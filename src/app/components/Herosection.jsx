@@ -8,11 +8,10 @@ const Herosection = () => {
                 <div className='col-span-7 place-self-center text-center sm:text-left'>
                     <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold' >
                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-500 to-teal-600'>Hello, I'm {""}</span>
-                        kevin
+                        Kevin Garrido
                     </h1>
                     <p className='text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima laudantium placeat provident, eius ullam harum totam illo, atque modi nesciunt eaque sapiente aut quisquam tempore cumque. Animi et iure voluptatibus.
-                    </p>
+                    I am a recent graduate in Intelligent Computing with knowledge in web programming, data science, and IT. I am eager to learn and grow as a developer.                    </p>
                     <div>
                         <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-pink-500 via-purple-500 to-teal-500 hover:bg-slate-200 text-white'>
                             Hire Me

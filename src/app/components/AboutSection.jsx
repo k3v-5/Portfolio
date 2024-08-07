@@ -5,17 +5,33 @@ import TabButton from './TabButton';
 
 const TAB_DATA = [
     {
+        title:"Experience",
+        id:"experience",
+        content:(
+            <ul className='list-disc pl-2'>
+                <li>Lion System Solutions</li>
+                <p className='px-4'>I develop activities such as API connections, creation of components and views, and database management for an e-commerce platform using .NET, VUE, and SQL.</p>
+           
+                <li>Cuauhtemoc University</li>
+                <p className='px-4'>I carried out activities ranging from credentialing, access control, report generation, and support for administrative staff and teachers, to connecting cameras and security devices, and cabling.</p>
+                 </ul>
+
+        )
+    },
+    {
+        
         title:"Skills",
         id: "skills",
         content:(
             <ul className='list-disc pl-2'>
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>MongoDb</li>
-                <li>Python</li>
                 <li>JavaScript</li>
+                <li>Python</li>
+                <li>.NET</li>
                 <li>React</li>
-                <li>Express</li>
+                <li>Angular</li>
+                <li>Vue</li>
+                <li>MongoDb</li>
+                <li>SQL</li>
             </ul>
         )
     },
@@ -25,18 +41,13 @@ const TAB_DATA = [
         content:(
             <ul className='list-disc pl-2'>
                 <li>Autonum University of Aguascalientes</li>
+                <p className='px-4'>I developed projects in areas of web programming such as a dating application with .Net and Angular; mobile development, such as a CRUD system; report generation using Power BI, Tableau, and Orange; machine learning algorithms with Python, such as emotion and facial detection; and a sentiment detector for tweets using web scraping.
+                </p>
+
             </ul>
         )
     },
-    {
-        title:"Experience",
-        id:"experience",
-        content:(
-            <ul className='list-disc pl-2'>
-                <li>Cuauhtemoc University</li>
-            </ul>
-        )
-    }
+
 ]
 
 const AboutSection = () => {
@@ -55,14 +66,13 @@ const AboutSection = () => {
                 <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
                     <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
                     <p className='text-base lg:text-lg'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. At totam modi esse reprehenderit maxime placeat consequuntur nesciunt harum, delectus, tempora, error facilis nulla dolores nam hic qui vel dignissimos obcaecati?
-                    </p>
+                    I am from Aguascalientes, Mexico, 23 years old, and have 2 years of experience in the technology field. I am very enthusiastic about learning, especially self-directed learning.                    </p>
                     <div className='flex flex-row justify-start mt-8'>
-                        <TabButton
-                            selecTab={() => handleTabChange("skills")}
-                            active={tab === "skills"}>
+                    <TabButton
+                            selecTab={() => handleTabChange("experience")}
+                            active={tab === "experience"}>
                             {" "}
-                            Skills{" "}
+                            Experience{" "}
                         </TabButton>
                         <TabButton
                             selecTab={() => handleTabChange("education")}
@@ -71,11 +81,13 @@ const AboutSection = () => {
                             Education{" "}
                         </TabButton>
                         <TabButton
-                            selecTab={() => handleTabChange("experience")}
-                            active={tab === "experience"}>
+                            selecTab={() => handleTabChange("skills")}
+                            active={tab === "skills"}>
                             {" "}
-                            Experience{" "}
+                            Skills{" "}
                         </TabButton>
+                        
+                        
                     </div>
                     <div className='mt-8'>{TAB_DATA.find((t)=> t.id===tab).content}</div>
                 </div>
