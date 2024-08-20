@@ -32,7 +32,7 @@ const ProjectsData = [
     image: "/images/projects/crypto-tracker/principal.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/k3v-5/CryptoTracker",
-    previewUrl: "/",
+    previewUrl: "https://cryptotrackerkg.netlify.app/",
   },
   {
     id: 4,
