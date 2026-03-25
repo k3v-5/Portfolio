@@ -34,28 +34,9 @@ const ProjectsData = [
     gitUrl: "https://github.com/k3v-5/CryptoTracker",
     previewUrl: "https://cryptotrackerkg.netlify.app/",
   },
+
   {
     id: 4,
-    title: "Covid-19 Data Analysis",
-    description:
-      "Analyzed Covid-19 data using Python and the Pandas library. The analysis included calculating the total number of cases, deaths, and recoveries for each country. The analysis also included creating visualizations such as bar charts and line graphs to help visualize the data.",
-    image: "/images/projects/3.jpg",
-    tag: ["All", "Data Science"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 5,
-    title: "Emotion Detection",
-    description:
-      "Developed an emotion detection model using Python and the OpenCV library. The model uses a webcam to capture a user's face and then uses a pre-trained deep learning model to detect the user's emotion. The model then displays the user's emotion on the screen.",
-    image: "/images/projects/3.jpg",
-    tag: ["All", "Data Science"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
     title: "Sentiment Analysis",
     description:
       "Developed a sentiment analysis model using Python . The model analyzes text data such as tweets and news articles to determine whether the sentiment is positive, negative, or neutral.",
@@ -73,7 +54,7 @@ const ProjectsSection = () => {
   };
 
   const filteredProjects = ProjectsData.filter((project) =>
-    project.tag.includes(tag)
+    project.tag.includes(tag),
   );
 
   return (

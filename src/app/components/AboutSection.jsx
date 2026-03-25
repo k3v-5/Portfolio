@@ -9,18 +9,26 @@ const TAB_DATA = [
     id: "experience",
     content: (
       <ul className="list-disc pl-2">
+        <li>RAINDE</li>
+        <p className="px-4">
+          Developed robust software solutions focusing on scalability and
+          performance. Collaborated in the full SDLC to deliver high-quality
+          codebases. QA Tester: Ensured software excellence through rigorous
+          manual and automated testing. Identified critical bugs and worked
+          closely with dev teams to maintain high deployment standards
+        </p>
         <li>Lion System Solutions</li>
         <p className="px-4">
-          I develop activities such as API connections, creation of components
-          and views, and database management for an e-commerce platform using
-          .NET, VUE, and SQL.
+          Designed and implemented end-to-end features for an e-commerce
+          platform. Optimized SQL queries for database management and built
+          modular UI components using Vue.js and .NET APIs.
         </p>
 
         <li>Cuauhtemoc University</li>
         <p className="px-4">
-          I carried out activities ranging from credentialing, access control,
-          report generation, and support for administrative staff and teachers,
-          to connecting cameras and security devices, and cabling.
+          Managed campus-wide IT infrastructure, including network cabling,
+          security systems, and access control. Provided technical
+          mission-critical support for administrative and academic staff.
         </p>
       </ul>
     ),
@@ -84,13 +92,7 @@ const AboutSection = () => {
   };
   return (
     <section className="text-white">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image
-          src="/images/about-image.jpg"
-          width={500}
-          height={500}
-          alt="about"
-        />
+      <div className=" gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
@@ -128,6 +130,7 @@ const AboutSection = () => {
               Skills{" "}
             </TabButton>
           </div>
+
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
