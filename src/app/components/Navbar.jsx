@@ -1,76 +1,45 @@
-"use client";
-import Link from "next/link";
-import React, { useState } from "react";
-import NavLink from "./NavLink";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import MenuOverlay from "./MenuOverlay";
-import Image from "next/image";
+import React from "react";
 
-const navLinks = [
-  {
-    title: "about",
-    path: "#about",
-  },
-  {
-    title: "projects",
-    path: "#projects",
-  },
-  {
-    title: "contact",
-    path: "#contact",
-  },
-  {
-    title: "blog",
-    path: "#blog",
-  },
-];
-const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <Link
-          href={"/"}
-          className="text-5xl md:text-5xl text-white font-semibold"
+    <nav>
+      <div className="container mx-auto px-6 lg:px-8 py-5 flex justify-between items-center">
+        <div className="text-xl font-black text-slate-900 uppercase tracking-tighter italic">
+          Kevin Garrido
+        </div>
+        <div className="hidden md:flex space-x-10 text-[10px] font-mono font-bold tracking-[0.4em] uppercase">
+          <a
+            href="#sobre-mi"
+            className="hover:text-purple-600 transition-colors text-slate-400"
+          >
+            // Bio
+          </a>
+          <a
+            href="#experiencia"
+            className="hover:text-purple-600 transition-colors text-slate-400"
+          >
+            // Exp
+          </a>
+          <a
+            href="#skills"
+            className="hover:text-purple-600 transition-colors text-slate-400"
+          >
+            // Tech
+          </a>
+          <a
+            href="#proyectos"
+            className="hover:text-purple-600 transition-colors text-slate-400"
+          >
+            // Work
+          </a>
+        </div>
+        <a
+          href="#contacto"
+          className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-[10px] font-mono font-bold hover:bg-purple-600 transition uppercase shadow-xl"
         >
-          {/* <Image
-            src="/images/logo.svg"
-            alt="logo image"
-            className="absolute transform "
-            width={50}
-            height={50}
-          ></Image> */}
-        </Link>
-        <div className="mobile-menu block md:hidden">
-          {!navbarOpen ? (
-            <button
-              onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <Bars3Icon className="h-5 w-5" />
-            </button>
-          ) : (
-            <button
-              onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
-          )}
-        </div>
-        <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <NavLink href={link.path} title={link.title} />
-              </li>
-            ))}
-          </ul>
-        </div>
+          Handshake.req
+        </a>
       </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
     </nav>
   );
-};
-
-export default Navbar;
+}

@@ -1,143 +1,34 @@
-"use client";
-import React, { useTransition, useState } from "react";
-import Image from "next/image";
-import TabButton from "./TabButton";
+import React from "react";
 
-const TAB_DATA = [
-  {
-    title: "Experience",
-    id: "experience",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>RAINDE</li>
-        <p className="px-4">
-          Developed robust software solutions focusing on scalability and
-          performance. Collaborated in the full SDLC to deliver high-quality
-          codebases. QA Tester: Ensured software excellence through rigorous
-          manual and automated testing. Identified critical bugs and worked
-          closely with dev teams to maintain high deployment standards
-        </p>
-        <li>Lion System Solutions</li>
-        <p className="px-4">
-          Designed and implemented end-to-end features for an e-commerce
-          platform. Optimized SQL queries for database management and built
-          modular UI components using Vue.js and .NET APIs.
-        </p>
-
-        <li>Cuauhtemoc University</li>
-        <p className="px-4">
-          Managed campus-wide IT infrastructure, including network cabling,
-          security systems, and access control. Provided technical
-          mission-critical support for administrative and academic staff.
-        </p>
-      </ul>
-    ),
-  },
-  {
-    title: "Languajes",
-    id: "Languajes",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>.NET</li>
-        <li>SQL</li>
-        <li>NOSQL</li>
-      </ul>
-    ),
-  },
-  {
-    title: "skills",
-    id: "skills",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>React</li>
-        <li>Next</li>
-        <li>Vue</li>
-        <li>Angular</li>
-        <li>Tensorflow</li>
-        <li>Pytorch</li>
-        <li>Django</li>
-        <li>Node</li>
-        <li>Power Bi</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Education",
-    id: "education",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Autonomum University of Aguascalientes</li>
-        <p className="px-4">
-          I developed projects in areas of web programming such as a dating
-          application with .Net and Angular; mobile development, such as a CRUD
-          system; report generation using Power BI, Tableau, and Orange; machine
-          learning algorithms with Python, such as emotion and facial detection;
-          and a sentiment detector for tweets using web scraping.
-        </p>
-      </ul>
-    ),
-  },
-];
-
-const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
-
-  const handleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
-  };
+export default function AboutSection() {
   return (
-    <section className="text-white">
-      <div className=" gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-            I am from Aguascalientes, Mexico, 23 years old, and have 2 years of
-            experience in the technology field. I am very enthusiastic about
-            learning, especially self-directed learning.{" "}
+    <section id="sobre-mi">
+      <div className="grid-layout">
+        <div className="content-card reveal-card">
+          <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest">
+            // MODULE_01: BIO
           </p>
-          <div className="flex flex-row justify-start mt-8">
-            <TabButton
-              selecTab={() => handleTabChange("experience")}
-              active={tab === "experience"}
-            >
-              {" "}
-              Experience{" "}
-            </TabButton>
-            <TabButton
-              selecTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selecTab={() => handleTabChange("Languajes")}
-              active={tab === "Languajes"}
-            >
-              {" "}
-              Programing Languajes{" "}
-            </TabButton>
-            <TabButton
-              selecTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              {" "}
-              Skills{" "}
-            </TabButton>
-          </div>
-
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+          <h2 className="text-4xl lg:text-5xl font-black mb-8 text-slate-900 uppercase italic">
+            Sobre Mí
+          </h2>
+          <p className="text-slate-500 leading-relaxed text-lg lg:text-xl font-light">
+            Soy de Aguascalientes, México, tengo 23 años y 2 años de experiencia
+            en el sector tecnológico. Me apasiona el aprendizaje autodidacta y
+            crear soluciones escalables, uniendo el código robusto con
+            experiencias de usuario fluidas.
+          </p>
+          <div className="mt-8 pt-6 border-t border-slate-100">
+            <p className="text-sm text-slate-400 font-mono uppercase tracking-widest">
+              Educación
+            </p>
+            <p className="text-slate-900 font-bold mt-2">
+              Universidad Autónoma de Aguascalientes
+            </p>
           </div>
         </div>
+        <div></div>
+        <div></div>
       </div>
     </section>
   );
-};
-
-export default AboutSection;
+}
