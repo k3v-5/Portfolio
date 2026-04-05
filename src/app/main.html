@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Kevin Garrido</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap");
+
+      :root {
+        --img-width: 800px;
+        --accent-color: #b95bd8;
+        --font-mono: "Fira Code", monospace;
+        --bg-color: #ffffff;
+        --text-color: #0f172a;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        cursor: none;
+      }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      /* MATRIX EFFECT - TEXTURA DE FONDO MUY SUTIL */
+      #matrix-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.04;
+      }
+
+      /* TEXTURA DE GRANO */
+      .grain-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.02;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* CURSOR */
+      #cursor-dot {
+        position: fixed;
+        width: 6px;
+        height: 6px;
+        background-color: var(--text-color);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10001;
+        transform: translate(-50%, -50%);
+      }
+      #cursor-ring {
+        position: fixed;
+        width: 35px;
+        height: 35px;
+        border: 1.5px solid var(--accent-color);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10000;
+        transform: translate(-50%, -50%);
+      }
+
+      .font-mono {
+        font-family: var(--font-mono);
+      }
+
+      nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+      }
+
+      .scroll-container {
+        position: relative;
+        width: 100%;
+      }
+
+      /* CAPA DE IMÁGENES - Z-INDEX 2 (ENCIMA DE LA LÍNEA) */
+      .bg-identity-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .identity-img {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: var(--img-width);
+        height: auto;
+        opacity: 0;
+        filter: drop-shadow(0 20px 50px rgba(185, 91, 216, 0.1));
+      }
+
+      /* CAPA DE LA LÍNEA - Z-INDEX 1 (DEBAJO DE LAS IMÁGENES) */
+      .svg-line-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0.3;
+      }
+
+      #scroll-path {
+        fill: none;
+        stroke: var(--accent-color);
+        stroke-width: 40;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      section {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 10; /* Texto siempre arriba */
+        padding: 5rem 0;
+      }
+
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr var(--img-width) 1fr;
+        width: 100%;
+        max-width: 1900px;
+        margin: 0 auto;
+        align-items: center;
+        gap: 4rem;
+        padding: 0 4rem;
+      }
+
+      .content-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 4rem;
+        border-radius: 3rem;
+        opacity: 0;
+        transform: translateY(30px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05);
+      }
+
+      .skill-tag {
+        background: #f1f5f9;
+        color: var(--text-color);
+        padding: 0.7rem 1.4rem;
+        border-radius: 100px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1600px) {
+        :root {
+          --img-width: 600px;
+        }
+        .grid-layout {
+          gap: 2rem;
+          padding: 0 3rem;
+        }
+      }
+
+      @media (max-width: 1280px) {
+        :root {
+          --img-width: 500px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .grid-layout {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 3rem;
+        }
+        /* SOLUCIÓN AL SOLAPAMIENTO: 
+               En móvil ocultamos la capa absoluta para que no tape el texto. 
+            */
+        .bg-identity-layer {
+          display: none;
+        }
+        .svg-line-container {
+          opacity: 0.1;
+        }
+
+        #cursor-dot,
+        #cursor-ring {
+          display: none;
+        }
+        html {
+          cursor: auto;
+        }
+
+        section {
+          padding: 4rem 1rem;
+          min-height: auto;
+        }
+        .content-card {
+          padding: 2rem;
+          border-radius: 2rem;
+        }
+
+        h1 {
+          font-size: 3.5rem !important;
+          line-height: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grain-overlay"></div>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <nav>
+      <div
+        class="container mx-auto px-6 lg:px-8 py-5 flex justify-between items-center"
+      >
+        <div
+          class="text-xl font-black text-slate-900 uppercase tracking-tighter italic"
+        >
+          Kevin Garrido
+        </div>
+        <div
+          class="hidden md:flex space-x-10 text-[10px] font-mono font-bold tracking-[0.4em] uppercase"
+        >
+          <a
+            href="#sobre-mi"
+            class="hover:text-purple-600 transition-colors text-slate-400"
+            >// Bio</a
+          >
+          <a
+            href="#experiencia"
+            class="hover:text-purple-600 transition-colors text-slate-400"
+            >// Exp</a
+          >
+          <a
+            href="#skills"
+            class="hover:text-purple-600 transition-colors text-slate-400"
+            >// Tech</a
+          >
+          <a
+            href="#proyectos"
+            class="hover:text-purple-600 transition-colors text-slate-400"
+            >// Work</a
+          >
+        </div>
+        <a
+          href="#contacto"
+          class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-[10px] font-mono font-bold hover:bg-purple-600 transition uppercase shadow-xl"
+          >Handshake.req</a
+        >
+      </div>
+    </nav>
+
+    <div class="scroll-container">
+      <!-- Capa de Identidad (Sólo Visible en Desktop para evitar solapes) -->
+      <div class="bg-identity-layer">
+        <div
+          style="
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--img-width);
+          "
+        >
+          <img src="img_1wb.png" class="identity-img w-full" id="img-1" />
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--img-width);
+          "
+        >
+          <img src="img_2wb.png" class="identity-img w-full" id="img-2" />
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--img-width);
+          "
+        >
+          <img src="img_3wb.png" class="identity-img w-full" id="img-3" />
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--img-width);
+          "
+        >
+          <img src="img_4wb.png" class="identity-img w-full" id="img-4" />
+        </div>
+      </div>
+
+      <div class="svg-line-container">
+        <svg
+          viewBox="0 0 3259 7000"
+          preserveAspectRatio="none"
+          style="width: 100%; height: 100%"
+        >
+          <path
+            id="scroll-path"
+            d="M1574.18 31.0454C1421.44 498.712 1100.61 756.881 3018.18 1260.05C3452.35 1459 2761.18 1485.55 2477.18 1437.7C2193.18 1389.86 786.643 1214.55 429.178 1732.55C388.798 1808.06 509.935 1966.42 912.889 2268.55C3088.07 3446.44 3309.13 4480.63 3018.18 2862.05C2606.93 1267.73 2556.14 2854.66 429.178 4075.05C-385.958 4763.89 253.091 5000.12 3018.18 5199.05 L 1574 7000"
+          />
+        </svg>
+      </div>
+
+      <!-- HERO -->
+      <section class="justify-center text-center">
+        <div class="max-w-6xl px-4">
+          <p
+            class="font-mono text-purple-600 text-xs mb-6 tracking-[0.8em] opacity-60"
+          >
+            >> DATA_STREAM_ACTIVE
+          </p>
+          <h1
+            class="text-6xl lg:text-[11rem] font-black tracking-tighter mb-8 bg-gradient-to-b from-slate-900 to-purple-600 bg-clip-text text-transparent uppercase italic leading-[0.85]"
+          >
+            Software<br />ENGINEER
+          </h1>
+          <div
+            class="flex flex-wrap justify-center gap-6 font-mono text-[11px] uppercase tracking-widest text-slate-400"
+          >
+            <span>Data Science</span>
+            <span>•</span>
+            <span>System Architecture</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- BIO -->
+      <section id="sobre-mi">
+        <div class="grid-layout">
+          <div class="content-card reveal-card">
+            <p
+              class="font-mono text-[10px] text-purple-500 mb-4 tracking-widest"
+            >
+              // MODULE_01: BIO
+            </p>
+            <h2
+              class="text-4xl lg:text-5xl font-black mb-8 text-slate-900 uppercase italic"
+            >
+              Sobre Mí
+            </h2>
+            <p
+              class="text-slate-500 leading-relaxed text-lg lg:text-xl font-light"
+            >
+              Especializado en la arquitectura de sistemas donde los
+              <span
+                class="text-slate-900 font-bold underline decoration-purple-500 decoration-4"
+                >datos masivos</span
+              >
+              cobran vida.
+            </p>
+          </div>
+          <div></div>
+          <div></div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCIA PERSONAL -->
+      <section id="experiencia">
+        <div class="grid-layout">
+          <div></div>
+          <div></div>
+          <div class="content-card reveal-card">
+            <p
+              class="font-mono text-[10px] text-purple-500 mb-4 tracking-widest"
+            >
+              // MODULE_02: EXPERIENCE
+            </p>
+            <h2
+              class="text-4xl lg:text-5xl font-black mb-10 text-slate-900 uppercase italic"
+            >
+              Trayectoria
+            </h2>
+            <div class="space-y-12">
+              <div class="border-l-4 border-purple-500 pl-8">
+                <h3 class="text-xl font-bold text-slate-900">
+                  Lead Experience Engineer
+                </h3>
+                <p
+                  class="text-slate-400 font-mono text-[10px] uppercase tracking-widest mt-1"
+                >
+                  2024 - Presente
+                </p>
+                <p class="text-slate-500 mt-4 text-sm leading-relaxed">
+                  Dirección técnica en plataformas de visualización de datos de
+                  alto volumen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="grid-layout">
+          <div class="content-card reveal-card">
+            <p
+              class="font-mono text-[10px] text-purple-500 mb-4 tracking-widest"
+            >
+              // MODULE_03: TECH_STACK
+            </p>
+            <h2
+              class="text-4xl lg:text-5xl font-black mb-8 text-slate-900 uppercase italic"
+            >
+              Skills
+            </h2>
+            <div class="flex flex-wrap gap-4">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">GSAP</span>
+              <span class="skill-tag">D3.js</span>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
+        </div>
+      </section>
+
+      <!-- PROYECTOS GALERIA 3 -->
+      <section id="proyectos" class="flex-col">
+        <div class="container mx-auto px-6 lg:px-12 mb-16 text-center">
+          <p
+            class="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase"
+          >
+            // MODULE_04: PORTFOLIO
+          </p>
+          <h2
+            class="text-5xl lg:text-8xl font-black text-slate-900 uppercase italic tracking-tighter"
+          >
+            Proyectos
+          </h2>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <!-- Proyecto 1 -->
+            <div class="content-card reveal-card group p-10 block">
+              <div
+                class="aspect-video bg-slate-50 rounded-2xl overflow-hidden mb-8 border border-slate-100"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bbbda536ad0a?q=80&w=800"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                />
+              </div>
+              <h3 class="text-3xl font-black text-slate-900 uppercase italic">
+                Data Engine
+              </h3>
+              <p
+                class="text-slate-400 font-mono text-[9px] mt-4 uppercase tracking-widest"
+              >
+                Analytics & Prediction
+              </p>
+            </div>
+            <!-- Proyecto 2 -->
+            <div class="content-card reveal-card group p-10 block">
+              <div
+                class="aspect-video bg-slate-50 rounded-2xl overflow-hidden mb-8 border border-slate-100"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                />
+              </div>
+              <h3 class="text-3xl font-black text-slate-900 uppercase italic">
+                Financial UI
+              </h3>
+              <p
+                class="text-slate-400 font-mono text-[9px] mt-4 uppercase tracking-widest"
+              >
+                Real-time Stock Flow
+              </p>
+            </div>
+            <!-- Proyecto 3 -->
+            <div class="content-card reveal-card group p-10 block">
+              <div
+                class="aspect-video bg-slate-50 rounded-2xl overflow-hidden mb-8 border border-slate-100"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1620712943543-bcc4628c6757?q=80&w=800"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                />
+              </div>
+              <h3 class="text-3xl font-black text-slate-900 uppercase italic">
+                Neural View
+              </h3>
+              <p
+                class="text-slate-400 font-mono text-[9px] mt-4 uppercase tracking-widest"
+              >
+                AI Model Visualization
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="justify-center">
+        <div
+          class="content-card reveal-card max-w-5xl w-full text-center border-4 border-slate-50 shadow-2xl mx-4"
+        >
+          <p
+            class="font-mono text-[10px] text-purple-500 mb-6 tracking-[0.5em]"
+          >
+            >> SIGNAL_READY
+          </p>
+          <h2 class="text-6xl font-black mb-12 italic uppercase text-slate-900">
+            Hablemos.
+          </h2>
+          <form class="space-y-6 text-left" onsubmit="event.preventDefault()">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <input
+                type="text"
+                placeholder="IDENTITY"
+                class="bg-slate-50 border border-slate-200 p-6 rounded-3xl font-mono text-xs outline-none focus:border-purple-500 transition-all text-slate-900"
+              />
+              <input
+                type="email"
+                placeholder="EMAIL"
+                class="bg-slate-50 border border-slate-200 p-6 rounded-3xl font-mono text-xs outline-none focus:border-purple-500 transition-all text-slate-900"
+              />
+            </div>
+            <textarea
+              placeholder="PAYLOAD"
+              rows="4"
+              class="w-full bg-slate-50 border border-slate-200 p-6 rounded-3xl font-mono text-xs outline-none focus:border-purple-500 transition-all text-slate-900"
+            ></textarea>
+            <button
+              class="w-full bg-slate-900 py-6 rounded-3xl font-black font-mono text-[10px] uppercase tracking-[0.5em] hover:bg-purple-600 text-white transition-all transform active:scale-95 shadow-2xl"
+            >
+              [ SEND_EXECUTE ]
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <footer
+        class="py-16 text-center opacity-30 font-mono text-[9px] uppercase tracking-[0.8em]"
+      >
+        Kevin Garrido // Data Engineering System // 2026
+      </footer>
+    </div>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      const initMatrixEffect = () => {
+        const canvas = document.getElementById("matrix-canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const symbols = "01ΣΔ∫√μλπθΦΨΩαβγ∞≈∑∏".split("");
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        const draw = () => {
+          ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "#B95BD8";
+          ctx.font = fontSize + "px 'Fira Code'";
+          drops.forEach((y, i) => {
+            const text = symbols[Math.floor(Math.random() * symbols.length)];
+            ctx.fillText(text, i * fontSize, y * fontSize);
+            if (y * fontSize > canvas.height && Math.random() > 0.975)
+              drops[i] = 0;
+            drops[i]++;
+          });
+        };
+        setInterval(draw, 50);
+        window.addEventListener("resize", () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+      };
+
+      window.onload = () => {
+        initMatrixEffect();
+        const path = document.querySelector("#scroll-path");
+        const pathLength = path.getTotalLength();
+        const dot = document.querySelector("#cursor-dot");
+        const ring = document.querySelector("#cursor-ring");
+
+        window.addEventListener("mousemove", (e) => {
+          gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0 });
+          gsap.to(ring, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        gsap.set(path, {
+          strokeDasharray: pathLength,
+          strokeDashoffset: pathLength,
+        });
+        gsap.to(path, {
+          strokeDashoffset: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".scroll-container",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+          },
+        });
+
+        const idImages = ["#img-1", "#img-2", "#img-3", "#img-4"];
+        idImages.forEach((id) => {
+          const el = document.querySelector(id);
+          if (el && window.innerWidth > 1024) {
+            gsap.to(el, {
+              opacity: 1,
+              y: -80,
+              scrollTrigger: {
+                trigger: el.parentElement,
+                start: "top 90%",
+                end: "bottom 10%",
+                scrub: true,
+              },
+            });
+            gsap.to(el, {
+              y: "+=30",
+              rotation: 1.5,
+              duration: 5 + Math.random() * 2,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+            });
+          }
+        });
+
+        gsap.utils.toArray(".reveal-card").forEach((card) => {
+          gsap.to(card, {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 90%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        });
+      };
+    </script>
+  </body>
+</html>
