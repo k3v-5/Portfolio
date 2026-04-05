@@ -7,9 +7,9 @@ import gsap from "gsap";
 const ProjectsData = [
   {
     id: 1,
-    title: "Dating App",
+    title: "Dating Platform",
     description:
-      "Developed a dating application using Angular, .NET and sql. The application allows users to create an account, upload photos, and search for other users based on their preferences. The application also includes a chat feature that allows users to communicate with each other in real-time.",
+      "Developed a full-stack application featuring messaging and profile management using Angular and .NET.",
     image: "/images/projects/dating-app/principal.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/k3v-5/CitasApp",
@@ -29,7 +29,7 @@ const ProjectsData = [
     id: 3,
     title: "Crypto Tracker",
     description:
-      "Developed a cryptocurrency tracker using React and the CoinGecko API. The tracker allows users to search for cryptocurrencies and view their current price, market cap, and trading volume. The tracker also includes a watchlist feature that allows users to save their favorite cryptocurrencies.",
+      "Built a real-time tracking application with historical charts and API integration using React (Next.js).",
     image: "/images/projects/crypto-tracker/principal.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/k3v-5/CryptoTracker",
@@ -71,13 +71,13 @@ export default function ProjectsSection() {
   }, [tag]);
 
   return (
-    <section id="proyectos" className="flex-col w-full relative z-10">
+    <section id="projects" className="flex-col w-full relative z-10">
       <div className="container mx-auto px-6 lg:px-12 mb-12 text-center">
         <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
           // MODULE_04: PORTFOLIO
         </p>
         <h2 className="text-5xl lg:text-8xl font-black text-slate-900 uppercase italic tracking-tighter">
-          Proyectos
+          Projects
         </h2>
       </div>
 

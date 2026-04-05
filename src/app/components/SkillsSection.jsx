@@ -1,20 +1,19 @@
 import React from "react";
 
 const skills = [
+  "Python",
   "React",
   "Next.js",
-  "Vue",
   "Angular",
   "TypeScript",
-  "Python",
+  "C#",
   ".NET",
-  "TensorFlow",
-  "PyTorch",
-  "Django",
-  "Node.js",
-  "SQL",
-  "NoSQL",
-  "Power BI",
+  ".NET Core",
+  "SQL Server",
+  "PowerBI",
+  "Tableau",
+  "Orange",
+  "Linux",
 ];
 
 export default function SkillsSection() {
