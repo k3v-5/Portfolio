@@ -233,7 +233,7 @@ export default function Home() {
         <ContactSection />
 
         <footer className="py-16 text-center opacity-30 font-mono text-[9px] uppercase tracking-[0.8em]">
-          Kevin Garrido // Data Engineering System // 2026
+          {"Kevin Garrido // Data Engineering System // 2026"}
         </footer>
       </div>
     </div>
