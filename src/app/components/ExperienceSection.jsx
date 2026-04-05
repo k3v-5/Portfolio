@@ -3,10 +3,8 @@ import React from "react";
 export default function ExperienceSection() {
   return (
     <section id="experiencia">
-      <div className="grid-layout">
-        <div></div>
-        <div></div>
-        <div className="content-card reveal-card">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 flex justify-end">
+        <div className="content-card reveal-card max-w-2xl w-full">
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest">
             // MODULE_02: EXPERIENCE
           </p>

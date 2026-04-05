@@ -45,7 +45,7 @@ export default function Home() {
             trigger: ".scroll-container",
             start: "top top",
             end: "bottom bottom",
-            scrub: true,
+            scrub: 1.5,
           },
         });
       }
@@ -100,7 +100,7 @@ export default function Home() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 90%",
+            start: "top 95%",
             toggleActions: "play none none reverse",
           },
         });
@@ -121,15 +121,14 @@ export default function Home() {
       <CustomCursor />
       <Navbar />
 
-      <div className="scroll-container">
+      <div className="scroll-container pb-24 lg:pb-32">
         {/* Background Images de SpotlightSection (Desktop Only) */}
         <div className="bg-identity-layer">
           <div
             style={{
               position: "absolute",
               top: "15%",
-              left: "50%",
-              transform: "translateX(-50%)",
+              right: "5%",
               width: "var(--img-width)",
             }}
           >
@@ -146,8 +145,7 @@ export default function Home() {
             style={{
               position: "absolute",
               top: "35%",
-              left: "50%",
-              transform: "translateX(-50%)",
+              left: "5%",
               width: "var(--img-width)",
             }}
           >
@@ -181,7 +179,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              top: "75%",
+              top: "80%",
               left: "50%",
               transform: "translateX(-50%)",
               width: "var(--img-width)",
@@ -201,13 +199,17 @@ export default function Home() {
         {/* Línea SVG de fondo */}
         <div className="svg-line-container">
           <svg
-            viewBox="0 0 3259 7000"
+            viewBox="0 0 2120 2590"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
             style={{ width: "100%", height: "100%" }}
           >
             <path
               id="scroll-path"
-              d="M1574.18 31.0454C1421.44 498.712 1100.61 756.881 3018.18 1260.05C3452.35 1459 2761.18 1485.55 2477.18 1437.7C2193.18 1389.86 786.643 1214.55 429.178 1732.55C388.798 1808.06 509.935 1966.42 912.889 2268.55C3088.07 3446.44 3309.13 4480.63 3018.18 2862.05C2606.93 1267.73 2556.14 2854.66 429.178 4075.05C-385.958 4763.89 253.091 5000.12 3018.18 5199.05 L 1574 7000"
+              d="M698.973 23.7537C844.473 293.254 1969.97 211.754 2033.97 425.754C2097.97 639.754 432.989 765.83 87.4731 964.754C-258.043 1163.68 1896.97 1777.25 2059.47 1221.25C2221.97 665.254 266.973 2102.75 87.4731 1666.25C-92.0268 1229.75 2102.48 2090.25 1841.47 2269.75C1580.47 2449.25 626.473 2539.25 626.473 2539.25 L 626.473 2590"
+              stroke="#9F44C9"
+              strokeWidth="100"
             />
           </svg>
         </div>
@@ -216,7 +218,15 @@ export default function Home() {
         <AboutSection />
         <ExperienceSection />
         <SkillsSection />
+
+        {/* Espaciador visual moderado */}
+        <div className="h-32 lg:h-64 w-full pointer-events-none"></div>
+
         <ProjectsSection />
+
+        {/* Espaciador visual más amplio para la última imagen */}
+        <div className="h-48 lg:h-96 w-full pointer-events-none"></div>
+
         <ContactSection />
 
         <footer className="py-16 text-center opacity-30 font-mono text-[9px] uppercase tracking-[0.8em]">

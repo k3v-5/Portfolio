@@ -24,20 +24,20 @@ export default function Navbar() {
             href="#skills"
             className="hover:text-purple-600 transition-colors text-slate-400"
           >
-            // Tech
+            // Skills
           </a>
           <a
             href="#proyectos"
             className="hover:text-purple-600 transition-colors text-slate-400"
           >
-            // Work
+            // Projects
           </a>
         </div>
         <a
           href="#contacto"
           className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-[10px] font-mono font-bold hover:bg-purple-600 transition uppercase shadow-xl"
         >
-          Handshake.req
+          Contact.me
         </a>
       </div>
     </nav>

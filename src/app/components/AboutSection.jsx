@@ -3,8 +3,8 @@ import React from "react";
 export default function AboutSection() {
   return (
     <section id="sobre-mi">
-      <div className="grid-layout">
-        <div className="content-card reveal-card">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 flex justify-start">
+        <div className="content-card reveal-card max-w-2xl w-full">
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest">
             // MODULE_01: BIO
           </p>

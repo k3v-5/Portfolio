@@ -38,7 +38,7 @@ export default function MatrixBackground() {
         });
       };
 
-      matrixInterval = setInterval(draw, 50);
+      matrixInterval = setInterval(draw, 80);
       window.addEventListener("resize", handleResize);
     }
 

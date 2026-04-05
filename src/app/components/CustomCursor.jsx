@@ -7,15 +7,23 @@ export default function CustomCursor() {
     const dot = document.querySelector("#cursor-dot");
     const ring = document.querySelector("#cursor-ring");
 
+    const xMoveDot = gsap.quickTo(dot, "x", { duration: 0 });
+    const yMoveDot = gsap.quickTo(dot, "y", { duration: 0 });
+    const xMoveRing = gsap.quickTo(ring, "x", {
+      duration: 0.3,
+      ease: "power2.out",
+    });
+    const yMoveRing = gsap.quickTo(ring, "y", {
+      duration: 0.3,
+      ease: "power2.out",
+    });
+
     const handleMouseMove = (e) => {
       if (dot && ring) {
-        gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0 });
-        gsap.to(ring, {
-          x: e.clientX,
-          y: e.clientY,
-          duration: 0.3,
-          ease: "power2.out",
-        });
+        xMoveDot(e.clientX);
+        yMoveDot(e.clientY);
+        xMoveRing(e.clientX);
+        yMoveRing(e.clientY);
       }
     };
 
