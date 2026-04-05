@@ -1,13 +1,25 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { marked } from "marked";
 
 export default function SignalLogSection() {
   const [logs, setLogs] = useState([]);
   const containerRef = useRef(null);
   const tweenRef = useRef(null);
+  const [stravaData, setStravaData] = useState({
+    name: "Loading route...",
+    pace: "--:--",
+    distance: "--",
+    time: "--",
+    elevation: "--",
+    type: "RUN",
+  });
+  const [spotifyData, setSpotifyData] = useState({
+    title: "Offline",
+    artist: "Spotify",
+    isPlaying: false,
+  });
 
   // 1. Fetch de los archivos Markdown dinámicos
   useEffect(() => {
@@ -39,7 +51,71 @@ export default function SignalLogSection() {
     loadMarkdown();
   }, []);
 
-  // 2. Efecto "Cinta Transportadora" Infinita con GSAP
+  // 2. Fetch de datos de Strava
+  useEffect(() => {
+    async function fetchStrava() {
+      try {
+        const res = await fetch("/api/strava");
+        if (res.ok) {
+          const data = await res.json();
+          setStravaData({
+            name: data.name,
+            pace: `${data.pace} /km`,
+            distance: `${data.distance} km`,
+            time: data.time,
+            elevation: data.elevation,
+            type: data.type.toUpperCase(),
+          });
+        } else {
+          const errorData = await res.json();
+          console.error("❌ Error de la API de Strava:", errorData);
+          setStravaData({
+            name: errorData.error || "No data",
+            pace: "--:--",
+            distance: "--",
+            time: "--",
+            elevation: "--",
+            type: "N/A",
+          });
+        }
+      } catch (error) {
+        console.error("❌ Falló la conexión al endpoint de Strava:", error);
+        setStravaData({
+          name: "Signal lost",
+          pace: "--:--",
+          distance: "--",
+          time: "--",
+          elevation: "--",
+          type: "ERR",
+        });
+      }
+    }
+    fetchStrava();
+  }, []);
+
+  // 3. Fetch de datos de Spotify
+  useEffect(() => {
+    async function fetchSpotify() {
+      try {
+        const res = await fetch("/api/spotify");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.isPlaying) {
+            setSpotifyData({
+              title: data.title,
+              artist: data.artist,
+              isPlaying: true,
+            });
+          }
+        }
+      } catch (error) {
+        console.error("❌ Error cargando Spotify", error);
+      }
+    }
+    fetchSpotify();
+  }, []);
+
+  // 4. Efecto "Cinta Transportadora" Infinita con GSAP
   useEffect(() => {
     let ctx;
     const timer = setTimeout(() => {
@@ -65,18 +141,51 @@ export default function SignalLogSection() {
       <div className="shrink-0 w-[300px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-8 md:p-10 rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
-            // [PROCESS_ID: 0xRUN]
+            // [PROCESS_ID: 0x{stravaData.type}]
           </p>
-          <h3 className="text-2xl font-black text-slate-900 uppercase italic">
-            Morning Run
+          <h3
+            className="text-2xl font-black text-slate-900 uppercase italic truncate"
+            title={stravaData.name}
+          >
+            {stravaData.name}
           </h3>
-          <p className="text-slate-500 text-sm mt-2 font-mono">
-            Último split:{" "}
-            <span className="font-bold text-slate-900">4:30 min/km</span>
-          </p>
+          <div className="grid grid-cols-2 gap-y-4 gap-x-2 mt-6">
+            <div>
+              <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
+                Distance
+              </p>
+              <p className="font-bold text-slate-900 font-mono text-sm">
+                {stravaData.distance}
+              </p>
+            </div>
+            <div>
+              <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
+                Avg Pace
+              </p>
+              <p className="font-bold text-slate-900 font-mono text-sm">
+                {stravaData.pace}
+              </p>
+            </div>
+            <div>
+              <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
+                Time
+              </p>
+              <p className="font-bold text-slate-900 font-mono text-sm">
+                {stravaData.time}
+              </p>
+            </div>
+            <div>
+              <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
+                Elevation
+              </p>
+              <p className="font-bold text-purple-600 font-mono text-sm">
+                {stravaData.elevation}
+              </p>
+            </div>
+          </div>
         </div>
         <svg
-          className="w-full h-16 mt-6 overflow-visible"
+          className="w-full h-12 mt-6 overflow-visible"
           viewBox="0 0 100 30"
           preserveAspectRatio="none"
         >
@@ -105,19 +214,34 @@ export default function SignalLogSection() {
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
             // [PROCESS_ID: 0xAUDIO]
           </p>
-          <h3 className="text-2xl font-black text-slate-900 uppercase italic">
+          <h3
+            className="text-2xl font-black text-slate-900 uppercase italic truncate"
+            title={spotifyData.title}
+          >
             Now Playing
           </h3>
-          <p className="text-slate-500 text-sm mt-2 font-mono">
-            Gesaffelstein - Opr
+          <p
+            className="text-slate-900 font-bold text-sm mt-4 font-mono truncate"
+            title={spotifyData.title}
+          >
+            {spotifyData.title}
+          </p>
+          <p
+            className="text-slate-500 text-xs mt-1 font-mono truncate"
+            title={spotifyData.artist}
+          >
+            {spotifyData.artist}
           </p>
         </div>
-        <div className="flex items-end justify-between gap-1 h-12 mt-8">
+        <div className="flex items-end justify-between gap-1 h-8 mt-8">
           {[40, 70, 45, 90, 60, 100, 50, 80, 30, 65, 40].map((h, i) => (
             <div
               key={i}
-              className="w-full bg-purple-500 rounded-t-sm animate-pulse"
-              style={{ height: `${h}%`, animationDelay: `${i * 0.1}s` }}
+              className={`w-full bg-purple-500 rounded-t-sm ${spotifyData.isPlaying ? "animate-pulse" : "opacity-30"}`}
+              style={{
+                height: spotifyData.isPlaying ? `${h}%` : "20%",
+                animationDelay: `${i * 0.1}s`,
+              }}
             ></div>
           ))}
         </div>
@@ -130,18 +254,18 @@ export default function SignalLogSection() {
             // [PROCESS_ID: 0xLIT]
           </p>
           <h3 className="text-2xl font-black text-slate-900 uppercase italic leading-none">
-            Neuromancer
+            Moby Dick
           </h3>
           <p className="text-slate-500 text-sm mt-2 font-mono">
-            William Gibson
+            Herman Melville
           </p>
         </div>
         <div className="mt-8">
           <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-            <div className="bg-purple-500 h-full w-[65%] shadow-[0_0_10px_rgba(168,85,247,0.8)]"></div>
+            <div className="bg-purple-500 h-full w-[10%] shadow-[0_0_10px_rgba(168,85,247,0.8)]"></div>
           </div>
           <p className="text-right text-[10px] font-mono text-slate-400 mt-2 font-bold">
-            65% COMPLETED
+            10% COMPLETED
           </p>
         </div>
       </div>

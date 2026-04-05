@@ -25,7 +25,7 @@ export default function ContactSection() {
           &gt;&gt; SIGNAL_READY
         </p>
         <h2 className="text-6xl font-black mb-8 italic uppercase text-slate-900">
-          Let's Connect.
+          Let&apos;s Connect.
         </h2>
         <div className="text-slate-500 font-light text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
           Whether it’s a technical challenge, a business inquiry, or you just

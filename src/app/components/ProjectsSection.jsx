@@ -118,6 +118,7 @@ export default function ProjectsSection() {
                   <Link
                     href={project.gitUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="h-14 w-14 mr-4 border-2 flex items-center justify-center relative rounded-full border-[#ADB7BE] hover:border-white group/link"
                   >
                     <CodeBracketIcon className="h-8 w-8 text-[#ADB7BE] cursor-pointer group-hover/link:text-white" />
@@ -125,6 +126,7 @@ export default function ProjectsSection() {
                   <Link
                     href={project.previewUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="h-14 w-14 border-2 flex items-center justify-center relative rounded-full border-[#ADB7BE] hover:border-white group/link"
                   >
                     <EyeIcon className="h-8 w-8 text-[#ADB7BE] cursor-pointer group-hover/link:text-white" />
