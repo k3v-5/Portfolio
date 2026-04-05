@@ -13,6 +13,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import MatrixBackground from "./components/MatrixBackground";
 import CustomCursor from "./components/CustomCursor";
+import SignalLogSection from "./components/SignalLogSection";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -61,20 +62,20 @@ export default function Home() {
           gsap.to(el, {
             opacity: 1,
             scrollTrigger: {
-              trigger: wrapper.parentElement,
-              start: "top 90%",
-              end: "bottom 10%",
+              trigger: wrapper,
+              start: "top 85%", // Comienza a aparecer un poco antes
+              end: "top 30%", // Opacidad 100% cuando alcanza el 30% superior de la pantalla
               scrub: true,
             },
           });
 
-          // 2. Parallax de scroll (aplicado al wrapper para evitar conflicto de ejes Y)
+          // 2. Parallax de scroll (aplicado al wrapper)
           gsap.to(wrapper, {
             y: -120,
             scrollTrigger: {
-              trigger: wrapper.parentElement,
-              start: "top 90%",
-              end: "bottom 10%",
+              trigger: wrapper,
+              start: "top bottom", // Inicia al entrar por debajo
+              end: "bottom top", // Termina al salir por arriba
               scrub: true,
             },
           });
@@ -161,7 +162,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              top: "54%",
+              top: "48%",
               left: "50%",
               transform: "translateX(-50%)",
               width: "var(--img-width)",
@@ -179,7 +180,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              top: "80%",
+              top: "82%",
               left: "50%",
               transform: "translateX(-50%)",
               width: "var(--img-width)",
@@ -226,6 +227,8 @@ export default function Home() {
 
         {/* Espaciador visual más amplio para la última imagen */}
         <div className="h-48 lg:h-96 w-full pointer-events-none"></div>
+
+        <SignalLogSection />
 
         <ContactSection />
 
