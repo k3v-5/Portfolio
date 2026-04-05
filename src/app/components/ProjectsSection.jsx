@@ -74,7 +74,7 @@ export default function ProjectsSection() {
     <section id="projects" className="flex-col w-full relative z-10">
       <div className="container mx-auto px-6 lg:px-12 mb-12 text-center">
         <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
-          // MODULE_04: PORTFOLIO
+          {"// MODULE_04: PORTFOLIO"}
         </p>
         <h2 className="text-5xl lg:text-8xl font-black text-slate-900 uppercase italic tracking-tighter">
           Projects

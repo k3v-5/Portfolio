@@ -28,8 +28,8 @@ export default function ContactSection() {
           Let&apos;s Connect.
         </h2>
         <div className="text-slate-500 font-light text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-          Whether it’s a technical challenge, a business inquiry, or you just
-          want to share a good book recommendation—my inbox is always open.
+          Whether it&apos;s a technical challenge, a business inquiry, or you
+          just want to share a good book recommendation—my inbox is always open.
         </div>
 
         {/* Copy to Clipboard Email */}
@@ -83,7 +83,7 @@ export default function ContactSection() {
 
         <div className="pt-8 border-t border-slate-100 flex flex-col items-center">
           <p className="font-mono text-[10px] text-slate-400 mb-6 tracking-widest uppercase">
-            // YOU COULD ALSO TRY SOME OTHER OPTIONS:
+            {"// YOU COULD ALSO TRY SOME OTHER OPTIONS:"}
           </p>
           <div className="flex space-x-8">
             <a

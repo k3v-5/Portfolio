@@ -12,25 +12,25 @@ export default function Navbar() {
             href="#about-me"
             className="hover:text-purple-600 transition-colors text-slate-400"
           >
-            // Bio
+            {"// Bio"}
           </a>
           <a
             href="#experience"
             className="hover:text-purple-600 transition-colors text-slate-400"
           >
-            // Exp
+            {"// Exp"}
           </a>
           <a
             href="#skills"
             className="hover:text-purple-600 transition-colors text-slate-400"
           >
-            // Skills
+            {"// Skills"}
           </a>
           <a
             href="#projects"
             className="hover:text-purple-600 transition-colors text-slate-400"
           >
-            // Projects
+            {"// Projects"}
           </a>
         </div>
         <a

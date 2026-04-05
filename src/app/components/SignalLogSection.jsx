@@ -141,7 +141,7 @@ export default function SignalLogSection() {
       <div className="shrink-0 w-[300px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-8 md:p-10 rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
-            // [PROCESS_ID: 0x{stravaData.type}]
+            {`// [PROCESS_ID: 0x${stravaData.type}]`}
           </p>
           <h3
             className="text-2xl font-black text-slate-900 uppercase italic truncate"
@@ -212,7 +212,7 @@ export default function SignalLogSection() {
       <div className="shrink-0 w-[300px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-8 md:p-10 rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
-            // [PROCESS_ID: 0xAUDIO]
+            {"// [PROCESS_ID: 0xAUDIO]"}
           </p>
           <h3
             className="text-2xl font-black text-slate-900 uppercase italic truncate"
@@ -251,7 +251,7 @@ export default function SignalLogSection() {
       <div className="shrink-0 w-[300px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-8 md:p-10 rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
-            // [PROCESS_ID: 0xLIT]
+            {"// [PROCESS_ID: 0xLIT]"}
           </p>
           <h3 className="text-2xl font-black text-slate-900 uppercase italic leading-none">
             Moby Dick
@@ -278,7 +278,7 @@ export default function SignalLogSection() {
         >
           <div className="flex-1">
             <p className="font-mono text-[10px] text-purple-500 mb-6 tracking-widest uppercase">
-              // [PROCESS_ID: {log.id.replace(".md", "")}]
+              {`// [PROCESS_ID: ${log.id.replace(".md", "")}]`}
             </p>
             <div
               className="text-sm font-mono text-slate-600 space-y-4 prose-a:text-purple-500 prose-strong:text-slate-900 prose-headings:font-black prose-headings:italic prose-headings:text-xl"
@@ -304,7 +304,7 @@ export default function SignalLogSection() {
       <div className="container mx-auto px-6 lg:px-12 mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 text-center md:text-left">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
-            // MODULE_05: SIGNAL_LOG
+            {"// MODULE_05: SIGNAL_LOG"}
           </p>
           <h2 className="text-4xl lg:text-7xl font-black text-slate-900 uppercase italic tracking-tighter">
             Transmissions

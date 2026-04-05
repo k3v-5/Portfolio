@@ -6,7 +6,7 @@ export default function ExperienceSection() {
       <div className="container mx-auto px-6 lg:px-12 relative z-10 flex justify-end">
         <div className="content-card reveal-card max-w-2xl w-full">
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest">
-            // MODULE_02: EXPERIENCE
+            {"// MODULE_02: EXPERIENCE"}
           </p>
           <h2 className="text-4xl lg:text-5xl font-black mb-10 text-slate-900 uppercase italic">
             Experience
