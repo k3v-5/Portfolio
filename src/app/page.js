@@ -161,7 +161,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              top: "55%",
+              top: "54%",
               left: "50%",
               transform: "translateX(-50%)",
               width: "var(--img-width)",

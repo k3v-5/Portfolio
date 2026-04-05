@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav>
       <div className="container mx-auto px-6 lg:px-8 py-5 flex justify-between items-center">
         <div className="text-xl font-black text-slate-900 uppercase tracking-tighter italic">
-          Kevin Garrido
+          <a href="#kevin-garrido">Kevin Garrido</a>
         </div>
         <div className="hidden md:flex space-x-10 text-[10px] font-mono font-bold tracking-[0.4em] uppercase">
           <a

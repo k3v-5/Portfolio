@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Herosection() {
   return (
-    <section className="justify-center text-center">
+    <section id="kevin-garrido" className="justify-center text-center">
       <div className="max-w-6xl px-4">
         <p className="font-mono text-purple-600 text-xs mb-6 tracking-[0.8em] opacity-60">
           &gt;&gt; HELLO_WORLD
