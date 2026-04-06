@@ -161,6 +161,21 @@ section {
   transition: all 0.3s ease;
 }
 
+/* AUDIO SPECTRUM ANIMATION */
+@keyframes audio-spectrum {
+  0%,
+  100% {
+    transform: scaleY(0.2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.animate-spectrum {
+  animation: audio-spectrum 1s ease-in-out infinite;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1600px) {
   :root {
