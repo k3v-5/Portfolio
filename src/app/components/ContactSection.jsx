@@ -14,20 +14,20 @@ export default function ContactSection() {
     <section id="contact" className="justify-center">
       <div className="content-card reveal-card max-w-5xl w-full text-center border-4 border-slate-50 shadow-2xl mx-4 relative overflow-hidden">
         {/* Availability Badge */}
-        <div className="absolute top-6 right-6 flex items-center space-x-2 bg-green-500/10 px-4 py-2 rounded-full border border-green-500/20">
-          <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
-          <span className="text-[10px] font-mono text-green-600 font-bold uppercase tracking-wider">
+        <div className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center space-x-1.5 md:space-x-2 bg-green-500/10 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-green-500/20">
+          <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
+          <span className="text-[8px] md:text-[10px] font-mono text-green-600 font-bold uppercase tracking-wider">
             Open for new projects
           </span>
         </div>
 
-        <p className="font-mono text-[10px] text-purple-500 mb-6 tracking-[0.5em] mt-12 md:mt-0">
+        <p className="font-mono text-[10px] text-purple-500 mb-4 md:mb-6 tracking-[0.5em] mt-12 md:mt-0">
           &gt;&gt; SIGNAL_READY
         </p>
-        <h2 className="text-6xl font-black mb-8 italic uppercase text-slate-900">
+        <h2 className="text-4xl md:text-6xl font-black mb-6 md:mb-8 italic uppercase text-slate-900">
           Let&apos;s Connect.
         </h2>
-        <div className="text-slate-500 font-light text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+        <div className="text-slate-500 font-light text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
           Whether it&apos;s a technical challenge, a business inquiry, or you
           just want to share a good book recommendation—my inbox is always open.
         </div>
@@ -36,14 +36,14 @@ export default function ContactSection() {
         <div className="flex flex-col items-center justify-center mb-16 relative">
           <button
             onClick={handleCopy}
-            className="group flex items-center space-x-4 bg-slate-50 border-2 border-slate-200 hover:border-purple-500 px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+            className="group flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 bg-slate-50 border-2 border-slate-200 hover:border-purple-500 px-4 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 w-full sm:w-auto"
           >
-            <span className="font-mono text-slate-900 font-bold tracking-wider group-hover:text-purple-600 transition-colors">
+            <span className="font-mono text-slate-900 font-bold tracking-wider text-[11px] sm:text-base group-hover:text-purple-600 transition-colors break-all">
               kevingarrido711@gmail.com
             </span>
             {copied ? (
               <svg
-                className="w-5 h-5 text-green-500"
+                className="w-5 h-5 text-green-500 shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -58,7 +58,7 @@ export default function ContactSection() {
               </svg>
             ) : (
               <svg
-                className="w-5 h-5 text-slate-400 group-hover:text-purple-500 transition-colors"
+                className="w-5 h-5 text-slate-400 group-hover:text-purple-500 transition-colors shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

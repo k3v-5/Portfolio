@@ -146,7 +146,7 @@ export default function SignalLogSection() {
   const renderCards = () => (
     <React.Fragment>
       {/* TARJETA 1: RUNNING STATS */}
-      <div className="shrink-0 w-[300px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-8 md:p-10 rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
+      <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
             {`// [PROCESS_ID: 0x${stravaData.type}]`}
@@ -234,7 +234,7 @@ export default function SignalLogSection() {
       </div>
 
       {/* TARJETA 3: CURRENT VIBE (AUDIO) */}
-      <div className="shrink-0 w-[300px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-8 md:p-10 rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
+      <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
             {"// [PROCESS_ID: 0xAUDIO]"}
@@ -333,7 +333,7 @@ export default function SignalLogSection() {
       </div>
 
       {/* TARJETA 4: BOOK CARD */}
-      <div className="shrink-0 w-[300px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-8 md:p-10 rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
+      <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
             {"// [PROCESS_ID: 0xLIT]"}
@@ -359,7 +359,7 @@ export default function SignalLogSection() {
       {logs.map((log) => (
         <div
           key={log.id}
-          className="shrink-0 w-[300px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-8 md:p-10 rounded-[3rem] shadow-xl transition-colors duration-300 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex justify-between gap-4"
+          className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex justify-between gap-4"
         >
           <div className="flex-1">
             <p className="font-mono text-[10px] text-purple-500 mb-6 tracking-widest uppercase">
@@ -384,9 +384,9 @@ export default function SignalLogSection() {
     <section
       id="signal-log"
       ref={containerRef}
-      className="flex-col w-full relative z-10 py-16"
+      className="flex-col w-full relative z-10 py-10 md:py-16"
     >
-      <div className="container mx-auto px-6 lg:px-12 mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 text-center md:text-left">
+      <div className="container mx-auto px-6 lg:px-12 mb-4 md:mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 text-center md:text-left">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
             {"// MODULE_05: SIGNAL_LOG"}
@@ -398,15 +398,19 @@ export default function SignalLogSection() {
       </div>
 
       {/* Contenedor Cinta Transportadora Infinita (Marquee) */}
-      <div className="overflow-hidden w-full py-16 [mask-image:_linear-gradient(to_right,transparent_0,_black_10vw,_black_calc(100%-10vw),transparent_100%)]">
+      <div className="overflow-hidden w-full py-8 md:py-16 [mask-image:_linear-gradient(to_right,transparent_0,_black_10vw,_black_calc(100%-10vw),transparent_100%)]">
         <div
-          className="marquee-track flex w-max gap-8"
+          className="marquee-track flex w-max gap-4 md:gap-8"
           onMouseEnter={() => tweenRef.current?.pause()}
           onMouseLeave={() => tweenRef.current?.play()}
         >
           {/* Renderizamos dos veces el mismo bloque de tarjetas para crear el ciclo infinito */}
-          <div className="flex gap-8 items-stretch">{renderCards()}</div>
-          <div className="flex gap-8 items-stretch">{renderCards()}</div>
+          <div className="flex gap-4 md:gap-8 items-stretch">
+            {renderCards()}
+          </div>
+          <div className="flex gap-4 md:gap-8 items-stretch">
+            {renderCards()}
+          </div>
         </div>
       </div>
     </section>

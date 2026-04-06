@@ -1,5 +1,8 @@
-<!-- SIDE_TEXT: MARATÓN -->
+<!-- SIDE_TEXT: MARATHON -->
 
-### 🏃‍♂️ Ruta al Maratón
+## 🏃 Marathon Journey
 
-**17km** recorridos
+- **Completed:** 17 km (3 months)
+- **Goal:** 42 km (next 4 months)
+
+> Progress isn’t fast, but it’s happening. 🔥
