@@ -7,7 +7,7 @@ export default function Herosection() {
         <p className="font-mono text-purple-600 text-xs mb-6 tracking-[0.8em] opacity-60">
           &gt;&gt; INTELLIGENT COMPUTING ENGINEER
         </p>
-        <h1 className="text-6xl lg:text-[10rem] font-black tracking-tighter mb-8 bg-gradient-to-b from-slate-900 to-purple-600 bg-clip-text text-transparent uppercase italic leading-[0.85]">
+        <h1 className="text-6xl lg:text-[10rem] font-black tracking-tighter mb-8 bg-gradient-to-b from-slate-900 to-purple-600 bg-clip-text text-transparent uppercase italic leading-[0.85] pr-4 lg:pr-8">
           Kevin
           <br />
           Garrido

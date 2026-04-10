@@ -131,7 +131,7 @@ export default function SignalLogSection() {
         tweenRef.current = gsap.to(".marquee-track", {
           xPercent: -50,
           ease: "none",
-          duration: 40, // Tiempo de rotación (ajustable, a mayor número más lento)
+          duration: 40, // Tiempo de rotación
           repeat: -1,
         });
       }, containerRef);
@@ -141,7 +141,63 @@ export default function SignalLogSection() {
       clearTimeout(timer);
       if (ctx) ctx.revert();
     };
-  }, [logs]); // Se vuelve a ejecutar si cambian los logs
+  }, [logs]);
+
+  // Lógica para permitir "empujar" (hacer scrub) las tarjetas con el tacto y el mouse
+  const dragState = useRef({ startX: 0, time: 0, isDragging: false });
+
+  const handleTouchStart = (e) => {
+    if (!tweenRef.current) return;
+    tweenRef.current.pause();
+    dragState.current.isDragging = true;
+    dragState.current.startX = e.touches[0].clientX;
+    dragState.current.time = tweenRef.current.time();
+  };
+
+  const handleMouseDown = (e) => {
+    if (!tweenRef.current) return;
+    tweenRef.current.pause();
+    dragState.current.isDragging = true;
+    dragState.current.startX = e.clientX;
+    dragState.current.time = tweenRef.current.time();
+  };
+
+  const handleDragMove = (currentX, currentTarget) => {
+    if (!dragState.current.isDragging || !tweenRef.current) return;
+    const deltaX = currentX - dragState.current.startX;
+    const trackElement = currentTarget;
+    const scrollableDistance = trackElement.offsetWidth / 2;
+
+    const fraction = deltaX / scrollableDistance;
+    const duration = tweenRef.current.duration();
+    const deltaT = fraction * duration;
+
+    let newTime = dragState.current.time - deltaT;
+    newTime = newTime % duration;
+    if (newTime < 0) newTime += duration;
+
+    tweenRef.current.time(newTime);
+  };
+
+  const handleTouchMove = (e) =>
+    handleDragMove(e.touches[0].clientX, e.currentTarget);
+  const handleMouseMove = (e) => handleDragMove(e.clientX, e.currentTarget);
+
+  const handleTouchEnd = () => {
+    dragState.current.isDragging = false;
+    if (!tweenRef.current) return;
+    tweenRef.current.play();
+  };
+
+  const handleMouseUp = () => {
+    dragState.current.isDragging = false;
+  };
+
+  const handleMouseLeave = () => {
+    dragState.current.isDragging = false;
+    if (!tweenRef.current) return;
+    tweenRef.current.play();
+  };
 
   const renderCards = () => (
     <React.Fragment>
@@ -400,9 +456,15 @@ export default function SignalLogSection() {
       {/* Contenedor Cinta Transportadora Infinita (Marquee) */}
       <div className="overflow-hidden w-full py-8 md:py-16 [mask-image:_linear-gradient(to_right,transparent_0,_black_10vw,_black_calc(100%-10vw),transparent_100%)]">
         <div
-          className="marquee-track flex w-max gap-4 md:gap-8"
+          className="marquee-track flex w-max gap-4 md:gap-8 cursor-grab active:cursor-grabbing"
           onMouseEnter={() => tweenRef.current?.pause()}
-          onMouseLeave={() => tweenRef.current?.play()}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
         >
           {/* Renderizamos dos veces el mismo bloque de tarjetas para crear el ciclo infinito */}
           <div className="flex gap-4 md:gap-8 items-stretch">
