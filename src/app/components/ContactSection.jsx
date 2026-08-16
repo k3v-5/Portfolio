@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function ContactSection() {
+  const { t } = useLanguage();
+  const contact = t.contact;
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -17,19 +20,18 @@ export default function ContactSection() {
         <div className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center space-x-1.5 md:space-x-2 bg-green-500/10 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-green-500/20">
           <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
           <span className="text-[8px] md:text-[10px] font-mono text-green-600 font-bold uppercase tracking-wider">
-            Open for new projects
+            {contact.badge}
           </span>
         </div>
 
         <p className="font-mono text-[10px] text-purple-500 mb-4 md:mb-6 tracking-[0.5em] mt-12 md:mt-0">
-          &gt;&gt; SIGNAL_READY
+          {contact.eyebrow}
         </p>
         <h2 className="text-4xl md:text-6xl font-black mb-6 md:mb-8 italic uppercase text-slate-900">
-          Let&apos;s Connect.
+          {contact.heading}
         </h2>
         <div className="text-slate-500 font-light text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
-          Whether it&apos;s a technical challenge, a business inquiry, or you
-          just want to share a good book recommendation—my inbox is always open.
+          {contact.body}
         </div>
 
         {/* Copy to Clipboard Email */}
@@ -77,13 +79,13 @@ export default function ContactSection() {
           <span
             className={`absolute -bottom-8 text-xs font-mono tracking-widest uppercase transition-opacity duration-300 ${copied ? "text-green-500 opacity-100" : "text-slate-400 opacity-0 group-hover:opacity-100"}`}
           >
-            {copied ? "COPIED TO CLIPBOARD" : "CLICK TO COPY"}
+            {copied ? contact.copiedHint : contact.copyHint}
           </span>
         </div>
 
         <div className="pt-8 border-t border-slate-100 flex flex-col items-center">
           <p className="font-mono text-[10px] text-slate-400 mb-6 tracking-widest uppercase">
-            {"// YOU COULD ALSO TRY SOME OTHER OPTIONS:"}
+            {contact.otherOptions}
           </p>
           <div className="flex space-x-8">
             <a

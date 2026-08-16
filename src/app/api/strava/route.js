@@ -29,6 +29,19 @@ export async function GET() {
     });
 
     const tokenData = await tokenResponse.json();
+
+    if (!tokenResponse.ok || !tokenData.access_token) {
+      console.error(
+        "❌ Strava rechazó el refresh token:",
+        tokenResponse.status,
+        tokenData,
+      );
+      return NextResponse.json(
+        { error: "No se pudo autenticar con Strava" },
+        { status: 502 },
+      );
+    }
+
     const accessToken = tokenData.access_token;
 
     // 2. Obtener la última actividad del atleta
@@ -45,7 +58,21 @@ export async function GET() {
     // Imprimir la respuesta de Strava en la terminal
     console.log("Respuesta cruda de Strava:", activities);
 
-    if (activities && activities.length > 0) {
+    if (!activitiesResponse.ok || !Array.isArray(activities)) {
+      // Strava devolvió un error (auth, permisos, rate limit, app inactiva, etc.)
+      // en vez de una lista de actividades — no lo confundamos con "sin actividades".
+      console.error(
+        "❌ Strava devolvió un error en vez de actividades:",
+        activitiesResponse.status,
+        activities,
+      );
+      return NextResponse.json(
+        { error: "Strava no devolvió actividades (ver logs del servidor)" },
+        { status: 502 },
+      );
+    }
+
+    if (activities.length > 0) {
       const lastActivity = activities[0];
 
       // Calcular ritmo promedio (min/km) a partir de m/s

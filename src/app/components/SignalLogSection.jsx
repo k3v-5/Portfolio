@@ -2,8 +2,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { marked } from "marked";
+import { useLanguage } from "../i18n/LanguageContext";
+
+// Strava requiere plan de pago desde que su API pasó a nivel "Inactive" para
+// apps gratuitas — la tarjeta se oculta hasta reactivar la suscripción, pero
+// el código queda listo (solo cambiar a `true`) para no rehacerlo.
+const STRAVA_ENABLED = false;
 
 export default function SignalLogSection() {
+  const { t } = useLanguage();
+  const signalLog = t.signalLog;
   const [logs, setLogs] = useState([]);
   const containerRef = useRef(null);
   const tweenRef = useRef(null);
@@ -52,8 +60,9 @@ export default function SignalLogSection() {
     loadMarkdown();
   }, []);
 
-  // 2. Fetch de datos de Strava
+  // 2. Fetch de datos de Strava (deshabilitado, ver STRAVA_ENABLED)
   useEffect(() => {
+    if (!STRAVA_ENABLED) return;
     async function fetchStrava() {
       try {
         const res = await fetch("/api/strava");
@@ -201,93 +210,95 @@ export default function SignalLogSection() {
 
   const renderCards = () => (
     <React.Fragment>
-      {/* TARJETA 1: RUNNING STATS */}
-      <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
-        <div>
-          <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
-            {`// [PROCESS_ID: 0x${stravaData.type}]`}
-          </p>
-          <div className="flex items-center gap-3">
-            <h3
-              className="text-2xl font-black text-slate-900 uppercase italic truncate"
-              title={stravaData.name}
-            >
-              {stravaData.name}
-            </h3>
-            <a
-              href="https://www.strava.com/athletes/207444772"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:scale-110 transition-transform cursor-pointer"
-              title="Ver perfil en Strava"
-            >
-              <svg
-                className="w-6 h-6 text-[#FC4C02] shrink-0"
-                viewBox="0 0 24 24"
-                fill="currentColor"
+      {/* TARJETA 1: RUNNING STATS (oculta, ver STRAVA_ENABLED) */}
+      {STRAVA_ENABLED && (
+        <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
+          <div>
+            <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
+              {`// [PROCESS_ID: 0x${stravaData.type}]`}
+            </p>
+            <div className="flex items-center gap-3">
+              <h3
+                className="text-2xl font-black text-slate-900 uppercase italic truncate"
+                title={stravaData.name}
               >
-                <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" />
-              </svg>
-            </a>
+                {stravaData.name}
+              </h3>
+              <a
+                href="https://www.strava.com/athletes/207444772"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform cursor-pointer"
+                title="Ver perfil en Strava"
+              >
+                <svg
+                  className="w-6 h-6 text-[#FC4C02] shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" />
+                </svg>
+              </a>
+            </div>
+            <div className="grid grid-cols-2 gap-y-4 gap-x-2 mt-6">
+              <div>
+                <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
+                  Distance
+                </p>
+                <p className="font-bold text-slate-900 font-mono text-sm">
+                  {stravaData.distance}
+                </p>
+              </div>
+              <div>
+                <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
+                  Avg Pace
+                </p>
+                <p className="font-bold text-slate-900 font-mono text-sm">
+                  {stravaData.pace}
+                </p>
+              </div>
+              <div>
+                <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
+                  Time
+                </p>
+                <p className="font-bold text-slate-900 font-mono text-sm">
+                  {stravaData.time}
+                </p>
+              </div>
+              <div>
+                <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
+                  Elevation
+                </p>
+                <p className="font-bold text-purple-600 font-mono text-sm">
+                  {stravaData.elevation}
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-y-4 gap-x-2 mt-6">
-            <div>
-              <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
-                Distance
-              </p>
-              <p className="font-bold text-slate-900 font-mono text-sm">
-                {stravaData.distance}
-              </p>
-            </div>
-            <div>
-              <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
-                Avg Pace
-              </p>
-              <p className="font-bold text-slate-900 font-mono text-sm">
-                {stravaData.pace}
-              </p>
-            </div>
-            <div>
-              <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
-                Time
-              </p>
-              <p className="font-bold text-slate-900 font-mono text-sm">
-                {stravaData.time}
-              </p>
-            </div>
-            <div>
-              <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
-                Elevation
-              </p>
-              <p className="font-bold text-purple-600 font-mono text-sm">
-                {stravaData.elevation}
-              </p>
-            </div>
-          </div>
+          <svg
+            className="w-full h-12 mt-6 overflow-visible"
+            viewBox="0 0 100 30"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,25 L20,20 L40,22 L60,10 L80,15 L100,5"
+              fill="none"
+              stroke="#a855f7"
+              strokeWidth="3"
+              vectorEffect="non-scaling-stroke"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <circle
+              cx="100"
+              cy="5"
+              r="4"
+              fill="#a855f7"
+              className="animate-pulse"
+            />
+          </svg>
         </div>
-        <svg
-          className="w-full h-12 mt-6 overflow-visible"
-          viewBox="0 0 100 30"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,25 L20,20 L40,22 L60,10 L80,15 L100,5"
-            fill="none"
-            stroke="#a855f7"
-            strokeWidth="3"
-            vectorEffect="non-scaling-stroke"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <circle
-            cx="100"
-            cy="5"
-            r="4"
-            fill="#a855f7"
-            className="animate-pulse"
-          />
-        </svg>
-      </div>
+      )}
 
       {/* TARJETA 3: CURRENT VIBE (AUDIO) */}
       <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
@@ -298,9 +309,9 @@ export default function SignalLogSection() {
           <div className="flex items-center gap-3">
             <h3
               className="text-2xl font-black text-slate-900 uppercase italic truncate"
-              title="Now Playing"
+              title={signalLog.nowPlaying}
             >
-              Now Playing
+              {signalLog.nowPlaying}
             </h3>
             {spotifyData.isPlaying && spotifyData.songUrl !== "#" ? (
               <a
@@ -395,10 +406,10 @@ export default function SignalLogSection() {
             {"// [PROCESS_ID: 0xLIT]"}
           </p>
           <h3 className="text-2xl font-black text-slate-900 uppercase italic leading-none">
-            Moby Dick
+            {signalLog.book.title}
           </h3>
           <p className="text-slate-500 text-sm mt-2 font-mono">
-            Herman Melville
+            {signalLog.book.author}
           </p>
         </div>
         <div className="mt-8">
@@ -406,7 +417,7 @@ export default function SignalLogSection() {
             <div className="bg-purple-500 h-full w-[10%] shadow-[0_0_10px_rgba(168,85,247,0.8)]"></div>
           </div>
           <p className="text-right text-[10px] font-mono text-slate-400 mt-2 font-bold">
-            10% COMPLETED
+            {signalLog.book.progress}
           </p>
         </div>
       </div>
@@ -445,10 +456,10 @@ export default function SignalLogSection() {
       <div className="container mx-auto px-6 lg:px-12 mb-4 md:mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 text-center md:text-left">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
-            {"// MODULE_05: SIGNAL_LOG"}
+            {signalLog.module}
           </p>
           <h2 className="text-4xl lg:text-7xl font-black text-slate-900 uppercase italic tracking-tighter">
-            Transmissions
+            {signalLog.heading}
           </h2>
         </div>
       </div>

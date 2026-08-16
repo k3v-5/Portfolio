@@ -9,13 +9,16 @@ import Herosection from "./components/Herosection";
 import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
 import SkillsSection from "./components/SkillsSection";
+import AIToolingSection from "./components/AIToolingSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import MatrixBackground from "./components/MatrixBackground";
 import CustomCursor from "./components/CustomCursor";
 import SignalLogSection from "./components/SignalLogSection";
+import { useLanguage } from "./i18n/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -29,6 +32,105 @@ export default function Home() {
     };
     gsap.ticker.add(updateLenis);
     gsap.ticker.lagSmoothing(0);
+
+    // Debe coincidir con el "y: -120" del efecto parallax de las imágenes
+    // más abajo: una vez el usuario scrollea de largo, el wrapper ya está
+    // desplazado -PARALLAX_SHIFT px, así que hay que descontarlo al calcular
+    // dónde debe "aterrizar" cada imagen para que el hueco final sea el
+    // que realmente se pide, no uno inflado por ese offset oculto.
+    const PARALLAX_SHIFT = 120;
+
+    // Posiciona las imágenes de fondo ancladas a sus secciones (no a un
+    // porcentaje de la altura total de la página), para que agregar o quitar
+    // secciones en cualquier parte del layout no las desalinee.
+    const positionIdentityImages = () => {
+      const scrollContainerEl = document.querySelector(".scroll-container");
+      if (!scrollContainerEl || window.innerWidth <= 1024) return;
+
+      const scRect = scrollContainerEl.getBoundingClientRect();
+      const relTop = (el) => el.getBoundingClientRect().top - scRect.top;
+      const relBottom = (el) => el.getBoundingClientRect().bottom - scRect.top;
+      const setTop = (wrapId, px) => {
+        const wrap = document.getElementById(wrapId);
+        if (wrap && Number.isFinite(px)) {
+          wrap.parentElement.style.top = `${px}px`;
+        }
+      };
+      // Altura real renderizada de la imagen (width fijo por CSS var,
+      // height:auto según su relación de aspecto natural).
+      const imgHeight = (imgId) => {
+        const img = document.getElementById(imgId);
+        if (!img) return 0;
+        const cssWidth = parseFloat(getComputedStyle(img).width) || 0;
+        if (img.naturalWidth && img.naturalHeight) {
+          return (img.naturalHeight / img.naturalWidth) * cssWidth;
+        }
+        return cssWidth * 0.6; // estimación si aún no cargó
+      };
+      // Posiciona una imagen para que, una vez asentado el scroll (parallax
+      // ya aplicado), su borde inferior quede a `finalGap` px ANTES del
+      // elemento objetivo — nunca lo invade, y el hueco visible es el que
+      // se pide, no uno inflado por el parallax o el padding interno de la
+      // tarjeta.
+      const setBefore = (wrapId, imgId, targetEl, finalGap = 40) => {
+        if (!targetEl) return;
+        setTop(
+          wrapId,
+          relTop(targetEl) - imgHeight(imgId) - finalGap + PARALLAX_SHIFT,
+        );
+      };
+
+      const aboutEl = document.getElementById("about-me");
+      const experienceCardEl =
+        document.querySelector("#experience .content-card") ||
+        document.getElementById("experience");
+      const projectsEl = document.getElementById("projects");
+      const signalLogEl = document.getElementById("signal-log");
+      const contactCardEl =
+        document.querySelector("#contact .content-card") ||
+        document.getElementById("contact");
+
+      // Imagen 1: no hay suficiente hueco entre el título del Hero y la
+      // tarjeta de About para dejarla afuera de las dos, así que mantiene
+      // su comportamiento original: flota dentro de About (tapada por su
+      // tarjeta), en vez de arriesgarse a solapar el título "KEVIN GARRIDO".
+      if (aboutEl) {
+        setTop("wrap-1", relTop(aboutEl) + aboutEl.offsetHeight * 0.35);
+      }
+      // Imagen 2: centrada en la mitad del contenido de "Experience"
+      if (experienceCardEl) {
+        const h = imgHeight("img-2");
+        setTop(
+          "wrap-2",
+          relTop(experienceCardEl) + experienceCardEl.offsetHeight / 2 - h / 2,
+        );
+      }
+      // Imagen 3: termina antes de que empiece "Projects" (sin tarjeta propia)
+      setBefore("wrap-3", "img-3", projectsEl, 60);
+      // Imagen 4: centrada en el hueco entre "Signal Log" y la tarjeta de
+      // "Contact" (ya con el parallax asentado, para que se vea centrada
+      // de verdad y no pegada a uno de los dos extremos).
+      if (signalLogEl && contactCardEl) {
+        const h = imgHeight("img-4");
+        const gapCenter = (relBottom(signalLogEl) + relTop(contactCardEl)) / 2;
+        setTop("wrap-4", gapCenter - h / 2 + PARALLAX_SHIFT);
+      }
+    };
+
+    positionIdentityImages();
+
+    // Recalcula si cambia el tamaño de ventana (reflow de texto) o si algo
+    // (fuentes, imágenes) ajusta la altura de las secciones tras el mount.
+    let resizeTimeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        positionIdentityImages();
+        ScrollTrigger.refresh();
+      }, 150);
+    };
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("load", positionIdentityImages);
 
     const ctxGsap = gsap.context(() => {
       // Animación de la línea SVG
@@ -71,7 +173,7 @@ export default function Home() {
 
           // 2. Parallax de scroll (aplicado al wrapper)
           gsap.to(wrapper, {
-            y: -120,
+            y: -PARALLAX_SHIFT,
             scrollTrigger: {
               trigger: wrapper,
               start: "top bottom", // Inicia al entrar por debajo
@@ -113,6 +215,9 @@ export default function Home() {
       ctxGsap.revert();
       gsap.ticker.remove(updateLenis);
       lenis.destroy();
+      clearTimeout(resizeTimeout);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("load", positionIdentityImages);
     };
   }, []);
 
@@ -145,7 +250,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              top: "35%",
+              top: "33%", // fallback antes del cálculo por JS (ver positionIdentityImages)
               left: "5%",
               width: "var(--img-width)",
             }}
@@ -162,7 +267,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              top: "48%",
+              top: "56%", // fallback antes del cálculo por JS (ver positionIdentityImages)
               left: "50%",
               transform: "translateX(-50%)",
               width: "var(--img-width)",
@@ -180,7 +285,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              top: "82%",
+              top: "87%", // fallback antes del cálculo por JS (ver positionIdentityImages)
               left: "50%",
               transform: "translateX(-50%)",
               width: "var(--img-width)",
@@ -223,6 +328,11 @@ export default function Home() {
         {/* Espaciador visual moderado */}
         <div className="h-32 lg:h-64 w-full pointer-events-none"></div>
 
+        <AIToolingSection />
+
+        {/* Espaciador visual moderado */}
+        <div className="h-32 lg:h-64 w-full pointer-events-none"></div>
+
         <ProjectsSection />
 
         {/* Espaciador visual más amplio para la última imagen */}
@@ -230,10 +340,13 @@ export default function Home() {
 
         <SignalLogSection />
 
+        {/* Espaciador visual para que la imagen 4 tenga hueco real donde centrarse */}
+        <div className="h-48 lg:h-96 w-full pointer-events-none"></div>
+
         <ContactSection />
 
         <footer className="py-16 text-center opacity-30 font-mono text-[9px] uppercase tracking-[0.8em]">
-          {"Kevin Garrido // Data Engineering System // 2026"}
+          {t.footer}
         </footer>
       </div>
     </div>
