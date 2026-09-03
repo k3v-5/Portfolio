@@ -451,7 +451,7 @@ export default function SignalLogSection() {
     <section
       id="signal-log"
       ref={containerRef}
-      className="flex-col w-full relative z-10 py-10 md:py-16"
+      className="flex-col w-full relative z-10 !min-h-0 !pt-8 !pb-2 md:!pt-12 md:!pb-4"
     >
       <div className="container mx-auto px-6 lg:px-12 mb-4 md:mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 text-center md:text-left">
         <div>
@@ -465,7 +465,7 @@ export default function SignalLogSection() {
       </div>
 
       {/* Contenedor Cinta Transportadora Infinita (Marquee) */}
-      <div className="overflow-hidden w-full py-8 md:py-16 [mask-image:_linear-gradient(to_right,transparent_0,_black_10vw,_black_calc(100%-10vw),transparent_100%)]">
+      <div className="overflow-hidden w-full !pt-4 !pb-4 md:!pt-6 md:!pb-6 [mask-image:_linear-gradient(to_right,transparent_0,_black_10vw,_black_calc(100%-10vw),transparent_100%)]">
         <div
           className="marquee-track flex w-max gap-4 md:gap-8 cursor-grab active:cursor-grabbing"
           onMouseEnter={() => tweenRef.current?.pause()}

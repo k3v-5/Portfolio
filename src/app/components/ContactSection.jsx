@@ -14,7 +14,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="justify-center">
+    <section id="contact" className="justify-center !min-h-0 !py-10 lg:!py-14">
       <div className="content-card reveal-card max-w-5xl w-full text-center border-4 border-slate-50 shadow-2xl mx-4 relative overflow-hidden">
         {/* Availability Badge */}
         <div className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center space-x-1.5 md:space-x-2 bg-green-500/10 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-green-500/20">

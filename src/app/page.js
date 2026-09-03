@@ -141,11 +141,15 @@ export default function Home() {
         const gapCenter = (relBottom(projectsEl) + relTop(signalLogEl)) / 2;
         setTop("wrap-7", gapCenter - h / 2 + PARALLAX_SHIFT);
       }
-      // Imagen 4: centrada en el hueco entre "Signal Log" y la tarjeta de "Contact"
-      if (signalLogEl && contactCardEl) {
+      // Imagen 4: posicionada directamente debajo de las tarjetas de Signal Log
+      const signalTrackEl =
+        document.querySelector("#signal-log .marquee-track") || signalLogEl;
+      if (signalTrackEl && contactCardEl) {
         const h = imgHeight("img-4");
-        const gapCenter = (relBottom(signalLogEl) + relTop(contactCardEl)) / 2;
-        setTop("wrap-4", gapCenter - h / 2 + PARALLAX_SHIFT);
+        const cardsBottom = relBottom(signalTrackEl);
+        const contactTop = relTop(contactCardEl);
+        const gapCenter = (cardsBottom + contactTop) / 2;
+        setTop("wrap-4", gapCenter - h / 2 + PARALLAX_SHIFT * 0.4);
       }
     };
 
@@ -421,10 +425,6 @@ export default function Home() {
         <Herosection />
         <AboutSection />
         <ExperienceSection />
-
-        {/* Espaciador suave entre Experience y Skills */}
-        <div className="h-16 lg:h-24 w-full pointer-events-none"></div>
-
         <SkillsSection />
 
         {/* Espaciador visual para The Creative Synthesis */}
@@ -442,8 +442,8 @@ export default function Home() {
 
         <SignalLogSection />
 
-        {/* Espaciador visual para que la imagen 4 tenga hueco real donde centrarse */}
-        <div className="h-48 lg:h-96 w-full pointer-events-none"></div>
+        {/* Espaciador moderado para que la imagen 4 respire */}
+        <div className="h-16 lg:h-28 w-full pointer-events-none"></div>
 
         <ContactSection />
 

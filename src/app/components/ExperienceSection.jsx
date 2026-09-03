@@ -7,7 +7,7 @@ export default function ExperienceSection() {
   const experience = t.experience;
 
   return (
-    <section id="experience">
+    <section id="experience" className="!min-h-0 !py-8 lg:!py-12">
       <div className="container mx-auto px-6 lg:px-12 relative z-10 flex justify-end">
         <div className="content-card reveal-card max-w-2xl w-full">
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest">
