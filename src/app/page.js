@@ -24,8 +24,17 @@ export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Inicializamos Lenis para el Smooth Scroll (Heredado de tu Spotlight)
-    const lenis = new Lenis();
+    // 1. Inicializamos Lenis con curva cinemática no lineal y respuesta ágil
+    const lenis = new Lenis({
+      duration: 1.0, // Duración controlada para eliminar la pesadez
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva exponencial no lineal: reactividad inmediata al toque y frenado orgánico
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+      wheelMultiplier: 1.2, // Acelera el avance natural de la rueda sin requerir esfuerzo
+      touchMultiplier: 1.5,
+      infinite: false,
+    });
     lenis.on("scroll", ScrollTrigger.update);
     const updateLenis = (time) => {
       lenis.raf(time * 1000);
@@ -171,7 +180,7 @@ export default function Home() {
             trigger: ".scroll-container",
             start: "top top",
             end: "bottom bottom",
-            scrub: 1.5,
+            scrub: 0.8, // Respuesta rápida que acompaña el scroll de forma precisa
           },
         });
       }
@@ -222,8 +231,8 @@ export default function Home() {
         gsap.to(card, {
           opacity: 1,
           y: 0,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: card,
             start: "top 95%",
