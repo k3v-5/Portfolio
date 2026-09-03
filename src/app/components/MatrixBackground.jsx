@@ -27,7 +27,7 @@ export default function MatrixBackground() {
       const draw = () => {
         ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#B95BD8";
+        ctx.fillStyle = "#9333EA";
         ctx.font = fontSize + "px 'Fira Code', monospace";
         drops.forEach((y, i) => {
           const text = symbols[Math.floor(Math.random() * symbols.length)];

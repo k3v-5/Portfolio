@@ -24,7 +24,7 @@ export default function ContactSection() {
           </span>
         </div>
 
-        <p className="font-mono text-[10px] text-purple-500 mb-4 md:mb-6 tracking-[0.5em] mt-12 md:mt-0">
+        <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 md:mb-6 tracking-[0.5em] mt-12 md:mt-0">
           {contact.eyebrow}
         </p>
         <h2 className="text-4xl md:text-6xl font-black mb-6 md:mb-8 italic uppercase text-slate-900">

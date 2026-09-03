@@ -113,7 +113,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="flex-col w-full relative z-10">
       <div className="container mx-auto px-6 lg:px-12 mb-12 text-center">
-        <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
+        <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
           {t.projects.module}
         </p>
         <h2 className="text-5xl lg:text-8xl font-black text-slate-900 uppercase italic tracking-tighter">

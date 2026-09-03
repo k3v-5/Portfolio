@@ -10,7 +10,7 @@ export default function AboutSection() {
     <section id="about-me">
       <div className="container mx-auto px-6 lg:px-12 relative z-10 flex justify-start">
         <div className="content-card reveal-card max-w-2xl w-full">
-          <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest">
+          <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
             {about.module}
           </p>
           <h2 className="text-4xl lg:text-5xl font-black mb-8 text-slate-900 uppercase italic">

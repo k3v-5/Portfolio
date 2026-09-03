@@ -10,18 +10,18 @@ export default function ExperienceSection() {
     <section id="experience" className="!min-h-0 !py-8 lg:!py-12">
       <div className="container mx-auto px-6 lg:px-12 relative z-10 flex justify-end">
         <div className="content-card reveal-card max-w-2xl w-full">
-          <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest">
+          <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
             {experience.module}
           </p>
           <h2 className="text-4xl lg:text-5xl font-black mb-10 text-slate-900 uppercase italic">
             {experience.heading}
           </h2>
-          <div className="space-y-10 border-l-4 border-purple-500 pl-8 ml-2 relative">
+          <div className="space-y-10 border-l-4 border-purple-600 pl-8 ml-2 relative">
             {experience.jobs.map((job, i) => (
               <div className="relative" key={job.company}>
                 <div
                   className={`absolute w-4 h-4 rounded-full -left-[40px] top-1 border-4 border-white ${
-                    i === 0 ? "bg-purple-500" : "bg-slate-300"
+                    i === 0 ? "bg-purple-600" : "bg-slate-300"
                   }`}
                 ></div>
                 <h3 className="text-xl font-bold text-slate-900">

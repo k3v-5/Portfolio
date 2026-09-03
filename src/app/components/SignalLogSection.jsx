@@ -214,7 +214,7 @@ export default function SignalLogSection() {
       {STRAVA_ENABLED && (
         <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
           <div>
-            <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
+            <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
               {`// [PROCESS_ID: 0x${stravaData.type}]`}
             </p>
             <div className="flex items-center gap-3">
@@ -303,7 +303,7 @@ export default function SignalLogSection() {
       {/* TARJETA 3: CURRENT VIBE (AUDIO) */}
       <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
-          <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
+          <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
             {"// [PROCESS_ID: 0xAUDIO]"}
           </p>
           <div className="flex items-center gap-3">
@@ -402,7 +402,7 @@ export default function SignalLogSection() {
       {/* TARJETA 4: BOOK CARD */}
       <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
         <div>
-          <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
+          <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
             {"// [PROCESS_ID: 0xLIT]"}
           </p>
           <h3 className="text-2xl font-black text-slate-900 uppercase italic leading-none">
@@ -429,7 +429,7 @@ export default function SignalLogSection() {
           className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex justify-between gap-4"
         >
           <div className="flex-1">
-            <p className="font-mono text-[10px] text-purple-500 mb-6 tracking-widest uppercase">
+            <p className="font-mono text-[10px] text-purple-600 font-bold mb-6 tracking-widest uppercase">
               {`// [PROCESS_ID: ${log.id.replace(".md", "")}]`}
             </p>
             <div
@@ -455,7 +455,7 @@ export default function SignalLogSection() {
     >
       <div className="container mx-auto px-6 lg:px-12 mb-4 md:mb-8 flex flex-col justify-center items-center text-center">
         <div>
-          <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
+          <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
             {signalLog.module}
           </p>
           <h2 className="text-4xl lg:text-7xl font-black text-slate-900 uppercase italic tracking-tighter">
