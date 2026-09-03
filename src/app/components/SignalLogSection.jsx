@@ -453,7 +453,7 @@ export default function SignalLogSection() {
       ref={containerRef}
       className="flex-col w-full relative z-10 !min-h-0 !pt-8 !pb-2 md:!pt-12 md:!pb-4"
     >
-      <div className="container mx-auto px-6 lg:px-12 mb-4 md:mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 text-center md:text-left">
+      <div className="container mx-auto px-6 lg:px-12 mb-4 md:mb-8 flex flex-col justify-center items-center text-center">
         <div>
           <p className="font-mono text-[10px] text-purple-500 mb-4 tracking-widest uppercase">
             {signalLog.module}

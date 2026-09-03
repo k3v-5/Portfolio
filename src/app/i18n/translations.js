@@ -346,7 +346,7 @@ export const translations = {
       body: "Ya sea un desafío técnico, una consulta de negocio, o simplemente quieras recomendarme un buen libro—mi bandeja de entrada siempre está abierta.",
       copyHint: "Clic para copiar",
       copiedHint: "Copiado al portapapeles",
-      otherOptions: "// También podés probar otras opciones:",
+      otherOptions: "// También puedes probar otras opciones:",
     },
     footer: "Kevin Garrido // Sistema de Ingeniería de Datos // 2026",
   },

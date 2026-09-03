@@ -120,12 +120,12 @@ nav {
   height: 100%;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.45;
 }
 
 #scroll-path {
   fill: none;
-  stroke: var(--accent-color);
+  stroke: #9822d6;
   stroke-width: 40;
   stroke-linecap: round;
   stroke-linejoin: round;
