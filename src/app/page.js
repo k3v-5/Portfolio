@@ -141,15 +141,13 @@ export default function Home() {
         const gapCenter = (relBottom(projectsEl) + relTop(signalLogEl)) / 2;
         setTop("wrap-7", gapCenter - h / 2 + PARALLAX_SHIFT);
       }
-      // Imagen 4: posicionada directamente debajo de las tarjetas de Signal Log
+      // Imagen 4: posicionada de forma segura para nunca invadir las tarjetas de Signal Log
       const signalTrackEl =
         document.querySelector("#signal-log .marquee-track") || signalLogEl;
       if (signalTrackEl && contactCardEl) {
-        const h = imgHeight("img-4");
         const cardsBottom = relBottom(signalTrackEl);
-        const contactTop = relTop(contactCardEl);
-        const gapCenter = (cardsBottom + contactTop) / 2;
-        setTop("wrap-4", gapCenter - h / 2 + PARALLAX_SHIFT * 0.4);
+        // Garantizamos que el borde superior nunca invada las tarjetas (mínimo 70px de margen):
+        setTop("wrap-4", cardsBottom + 70 + PARALLAX_SHIFT);
       }
     };
 
@@ -390,7 +388,7 @@ export default function Home() {
               top: "90%",
               left: "50%",
               transform: "translateX(-50%)",
-              width: "var(--img-width)",
+              width: "min(var(--img-width), 640px)",
             }}
           >
             <div id="wrap-4" className="w-full h-full">
@@ -442,8 +440,8 @@ export default function Home() {
 
         <SignalLogSection />
 
-        {/* Espaciador moderado para que la imagen 4 respire */}
-        <div className="h-16 lg:h-28 w-full pointer-events-none"></div>
+        {/* Espaciador visual amplio para que la imagen 4 respire sin solapar */}
+        <div className="h-64 lg:h-[440px] w-full pointer-events-none"></div>
 
         <ContactSection />
 
