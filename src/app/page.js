@@ -141,13 +141,13 @@ export default function Home() {
         const gapCenter = (relBottom(projectsEl) + relTop(signalLogEl)) / 2;
         setTop("wrap-7", gapCenter - h / 2 + PARALLAX_SHIFT);
       }
-      // Imagen 4: posicionada de forma segura para nunca invadir las tarjetas de Signal Log
+      // Imagen 4: posicionada más abajo para centrarla en el hueco sin tocar las tarjetas
       const signalTrackEl =
         document.querySelector("#signal-log .marquee-track") || signalLogEl;
       if (signalTrackEl && contactCardEl) {
         const cardsBottom = relBottom(signalTrackEl);
-        // Garantizamos que el borde superior nunca invada las tarjetas (mínimo 70px de margen):
-        setTop("wrap-4", cardsBottom + 70 + PARALLAX_SHIFT);
+        // Bajamos la imagen para que quede centrada en el hueco con margen limpio respecto a las tarjetas
+        setTop("wrap-4", cardsBottom + 150 + PARALLAX_SHIFT);
       }
     };
 
