@@ -112,7 +112,7 @@ export default function LabSection() {
                   {item.highlights && item.highlights.length > 0 && (
                     <div className="space-y-2 mb-8 bg-slate-50/80 rounded-2xl p-4 border border-slate-100">
                       <p className="font-mono text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2">
-                        {"// Key Innovations"}
+                        {lab.keyInnovations || "// Key Innovations"}
                       </p>
                       {item.highlights.map((highlight, idx) => (
                         <div

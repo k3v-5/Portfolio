@@ -77,6 +77,7 @@ export const translations = {
       heading: "Creative Tech & AI Engines",
       subtitle:
         "Architecting custom graphics engines, AI orchestration systems, and generative pipelines via Model Context Protocol (MCP).",
+      keyInnovations: "// Key Innovations",
       items: [
         {
           id: "ae-video-engine",
@@ -249,6 +250,7 @@ export const translations = {
       heading: "Creative Tech & Motores de IA",
       subtitle:
         "Desarrollo de motores gráficos propios, orquestación por IA y pipelines generativos con Model Context Protocol (MCP).",
+      keyInnovations: "// Innovaciones Clave",
       items: [
         {
           id: "ae-video-engine",
