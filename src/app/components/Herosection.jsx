@@ -24,6 +24,29 @@ export default function Herosection() {
             </React.Fragment>
           ))}
         </div>
+
+        {/* Action CTAs */}
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-4">
+          <a
+            href="#projects"
+            className="group inline-flex items-center gap-3 bg-slate-900 hover:bg-purple-600 text-white font-mono text-[11px] uppercase font-bold tracking-widest px-8 py-3.5 rounded-full transition-all duration-300 shadow-xl hover:shadow-[0_0_30px_rgba(147,51,234,0.35)] transform hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <span>{t.hero.ctaProjects}</span>
+            <span className="text-purple-400 group-hover:text-white transition-colors">&gt;&gt;</span>
+          </a>
+          <a
+            href="#lab"
+            className="inline-flex items-center gap-2 bg-white/80 hover:bg-slate-50 border-2 border-slate-200 hover:border-purple-600 text-slate-800 font-mono text-[11px] uppercase font-bold tracking-widest px-7 py-3.5 rounded-full transition-all duration-300 backdrop-blur-md shadow-sm hover:shadow-[0_0_20px_rgba(147,51,234,0.15)] transform hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <span>{t.hero.ctaLab}</span>
+          </a>
+          <a
+            href="#contact"
+            className="text-slate-400 hover:text-purple-600 font-mono text-[11px] uppercase font-bold tracking-widest px-5 py-3 transition-colors"
+          >
+            <span>{t.hero.ctaContact}</span>
+          </a>
+        </div>
       </div>
     </section>
   );

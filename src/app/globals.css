@@ -152,14 +152,22 @@ section {
 }
 
 .skill-tag {
-  background: #f1f5f9;
-  color: var(--text-color);
-  padding: 0.7rem 1.4rem;
+  background: #f8fafc;
+  color: #1e293b;
+  padding: 0.5rem 1.1rem;
   border-radius: 100px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  border: 1px solid transparent;
-  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(147, 51, 234, 0.08);
+  border-color: rgba(147, 51, 234, 0.4);
+  color: #9333ea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.12);
 }
 
 /* AUDIO SPECTRUM ANIMATION */

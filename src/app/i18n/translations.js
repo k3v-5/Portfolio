@@ -16,6 +16,9 @@ export const translations = {
     hero: {
       eyebrow: ">> INTELLIGENT COMPUTING ENGINEER",
       tags: ["Artificial Intelligence", "Data Mining", "Full-Stack Developer"],
+      ctaProjects: "Explore Projects",
+      ctaLab: "View LAB",
+      ctaContact: "Get in Touch",
     },
     about: {
       module: "// MODULE_01: BIO",
@@ -71,6 +74,48 @@ export const translations = {
     skills: {
       module: "// MODULE_03: TECH_STACK",
       heading: "Skills",
+      categories: [
+        {
+          title: "// AI, ORCHESTRATION & AUTOMATION",
+          items: [
+            "Model Context Protocol (MCP)",
+            "n8n Automation",
+            "Python",
+            "Data Mining",
+            "Orange",
+            "Intelligent Optimization",
+          ],
+        },
+        {
+          title: "// FULL-STACK ARCHITECTURE",
+          items: [
+            "React",
+            "Next.js",
+            "Angular",
+            "TypeScript",
+            "C#",
+            ".NET / .NET Core",
+            "SQL Server",
+          ],
+        },
+        {
+          title: "// CREATIVE TECH & 3D GRAPHICS",
+          items: [
+            "Blender (3D Python)",
+            "Adobe After Effects",
+            "Game Dev Toolchains",
+            "Linux",
+          ],
+        },
+        {
+          title: "// DATA & BUSINESS INTELLIGENCE",
+          items: [
+            "PowerBI",
+            "Tableau",
+            "RESTful APIs",
+          ],
+        },
+      ],
     },
     lab: {
       module: "// MODULE_04: LAB",
@@ -189,6 +234,9 @@ export const translations = {
     hero: {
       eyebrow: ">> INGENIERO EN CÓMPUTO INTELIGENTE",
       tags: ["Inteligencia Artificial", "Minería de Datos", "Desarrollador Full-Stack"],
+      ctaProjects: "Explorar Proyectos",
+      ctaLab: "Ver LAB",
+      ctaContact: "Conectar",
     },
     about: {
       module: "// MODULE_01: BIO",
@@ -244,6 +292,48 @@ export const translations = {
     skills: {
       module: "// MODULE_03: TECH_STACK",
       heading: "Habilidades",
+      categories: [
+        {
+          title: "// IA, ORQUESTACIÓN Y AUTOMATIZACIÓN",
+          items: [
+            "Model Context Protocol (MCP)",
+            "Automatización n8n",
+            "Python",
+            "Minería de Datos",
+            "Orange",
+            "Optimización Inteligente",
+          ],
+        },
+        {
+          title: "// ARQUITECTURA FULL-STACK",
+          items: [
+            "React",
+            "Next.js",
+            "Angular",
+            "TypeScript",
+            "C#",
+            ".NET / .NET Core",
+            "SQL Server",
+          ],
+        },
+        {
+          title: "// CREATIVE TECH Y GRÁFICOS 3D",
+          items: [
+            "Blender (Python 3D)",
+            "Adobe After Effects",
+            "Pipelines de Videojuegos",
+            "Linux",
+          ],
+        },
+        {
+          title: "// DATOS E INTELIGENCIA DE NEGOCIO",
+          items: [
+            "PowerBI",
+            "Tableau",
+            "APIs RESTful",
+          ],
+        },
+      ],
     },
     lab: {
       module: "// MODULE_04: LAB",

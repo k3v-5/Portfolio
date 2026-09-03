@@ -2,24 +2,10 @@
 import React from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 
-const skills = [
-  "Python",
-  "React",
-  "Next.js",
-  "Angular",
-  "TypeScript",
-  "C#",
-  ".NET",
-  ".NET Core",
-  "SQL Server",
-  "PowerBI",
-  "Tableau",
-  "Orange",
-  "Linux",
-];
 
 export default function SkillsSection() {
   const { t } = useLanguage();
+  const categories = t.skills.categories;
 
   return (
     <section id="skills" className="!min-h-0 !py-8 lg:!py-12">
@@ -31,12 +17,24 @@ export default function SkillsSection() {
           <h2 className="text-4xl lg:text-5xl font-black mb-8 text-slate-900 uppercase italic">
             {t.skills.heading}
           </h2>
-          <div className="flex flex-wrap gap-4">
-            {skills.map((skill) => (
-              <span key={skill} className="skill-tag">
-                {skill}
-              </span>
-            ))}
+
+          <div className="space-y-6">
+            {categories && categories.length > 0 ? (
+              categories.map((cat) => (
+                <div key={cat.title}>
+                  <p className="font-mono text-[10px] text-purple-600 font-bold uppercase tracking-widest mb-2.5">
+                    {cat.title}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.items.map((skill) => (
+                      <span key={skill} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))
+            ) : null}
           </div>
         </div>
       </div>

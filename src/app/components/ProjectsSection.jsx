@@ -31,8 +31,8 @@ const ProjectsData = [
     id: 2,
     image: "/images/projects/tesla-shop/principal.jpg",
     tagIds: ["all", "web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: null,
+    previewUrl: null,
   },
   {
     id: 3,
