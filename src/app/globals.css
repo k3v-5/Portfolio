@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --img-width: 800px;
+  --img-width: 720px;
   --accent-color: #b95bd8;
   --bg-color: #ffffff;
   --text-color: #0f172a;
@@ -179,13 +179,13 @@ section {
 /* RESPONSIVE */
 @media (max-width: 1600px) {
   :root {
-    --img-width: 600px;
+    --img-width: 580px;
   }
 }
 
 @media (max-width: 1280px) {
   :root {
-    --img-width: 500px;
+    --img-width: 480px;
   }
 }
 

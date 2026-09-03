@@ -9,7 +9,7 @@ import Herosection from "./components/Herosection";
 import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
 import SkillsSection from "./components/SkillsSection";
-import AIToolingSection from "./components/AIToolingSection";
+import LabSection from "./components/LabSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import MatrixBackground from "./components/MatrixBackground";
@@ -65,7 +65,7 @@ export default function Home() {
         if (img.naturalWidth && img.naturalHeight) {
           return (img.naturalHeight / img.naturalWidth) * cssWidth;
         }
-        return cssWidth * 0.6; // estimación si aún no cargó
+        return cssWidth * (1536 / 2816); // ratio nativo exacto
       };
       // Posiciona una imagen para que, una vez asentado el scroll (parallax
       // ya aplicado), su borde inferior quede a `finalGap` px ANTES del
@@ -84,20 +84,21 @@ export default function Home() {
       const experienceCardEl =
         document.querySelector("#experience .content-card") ||
         document.getElementById("experience");
+      const skillsEl = document.getElementById("skills");
+      const skillsCardEl =
+        document.querySelector("#skills .content-card") || skillsEl;
+      const labEl = document.getElementById("lab");
       const projectsEl = document.getElementById("projects");
       const signalLogEl = document.getElementById("signal-log");
       const contactCardEl =
         document.querySelector("#contact .content-card") ||
         document.getElementById("contact");
 
-      // Imagen 1: no hay suficiente hueco entre el título del Hero y la
-      // tarjeta de About para dejarla afuera de las dos, así que mantiene
-      // su comportamiento original: flota dentro de About (tapada por su
-      // tarjeta), en vez de arriesgarse a solapar el título "KEVIN GARRIDO".
+      // Imagen 1: About
       if (aboutEl) {
         setTop("wrap-1", relTop(aboutEl) + aboutEl.offsetHeight * 0.35);
       }
-      // Imagen 2: centrada en la mitad del contenido de "Experience"
+      // Imagen 2: centrada en la mitad del contenido de "Experience" (lado izquierdo)
       if (experienceCardEl) {
         const h = imgHeight("img-2");
         setTop(
@@ -105,11 +106,33 @@ export default function Home() {
           relTop(experienceCardEl) + experienceCardEl.offsetHeight / 2 - h / 2,
         );
       }
-      // Imagen 3: termina antes de que empiece "Projects" (sin tarjeta propia)
-      setBefore("wrap-3", "img-3", projectsEl, 60);
-      // Imagen 4: centrada en el hueco entre "Signal Log" y la tarjeta de
-      // "Contact" (ya con el parallax asentado, para que se vea centrada
-      // de verdad y no pegada a uno de los dos extremos).
+      // Imagen 5: The Algorithmic Core (centrada con Skills, lado derecho)
+      if (skillsCardEl) {
+        const h = imgHeight("img-5");
+        setTop(
+          "wrap-5",
+          relTop(skillsCardEl) + skillsCardEl.offsetHeight / 2 - h / 2,
+        );
+      }
+      // Imagen 6: The Creative Synthesis (centrada entre Skills y Lab)
+      if (skillsEl && labEl) {
+        const h = imgHeight("img-6");
+        const gapCenter = (relBottom(skillsEl) + relTop(labEl)) / 2;
+        setTop("wrap-6", gapCenter - h / 2 + PARALLAX_SHIFT);
+      }
+      // Imagen 3: Server Towers (centrada entre Lab y Projects)
+      if (labEl && projectsEl) {
+        const h = imgHeight("img-3");
+        const gapCenter = (relBottom(labEl) + relTop(projectsEl)) / 2;
+        setTop("wrap-3", gapCenter - h / 2 + PARALLAX_SHIFT);
+      }
+      // Imagen 7: The Deep Transmission (entre Projects y Signal Log)
+      if (projectsEl && signalLogEl) {
+        const h = imgHeight("img-7");
+        const gapCenter = (relBottom(projectsEl) + relTop(signalLogEl)) / 2;
+        setTop("wrap-7", gapCenter - h / 2 + PARALLAX_SHIFT);
+      }
+      // Imagen 4: centrada en el hueco entre "Signal Log" y la tarjeta de "Contact"
       if (signalLogEl && contactCardEl) {
         const h = imgHeight("img-4");
         const gapCenter = (relBottom(signalLogEl) + relTop(contactCardEl)) / 2;
@@ -154,7 +177,7 @@ export default function Home() {
       }
 
       // Animación de imágenes de fondo (Identity Layer)
-      const imageIndices = [1, 2, 3, 4];
+      const imageIndices = [1, 2, 3, 4, 5, 6, 7];
       imageIndices.forEach((num) => {
         const wrapper = document.querySelector(`#wrap-${num}`);
         const el = document.querySelector(`#img-${num}`);
@@ -230,6 +253,7 @@ export default function Home() {
       <div className="scroll-container pb-24 lg:pb-32">
         {/* Background Images de SpotlightSection (Desktop Only) */}
         <div className="bg-identity-layer">
+          {/* 1: About */}
           <div
             style={{
               position: "absolute",
@@ -247,10 +271,12 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* 2: Experience */}
           <div
             style={{
               position: "absolute",
-              top: "33%", // fallback antes del cálculo por JS (ver positionIdentityImages)
+              top: "28%",
               left: "5%",
               width: "var(--img-width)",
             }}
@@ -264,10 +290,51 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* 5: The Algorithmic Core (Between Experience & Skills) */}
           <div
             style={{
               position: "absolute",
-              top: "56%", // fallback antes del cálculo por JS (ver positionIdentityImages)
+              top: "40%",
+              right: "5%",
+              width: "var(--img-width)",
+            }}
+          >
+            <div id="wrap-5" className="w-full h-full">
+              <img
+                src="/images/img_algorithmic_core_wb.png"
+                className="identity-img w-full"
+                id="img-5"
+                alt="bg-identity 5 - The Algorithmic Core"
+              />
+            </div>
+          </div>
+
+          {/* 6: The Creative Synthesis (Between Skills & Lab) */}
+          <div
+            style={{
+              position: "absolute",
+              top: "52%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "var(--img-width)",
+            }}
+          >
+            <div id="wrap-6" className="w-full h-full">
+              <img
+                src="/images/img_creative_synthesis_wb.png"
+                className="identity-img w-full"
+                id="img-6"
+                alt="bg-identity 6 - The Creative Synthesis"
+              />
+            </div>
+          </div>
+
+          {/* 3: Server Towers (Between Lab & Projects) */}
+          <div
+            style={{
+              position: "absolute",
+              top: "65%",
               left: "50%",
               transform: "translateX(-50%)",
               width: "var(--img-width)",
@@ -282,10 +349,32 @@ export default function Home() {
               />
             </div>
           </div>
+
+          {/* 7: The Deep Transmission (Between Projects & Signal Log) */}
           <div
             style={{
               position: "absolute",
-              top: "87%", // fallback antes del cálculo por JS (ver positionIdentityImages)
+              top: "78%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "var(--img-width)",
+            }}
+          >
+            <div id="wrap-7" className="w-full h-full">
+              <img
+                src="/images/img_deep_transmission_wb.png"
+                className="identity-img w-full"
+                id="img-7"
+                alt="bg-identity 7 - The Deep Transmission"
+              />
+            </div>
+          </div>
+
+          {/* 4: Neural Core (Between Signal Log & Contact) */}
+          <div
+            style={{
+              position: "absolute",
+              top: "90%",
               left: "50%",
               transform: "translateX(-50%)",
               width: "var(--img-width)",
@@ -323,19 +412,23 @@ export default function Home() {
         <Herosection />
         <AboutSection />
         <ExperienceSection />
+
+        {/* Espaciador suave entre Experience y Skills */}
+        <div className="h-16 lg:h-24 w-full pointer-events-none"></div>
+
         <SkillsSection />
 
-        {/* Espaciador visual moderado */}
-        <div className="h-32 lg:h-64 w-full pointer-events-none"></div>
+        {/* Espaciador visual para The Creative Synthesis */}
+        <div className="h-44 lg:h-80 w-full pointer-events-none"></div>
 
-        <AIToolingSection />
+        <LabSection />
 
-        {/* Espaciador visual moderado */}
-        <div className="h-32 lg:h-64 w-full pointer-events-none"></div>
+        {/* Espaciador visual para Server Towers */}
+        <div className="h-44 lg:h-80 w-full pointer-events-none"></div>
 
         <ProjectsSection />
 
-        {/* Espaciador visual más amplio para la última imagen */}
+        {/* Espaciador visual más amplio para The Deep Transmission */}
         <div className="h-48 lg:h-96 w-full pointer-events-none"></div>
 
         <SignalLogSection />

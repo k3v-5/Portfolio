@@ -31,10 +31,10 @@ export default function Navbar() {
             {t.nav.skills}
           </a>
           <a
-            href="#ai-tooling"
+            href="#lab"
             className="hover:text-purple-600 transition-colors text-slate-400"
           >
-            {t.nav.ai}
+            {t.nav.lab}
           </a>
           <a
             href="#projects"

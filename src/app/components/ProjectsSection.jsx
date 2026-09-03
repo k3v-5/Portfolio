@@ -14,6 +14,13 @@ import { useLanguage } from "../i18n/LanguageContext";
 // compara contra estas, nunca contra la etiqueta traducida en pantalla.
 const ProjectsData = [
   {
+    id: 0,
+    image: "/images/projects/darx/principal.png",
+    tagIds: ["all", "gameDev", "ai"],
+    gitUrl: null,
+    previewUrl: null,
+  },
+  {
     id: 1,
     image: "/images/projects/dating-app/principal.jpg",
     tagIds: ["all", "web"],
@@ -48,16 +55,9 @@ const ProjectsData = [
     gitUrl: "https://github.com/k3v-5/LexiKit",
     previewUrl: null,
   },
-  {
-    id: 6,
-    image: null,
-    tagIds: ["all", "ai"],
-    gitUrl: null,
-    previewUrl: null,
-  },
 ];
 
-const FILTER_IDS = ["all", "web", "dataScience", "ai"];
+const FILTER_IDS = ["all", "gameDev", "ai", "web", "dataScience"];
 
 export default function ProjectsSection() {
   const { t } = useLanguage();
@@ -70,6 +70,7 @@ export default function ProjectsSection() {
   // suelen entrar completas, no aparece un botón inútil).
   const [overflowingIds, setOverflowingIds] = useState({});
   const [expandedIds, setExpandedIds] = useState({});
+  const [imgErrors, setImgErrors] = useState({});
 
   const filteredProjects = ProjectsData.filter((project) =>
     project.tagIds.includes(tagId),
@@ -141,23 +142,28 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {filteredProjects.map((project) => {
             const copy = t.projects.items[project.id];
+            const hasImg = project.image && !imgErrors[project.id];
             return (
               <div
                 key={project.id}
                 className="project-card-anim bg-white/95 backdrop-blur-[20px] border border-black/5 p-8 md:p-10 rounded-[3rem] shadow-2xl block"
               >
-                <div className="aspect-video rounded-2xl overflow-hidden mb-8 relative group border border-slate-100">
-                  {project.image ? (
-                    <div
-                      className="w-full h-full transition-transform duration-1000 group-hover:scale-110"
-                      style={{
-                        background: `url(${project.image}) center center`,
-                        backgroundSize: "cover",
-                      }}
-                    ></div>
+                <div className={`${project.id === 0 ? "aspect-[2816/1536]" : "aspect-video"} rounded-2xl overflow-hidden mb-8 relative group border border-slate-100 bg-slate-950 flex items-center justify-center`}>
+                  {hasImg ? (
+                    <img
+                      src={project.image}
+                      alt={copy?.title || "Project"}
+                      onError={() =>
+                        setImgErrors((prev) => ({ ...prev, [project.id]: true }))
+                      }
+                      className={`w-full h-full ${project.id === 0 ? "object-contain" : "object-cover"} transition-transform duration-1000 group-hover:scale-105`}
+                    />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-purple-900">
-                      <SparklesIcon className="h-16 w-16 text-purple-300" />
+                    <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-purple-950 p-6 text-center">
+                      <SparklesIcon className="h-14 w-14 text-purple-300 mb-2" />
+                      <span className="font-mono text-[9px] text-purple-400 uppercase tracking-widest">
+                        {project.id === 0 ? "DARX // GAME DEV PREVIEW" : "PREVIEW SLOT"}
+                      </span>
                     </div>
                   )}
                   {/* OVERLAY CON ICONOS (solo si hay algún link disponible) */}
@@ -186,9 +192,16 @@ export default function ProjectsSection() {
                     </div>
                   )}
                 </div>
-                <h3 className="text-3xl font-black text-slate-900 uppercase italic">
-                  {copy.title}
-                </h3>
+                <div className="flex items-start justify-between gap-4 flex-wrap">
+                  <h3 className="text-3xl font-black text-slate-900 uppercase italic">
+                    {copy?.title}
+                  </h3>
+                  {copy?.badge && (
+                    <span className="px-3 py-1 rounded-full font-mono text-[9px] font-bold uppercase tracking-widest bg-purple-100 text-purple-700 border border-purple-200">
+                      {copy.badge}
+                    </span>
+                  )}
+                </div>
                 <p
                   ref={(el) => {
                     descRefs.current[project.id] = el;
@@ -197,7 +210,7 @@ export default function ProjectsSection() {
                     expandedIds[project.id] ? "" : "line-clamp-3"
                   }`}
                 >
-                  {copy.description}
+                  {copy?.description}
                 </p>
                 {(overflowingIds[project.id] || expandedIds[project.id]) && (
                   <button

@@ -9,7 +9,7 @@ export const translations = {
       bio: "// Bio",
       exp: "// Exp",
       skills: "// Skills",
-      ai: "// AI",
+      lab: "// Lab",
       projects: "// Projects",
       contact: "Contact.me",
     },
@@ -72,47 +72,61 @@ export const translations = {
       module: "// MODULE_03: TECH_STACK",
       heading: "Skills",
     },
-    aiTooling: {
-      module: "// MODULE_04: AI_TOOLING",
-      heading: "AI-Augmented Engineering",
+    lab: {
+      module: "// MODULE_04: LAB",
+      heading: "Creative Tech & AI Engines",
       subtitle:
-        "I integrate agentic AI tools into real workflows — not just as autocomplete assistants.",
-      tools: [
+        "Architecting custom graphics engines, AI orchestration systems, and generative pipelines via Model Context Protocol (MCP).",
+      items: [
         {
-          name: "MCP",
-          full: "Model Context Protocol",
+          id: "ae-video-engine",
+          name: "After Effects MCP Video Engine",
+          tagline: "Token-Efficient AI Video Orchestration",
           blurb:
-            "Protocol that connects AI agents to external tools and data in real time.",
-          usage:
-            "Connected MCP servers to Ableton Live, Blender, and SQL databases — orchestrating music production, 3D modeling, and data queries from a single conversational workflow.",
-          tags: ["Ableton Live", "Blender", "SQL"],
+            "Proprietary graphics and composition bridge connected to Adobe After Effects through MCP. Allows AI models to orchestrate, animate, and render motion graphics using compact control signals rather than heavy prompt loads—achieving massive token savings and real-time execution.",
+          highlights: [
+            "Context-optimized payload routing (Token Savings)",
+            "Automated multi-layer timeline and camera animation",
+            "Real-time headless render queue automation",
+          ],
+          tags: ["After Effects", "MCP Protocol", "Token Optimization", "Motion Graphics", "Custom Engine"],
+          image: "/images/lab/ae-video-engine.png",
         },
         {
-          name: "Claude Code",
-          full: "Anthropic CLI Agent",
-          blurb: "AI agent for working directly on code from the terminal.",
-          usage:
-            "Automating repetitive processes, optimizing workflows, and reviewing bugs on real projects — including the development of this very portfolio.",
-          tags: ["Automation", "Debugging", "Workflows"],
-        },
-        {
-          name: "Antigravity",
-          full: "Google Agentic IDE",
+          id: "blender-character-engine",
+          name: "Blender MCP Character Engine",
+          tagline: "Procedural 3D Character Synthesis at Scale",
           blurb:
-            "Agentic IDE geared toward end-to-end AI-assisted development.",
-          usage:
-            "Same approach as Claude Code: process automation, workflow optimization, and bug review.",
-          tags: ["Automation", "Debugging", "Workflows"],
+            "High-speed graphics engine interfaced with Blender via MCP. Empowers AI agents to programmatically generate 3D characters, procedural topology, dynamic rigging, and materials, collapsing character conception and 3D asset iteration from days into minutes.",
+          highlights: [
+            "Procedural mesh generation & topology refinement",
+            "Automated armature rigging & weight painting setup",
+            "Bi-directional LLM-to-Blender Python bridge",
+          ],
+          tags: ["Blender", "MCP Protocol", "3D Procedural", "Character Pipeline", "Python Engine"],
+          image: "/images/lab/blender-character-engine.png",
         },
       ],
     },
     projects: {
       module: "// MODULE_05: PORTFOLIO",
       heading: "Projects",
-      filters: { all: "All", web: "Web", dataScience: "Data Science", ai: "AI" },
+      filters: {
+        all: "All",
+        gameDev: "Game Dev",
+        ai: "AI",
+        web: "Web",
+        dataScience: "Data Science",
+      },
       readMore: "Read more",
       showLess: "Show less",
       items: {
+        0: {
+          title: "DARX",
+          badge: "In Active Development",
+          description:
+            "Action-adventure video game currently in development, built on a proprietary generative toolchain. Integrates 3D characters procedurally synthesized through the Blender MCP engine with cinematic sequences and visual motion orchestrated via the After Effects MCP pipeline.",
+        },
         1: {
           title: "Dating Platform",
           description:
@@ -137,11 +151,6 @@ export const translations = {
           title: "LexiKit",
           description:
             "AI-powered language learning app that generates lessons on demand and reinforces them with spaced repetition across a variety of flashcard types.",
-        },
-        6: {
-          title: "AI Creative Pipeline (MCP)",
-          description:
-            "Connected Claude to Ableton Live and Blender through MCP servers — generating MIDI ideas for songs directly inside Ableton, and driving AI-assisted video generation in Blender from a single agentic workflow.",
         },
       },
     },
@@ -172,7 +181,7 @@ export const translations = {
       bio: "// Bio",
       exp: "// Exp",
       skills: "// Skills",
-      ai: "// IA",
+      lab: "// Lab",
       projects: "// Proyectos",
       contact: "Contact.me",
     },
@@ -235,38 +244,39 @@ export const translations = {
       module: "// MODULE_03: TECH_STACK",
       heading: "Habilidades",
     },
-    aiTooling: {
-      module: "// MODULE_04: AI_TOOLING",
-      heading: "Ingeniería Potenciada por IA",
+    lab: {
+      module: "// MODULE_04: LAB",
+      heading: "Creative Tech & Motores de IA",
       subtitle:
-        "Integro herramientas de IA agentic en flujos de trabajo reales, no solo como asistentes de autocompletado.",
-      tools: [
+        "Desarrollo de motores gráficos propios, orquestación por IA y pipelines generativos con Model Context Protocol (MCP).",
+      items: [
         {
-          name: "MCP",
-          full: "Model Context Protocol",
+          id: "ae-video-engine",
+          name: "Motor After Effects MCP",
+          tagline: "Generación y Orquestación de Video con Ahorro de Tokens",
           blurb:
-            "Protocolo que conecta agentes de IA con herramientas y datos externos en tiempo real.",
-          usage:
-            "Conecté servidores MCP a Ableton Live, Blender y bases de datos SQL, orquestando producción musical, modelado 3D y consultas de datos desde un mismo flujo conversacional.",
-          tags: ["Ableton Live", "Blender", "SQL"],
+            "Motor gráfico propio conectado con Adobe After Effects a través de MCP. Permite a modelos de IA dirigir, animar y renderizar composiciones de video complejas mediante instrucciones de control compactas, logrando un ahorro masivo de tokens y ejecución en tiempo real sin saturar la ventana de contexto.",
+          highlights: [
+            "Arquitectura optimizada para mínimo consumo de tokens",
+            "Control automatizado de timeline, keyframes y cámaras",
+            "Renderizado desatendido multicapa en tiempo real",
+          ],
+          tags: ["After Effects", "Protocolo MCP", "Ahorro de Tokens", "Motion Graphics", "Motor Propio"],
+          image: "/images/lab/ae-video-engine.png",
         },
         {
-          name: "Claude Code",
-          full: "Anthropic CLI Agent",
+          id: "blender-character-engine",
+          name: "Motor de Personajes Blender MCP",
+          tagline: "Generación Procedural Acelerada de Personajes 3D",
           blurb:
-            "Agente de IA para trabajar directamente sobre código en la terminal.",
-          usage:
-            "Automatización de procesos repetitivos, optimización de flujos de trabajo y revisión de bugs en proyectos reales — incluyendo el desarrollo de este mismo portfolio.",
-          tags: ["Automatización", "Debugging", "Workflows"],
-        },
-        {
-          name: "Antigravity",
-          full: "Google Agentic IDE",
-          blurb:
-            "IDE agentic orientado a desarrollo asistido por IA de extremo a extremo.",
-          usage:
-            "Mismo enfoque que con Claude Code: automatización de procesos, optimización de flujos de trabajo y revisión de bugs.",
-          tags: ["Automatización", "Debugging", "Workflows"],
+            "Motor gráfico de alta velocidad comunicado con Blender mediante MCP. Permite a agentes de IA generar paramétricamente personajes tridimensionales, mallas procedurales, rigging dinámico y materiales, reduciendo los tiempos de creación de días a solo minutos.",
+          highlights: [
+            "Topología y generación de mallas procedural",
+            "Rigging y asignación de pesos automatizados",
+            "Puente bidireccional LLM a Blender vía Python API",
+          ],
+          tags: ["Blender", "Protocolo MCP", "3D Procedural", "Pipeline de Personajes", "Python Engine"],
+          image: "/images/lab/blender-character-engine.png",
         },
       ],
     },
@@ -275,13 +285,20 @@ export const translations = {
       heading: "Proyectos",
       filters: {
         all: "Todos",
+        gameDev: "Videojuegos",
+        ai: "IA",
         web: "Web",
         dataScience: "Ciencia de Datos",
-        ai: "IA",
       },
       readMore: "Ver más",
       showLess: "Ver menos",
       items: {
+        0: {
+          title: "DARX",
+          badge: "En Desarrollo Activo",
+          description:
+            "Videojuego de acción/aventura en desarrollo activo, impulsado por un pipeline generativo propio. Integra personajes 3D sintetizados proceduralmente mediante el motor de Blender MCP y cinemáticas orquestadas a través del motor de video de After Effects MCP.",
+        },
         1: {
           title: "Plataforma de Citas",
           description:
@@ -306,11 +323,6 @@ export const translations = {
           title: "LexiKit",
           description:
             "App de aprendizaje de idiomas potenciada por IA que genera lecciones a demanda y las refuerza con repetición espaciada sobre una variedad de tarjetas de aprendizaje.",
-        },
-        6: {
-          title: "Pipeline Creativo de IA (MCP)",
-          description:
-            "Conecté a Claude con Ableton Live y Blender mediante servidores MCP — generando ideas de MIDI para canciones directamente en Ableton, e impulsando generación de video asistida por IA en Blender desde un mismo flujo agentic.",
         },
       },
     },
