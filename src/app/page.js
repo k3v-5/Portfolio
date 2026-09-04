@@ -262,9 +262,8 @@ export default function Home() {
       <Navbar />
 
       <div className="scroll-container pb-24 lg:pb-32">
-        {/* Background Images de SpotlightSection (Desktop Only) */}
         <div className="bg-identity-layer">
-          {/* 1: About */}
+          {/* 1: About Me */}
           <div
             style={{
               position: "absolute",
@@ -275,10 +274,12 @@ export default function Home() {
           >
             <div id="wrap-1" className="w-full h-full">
               <img
-                src="/images/img_1wb.png"
+                src="/images/img_1wb.webp"
                 className="identity-img w-full"
                 id="img-1"
                 alt="bg-identity 1"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
           </div>
@@ -294,10 +295,12 @@ export default function Home() {
           >
             <div id="wrap-2" className="w-full h-full">
               <img
-                src="/images/img_2wb.png"
+                src="/images/img_2wb.webp"
                 className="identity-img w-full"
                 id="img-2"
                 alt="bg-identity 2"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -313,10 +316,12 @@ export default function Home() {
           >
             <div id="wrap-5" className="w-full h-full">
               <img
-                src="/images/img_algorithmic_core_wb.png"
+                src="/images/img_algorithmic_core_wb.webp"
                 className="identity-img w-full"
                 id="img-5"
                 alt="bg-identity 5 - The Algorithmic Core"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -333,10 +338,12 @@ export default function Home() {
           >
             <div id="wrap-6" className="w-full h-full">
               <img
-                src="/images/img_creative_synthesis_wb.png"
+                src="/images/img_creative_synthesis_wb.webp"
                 className="identity-img w-full"
                 id="img-6"
                 alt="bg-identity 6 - The Creative Synthesis"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -353,10 +360,12 @@ export default function Home() {
           >
             <div id="wrap-3" className="w-full h-full">
               <img
-                src="/images/img_3wb.png"
+                src="/images/img_3wb.webp"
                 className="identity-img w-full"
                 id="img-3"
                 alt="bg-identity 3"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -373,10 +382,12 @@ export default function Home() {
           >
             <div id="wrap-7" className="w-full h-full">
               <img
-                src="/images/img_deep_transmission_wb.png"
+                src="/images/img_deep_transmission_wb.webp"
                 className="identity-img w-full"
                 id="img-7"
                 alt="bg-identity 7 - The Deep Transmission"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -393,10 +404,12 @@ export default function Home() {
           >
             <div id="wrap-4" className="w-full h-full">
               <img
-                src="/images/img_4wb.png"
+                src="/images/img_4wb.webp"
                 className="identity-img w-full"
                 id="img-4"
                 alt="bg-identity 4"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

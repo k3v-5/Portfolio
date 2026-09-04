@@ -15,7 +15,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 const ProjectsData = [
   {
     id: 0,
-    image: "/images/projects/darx/principal.png",
+    image: "/images/projects/darx/principal.webp",
     tagIds: ["all", "gameDev", "ai"],
     gitUrl: null,
     previewUrl: null,
@@ -43,14 +43,14 @@ const ProjectsData = [
   },
   {
     id: 4,
-    image: "/images/projects/sentiment-analysis/principal.jpg",
+    image: "/images/projects/sentiment-analysis/principal.webp",
     tagIds: ["all", "dataScience"],
     gitUrl: "https://github.com/k3v-5/Sentiment-analysis",
     previewUrl: "https://github.com/k3v-5/Sentiment-analysis",
   },
   {
     id: 5,
-    image: "/images/projects/lexikit/principal.jpg",
+    image: "/images/projects/lexikit/principal.webp",
     tagIds: ["all", "ai"],
     gitUrl: "https://github.com/k3v-5/LexiKit",
     previewUrl: null,
@@ -153,6 +153,8 @@ export default function ProjectsSection() {
                     <img
                       src={project.image}
                       alt={copy?.title || "Project"}
+                      loading="lazy"
+                      decoding="async"
                       onError={() =>
                         setImgErrors((prev) => ({ ...prev, [project.id]: true }))
                       }

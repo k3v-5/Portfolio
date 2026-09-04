@@ -55,6 +55,8 @@ export default function LabSection() {
                       <img
                         src={item.image}
                         alt={item.name}
+                        loading="lazy"
+                        decoding="async"
                         onError={() => handleImageError(item.id)}
                         className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                       />
