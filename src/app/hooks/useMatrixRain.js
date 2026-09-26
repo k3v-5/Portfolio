@@ -11,14 +11,13 @@ export function useMatrixRain(canvasRef) {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let matrixInterval;
-    let handleResize;
+    let animId;
+    let lastTime = 0;
+    const intervalMs = 80;
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let columns, drops;
-    const fontSize = 14;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
     handleResize = () => {
       canvas.width = window.innerWidth;
@@ -30,7 +29,7 @@ export function useMatrixRain(canvasRef) {
     handleResize();
     const symbols = "01ΣΔ∫√μλπθΦΨΩαβγ∞≈∑∏".split("");
 
-    const draw = () => {
+    const drawFrame = () => {
       ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "#9333EA";
@@ -45,12 +44,38 @@ export function useMatrixRain(canvasRef) {
       });
     };
 
-    matrixInterval = setInterval(draw, 80);
-    window.addEventListener("resize", handleResize);
+    if (prefersReducedMotion) {
+      drawFrame();
+      return;
+    }
+
+    const loop = (timestamp) => {
+      if (document.hidden) {
+        animId = requestAnimationFrame(loop);
+        return;
+      }
+
+      if (timestamp - lastTime >= intervalMs) {
+        lastTime = timestamp;
+        drawFrame();
+      }
+      animId = requestAnimationFrame(loop);
+    };
+
+    animId = requestAnimationFrame(loop);
+
+    let resizeTimeout;
+    const onResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(handleResize, 100);
+    };
+
+    window.addEventListener("resize", onResize, { passive: true });
 
     return () => {
-      clearInterval(matrixInterval);
-      if (handleResize) window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animId);
+      clearTimeout(resizeTimeout);
+      window.removeEventListener("resize", onResize);
     };
   }, [canvasRef]);
 }

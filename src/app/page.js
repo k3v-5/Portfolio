@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import dynamic from "next/dynamic";
 import Navbar from "./components/Navbar";
 import Herosection from "./components/Herosection";
 import AboutSection from "./components/AboutSection";
@@ -8,12 +9,26 @@ import SkillsSection from "./components/SkillsSection";
 import LabSection from "./components/LabSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
-import MatrixBackground from "./components/MatrixBackground";
-import CustomCursor from "./components/CustomCursor";
-import SignalLogSection from "./components/SignalLogSection";
 import SectionVisual from "./components/SectionVisual";
 import { useLanguage } from "./i18n/LanguageContext";
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
+
+// Carga diferida no bloqueante de efectos y componentes periféricos
+const MatrixBackground = dynamic(
+  () => import("./components/MatrixBackground"),
+  { ssr: false }
+);
+const CustomCursor = dynamic(
+  () => import("./components/CustomCursor"),
+  { ssr: false }
+);
+const SignalLogSection = dynamic(
+  () => import("./components/SignalLogSection"),
+  {
+    ssr: false,
+    loading: () => <div className="min-h-[120px]" />,
+  }
+);
 
 export default function Home() {
   const { t } = useLanguage();

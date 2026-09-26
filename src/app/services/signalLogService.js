@@ -1,5 +1,3 @@
-import { marked } from "marked";
-
 /**
  * Signal Log Service
  * Fetches dynamic Markdown logs and metadata, converting Markdown text
@@ -12,7 +10,9 @@ export async function fetchSignalLogs() {
     if (!res.ok) return [];
 
     const files = await res.json();
-    if (!Array.isArray(files)) return [];
+    if (!Array.isArray(files) || files.length === 0) return [];
+
+    const { marked } = await import("marked");
 
     const posts = await Promise.all(
       files.map(async (file) => {

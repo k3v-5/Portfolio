@@ -22,6 +22,7 @@ export function useSpotifyTrack(pollInterval = 60000) {
     let isMounted = true;
 
     async function loadTrack() {
+      if (document.hidden) return;
       const data = await fetchSpotifyTrack();
       if (!isMounted) return;
 
@@ -45,9 +46,15 @@ export function useSpotifyTrack(pollInterval = 60000) {
     loadTrack();
     const interval = setInterval(loadTrack, pollInterval);
 
+    const onVisibilityChange = () => {
+      if (!document.hidden) loadTrack();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
     return () => {
       isMounted = false;
       clearInterval(interval);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, [pollInterval]);
 

@@ -59,6 +59,7 @@ export default function ProjectCardItem({
             alt={copy?.title || "Project"}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={85}
             onError={() => setImgError(true)}
             className={`w-full h-full ${project.fit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-1000 group-hover:scale-105`}
           />

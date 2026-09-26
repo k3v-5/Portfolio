@@ -37,7 +37,6 @@ export default function AboutSection() {
               src="/images/img_1wb.webp"
               alt="About visual - Identity 1"
               direction="right"
-              priority
             />
           </div>
         </div>

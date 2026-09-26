@@ -2,8 +2,15 @@ import { Fira_Code, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./i18n/LanguageContext";
 
-const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-mono" });
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL("https://kevingarrido.dev"),
