@@ -55,6 +55,7 @@ export async function GET() {
       isPlaying: song.is_playing,
       title: song.item.name,
       artist: song.item.artists.map((artist) => artist.name).join(", "),
+      songUrl: song.item.external_urls?.spotify || "#",
     });
   } catch (error) {
     return NextResponse.json({ isPlaying: false, error: "Server error" });

@@ -1,11 +1,9 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "lenis";
 import CustomCursor from "../components/CustomCursor";
 import MatrixBackground from "../components/MatrixBackground";
+import { useScrollAnimations } from "../hooks/useScrollAnimations";
 
 // Micro-componente para estandarizar los títulos de sección
 const SectionHeading = ({ number, title }) => (
@@ -32,46 +30,11 @@ const ListItem = ({ children }) => (
 export default function PrivacyPolicy() {
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Inicializamos Lenis para el Smooth Scroll
-    const lenis = new Lenis();
-    lenis.on("scroll", ScrollTrigger.update);
-    const updateLenis = (time) => {
-      lenis.raf(time * 1000);
-    };
-    gsap.ticker.add(updateLenis);
-    gsap.ticker.lagSmoothing(0);
-
-    const ctxGsap = gsap.context(() => {
-      // Animación de la línea SVG
-      const path = document.querySelector("#scroll-path");
-      if (path) {
-        const pathLength = path.getTotalLength();
-        gsap.set(path, {
-          strokeDasharray: pathLength,
-          strokeDashoffset: pathLength,
-        });
-        gsap.to(path, {
-          strokeDashoffset: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".scroll-container",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1.5,
-          },
-        });
-      }
-    }, containerRef);
-
-    return () => {
-      ctxGsap.revert();
-      gsap.ticker.remove(updateLenis);
-      lenis.destroy();
-    };
-  }, []);
+  useScrollAnimations({
+    containerRef,
+    revealCards: false,
+    scrub: 0.65,
+  });
 
   return (
     <div ref={containerRef} className="relative min-h-screen scroll-container">
@@ -79,9 +42,9 @@ export default function PrivacyPolicy() {
       <CustomCursor />
 
       {/* Línea SVG de fondo */}
-      <div className="svg-line-container" style={{ opacity: 0.7 }}>
+      <div className="svg-line-container" style={{ opacity: 0.85 }}>
         <svg
-          viewBox="0 0 2120 2590"
+          viewBox="0 0 2120 10000"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
@@ -89,9 +52,10 @@ export default function PrivacyPolicy() {
         >
           <path
             id="scroll-path"
-            d="M698.973 23.7537C844.473 293.254 1969.97 211.754 2033.97 425.754C2097.97 639.754 432.989 765.83 87.4731 964.754C-258.043 1163.68 1896.97 1777.25 2059.47 1221.25C2221.97 665.254 266.973 2102.75 87.4731 1666.25C-92.0268 1229.75 2102.48 2090.25 1841.47 2269.75C1580.47 2449.25 626.473 2539.25 626.473 2539.25 L 626.473 2590"
-            stroke="#9F44C9"
-            strokeWidth="100"
+            d="M 699 0 C 699 248, 1950 303, 1950 550 C 1950 910, 1980 990, 1980 1350 C 1980 1710, 140 1790, 140 2150 C 140 2510, 1980 2590, 1980 2950 C 1980 3265, 1350 3335, 1350 3650 C 1350 3988, 200 4063, 200 4400 C 200 4738, 1920 4813, 1920 5150 C 1920 5510, 180 5590, 180 5950 C 180 6355, 1940 6445, 1940 6850 C 1940 7210, 900 7290, 900 7650 C 900 8010, 1950 8090, 1950 8450 C 1950 8788, 250 8863, 250 9200 C 250 9425, 1060 9475, 1060 9700 C 1060 9835, 1060 9865, 1060 10000"
+            stroke="#c084fc"
+            strokeWidth="32"
+            vectorEffect="non-scaling-stroke"
           />
         </svg>
       </div>

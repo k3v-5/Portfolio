@@ -1,6 +1,7 @@
 "use client";
 import React, {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -32,14 +33,22 @@ export function LanguageProvider({ children }) {
     setReady(true);
   }, []);
 
-  const setLang = (next) => {
+  const setLang = useCallback((next) => {
     setLangState(next);
     if (typeof window !== "undefined") {
       window.localStorage.setItem(STORAGE_KEY, next);
     }
-  };
+  }, []);
 
-  const toggleLang = () => setLang(lang === "en" ? "es" : "en");
+  const toggleLang = useCallback(() => {
+    setLangState((prev) => {
+      const next = prev === "en" ? "es" : "en";
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(STORAGE_KEY, next);
+      }
+      return next;
+    });
+  }, []);
 
   const value = useMemo(
     () => ({
@@ -47,9 +56,9 @@ export function LanguageProvider({ children }) {
       setLang,
       toggleLang,
       ready,
-      t: translations[lang],
+      t: translations[lang] || translations.en,
     }),
-    [lang, ready, toggleLang],
+    [lang, ready, setLang, toggleLang],
   );
 
   return (

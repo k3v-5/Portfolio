@@ -19,6 +19,7 @@ export const translations = {
       ctaProjects: "Explore Projects",
       ctaLab: "View LAB",
       ctaContact: "Get in Touch",
+      ctaCv: "Download CV",
     },
     about: {
       module: "// MODULE_01: BIO",
@@ -140,17 +141,33 @@ export const translations = {
         },
         {
           id: "blender-character-engine",
-          name: "Blender MCP Character Engine",
-          tagline: "Accelerated Procedural 3D Character Generation",
+          name: "Blender Asset Orchestration Engine (AOE)",
+          tagline: "Token-Efficient 3D Asset & World Generation via MCP",
           blurb:
-            "A high-speed graphics pipeline bridging Blender via MCP. Enables AI agents to generate parametric 3D meshes, automated rigging, and materials from structured prompts, reducing asset prototyping time from days to minutes.",
+            "A high-speed graphics and asset orchestration pipeline bridging Blender via Python API and MCP. Empowers AI coding assistants to generate parametric 3D meshes, automated rigging, and procedural environments with single-turn batch commands, saving up to 80% context tokens.",
           highlights: [
             "Procedural mesh generation & topological modeling",
             "Automated skeleton rigging & skin weight assignment",
-            "Bidirectional LLM-to-Blender bridge via Python API",
+            "19-stage production orchestrator & headless Blender export",
           ],
           tags: ["Blender", "MCP Protocol", "Procedural 3D", "Character Pipeline", "Python Engine"],
           image: "/images/lab/blender-character-engine.webp",
+          gitUrl: "https://github.com/k3v-5/AssetOrchestrationEngine",
+        },
+        {
+          id: "hendrix-assistant",
+          name: "Hendrix Assistant",
+          tagline: "Mobile AI Assistant & Desktop/IoT Orchestration",
+          blurb:
+            "Mobile AI assistant engineered with a hybrid cloud and local API architecture. Seamlessly connects with desktop environments to execute OS-level process automation, build intelligent custom routines, orchestrate smart home domotics, and solve multi-step complex workflows.",
+          highlights: [
+            "Hybrid API integration: Remote endpoints & local model inference",
+            "Desktop-bridge workflow orchestration & smart routines",
+            "Smart home domotics & IoT device automation",
+          ],
+          tags: ["Mobile AI", "Local LLMs", "Automation", "IoT / Domotics", "Desktop Bridge", "APIs"],
+          image: "/images/lab/hendrix-assistant.webp",
+          gitUrl: "https://github.com/k3v-5/HendrixAssistant",
         },
       ],
     },
@@ -163,6 +180,7 @@ export const translations = {
         ai: "AI",
         web: "Web",
         dataScience: "Data Science",
+        audioDev: "Audio / VST",
       },
       readMore: "Read more",
       showLess: "Show less",
@@ -197,6 +215,18 @@ export const translations = {
           title: "LexiKit",
           description:
             "AI-powered language learning app that generates lessons on demand and reinforces them with spaced repetition across a variety of flashcard types.",
+        },
+        6: {
+          title: "N8Effect",
+          badge: "Modular Audio Engine",
+          description:
+            "Modular VST audio plugin engineered for dynamic effect integration and custom audio signal chain routing. Designed for high-fidelity audio reprocessing, real-time spatial manipulation, and the synthesis of intricate acoustic atmospheres and soundscapes.",
+        },
+        7: {
+          title: "AbletonEngine",
+          badge: "Generative Music Studio",
+          description:
+            "Autonomous algorithmic composition and AI music production pipeline connected to Ableton Live. Generates complete musical arrangements while enforcing rigorous production standards, including real-time LUFS loudness validation, tonal key consistency, chord voicing, and multi-track spectral balance.",
         },
       },
     },
@@ -237,6 +267,7 @@ export const translations = {
       ctaProjects: "Explorar Proyectos",
       ctaLab: "Ver LAB",
       ctaContact: "Conectar",
+      ctaCv: "Descargar CV",
     },
     about: {
       module: "// MODULE_01: BIO",
@@ -358,17 +389,33 @@ export const translations = {
         },
         {
           id: "blender-character-engine",
-          name: "Motor de Personajes Blender MCP",
-          tagline: "Generación Procedural Acelerada de Personajes 3D",
+          name: "Motor de Orquestación de Assets Blender (AOE)",
+          tagline: "Generación Procedural de Assets 3D y Mundos con Ahorro de Tokens vía MCP",
           blurb:
-            "Motor gráfico de alta velocidad comunicado con Blender mediante MCP. Permite a agentes de IA generar paramétricamente personajes tridimensionales, mallas procedurales, rigging dinámico y materiales, reduciendo los tiempos de creación de días a solo minutos.",
+            "Motor gráfico de alta velocidad y pipeline de orquestación de assets comunicando Blender vía Python API y MCP. Permite a asistentes y agentes de IA generar paramétricamente modelos 3D, rigging automatizado y entornos procedurales mediante comandos por lotes de un solo turno, reduciendo hasta un 80% el consumo de tokens.",
           highlights: [
             "Topología y generación de mallas procedural",
             "Rigging y asignación de pesos automatizados",
-            "Puente bidireccional LLM a Blender vía Python API",
+            "Orquestador de producción de 19 etapas y render headless en Blender",
           ],
-          tags: ["Blender", "Protocolo MCP", "3D Procedural", "Pipeline de Personajes", "Python Engine"],
+          tags: ["Blender", "Protocolo MCP", "3D Procedural", "Pipeline de Assets", "Python Engine"],
           image: "/images/lab/blender-character-engine.webp",
+          gitUrl: "https://github.com/k3v-5/AssetOrchestrationEngine",
+        },
+        {
+          id: "hendrix-assistant",
+          name: "Hendrix Assistant",
+          tagline: "Asistente Móvil de IA & Orquestación de Sistemas y Domótica",
+          blurb:
+            "Asistente móvil de inteligencia artificial con arquitectura híbrida (APIs en la nube y modelos locales). Se conecta directamente a la computadora para automatizar procesos de escritorio, crear rutinas personalizadas, gestionar domótica/IoT y resolver flujos de trabajo de alta complejidad.",
+          highlights: [
+            "Integración híbrida: APIs remotas e inferencia de modelos locales",
+            "Puente de escritorio para automatización profunda y rutinas",
+            "Gestión integral de domótica, IoT y tareas complejas",
+          ],
+          tags: ["Mobile AI", "LLMs Locales", "Automatización", "Domótica / IoT", "Puente PC", "APIs"],
+          image: "/images/lab/hendrix-assistant.webp",
+          gitUrl: "https://github.com/k3v-5/HendrixAssistant",
         },
       ],
     },
@@ -381,6 +428,7 @@ export const translations = {
         ai: "IA",
         web: "Web",
         dataScience: "Ciencia de Datos",
+        audioDev: "Audio / VST",
       },
       readMore: "Ver más",
       showLess: "Ver menos",
@@ -415,6 +463,18 @@ export const translations = {
           title: "LexiKit",
           description:
             "App de aprendizaje de idiomas potenciada por IA que genera lecciones a demanda y las refuerza con repetición espaciada sobre una variedad de tarjetas de aprendizaje.",
+        },
+        6: {
+          title: "N8Effect",
+          badge: "Motor de Audio Modular",
+          description:
+            "Plugin VST modular diseñado para la integración dinámica de efectos y la personalización flexible de cadenas de audio. Permite el reprocesamiento avanzado de señales en tiempo real y la creación inmersiva de atmósferas y paisajes sonoros complejos.",
+        },
+        7: {
+          title: "AbletonEngine",
+          badge: "Generative Music Studio",
+          description:
+            "Pipeline autónomo de composición algorítmica y producción musical generada por IA conectado con Ableton Live. Genera arreglos musicales completos garantizando estrictos criterios de producción profesional, incluyendo validación de sonoridad (LUFS), consistencia tonal, armonía y balance espectral multicanal.",
         },
       },
     },

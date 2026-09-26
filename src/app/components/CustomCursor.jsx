@@ -1,40 +1,33 @@
 "use client";
-import { useEffect } from "react";
-import gsap from "gsap";
+import React from "react";
+import { useCustomCursor } from "../hooks/useCustomCursor";
 
 export default function CustomCursor() {
-  useEffect(() => {
-    const dot = document.querySelector("#cursor-dot");
-    const ring = document.querySelector("#cursor-ring");
-
-    const xMoveDot = gsap.quickTo(dot, "x", { duration: 0 });
-    const yMoveDot = gsap.quickTo(dot, "y", { duration: 0 });
-    const xMoveRing = gsap.quickTo(ring, "x", {
-      duration: 0.3,
-      ease: "power2.out",
-    });
-    const yMoveRing = gsap.quickTo(ring, "y", {
-      duration: 0.3,
-      ease: "power2.out",
-    });
-
-    const handleMouseMove = (e) => {
-      if (dot && ring) {
-        xMoveDot(e.clientX);
-        yMoveDot(e.clientY);
-        xMoveRing(e.clientX);
-        yMoveRing(e.clientY);
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  useCustomCursor();
 
   return (
     <>
-      <div id="cursor-dot"></div>
-      <div id="cursor-ring"></div>
+      <div id="cursor-dot" />
+      <div id="cursor-ring" />
+      <div id="cursor-pointer" aria-hidden="true">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 26 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full drop-shadow-[0_2px_10px_rgba(147,51,234,0.65)]"
+        >
+          <path
+            d="M3 2V21L8 16.5L12.5 24.5L15 23L10.5 15.5H17.5L3 2Z"
+            fill="#9333ea"
+            stroke="#ffffff"
+            strokeWidth="1.8"
+            strokeLinejoin="round"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
     </>
   );
 }

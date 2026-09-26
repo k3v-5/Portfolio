@@ -1,44 +1,54 @@
 "use client";
 import React from "react";
 import { useLanguage } from "../i18n/LanguageContext";
+import SectionVisual from "./SectionVisual";
 
 export default function ExperienceSection() {
   const { t } = useLanguage();
   const experience = t.experience;
 
   return (
-    <section id="experience" className="!min-h-0 !py-8 lg:!py-12">
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 flex justify-end">
-        <div className="content-card reveal-card max-w-2xl w-full">
-          <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
-            {experience.module}
-          </p>
-          <h2 className="text-4xl lg:text-5xl font-black mb-10 text-slate-900 uppercase italic">
-            {experience.heading}
-          </h2>
-          <div className="space-y-10 border-l-4 border-purple-600 pl-8 ml-2 relative">
-            {experience.jobs.map((job, i) => (
-              <div className="relative" key={job.company}>
-                <div
-                  className={`absolute w-4 h-4 rounded-full -left-[40px] top-1 border-4 border-white ${
-                    i === 0 ? "bg-purple-600" : "bg-slate-300"
-                  }`}
-                ></div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  {job.company}
-                </h3>
-                <p className="text-slate-400 font-mono text-[10px] tracking-widest mt-1">
-                  {job.roleDates}
-                </p>
-                <p className="text-slate-500 mt-4 text-sm leading-relaxed">
-                  {job.bullets.map((bullet, bi) => (
-                    <React.Fragment key={bi}>
-                      {bi > 0 && <br />}• {bullet}
-                    </React.Fragment>
-                  ))}
-                </p>
-              </div>
-            ))}
+    <section id="experience" className="min-h-0 py-12 lg:py-20 relative z-10">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="lg:col-span-5 flex justify-center items-center order-2 lg:order-1">
+            <SectionVisual
+              src="/images/img_2wb.webp"
+              alt="Experience visual - Identity 2"
+              direction="left"
+            />
+          </div>
+          <div className="lg:col-span-7 content-card reveal-card w-full order-1 lg:order-2">
+            <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
+              {experience.module}
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-black mb-10 text-slate-900 uppercase italic">
+              {experience.heading}
+            </h2>
+            <div className="space-y-10 border-l-4 border-purple-600 pl-8 ml-2 relative">
+              {experience.jobs.map((job, i) => (
+                <div className="relative" key={job.company}>
+                  <div
+                    className={`absolute w-4 h-4 rounded-full -left-[40px] top-1 border-4 border-white ${
+                      i === 0 ? "bg-purple-600" : "bg-slate-300"
+                    }`}
+                  ></div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    {job.company}
+                  </h3>
+                  <p className="text-slate-400 font-mono text-[10px] tracking-widest mt-1">
+                    {job.roleDates}
+                  </p>
+                  <p className="text-slate-500 mt-4 text-sm leading-relaxed">
+                    {job.bullets.map((bullet, bi) => (
+                      <React.Fragment key={bi}>
+                        {bi > 0 && <br />}• {bullet}
+                      </React.Fragment>
+                    ))}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
