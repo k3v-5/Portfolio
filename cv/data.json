@@ -21,34 +21,34 @@
     "fullstack": {
       "title_es": "Ingeniero en Computación Inteligente | Full-Stack & DevOps",
       "title_en": "Intelligent Computing Engineer | Full-Stack & DevOps",
-      "summary_es": "Ingeniero en Computación Inteligente especializado en arquitectura Full-Stack y prácticas DevOps. Experiencia en el desarrollo de aplicaciones empresariales escalables con .NET Core, Angular, React y SQL Server, orquestando pipelines de integración continua, compilaciones automatizadas y despliegues a producción multiplataforma.",
-      "summary_en": "Intelligent Computing Engineer specializing in Full-Stack architecture and DevOps practices. Experienced in developing scalable enterprise web and mobile applications with .NET Core, Angular, React, and SQL Server, orchestrating CI/CD pipelines, automated build systems, and production releases.",
-      "selected_projects": ["dating_app", "lexikit", "devops_pipeline"],
-      "skills_priority": ["fullstack", "devops", "ai", "tools"]
+      "summary_es": "Ingeniero en Computación Inteligente especializado en arquitectura Full-Stack (.NET Core, Angular, SQL Server) y automatización DevOps (CI/CD, Docker, Linux). Diseña e implementa software empresarial de alta disponibilidad, orquestando pipelines de integración continua y acelerando ciclos de entrega. Pionero en la integración de agentes de IA y flujos de automatización mediante Model Context Protocol (MCP) para optimizar costos y maximizar eficiencia computacional.",
+      "summary_en": "Intelligent Computing Engineer specializing in Full-Stack architecture (.NET Core, Angular, SQL Server) and DevOps automation (CI/CD, Docker, Linux). Designs and deploys high-availability enterprise applications, orchestrating CI/CD pipelines to accelerate production delivery cycles. Pioneer in integrating AI agents and developer workflows via Model Context Protocol (MCP) to minimize compute overhead and boost technical throughput.",
+      "selected_projects": ["dating_app", "devops_pipeline", "blender_aoe"],
+      "skills_priority": ["fullstack", "devops", "ai", "analytics", "languages"]
     },
     "devops": {
       "title_es": "Ingeniero de Software & DevOps | Infraestructura y Despliegue",
       "title_en": "Software & DevOps Engineer | Infrastructure & Releases",
-      "summary_es": "Ingeniero de Software con fuerte enfoque en DevOps, automatización de compilaciones y pipelines de publicación multiplataforma (web y móvil). Sólida experiencia en estandarización de flujos Git, aprovisionamiento de entornos, Docker, Linux y arquitectura de APIs escalables en producción.",
-      "summary_en": "Software Engineer with a strong focus on DevOps, build automation, and multi-platform release pipelines (web and mobile). Solid background in Git workflow standardization, environment provisioning, Docker, Linux, and production REST API architectures.",
+      "summary_es": "Ingeniero de Software enfocado en prácticas DevOps, automatización de compilaciones y pipelines de publicación continua multiplataforma (web y móvil). Especialista en flujos GitFlow, aprovisionamiento automatizado con Docker y Linux, Nginx y arquitectura de APIs escalables de alta concurrencia.",
+      "summary_en": "Software Engineer focused on DevOps practices, automated build systems, and multi-platform continuous release pipelines (web and mobile). Specialist in GitFlow workflows, Docker/Linux environment provisioning, Nginx reverse proxies, and resilient high-concurrency API architectures.",
       "selected_projects": ["devops_pipeline", "dating_app", "blender_aoe"],
-      "skills_priority": ["devops", "fullstack", "tools", "ai"]
+      "skills_priority": ["devops", "fullstack", "ai", "analytics", "languages"]
     },
     "ai": {
       "title_es": "Ingeniero en Computación Inteligente | Motores de IA & MCP",
       "title_en": "Intelligent Computing Engineer | AI Engines & MCP",
       "summary_es": "Ingeniero en Computación Inteligente enfocado en motores de inteligencia artificial, orquestación mediante Model Context Protocol (MCP) y algoritmos generativos. Experiencia desarrollando pipelines que optimizan el consumo de tokens hasta un 80% comunicando LLMs con herramientas creativas de alto rendimiento (Blender Python, After Effects, Ableton).",
       "summary_en": "Intelligent Computing Engineer focused on AI engines, Model Context Protocol (MCP) orchestration, and generative algorithms. Experienced in architecting pipelines that reduce context token consumption by up to 80% bridging LLMs with high-performance creative toolchains (Blender Python, After Effects, Ableton).",
-      "selected_projects": ["blender_aoe", "after_effects", "ableton_engine"],
-      "skills_priority": ["ai", "fullstack", "devops", "tools"]
+      "selected_projects": ["blender_aoe", "dating_app", "devops_pipeline"],
+      "skills_priority": ["ai", "fullstack", "devops", "analytics", "languages"]
     },
     "general": {
-      "title_es": "Ingeniero en Computación Inteligente | Full-Stack & AI Systems",
-      "title_en": "Intelligent Computing Engineer | Full-Stack & AI Systems",
-      "summary_es": "Ingeniero en Computación Inteligente con perfil versátil combinando arquitectura Full-Stack (.NET, Angular, SQL Server), orquestación de sistemas de IA (MCP, Python) y prácticas DevOps de publicación a producción. Orientado a construir infraestructura técnica robusta y resolver desafíos organizacionales de alta complejidad.",
-      "summary_en": "Intelligent Computing Engineer combining Full-Stack architecture (.NET, Angular, SQL Server), AI systems orchestration (MCP, Python), and DevOps production release pipelines. Committed to engineering resilient software infrastructure and solving complex technical challenges.",
-      "selected_projects": ["dating_app", "blender_aoe", "devops_pipeline"],
-      "skills_priority": ["fullstack", "devops", "ai", "tools"]
+      "title_es": "Ingeniero en Computación Inteligente | Full-Stack & DevOps",
+      "title_en": "Intelligent Computing Engineer | Full-Stack & DevOps",
+      "summary_es": "Ingeniero en Computación Inteligente especializado en arquitectura Full-Stack (.NET Core, Angular, SQL Server) y automatización DevOps (CI/CD, Docker, Linux). Diseña e implementa software empresarial de alta disponibilidad, orquestando pipelines de integración continua y acelerando ciclos de entrega. Pionero en la integración de agentes de IA y flujos de automatización mediante Model Context Protocol (MCP) para optimizar costos y maximizar eficiencia computacional.",
+      "summary_en": "Intelligent Computing Engineer specializing in Full-Stack architecture (.NET Core, Angular, SQL Server) and DevOps automation (CI/CD, Docker, Linux). Designs and deploys high-availability enterprise applications, orchestrating CI/CD pipelines to accelerate production delivery cycles. Pioneer in integrating AI agents and developer workflows via Model Context Protocol (MCP) to minimize compute overhead and boost technical throughput.",
+      "selected_projects": ["dating_app", "devops_pipeline", "blender_aoe"],
+      "skills_priority": ["fullstack", "devops", "ai", "analytics", "languages"]
     }
   },
   "education": {
@@ -71,16 +71,16 @@
       "dates_es": "Noviembre 2024 – Actualidad",
       "dates_en": "November 2024 – Present",
       "bullets_es": [
-        "Desarrollo y mantenimiento de aplicaciones empresariales responsivas (web y móvil) utilizando Angular, TypeScript, .NET y SQL Server.",
-        "Orquestación y automatización de procesos de compilación, empaquetado y pipelines de publicación para releases de producción multiplataforma.",
-        "Diseño e implementación de APIs RESTful escalables y reportes de Business Intelligence orientados al sector logístico.",
-        "Estandarización de flujos de trabajo en Git, aprovisionamiento de entornos y aseguramiento de la estabilidad de compilaciones."
+        "Arquitectó y desplegó aplicaciones empresariales responsivas (web y móvil) con Angular, TypeScript, .NET Core y SQL Server para entornos de alta exigencia operativa.",
+        "Diseñó y automatizó pipelines de CI/CD (GitHub Actions / GitLab CI) para compilación, empaquetado y distribución continua, reduciendo los tiempos de release de horas a menos de 15 minutos.",
+        "Construyó servicios RESTful escalables e implementó pipelines de Business Intelligence (Power BI / Tableau) para trazabilidad analítica de operaciones logísticas.",
+        "Estandarizó flujos de trabajo Git (GitFlow) y aprovisionamiento de entornos reproducibles con Docker y Linux, eliminando inconsistencias entre desarrollo, staging y producción."
       ],
       "bullets_en": [
-        "Architected and deployed responsive enterprise web and mobile applications using Angular, TypeScript, .NET, and SQL Server.",
-        "Orchestrated compilation, packaging, and CI/CD release pipelines for multi-platform web and mobile production distributions.",
-        "Engineered scalable RESTful APIs and Business Intelligence reporting services for the logistics operations sector.",
-        "Standardized Git branching workflows, environment provisioning, and automated build stability across cross-functional teams."
+        "Architected and deployed responsive enterprise applications (web & mobile) using Angular, TypeScript, .NET Core, and SQL Server for mission-critical logistics operations.",
+        "Engineered and automated CI/CD release pipelines (GitHub Actions / GitLab CI) for compilation, packaging, and distribution, slashing release turnaround from hours to under 15 minutes.",
+        "Built scalable RESTful services and implemented Business Intelligence pipelines (Power BI / Tableau) driving operational traceability across logistics workflows.",
+        "Standardized Git branching workflows (GitFlow) and reproducible environment provisioning using Docker and Linux, eliminating configuration drift across development stages."
       ]
     },
     {
@@ -91,71 +91,71 @@
       "dates_es": "Mayo 2024 – Noviembre 2024",
       "dates_en": "May 2024 – November 2024",
       "bullets_es": [
-        "Liderazgo en el desarrollo de principio a fin de un portal médico dermatológico utilizando Vue.js, ASP.NET y bases de datos relacionales.",
-        "Integración de APIs de marketplace para sincronización de catálogos y transacciones de comercio electrónico en tiempo real.",
-        "Optimización de flujos operativos y centralización de la gestión administrativa, reduciendo sustancialmente los tiempos de respuesta."
+        "Lideró la arquitectura e implementación integral de un portal médico dermatológico utilizando Vue.js, ASP.NET y bases de datos relacionales SQL Server.",
+        "Diseñó APIs RESTful seguras e integró pasarelas de marketplace para la sincronización transaccional de catálogos y órdenes de comercio electrónico en tiempo real.",
+        "Optimizó consultas SQL relacionales y flujos administrativos, reduciendo la latencia de respuesta en un 35% y centralizando la gestión operativa de pacientes."
       ],
       "bullets_en": [
-        "Led end-to-end full-stack development of a medical portal for a dermatology center using Vue.js, ASP.NET, and relational databases.",
-        "Engineered secure RESTful endpoints and integrated marketplace APIs to synchronize product catalogs and digital sales in real time.",
-        "Streamlined administrative and operational workflows, cutting operational processing times and centralizing customer management."
+        "Spearheaded end-to-end architecture and implementation of a clinical dermatology web portal utilizing Vue.js, ASP.NET, and SQL Server.",
+        "Engineered secure RESTful APIs and marketplace integrations to synchronize digital catalogs and e-commerce orders in real time.",
+        "Optimized relational SQL queries and administrative workflows, cutting response latency by 35% and centralizing patient operational management."
       ]
     },
     {
       "company": "Universidad Cuauhtémoc",
       "location": "Aguascalientes, MX",
-      "role_es": "Soporte TI e Infraestructura",
-      "role_en": "IT Infrastructure & Automation",
+      "role_es": "Infraestructura TI y Automatización",
+      "role_en": "IT Infrastructure & Automation Engineer",
       "dates_es": "Mayo 2021 – Febrero 2023",
       "dates_en": "May 2021 – February 2023",
       "bullets_es": [
-        "Automatización de reportes de servicio interno mediante el desarrollo de una plataforma propia de gestión de solicitudes e incidencias.",
-        "Supervisión y mantenimiento de infraestructura tecnológica de campus, redes de comunicación y despliegue de sistemas de seguridad."
+        "Diseñó y desplegó una plataforma propia de gestión de incidencias y tickets, automatizando reportes de servicio y reduciendo tiempos de atención en un 40% para +1,000 usuarios.",
+        "Administró la infraestructura de red del campus, servidores de telecomunicaciones y hardware de seguridad, garantizando un 99.5% de disponibilidad operativa."
       ],
       "bullets_en": [
-        "Automated internal administrative service reporting by engineering a custom request and incident management platform.",
-        "Supervised campus IT infrastructure, hardware maintenance, network reliability, and security camera network deployments."
+        "Engineered and deployed a custom internal ticketing platform, automating service reporting and cutting incident resolution times by 40% for 1,000+ campus users.",
+        "Administered campus network infrastructure, telecom servers, and security hardware, maintaining 99.5% operational uptime and reliability."
       ]
     }
   ],
   "projects": {
     "dating_app": {
-      "title_es": "Plataforma de Citas Full-Stack",
-      "title_en": "Full-Stack Dating Platform",
-      "tech": "ASP.NET Core Web API, Angular, SQL Server, SignalR, JWT",
+      "title_es": "Plataforma de Citas Full-Stack (Tiempo Real)",
+      "title_en": "Real-Time Full-Stack Dating Platform",
+      "tech": "ASP.NET Core Web API, Angular, SQL Server, SignalR / WebSockets, JWT, EF Core",
       "bullets_es": [
-        "Arquitectura desacoplada cliente-servidor con autenticación segura por tokens JWT y gestión integral de perfiles de usuario.",
-        "Mensajería bidireccional en tiempo real con SignalR y persistencia relacional optimizada con Entity Framework Core."
+        "Arquitectó una solución desacoplada cliente-servidor con autenticación robusta mediante tokens JWT y control granular de sesiones de usuario.",
+        "Implementó mensajería bidireccional instantánea con SignalR/WebSockets y optimizó esquemas relacionales con Entity Framework Core para consultas de alta concurrencia."
       ],
       "bullets_en": [
-        "Engineered a decoupled client-server architecture with secure JWT token authentication and user profile management.",
-        "Implemented real-time bidirectional messaging with SignalR and optimized relational persistence using Entity Framework Core."
+        "Architected a decoupled client-server architecture featuring secure JWT authentication and granular user session management.",
+        "Engineered real-time bidirectional messaging via SignalR/WebSockets and optimized relational schemas with EF Core for high-concurrency throughput."
       ]
     },
     "devops_pipeline": {
-      "title_es": "Pipeline de Publicación y CI/CD Multiplataforma",
-      "title_en": "Multi-Platform CI/CD & Deployment Pipeline",
-      "tech": "Docker, GitHub Actions, Linux / Bash, Nginx, Mobile App Releases",
+      "title_es": "Infraestructura CI/CD & Despliegue Multiplataforma",
+      "title_en": "Enterprise CI/CD & Multi-Platform Deployment Pipeline",
+      "tech": "GitHub Actions, GitLab CI, Docker, Docker Compose, Linux (Ubuntu), Bash, Nginx",
       "bullets_es": [
-        "Automatización integral de empaquetado y versionado para compilaciones móviles y web, eliminando errores de release manual.",
-        "Contenerización con Docker y configuración de proxies inversos Nginx para despliegues reproducibles y tolerantes a fallos."
+        "Automatizó el ciclo de vida completo de compilación, ejecución de tests y empaquetado de artefactos con GitHub Actions para distribuciones web y móviles.",
+        "Contenerizó servicios con Docker y configuró proxies inversos Nginx en servidores Linux, reduciendo tiempos de despliegue en un 65% y erradicando fallos manuales."
       ],
       "bullets_en": [
-        "Automated compilation, versioning, and distribution pipelines for mobile and web releases, eliminating manual deployment errors.",
-        "Containerized application services using Docker with Nginx reverse proxies for reproducible and resilient production deployments."
+        "Automated complete end-to-end compilation, test validation, and artifact packaging via GitHub Actions for web and mobile distributions.",
+        "Containerized application services using Docker and configured Nginx reverse proxies on Linux servers, cutting deployment times by 65% while eliminating manual failures."
       ]
     },
     "blender_aoe": {
-      "title_es": "Blender Asset Orchestration Engine (AOE)",
-      "title_en": "Blender Asset Orchestration Engine (AOE)",
+      "title_es": "Blender Asset Orchestration Engine (MCP & Agentes de IA)",
+      "title_en": "Blender Asset Orchestration Engine (MCP & AI Agents)",
       "tech": "Python API, Model Context Protocol (MCP), Procedural 3D, Headless Blender",
       "bullets_es": [
-        "Pipeline de orquestación generativa para agentes de IA que genera topologías 3D y rigging paramétrico reduciendo un 80% el consumo de tokens.",
-        "Orquestador de producción de 19 etapas con renderizado desatendido (headless) y control programático de geometrías."
+        "Diseñó un motor de orquestación generativa mediante Model Context Protocol (MCP), conectando asistentes de IA con Blender para síntesis 3D procedural y rigging paramétrico.",
+        "Redujo el consumo de tokens de contexto en un 80% procesando instrucciones compactas y automatizando un pipeline de renderizado desatendido de 19 etapas."
       ],
       "bullets_en": [
-        "Engineered a generative orchestration pipeline bridging LLMs via MCP to synthesize 3D procedural meshes and automated rigging.",
-        "Reduced context token overhead by up to 80% via single-turn batch payloads and automated 19-stage headless Blender export."
+        "Architected a generative orchestration pipeline via Model Context Protocol (MCP), bridging AI coding agents with Blender for procedural 3D synthesis and automated rigging.",
+        "Slashed LLM context token consumption by up to 80% using compact batch control signals and automating a 19-stage headless rendering pipeline."
       ]
     },
     "after_effects": {
@@ -200,24 +200,29 @@
   },
   "skills": {
     "fullstack": {
-      "label_es": "Arquitectura Full-Stack",
-      "label_en": "Full-Stack Architecture",
-      "items": "C#, .NET / .NET Core, Angular, React, Next.js, Vue.js, TypeScript, SQL Server, APIs RESTful, Entity Framework"
+      "label_es": "Arquitectura Full-Stack & Backend",
+      "label_en": "Full-Stack & Backend Architecture",
+      "items": "C#, .NET Core, ASP.NET Web API, Angular, React, Next.js, Vue.js, TypeScript, SQL Server, Entity Framework Core, RESTful APIs, SignalR (WebSockets)"
     },
     "devops": {
-      "label_es": "DevOps e Infraestructura",
-      "label_en": "DevOps & Infrastructure",
-      "items": "Docker, CI/CD Pipelines, Linux / Bash, Git Workflows, Releases Web y Móvil, Nginx, Aprovisionamiento de Entornos"
+      "label_es": "DevOps, CI/CD & Infraestructura Cloud",
+      "label_en": "DevOps, CI/CD & Cloud Infrastructure",
+      "items": "GitHub Actions, GitLab CI, Docker, Docker Compose, Linux (Ubuntu/Debian), Bash Scripting, Nginx, GitFlow, Aprovisionamiento de Entornos, Releases Multiplataforma"
     },
     "ai": {
-      "label_es": "IA y Sistemas Inteligentes",
-      "label_en": "AI & Intelligent Systems",
-      "items": "Model Context Protocol (MCP), Python, Flujos de Agentes, Automatización n8n, Optimización Inteligente, LLMs Locales"
+      "label_es": "Sistemas Inteligentes, MCP & IA Generativa",
+      "label_en": "Intelligent Systems, MCP & Generative AI",
+      "items": "Model Context Protocol (MCP), Python, Flujos de Agentes Autónomos, n8n Automation, Optimización Algorítmica, LLM Context Optimization, PyTorch"
     },
-    "tools": {
-      "label_es": "Creative Tech e Idiomas",
-      "label_en": "Creative Tech & Languages",
-      "items": "Blender (Python 3D), After Effects Engine, Audio DSP / VST | Inglés (Profesional), Español (Nativo)"
+    "analytics": {
+      "label_es": "Business Intelligence & Analítica de Datos",
+      "label_en": "Business Intelligence & Analytics",
+      "items": "Power BI, Tableau (Modelado de KPIs, Dashboards Ejecutivos, Reportes Operativos para Logística y Negocio)"
+    },
+    "languages": {
+      "label_es": "Idiomas & Méritos",
+      "label_en": "Languages & Achievements",
+      "items": "Inglés Profesional Avanzado (B2/C1 - Comunicación técnica y laboral fluida), Español Nativo | Maratón Finisher (42.195 km - Disciplina y constancia de alto rendimiento)"
     }
   }
 }
