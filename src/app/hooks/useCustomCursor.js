@@ -11,10 +11,9 @@ import gsap from "gsap";
  */
 export function useCustomCursor() {
   useEffect(() => {
-    // Skip on touch-only mobile devices or if user prefers reduced motion
+    // Only skip on actual touch-only mobile devices
     if (typeof window === "undefined") return;
     if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const dot = document.querySelector("#cursor-dot");
     const ring = document.querySelector("#cursor-ring");
