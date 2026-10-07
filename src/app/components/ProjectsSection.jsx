@@ -45,7 +45,7 @@ const ProjectsData = [
   },
   {
     id: 1,
-    image: "/images/projects/dating-app/principal.jpg",
+    image: "/images/projects/dating-app/principal.webp",
     tagIds: ["all", "fullstack"],
     gitUrl: "https://github.com/k3v-5/CitasApp",
     previewUrl: "https://github.com/k3v-5/CitasApp",
