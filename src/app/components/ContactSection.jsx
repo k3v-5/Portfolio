@@ -34,6 +34,7 @@ export default function ContactSection() {
           onCopy={() => copy(CONTACT_EMAIL)}
           copyHint={contact.copyHint}
           copiedHint={contact.copiedHint}
+          openMailLabel={contact.openMail}
         />
 
         <SocialLinks label={contact.otherOptions} />

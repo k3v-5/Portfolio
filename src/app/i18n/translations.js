@@ -13,6 +13,8 @@ export const translations = {
       projects: "// Projects",
       cv: "// CV",
       contact: "Contact.me",
+      menu: "Menu",
+      close: "Close",
     },
     hero: {
       eyebrow: ">> INTELLIGENT COMPUTING ENGINEER",
@@ -237,6 +239,8 @@ export const translations = {
       body: "Whether it's a technical challenge, a business inquiry, or you just want to share a good book recommendation—my inbox is always open.",
       copyHint: "Click to copy",
       copiedHint: "Copied to clipboard",
+      openMail: "Open in mail client",
+      backToTop: "Back to top",
       otherOptions: "// You could also try some other options:",
     },
     cvModal: {
@@ -269,6 +273,8 @@ export const translations = {
       projects: "// Proyectos",
       cv: "// CV",
       contact: "Contact.me",
+      menu: "Menú",
+      close: "Cerrar",
     },
     hero: {
       eyebrow: ">> INGENIERO EN CÓMPUTO INTELIGENTE",
@@ -493,6 +499,8 @@ export const translations = {
       body: "Ya sea un desafío técnico, una consulta de negocio, o simplemente quieras recomendarme un buen libro—mi bandeja de entrada siempre está abierta.",
       copyHint: "Clic para copiar",
       copiedHint: "Copiado al portapapeles",
+      openMail: "Abrir en tu correo",
+      backToTop: "Volver arriba",
       otherOptions: "// También puedes probar otras opciones:",
     },
     cvModal: {

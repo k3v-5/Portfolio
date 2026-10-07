@@ -45,49 +45,61 @@ export function useScrollAnimations({
     gsap.ticker.add(updateLenis);
     gsap.ticker.lagSmoothing(0);
 
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const ctxGsap = gsap.context(() => {
       // SVG path animation
       const path = document.querySelector("#scroll-path");
       if (path && typeof path.getTotalLength === "function") {
         const pathLength = path.getTotalLength();
 
-        gsap.set(path, {
-          strokeDasharray: pathLength,
-          strokeDashoffset: pathLength,
-        });
+        if (prefersReducedMotion) {
+          gsap.set(path, { strokeDasharray: "none", strokeDashoffset: 0 });
+        } else {
+          gsap.set(path, {
+            strokeDasharray: pathLength,
+            strokeDashoffset: pathLength,
+          });
 
-        gsap.to(path, {
-          strokeDashoffset: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".scroll-container",
-            start: pathStart,
-            end: pathEnd,
-            scrub: typeof scrub === "number" ? scrub : 0.65,
-            invalidateOnRefresh: true,
-          },
-        });
+          gsap.to(path, {
+            strokeDashoffset: 0,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".scroll-container",
+              start: pathStart,
+              end: pathEnd,
+              scrub: typeof scrub === "number" ? scrub : 0.65,
+              invalidateOnRefresh: true,
+            },
+          });
+        }
       }
 
       // Card reveal animations
       if (revealCards) {
-        gsap.utils.toArray(".reveal-card").forEach((card) => {
-          gsap.fromTo(
-            card,
-            { opacity: 0, y: 30 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 95%",
-                toggleActions: "play none none reverse",
+        if (prefersReducedMotion) {
+          gsap.set(".reveal-card", { opacity: 1, y: 0 });
+        } else {
+          gsap.utils.toArray(".reveal-card").forEach((card) => {
+            gsap.fromTo(
+              card,
+              { opacity: 0, y: 30 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 95%",
+                  toggleActions: "play none none reverse",
+                },
               },
-            },
-          );
-        });
+            );
+          });
+        }
       }
     }, containerRef);
 

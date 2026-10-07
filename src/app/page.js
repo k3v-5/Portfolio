@@ -33,6 +33,10 @@ const CvModal = dynamic(
   () => import("./components/cv/CvModal"),
   { ssr: false }
 );
+const ScrollProgress = dynamic(
+  () => import("./components/ScrollProgress"),
+  { ssr: false }
+);
 
 export default function Home() {
   const { t } = useLanguage();
@@ -60,6 +64,7 @@ export default function Home() {
 
   return (
     <div ref={containerRef}>
+      <ScrollProgress />
       <MatrixBackground />
       <CustomCursor />
       <Navbar onOpenCv={() => setIsCvOpen(true)} />
