@@ -2,7 +2,7 @@
 import React from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 
-export default function Navbar() {
+export default function Navbar({ onOpenCv }) {
   const { lang, toggleLang, t } = useLanguage();
 
   return (
@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="text-xl font-black text-slate-900 uppercase tracking-tighter italic">
           <a href="#kevin-garrido">Kevin Garrido</a>
         </div>
-        <div className="hidden md:flex space-x-10 text-[10px] font-mono font-bold tracking-[0.4em] uppercase">
+        <div className="hidden md:flex space-x-10 text-[10px] font-mono font-bold tracking-[0.4em] uppercase items-center">
           <a
             href="#about-me"
             className="hover:text-purple-600 transition-colors text-slate-400"
@@ -42,8 +42,23 @@ export default function Navbar() {
           >
             {t.nav.projects}
           </a>
+          <button
+            type="button"
+            onClick={onOpenCv}
+            className="hover:text-purple-600 transition-colors text-slate-400"
+          >
+            {t.nav.cv || "// CV"}
+          </button>
         </div>
-        <div className="flex items-center gap-3 md:gap-5">
+        <div className="flex items-center gap-2.5 md:gap-4">
+          <button
+            type="button"
+            onClick={onOpenCv}
+            className="flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-widest text-purple-700 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-400 rounded-full px-3 py-1.5 transition-colors uppercase shadow-sm"
+            title="Curriculum Vitae"
+          >
+            <span>CV</span>
+          </button>
           <button
             onClick={toggleLang}
             className="flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-widest text-slate-400 hover:text-purple-600 transition-colors uppercase border border-slate-200 hover:border-purple-300 rounded-full px-3 py-1.5"
@@ -55,7 +70,7 @@ export default function Navbar() {
           </button>
           <a
             href="#contact"
-            className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-[10px] font-mono font-bold hover:bg-purple-600 transition uppercase shadow-xl"
+            className="bg-slate-900 text-white px-5 md:px-6 py-2.5 rounded-full text-[10px] font-mono font-bold hover:bg-purple-600 transition uppercase shadow-xl"
           >
             {t.nav.contact}
           </a>

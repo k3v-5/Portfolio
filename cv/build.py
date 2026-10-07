@@ -153,6 +153,15 @@ def main():
                 generated.append((filename, f"{kb:.1f} KB", p, l.upper()))
                 print(f"  [OK] {filename:<38} [{kb:5.1f} KB] ({p} / {l.upper()})")
 
+    # Copiar también a public/cv/ para acceso directo en web
+    public_cv_dir = root_dir / "public" / "cv"
+    public_cv_dir.mkdir(parents=True, exist_ok=True)
+    import shutil
+    for fn, _, _, _ in generated:
+        src_f = dist_dir / fn
+        if src_f.exists():
+            shutil.copyfile(src_f, public_cv_dir / fn)
+
     # Si se solicita publish o por defecto para general_es, copiar a public/cv.pdf
     public_cv = root_dir / "public" / "cv.pdf"
     if args.publish or not public_cv.exists():
@@ -162,12 +171,11 @@ def main():
             preferred = dist_dir / "Kevin_Garrido_CV_GENERAL_ES.pdf"
         
         if preferred.exists():
-            import shutil
             shutil.copyfile(preferred, public_cv)
             print(f"\n  [PUBLICADO] Copiado a portfolio: public/cv.pdf ({preferred.name})")
 
     print("\n========================================================")
-    print(f" Total generados: {len(generated)} PDFs listos en cv/dist/")
+    print(f" Total generados: {len(generated)} PDFs listos en cv/dist/ y public/cv/")
     print("========================================================\n")
 
 if __name__ == "__main__":

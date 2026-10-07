@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "./components/Navbar";
 import Herosection from "./components/Herosection";
@@ -29,10 +29,28 @@ const SignalLogSection = dynamic(
     loading: () => <div className="min-h-[120px]" />,
   }
 );
+const CvModal = dynamic(
+  () => import("./components/cv/CvModal"),
+  { ssr: false }
+);
 
 export default function Home() {
   const { t } = useLanguage();
   const containerRef = useRef(null);
+  const [isCvOpen, setIsCvOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#cv") {
+      setIsCvOpen(true);
+    }
+    const handleHashChange = () => {
+      if (window.location.hash === "#cv") {
+        setIsCvOpen(true);
+      }
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   useScrollAnimations({
     containerRef,
@@ -44,7 +62,8 @@ export default function Home() {
     <div ref={containerRef}>
       <MatrixBackground />
       <CustomCursor />
-      <Navbar />
+      <Navbar onOpenCv={() => setIsCvOpen(true)} />
+      <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
 
       <div className="scroll-container pb-24 lg:pb-32">
         {/* Línea SVG de fondo fluida y sincronizada con el recorrido de todas las secciones */}
@@ -66,9 +85,9 @@ export default function Home() {
           </svg>
         </div>
 
-        <Herosection />
+        <Herosection onOpenCv={() => setIsCvOpen(true)} />
         <AboutSection />
-        <ExperienceSection />
+        <ExperienceSection onOpenCv={() => setIsCvOpen(true)} />
         <SkillsSection />
 
         {/* The Creative Synthesis: Hito visual autónomo entre Skills y Lab */}

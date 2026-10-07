@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+import { ArrowDownTrayIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
 import { useLanguage } from "../i18n/LanguageContext";
 
-export default function Herosection() {
+export default function Herosection({ onOpenCv }) {
   const { t } = useLanguage();
 
   return (
@@ -41,13 +41,21 @@ export default function Herosection() {
           >
             <span>{t.hero.ctaLab}</span>
           </a>
+          <button
+            type="button"
+            onClick={onOpenCv}
+            className="inline-flex items-center gap-2 bg-purple-50 hover:bg-purple-100 border-2 border-purple-200 hover:border-purple-600 text-purple-700 font-mono text-[11px] uppercase font-bold tracking-widest px-7 py-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_25px_rgba(147,51,234,0.25)] transform hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <DocumentTextIcon className="w-4 h-4 text-purple-600" />
+            <span>{t.hero.ctaViewCv || "Ver CV"}</span>
+          </button>
           <a
             href="/cv.pdf"
             download="Kevin_Garrido_CV.pdf"
-            className="inline-flex items-center gap-2 bg-purple-50 hover:bg-purple-100 border-2 border-purple-200 hover:border-purple-600 text-purple-700 font-mono text-[11px] uppercase font-bold tracking-widest px-7 py-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_25px_rgba(147,51,234,0.25)] transform hover:-translate-y-0.5 active:translate-y-0"
+            title={t.hero.ctaCv || "Descargar CV (.pdf)"}
+            className="inline-flex items-center justify-center bg-white hover:bg-purple-50 border-2 border-slate-200 hover:border-purple-600 text-slate-700 hover:text-purple-700 font-mono text-[11px] uppercase font-bold p-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(147,51,234,0.15)] transform hover:-translate-y-0.5 active:translate-y-0"
           >
             <ArrowDownTrayIcon className="w-4 h-4 text-purple-600" />
-            <span>{t.hero.ctaCv || "Descargar CV"}</span>
           </a>
           <a
             href="#contact"

@@ -3,7 +3,7 @@ import React from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import SectionVisual from "./SectionVisual";
 
-export default function ExperienceSection() {
+export default function ExperienceSection({ onOpenCv }) {
   const { t } = useLanguage();
   const experience = t.experience;
 
@@ -48,6 +48,19 @@ export default function ExperienceSection() {
                   </p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-10 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+                {"// ATS-FRIENDLY OXFORD FORMAT"}
+              </span>
+              <button
+                type="button"
+                onClick={onOpenCv}
+                className="inline-flex items-center gap-2 text-xs font-mono font-bold text-purple-600 hover:text-purple-700 uppercase tracking-widest hover:underline"
+              >
+                <span>{experience.viewFullCv || "Ver CV Completo (Formato Oxford ATS) →"}</span>
+              </button>
             </div>
           </div>
         </div>

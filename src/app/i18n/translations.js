@@ -11,6 +11,7 @@ export const translations = {
       skills: "// Skills",
       lab: "// Lab",
       projects: "// Projects",
+      cv: "// CV",
       contact: "Contact.me",
     },
     hero: {
@@ -19,6 +20,7 @@ export const translations = {
       ctaProjects: "Explore Projects",
       ctaLab: "View LAB",
       ctaContact: "Get in Touch",
+      ctaViewCv: "View CV",
       ctaCv: "Download CV",
     },
     about: {
@@ -64,6 +66,7 @@ export const translations = {
           ],
         },
       ],
+      viewFullCv: "View Full Resume (Oxford ATS)",
     },
     skills: {
       module: "// MODULE_03: TECH_STACK",
@@ -236,6 +239,31 @@ export const translations = {
       copiedHint: "Copied to clipboard",
       otherOptions: "// You could also try some other options:",
     },
+    cvModal: {
+      badge: "OXFORD ATS FORMAT // 1-PAGE TAILORED RESUME",
+      title: "Curriculum Vitae",
+      subtitle: "Tailored by vacancy profile with strict single-page Oxford layout and 100% ATS score compliance.",
+      profiles: {
+        fullstack: "Full-Stack & DevOps",
+        devops: "DevOps & Cloud",
+        ai: "AI & MCP Engines",
+        general: "General (Intelligent Comp.)",
+      },
+      actions: {
+        downloadPdf: "Download PDF",
+        openPdf: "Open in Tab",
+        copyText: "Copy ATS Text",
+        copied: "Copied to Clipboard!",
+        close: "Close",
+      },
+      sections: {
+        education: "EDUCATION",
+        experience: "PROFESSIONAL EXPERIENCE",
+        projects: "SELECTED PROJECTS",
+        skills: "TECHNICAL SKILLS",
+      },
+      atsNotice: "Strict 1-page Oxford layout calibrated for high ATS parsing accuracy and instant recruiter readability.",
+    },
     footer: "Kevin Garrido // Intelligent Computing & DevOps // 2026",
   },
   es: {
@@ -245,6 +273,7 @@ export const translations = {
       skills: "// Skills",
       lab: "// Lab",
       projects: "// Proyectos",
+      cv: "// CV",
       contact: "Contact.me",
     },
     hero: {
@@ -253,6 +282,7 @@ export const translations = {
       ctaProjects: "Explorar Proyectos",
       ctaLab: "Ver LAB",
       ctaContact: "Conectar",
+      ctaViewCv: "Ver CV",
       ctaCv: "Descargar CV",
     },
     about: {
@@ -298,6 +328,7 @@ export const translations = {
           ],
         },
       ],
+      viewFullCv: "Ver CV Completo (Formato Oxford ATS)",
     },
     skills: {
       module: "// MODULE_03: TECH_STACK",
@@ -469,6 +500,31 @@ export const translations = {
       copyHint: "Clic para copiar",
       copiedHint: "Copiado al portapapeles",
       otherOptions: "// También puedes probar otras opciones:",
+    },
+    cvModal: {
+      badge: "FORMATO OXFORD ATS // 1 PÁGINA CALIBRADA",
+      title: "Curriculum Vitae",
+      subtitle: "Perfilado por tipo de vacante con maquetación estricta Oxford de una página y 100% amigable con ATS.",
+      profiles: {
+        fullstack: "Full-Stack & DevOps",
+        devops: "DevOps & Cloud",
+        ai: "IA & Motores MCP",
+        general: "General (Cómputo Inteligente)",
+      },
+      actions: {
+        downloadPdf: "Descargar PDF",
+        openPdf: "Abrir en Pestaña",
+        copyText: "Copiar Texto ATS",
+        copied: "¡Copiado al Portapapeles!",
+        close: "Cerrar",
+      },
+      sections: {
+        education: "EDUCACIÓN",
+        experience: "EXPERIENCIA PROFESIONAL",
+        projects: "PROYECTOS SELECCIONADOS",
+        skills: "HABILIDADES TÉCNICAS",
+      },
+      atsNotice: "Formato Oxford de 1 página estricta, optimizado para pasar filtros automáticos de ATS y revisión técnica ágil.",
     },
     footer: "Kevin Garrido // Intelligent Computing & DevOps // 2026",
   },
