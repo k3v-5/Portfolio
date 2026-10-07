@@ -64,9 +64,48 @@ export const metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Kevin Garrido",
+  jobTitle: "Ingeniero en Computación Inteligente",
+  url: "https://kevingarrido.vercel.app",
+  sameAs: [
+    "https://www.linkedin.com/in/kdgs7/",
+    "https://github.com/k3v-5"
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "RAINDE"
+  },
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "Universidad Autónoma de Aguascalientes"
+  },
+  knowsAbout: [
+    "Full-Stack Architecture",
+    ".NET Core",
+    "Angular",
+    "SQL Server",
+    "DevOps",
+    "CI/CD",
+    "Docker",
+    "Model Context Protocol (MCP)",
+    "Inteligencia Artificial"
+  ]
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${firaCode.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://i.scdn.co" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://i.scdn.co" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className={jakarta.className}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
