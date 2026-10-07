@@ -11,15 +11,21 @@ export function useMatrixRain(canvasRef) {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
     let animId;
     let lastTime = 0;
     const intervalMs = 80;
+    const fontSize = 14;
+    let columns = 0;
+    let drops = [];
 
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    handleResize = () => {
+    const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       columns = canvas.width / fontSize;
