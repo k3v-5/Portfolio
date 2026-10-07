@@ -1,8 +1,9 @@
-<!-- SIDE_TEXT: MARATHON -->
+<!-- SIDE_TEXT: 42.195 KM // FINISHER -->
 
-## 🏃 Marathon Journey
+## 🏅 42K Marathon Finisher
 
-- **Completed:** 17 km (3 months)
-- **Goal:** 42 km (next 4 months)
+- **Distance:** 42.195 km (Full Marathon)
+- **Status:** Goal Achieved // Finisher 🎯
+- **Mindset:** Extreme discipline, stamina & long-range engineering focus.
 
-> Progress isn’t fast, but it’s happening. 🔥
+> *"Long-distance endurance translates directly into engineering: deep focus, patience through friction, and delivering across the finish line."* ⚡

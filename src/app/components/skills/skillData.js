@@ -244,6 +244,60 @@ export const SKILL_ICONS = {
       </svg>
     ),
   },
+  docker: {
+    color: "#2496ED",
+    hoverBg: "rgba(36, 150, 237, 0.08)",
+    hoverBorder: "rgba(36, 150, 237, 0.4)",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.186.185.186m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.714h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.186.186 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.929 0h2.12a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.136a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185m-2.928 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.208a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185m21.642-.288c-.378-.258-1.503-.352-2.31-.082-.14-.49-.413-.91-.796-1.229-.53-.44-1.23-.623-1.97-.502-.33.053-.65.176-.94.36-.18-.46-.49-.85-.89-1.12-.55-.38-1.25-.51-1.96-.36l-.08.02c-.08-.02-.17-.03-.25-.03h-2.48a.25.25 0 00-.25.25v2.85H1.47a.47.47 0 00-.47.47c0 2.22.79 4.3 2.22 5.86C5.07 22.06 7.6 23 10.45 23c6.91 0 11.83-4.4 12.38-10.87.53-.16 1.02-.45 1.4-.87.41-.46.59-1.05.51-1.63a1.9 1.9 0 00-.89-1.07" />
+      </svg>
+    ),
+  },
+  cicd: {
+    color: "#00B4D8",
+    hoverBg: "rgba(0, 180, 216, 0.08)",
+    hoverBorder: "rgba(0, 180, 216, 0.4)",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <circle cx="12" cy="12" r="3" />
+        <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+        <path d="M21 3v5h-5" />
+        <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+        <path d="M3 21v-5h5" />
+      </svg>
+    ),
+  },
+  git: {
+    color: "#F05032",
+    hoverBg: "rgba(240, 80, 50, 0.08)",
+    hoverBorder: "rgba(240, 80, 50, 0.4)",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M21.62 10.44L13.56 2.38a2.53 2.53 0 00-3.58 0L7.61 4.75l2.25 2.25a2.12 2.12 0 012.7 2.7l2.17 2.17a2.12 2.12 0 11-1.28 1.28l-2.02-2.02v4.54a2.12 2.12 0 11-1.81 0V9.45a2.12 2.12 0 01-1.12-2.77L6.23 4.41 2.38 8.26a2.53 2.53 0 000 3.58l8.06 8.06a2.53 2.53 0 003.58 0l7.6-7.6a2.53 2.53 0 000-3.87z" />
+      </svg>
+    ),
+  },
+  audiodsp: {
+    color: "#A855F7",
+    hoverBg: "rgba(168, 85, 247, 0.08)",
+    hoverBorder: "rgba(168, 85, 247, 0.4)",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" {...props}>
+        <path d="M2 10v4M6 6v12M10 3v18M14 7v10M18 5v14M22 10v4" />
+      </svg>
+    ),
+  },
+  nginx: {
+    color: "#009639",
+    hoverBg: "rgba(0, 150, 57, 0.08)",
+    hoverBorder: "rgba(0, 150, 57, 0.4)",
+    icon: (props) => (
+      <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M12 1.5L2.5 7v10L12 22.5 21.5 17V7L12 1.5zm6.5 13.9l-2.7-4.1v4.1H14V8.6h1.8l2.7 4.1V8.6h1.8v6.8h-1.8zm-7.3-6.8H9.4v4.1l-2.7-4.1H4.9v6.8h1.8v-4.1l2.7 4.1h1.8V8.6z" />
+      </svg>
+    ),
+  },
 };
 
 /**
@@ -311,6 +365,24 @@ export function getSkillData(skillName = "") {
   }
   if (normalized.includes("api") || normalized.includes("rest")) {
     return SKILL_ICONS.restapi;
+  }
+  if (normalized.includes("docker")) {
+    return SKILL_ICONS.docker;
+  }
+  if (normalized.includes("ci/cd") || normalized.includes("pipeline")) {
+    return SKILL_ICONS.cicd;
+  }
+  if (normalized.includes("git")) {
+    return SKILL_ICONS.git;
+  }
+  if (normalized.includes("nginx")) {
+    return SKILL_ICONS.nginx;
+  }
+  if (normalized.includes("audio") || normalized.includes("dsp") || normalized.includes("vst")) {
+    return SKILL_ICONS.audiodsp;
+  }
+  if (normalized.includes("agent") || normalized.includes("llm")) {
+    return SKILL_ICONS.mcp;
   }
 
   // Fallback

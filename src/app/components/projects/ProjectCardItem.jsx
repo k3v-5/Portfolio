@@ -7,6 +7,7 @@ import {
   EyeIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
+import AudioDemoPlayer from "./AudioDemoPlayer";
 
 /**
  * Project Card Item Component
@@ -141,6 +142,15 @@ export default function ProjectCardItem({
         >
           {isExpanded ? showLessLabel : readMoreLabel}
         </button>
+      )}
+
+      {/* Reproductor de Demo de Audio para proyectos con audio */}
+      {project.audioDemo && (
+        <AudioDemoPlayer
+          src={project.audioDemo}
+          label={copy?.audioDemoLabel}
+          fallbackNote={copy?.audioFallbackNote}
+        />
       )}
 
       <p className="text-slate-400 font-mono text-[9px] mt-6 uppercase tracking-widest">

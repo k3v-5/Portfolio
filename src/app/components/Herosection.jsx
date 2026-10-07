@@ -42,12 +42,13 @@ export default function Herosection() {
             <span>{t.hero.ctaLab}</span>
           </a>
           <a
-            href="/cv.pdf"
-            download="Kevin_Garrido_CV.pdf"
+            href="https://linkedin.com/in/kdgs7"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-purple-50 hover:bg-purple-100 border-2 border-purple-200 hover:border-purple-600 text-purple-700 font-mono text-[11px] uppercase font-bold tracking-widest px-7 py-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_25px_rgba(147,51,234,0.25)] transform hover:-translate-y-0.5 active:translate-y-0"
           >
             <ArrowDownTrayIcon className="w-4 h-4 text-purple-600" />
-            <span>{t.hero.ctaCv || "Descargar CV"}</span>
+            <span>{t.hero.ctaCv || "LinkedIn // CV"}</span>
           </a>
           <a
             href="#contact"

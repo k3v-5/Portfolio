@@ -19,59 +19,40 @@ const ProjectsData = [
     fit: "contain",
   },
   {
-    id: 6,
-    image: "/images/projects/n8effect/principal.webp",
-    tagIds: ["all", "audioDev", "gameDev"],
-    gitUrl: null,
-    previewUrl: null,
-    fit: "contain",
-  },
-  {
-    id: 5,
-    image: "/images/projects/lexikit/principal.webp",
-    tagIds: ["all", "ai"],
-    gitUrl: "https://github.com/k3v-5/LexiKit",
-    previewUrl: null,
-  },
-  {
     id: 7,
     image: "/images/projects/ableton-engine/principal.webp",
     tagIds: ["all", "ai", "audioDev"],
     gitUrl: "https://github.com/k3v-5/AbletonEngine",
     previewUrl: null,
+    audioDemo: "/audio/ableton-engine-demo.mp3",
     fit: "contain",
+  },
+  {
+    id: 6,
+    image: "/images/projects/n8effect/principal.webp",
+    tagIds: ["all", "audioDev", "gameDev"],
+    gitUrl: null,
+    previewUrl: null,
+    audioDemo: "/audio/n8effect-demo.mp3",
+    fit: "contain",
+  },
+  {
+    id: 5,
+    image: "/images/projects/lexikit/principal.webp",
+    tagIds: ["all", "ai", "fullstack"],
+    gitUrl: "https://github.com/k3v-5/LexiKit",
+    previewUrl: null,
   },
   {
     id: 1,
     image: "/images/projects/dating-app/principal.jpg",
-    tagIds: ["all", "web"],
+    tagIds: ["all", "fullstack"],
     gitUrl: "https://github.com/k3v-5/CitasApp",
     previewUrl: "https://github.com/k3v-5/CitasApp",
   },
-  {
-    id: 2,
-    image: "/images/projects/tesla-shop/principal.jpg",
-    tagIds: ["all", "web"],
-    gitUrl: null,
-    previewUrl: null,
-  },
-  {
-    id: 3,
-    image: "/images/projects/crypto-tracker/principal.jpg",
-    tagIds: ["all", "web"],
-    gitUrl: "https://github.com/k3v-5/CryptoTracker",
-    previewUrl: "https://cryptotrackerkg.netlify.app/",
-  },
-  {
-    id: 4,
-    image: "/images/projects/sentiment-analysis/principal.webp",
-    tagIds: ["all", "dataScience"],
-    gitUrl: "https://github.com/k3v-5/Sentiment-analysis",
-    previewUrl: "https://github.com/k3v-5/Sentiment-analysis",
-  },
 ];
 
-const FILTER_IDS = ["all", "gameDev", "ai", "web", "dataScience", "audioDev"];
+const FILTER_IDS = ["all", "fullstack", "ai", "gameDev", "audioDev"];
 
 export default function ProjectsSection() {
   const { t } = useLanguage();

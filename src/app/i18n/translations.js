@@ -15,16 +15,16 @@ export const translations = {
     },
     hero: {
       eyebrow: ">> INTELLIGENT COMPUTING ENGINEER",
-      tags: ["Artificial Intelligence", "Data Mining", "Full-Stack Developer"],
+      tags: ["Full-Stack & DevOps", "Intelligent Systems & MCP", "Cloud & Automation"],
       ctaProjects: "Explore Projects",
       ctaLab: "View LAB",
       ctaContact: "Get in Touch",
-      ctaCv: "Download CV",
+      ctaCv: "LinkedIn // CV",
     },
     about: {
       module: "// MODULE_01: BIO",
       heading: "About Me",
-      bio: "Intelligent Computing Engineer with a specialized focus on artificial intelligence, data mining, and full-stack development. Experienced in architecting scalable web applications using React, Angular, and .NET, while streamlining business processes through data-driven reporting and RESTful services. Committed to leveraging advanced algorithms and modern frontend frameworks to solve complex organizational challenges and drive technical efficiency.",
+      bio: "Intelligent Computing Engineer combining robust Full-Stack architecture and DevOps practices with cutting-edge AI systems. Experienced in engineering resilient web applications using .NET, Angular, React, and SQL Server, while orchestrating end-to-end production pipelines, automated releases, and business intelligence reporting. Committed to building scalable software infrastructure and innovative generative engines.",
       educationLabel: "Education",
       degree: "B.S. Intelligent Computing Engineering",
       school:
@@ -38,36 +38,29 @@ export const translations = {
       jobs: [
         {
           company: "RAINDE",
-          roleDates: "SOFTWARE ENGINEER | NOV 2024 - CURRENT",
+          roleDates: "SOFTWARE & DEVOPS ENGINEER | NOV 2024 - CURRENT",
           bullets: [
-            "Developed responsive web and mobile applications utilizing Angular, TypeScript, and SQL Server.",
-            "Engineered REST APIs focused on mobile solutions and business intelligence reporting for the logistics sector.",
-            "Managed publication processes for web and mobile platforms, overseeing project compilation and production releases.",
-            "Collaborated in multidisciplinary environments to deliver high-quality code and scalable technical solutions.",
+            "Architected and deployed enterprise web and mobile applications using Angular, TypeScript, .NET, and SQL Server.",
+            "Orchestrated CI/CD compilation and production release pipelines for multi-platform web and mobile distributions.",
+            "Engineered scalable REST APIs and business intelligence reporting services for logistics operations.",
+            "Standardized Git workflows, environment provisioning, and automated build stability across cross-functional engineering teams.",
           ],
         },
         {
           company: "Lion Intel Solutions",
           roleDates: "FULLSTACK DEVELOPER | MAY 2024 - NOV 2024",
           bullets: [
-            "Led the end-to-end development of a comprehensive web application for a dermatology center using Vue.js and .NET.",
-            "Integrated marketplace APIs to synchronize catalogs and online sales, enhancing digital presence.",
-            "Streamlined operational processes and centralized customer service, resulting in faster response times.",
-          ],
-        },
-        {
-          company: "Financiera Independencia",
-          roleDates: "CUSTOMER SUPPORT | JAN 2024 - APR 2024",
-          bullets: [
-            "Managed account balances and processed digital payments by generating custom payment links for virtual department clients.",
+            "Led the end-to-end full-stack development of a medical portal using Vue.js, ASP.NET, and relational database architecture.",
+            "Engineered secure RESTful endpoints and integrated marketplace APIs to synchronize catalogs and transactions in real time.",
+            "Streamlined deployment workflows and centralized administrative operations, cutting system response times.",
           ],
         },
         {
           company: "Cuauhtémoc University",
-          roleDates: "IT SUPPORT | MAY 2021 - FEB 2023",
+          roleDates: "IT INFRASTRUCTURE & AUTOMATION | MAY 2021 - FEB 2023",
           bullets: [
-            "Automated internal service reporting by developing a custom request management system.",
-            "Managed technical infrastructure, including hardware maintenance and security camera installations.",
+            "Automated internal administrative workflows by engineering a custom ticket and request management platform.",
+            "Supervised campus IT infrastructure, network stability, and security hardware deployments.",
           ],
         },
       ],
@@ -77,43 +70,47 @@ export const translations = {
       heading: "Skills",
       categories: [
         {
-          title: "// AI, ORCHESTRATION & AUTOMATION",
-          items: [
-            "Model Context Protocol (MCP)",
-            "n8n Automation",
-            "Python",
-            "Data Mining",
-            "Orange",
-            "Intelligent Optimization",
-          ],
-        },
-        {
           title: "// FULL-STACK ARCHITECTURE",
           items: [
-            "React",
-            "Next.js",
-            "Angular",
-            "TypeScript",
             "C#",
             ".NET / .NET Core",
+            "Angular",
+            "React",
+            "Next.js",
+            "TypeScript",
             "SQL Server",
+            "RESTful APIs",
           ],
         },
         {
-          title: "// CREATIVE TECH & 3D GRAPHICS",
+          title: "// DEVOPS, CLOUD & INFRASTRUCTURE",
+          items: [
+            "Docker",
+            "CI/CD Pipelines",
+            "Linux",
+            "Git Workflows",
+            "Mobile & Web Releases",
+            "Nginx",
+          ],
+        },
+        {
+          title: "// AI SYSTEMS, ORCHESTRATION & AGENTS",
+          items: [
+            "Model Context Protocol (MCP)",
+            "Python",
+            "Agentic Workflows",
+            "n8n Automation",
+            "Intelligent Optimization",
+            "Local LLMs",
+          ],
+        },
+        {
+          title: "// CREATIVE TECH & AUDIO DSP",
           items: [
             "Blender (3D Python)",
-            "Adobe After Effects",
+            "Adobe After Effects Engine",
+            "Audio DSP / VST",
             "Game Dev Toolchains",
-            "Linux",
-          ],
-        },
-        {
-          title: "// DATA & BUSINESS INTELLIGENCE",
-          items: [
-            "PowerBI",
-            "Tableau",
-            "RESTful APIs",
           ],
         },
       ],
@@ -176,10 +173,9 @@ export const translations = {
       heading: "Projects",
       filters: {
         all: "All",
+        fullstack: "Full-Stack Web",
+        ai: "AI & Agents",
         gameDev: "Game Dev",
-        ai: "AI",
-        web: "Web",
-        dataScience: "Data Science",
         audioDev: "Audio / VST",
       },
       readMore: "Read more",
@@ -191,42 +187,32 @@ export const translations = {
           description:
             "Action-adventure video game currently in development, built on a proprietary generative toolchain. Integrates 3D characters procedurally synthesized through the Blender MCP engine with cinematic sequences and visual motion orchestrated via the After Effects MCP pipeline.",
         },
-        1: {
-          title: "Dating Platform",
+        7: {
+          title: "AbletonEngine",
+          badge: "Generative Music Studio",
+          audioDemoLabel: "Algorithmic Composition Output",
+          audioFallbackNote: "Place audio file in public/audio",
           description:
-            "Developed a full-stack application featuring messaging and profile management using Angular and .NET.",
+            "Autonomous algorithmic composition and AI music production pipeline connected to Ableton Live. Generates complete musical arrangements while enforcing rigorous production standards, including real-time LUFS loudness validation, tonal key consistency, chord voicing, and multi-track spectral balance.",
         },
-        2: {
-          title: "Ecommerce Website",
+        6: {
+          title: "N8Effect",
+          badge: "Modular Audio Engine",
+          audioDemoLabel: "Spatial DSP Modular Output",
+          audioFallbackNote: "Place audio file in public/audio",
           description:
-            "Developed an e-commerce website using Next.js and PostgreSQL. The website allows users to browse products, add them to their cart, and checkout using a credit card. The website also includes an admin panel that allows the site owner to add, edit, and delete products.",
-        },
-        3: {
-          title: "Crypto Tracker",
-          description:
-            "Built a real-time tracking application with historical charts and API integration using React (Next.js).",
-        },
-        4: {
-          title: "Sentiment Analysis",
-          description:
-            "Developed a sentiment analysis model using Python . The model analyzes text data such as tweets and news articles to determine whether the sentiment is positive, negative, or neutral.",
+            "Modular VST audio plugin engineered for dynamic effect integration and custom audio signal chain routing. Designed for high-fidelity audio reprocessing, real-time spatial manipulation, and the synthesis of intricate acoustic atmospheres and soundscapes.",
         },
         5: {
           title: "LexiKit",
           description:
             "AI-powered language learning app that generates lessons on demand and reinforces them with spaced repetition across a variety of flashcard types.",
         },
-        6: {
-          title: "N8Effect",
-          badge: "Modular Audio Engine",
+        1: {
+          title: "Full-Stack Dating Platform",
+          badge: "Enterprise Architecture",
           description:
-            "Modular VST audio plugin engineered for dynamic effect integration and custom audio signal chain routing. Designed for high-fidelity audio reprocessing, real-time spatial manipulation, and the synthesis of intricate acoustic atmospheres and soundscapes.",
-        },
-        7: {
-          title: "AbletonEngine",
-          badge: "Generative Music Studio",
-          description:
-            "Autonomous algorithmic composition and AI music production pipeline connected to Ableton Live. Generates complete musical arrangements while enforcing rigorous production standards, including real-time LUFS loudness validation, tonal key consistency, chord voicing, and multi-track spectral balance.",
+            "Full-stack web platform built with a decoupled architecture using ASP.NET Core Web API and Angular SPA. Features secure JWT authentication, bidirectional real-time messaging, comprehensive user profile management, and relational database persistence.",
         },
       },
     },
@@ -250,7 +236,7 @@ export const translations = {
       copiedHint: "Copied to clipboard",
       otherOptions: "// You could also try some other options:",
     },
-    footer: "Kevin Garrido // Data Engineering System // 2026",
+    footer: "Kevin Garrido // Intelligent Computing & DevOps // 2026",
   },
   es: {
     nav: {
@@ -263,16 +249,16 @@ export const translations = {
     },
     hero: {
       eyebrow: ">> INGENIERO EN CÓMPUTO INTELIGENTE",
-      tags: ["Inteligencia Artificial", "Minería de Datos", "Desarrollador Full-Stack"],
+      tags: ["Full-Stack & DevOps", "Sistemas Inteligentes & MCP", "Cloud y Automatización"],
       ctaProjects: "Explorar Proyectos",
       ctaLab: "Ver LAB",
       ctaContact: "Conectar",
-      ctaCv: "Descargar CV",
+      ctaCv: "LinkedIn // CV",
     },
     about: {
       module: "// MODULE_01: BIO",
       heading: "Sobre Mí",
-      bio: "Ingeniero en Cómputo Inteligente especializado en inteligencia artificial, minería de datos y desarrollo full-stack. Con experiencia en la arquitectura de aplicaciones web escalables usando React, Angular y .NET, optimizando procesos de negocio mediante reportes basados en datos y servicios RESTful. Comprometido con aprovechar algoritmos avanzados y frameworks modernos de frontend para resolver desafíos organizacionales complejos e impulsar la eficiencia técnica.",
+      bio: "Ingeniero en Cómputo Inteligente que combina una sólida arquitectura Full-Stack y prácticas DevOps con sistemas de inteligencia artificial de vanguardia. Con experiencia en la construcción de aplicaciones web escalables con .NET, Angular, React y SQL Server, orquestando pipelines de producción, despliegues automatizados y reportes de inteligencia de negocio. Enfocado en diseñar infraestructura de software resiliente y motores generativos innovadores.",
       educationLabel: "Educación",
       degree: "Ingeniería en Cómputo Inteligente",
       school:
@@ -286,36 +272,29 @@ export const translations = {
       jobs: [
         {
           company: "RAINDE",
-          roleDates: "INGENIERO DE SOFTWARE | NOV 2024 - ACTUALIDAD",
+          roleDates: "INGENIERO DE SOFTWARE & DEVOPS | NOV 2024 - ACTUALIDAD",
           bullets: [
-            "Desarrollo de aplicaciones web y móviles responsivas utilizando Angular, TypeScript y SQL Server.",
-            "Diseño de APIs REST enfocadas en soluciones móviles y reportes de inteligencia de negocio para el sector logístico.",
-            "Gestión de procesos de publicación para plataformas web y móviles, supervisando la compilación de proyectos y los releases de producción.",
-            "Colaboración en entornos multidisciplinarios para entregar código de alta calidad y soluciones técnicas escalables.",
+            "Desarrollo y despliegue de aplicaciones web y móviles empresariales utilizando Angular, TypeScript, .NET y SQL Server.",
+            "Orquestación de procesos de compilación, empaquetado y pipelines CI/CD de publicación para releases a producción multiplataforma (web y móvil).",
+            "Diseño y mantenimiento de APIs REST escalables y servicios de inteligencia de negocio para el sector logístico.",
+            "Estandarización de flujos de trabajo con Git, aprovisionamiento de entornos y estabilidad de compilaciones en equipos multidisciplinarios.",
           ],
         },
         {
           company: "Lion Intel Solutions",
           roleDates: "DESARROLLADOR FULLSTACK | MAY 2024 - NOV 2024",
           bullets: [
-            "Lideré el desarrollo end-to-end de una aplicación web integral para un centro de dermatología usando Vue.js y .NET.",
-            "Integración de APIs de marketplace para sincronizar catálogos y ventas en línea, mejorando la presencia digital.",
-            "Optimización de procesos operativos y centralización del servicio al cliente, logrando tiempos de respuesta más rápidos.",
-          ],
-        },
-        {
-          company: "Financiera Independencia",
-          roleDates: "SOPORTE AL CLIENTE | ENE 2024 - ABR 2024",
-          bullets: [
-            "Gestión de saldos de cuenta y procesamiento de pagos digitales generando links de pago personalizados para clientes del departamento virtual.",
+            "Lideré el desarrollo full-stack integral de un portal médico utilizando Vue.js, ASP.NET y bases de datos relacionales.",
+            "Diseño de endpoints RESTful seguros e integración de APIs de marketplace para sincronización de catálogos y transacciones en tiempo real.",
+            "Optimización del flujo de despliegue y centralización de procesos operativos, reduciendo drásticamente los tiempos de respuesta del sistema.",
           ],
         },
         {
           company: "Universidad Cuauhtémoc",
-          roleDates: "SOPORTE TI | MAY 2021 - FEB 2023",
+          roleDates: "INFRAESTRUCTURA TI Y AUTOMATIZACIÓN | MAY 2021 - FEB 2023",
           bullets: [
-            "Automatización de reportes de servicio interno mediante el desarrollo de un sistema propio de gestión de solicitudes.",
-            "Gestión de infraestructura técnica, incluyendo mantenimiento de hardware e instalación de cámaras de seguridad.",
+            "Automatización de flujos administrativos internos mediante el desarrollo de una plataforma propia de gestión de incidencias y tickets.",
+            "Supervisión de infraestructura tecnológica, estabilidad de redes y despliegue de sistemas de seguridad en campus.",
           ],
         },
       ],
@@ -325,43 +304,47 @@ export const translations = {
       heading: "Habilidades",
       categories: [
         {
-          title: "// IA, ORQUESTACIÓN Y AUTOMATIZACIÓN",
-          items: [
-            "Model Context Protocol (MCP)",
-            "Automatización n8n",
-            "Python",
-            "Minería de Datos",
-            "Orange",
-            "Optimización Inteligente",
-          ],
-        },
-        {
           title: "// ARQUITECTURA FULL-STACK",
           items: [
-            "React",
-            "Next.js",
-            "Angular",
-            "TypeScript",
             "C#",
             ".NET / .NET Core",
+            "Angular",
+            "React",
+            "Next.js",
+            "TypeScript",
             "SQL Server",
+            "APIs RESTful",
           ],
         },
         {
-          title: "// CREATIVE TECH Y GRÁFICOS 3D",
+          title: "// DEVOPS, CLOUD E INFRAESTRUCTURA",
+          items: [
+            "Docker",
+            "Pipelines CI/CD",
+            "Linux",
+            "Flujos Git",
+            "Releases Web y Móvil",
+            "Nginx",
+          ],
+        },
+        {
+          title: "// SISTEMAS DE IA, ORQUESTACIÓN Y AGENTES",
+          items: [
+            "Model Context Protocol (MCP)",
+            "Python",
+            "Flujos de Agentes",
+            "Automatización n8n",
+            "Optimización Inteligente",
+            "LLMs Locales",
+          ],
+        },
+        {
+          title: "// CREATIVE TECH Y AUDIO DSP",
           items: [
             "Blender (Python 3D)",
-            "Adobe After Effects",
+            "Motor After Effects",
+            "Audio DSP / VST",
             "Pipelines de Videojuegos",
-            "Linux",
-          ],
-        },
-        {
-          title: "// DATOS E INTELIGENCIA DE NEGOCIO",
-          items: [
-            "PowerBI",
-            "Tableau",
-            "APIs RESTful",
           ],
         },
       ],
@@ -424,10 +407,9 @@ export const translations = {
       heading: "Proyectos",
       filters: {
         all: "Todos",
+        fullstack: "Full-Stack Web",
+        ai: "IA y Agentes",
         gameDev: "Videojuegos",
-        ai: "IA",
-        web: "Web",
-        dataScience: "Ciencia de Datos",
         audioDev: "Audio / VST",
       },
       readMore: "Ver más",
@@ -439,42 +421,32 @@ export const translations = {
           description:
             "Videojuego de acción/aventura en desarrollo activo, impulsado por un pipeline generativo propio. Integra personajes 3D sintetizados proceduralmente mediante el motor de Blender MCP y cinemáticas orquestadas a través del motor de video de After Effects MCP.",
         },
-        1: {
-          title: "Plataforma de Citas",
+        7: {
+          title: "AbletonEngine",
+          badge: "Generative Music Studio",
+          audioDemoLabel: "Muestra de Composición Algorítmica",
+          audioFallbackNote: "Coloca tu archivo de audio en public/audio",
           description:
-            "Aplicación full-stack con mensajería y gestión de perfiles usando Angular y .NET.",
+            "Pipeline autónomo de composición algorítmica y producción musical generada por IA conectado con Ableton Live. Genera arreglos musicales completos garantizando estrictos criterios de producción profesional, incluyendo validación de sonoridad (LUFS), consistencia tonal, armonía y balance espectral multicanal.",
         },
-        2: {
-          title: "Sitio de Ecommerce",
+        6: {
+          title: "N8Effect",
+          badge: "Motor de Audio Modular",
+          audioDemoLabel: "Muestra DSP Espacial y Modular",
+          audioFallbackNote: "Coloca tu archivo de audio en public/audio",
           description:
-            "Sitio de comercio electrónico con Next.js y PostgreSQL. Permite explorar productos, agregarlos al carrito y pagar con tarjeta de crédito. Incluye un panel de administración para agregar, editar y eliminar productos.",
-        },
-        3: {
-          title: "Rastreador de Criptomonedas",
-          description:
-            "Aplicación de seguimiento en tiempo real con gráficos históricos e integración de API usando React (Next.js).",
-        },
-        4: {
-          title: "Análisis de Sentimientos",
-          description:
-            "Modelo de análisis de sentimientos desarrollado en Python. Analiza datos de texto como tweets y artículos de noticias para determinar si el sentimiento es positivo, negativo o neutral.",
+            "Plugin VST modular diseñado para la integración dinámica de efectos y la personalización flexible de cadenas de audio. Permite el reprocesamiento avanzado de señales en tiempo real y la creación inmersiva de atmósferas y paisajes sonoros complejos.",
         },
         5: {
           title: "LexiKit",
           description:
             "App de aprendizaje de idiomas potenciada por IA que genera lecciones a demanda y las refuerza con repetición espaciada sobre una variedad de tarjetas de aprendizaje.",
         },
-        6: {
-          title: "N8Effect",
-          badge: "Motor de Audio Modular",
+        1: {
+          title: "Plataforma de Citas Full-Stack",
+          badge: "Arquitectura Empresarial",
           description:
-            "Plugin VST modular diseñado para la integración dinámica de efectos y la personalización flexible de cadenas de audio. Permite el reprocesamiento avanzado de señales en tiempo real y la creación inmersiva de atmósferas y paisajes sonoros complejos.",
-        },
-        7: {
-          title: "AbletonEngine",
-          badge: "Generative Music Studio",
-          description:
-            "Pipeline autónomo de composición algorítmica y producción musical generada por IA conectado con Ableton Live. Genera arreglos musicales completos garantizando estrictos criterios de producción profesional, incluyendo validación de sonoridad (LUFS), consistencia tonal, armonía y balance espectral multicanal.",
+            "Plataforma web Full-Stack con arquitectura desacoplada basada en ASP.NET Core Web API y cliente SPA en Angular. Integra autenticación segura con tokens JWT, mensajería bidireccional en tiempo real, gestión completa de perfiles de usuario y persistencia relacional optimizada.",
         },
       },
     },
@@ -498,7 +470,7 @@ export const translations = {
       copiedHint: "Copiado al portapapeles",
       otherOptions: "// También puedes probar otras opciones:",
     },
-    footer: "Kevin Garrido // Sistema de Ingeniería de Datos // 2026",
+    footer: "Kevin Garrido // Intelligent Computing & DevOps // 2026",
   },
 };
 
