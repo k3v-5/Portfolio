@@ -21,14 +21,6 @@ const nextConfig = {
         ? { exclude: ["error", "warn"] }
         : false,
   },
-
-  // Tree-shaking avanzado para librerías de iconos y utilidades
-  experimental: {
-    optimizePackageImports: [
-      "@heroicons/react/24/outline",
-      "@heroicons/react/20/solid",
-    ],
-  },
 };
 
 module.exports = nextConfig;
