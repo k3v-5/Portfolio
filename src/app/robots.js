@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://kevingarrido.vercel.app/sitemap.xml",
+    sitemap: "https://kevingarrido.com/sitemap.xml",
   };
 }
