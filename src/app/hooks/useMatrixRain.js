@@ -55,11 +55,17 @@ export function useMatrixRain(canvasRef) {
       return;
     }
 
+    const startLoop = () => {
+      cancelAnimationFrame(animId);
+      animId = requestAnimationFrame(loop);
+    };
+
+    const stopLoop = () => {
+      cancelAnimationFrame(animId);
+    };
+
     const loop = (timestamp) => {
-      if (document.hidden) {
-        animId = requestAnimationFrame(loop);
-        return;
-      }
+      if (document.hidden) return;
 
       if (timestamp - lastTime >= intervalMs) {
         lastTime = timestamp;
@@ -68,7 +74,18 @@ export function useMatrixRain(canvasRef) {
       animId = requestAnimationFrame(loop);
     };
 
-    animId = requestAnimationFrame(loop);
+    startLoop();
+
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        stopLoop();
+      } else {
+        lastTime = performance.now();
+        startLoop();
+      }
+    };
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
 
     let resizeTimeout;
     const onResize = () => {
@@ -79,9 +96,10 @@ export function useMatrixRain(canvasRef) {
     window.addEventListener("resize", onResize, { passive: true });
 
     return () => {
-      cancelAnimationFrame(animId);
+      stopLoop();
       clearTimeout(resizeTimeout);
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, [canvasRef]);
 }

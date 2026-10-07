@@ -35,7 +35,7 @@ export default function SectionVisual({
           width={720}
           height={720}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 672px"
-          quality={85}
+          quality={75}
           priority={priority}
           className="w-full h-auto object-contain max-h-[360px] md:max-h-[460px] lg:max-h-[540px] drop-shadow-[0_20px_50px_rgba(185,91,216,0.18)] will-change-transform relative z-10"
         />

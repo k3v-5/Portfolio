@@ -2,12 +2,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import {
   CodeBracketIcon,
   EyeIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
-import AudioDemoPlayer from "./AudioDemoPlayer";
+
+const AudioDemoPlayer = dynamic(() => import("./AudioDemoPlayer"), {
+  ssr: false,
+});
 
 /**
  * Project Card Item Component
@@ -60,7 +64,7 @@ export default function ProjectCardItem({
             alt={copy?.title || "Project"}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            quality={85}
+            quality={75}
             onError={() => setImgError(true)}
             className={`w-full h-full ${project.fit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-1000 group-hover:scale-105`}
           />

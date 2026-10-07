@@ -6,9 +6,6 @@ import Herosection from "./components/Herosection";
 import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
 import SkillsSection from "./components/SkillsSection";
-import LabSection from "./components/LabSection";
-import ProjectsSection from "./components/ProjectsSection";
-import ContactSection from "./components/ContactSection";
 import SectionVisual from "./components/SectionVisual";
 import { useLanguage } from "./i18n/LanguageContext";
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
@@ -22,12 +19,24 @@ const CustomCursor = dynamic(
   () => import("./components/CustomCursor"),
   { ssr: false }
 );
+const LabSection = dynamic(
+  () => import("./components/LabSection"),
+  { loading: () => <div className="min-h-[400px]" /> }
+);
+const ProjectsSection = dynamic(
+  () => import("./components/ProjectsSection"),
+  { loading: () => <div className="min-h-[600px]" /> }
+);
 const SignalLogSection = dynamic(
   () => import("./components/SignalLogSection"),
   {
     ssr: false,
     loading: () => <div className="min-h-[120px]" />,
   }
+);
+const ContactSection = dynamic(
+  () => import("./components/ContactSection"),
+  { loading: () => <div className="min-h-[300px]" /> }
 );
 const CvModal = dynamic(
   () => import("./components/cv/CvModal"),
@@ -63,7 +72,7 @@ export default function Home() {
       <MatrixBackground />
       <CustomCursor />
       <Navbar onOpenCv={() => setIsCvOpen(true)} />
-      <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
+      {isCvOpen && <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />}
 
       <div className="scroll-container pb-24 lg:pb-32">
         {/* Línea SVG de fondo fluida y sincronizada con el recorrido de todas las secciones */}
