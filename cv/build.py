@@ -60,15 +60,16 @@ def render_html(template_path, data, lang="es", profile_name="fullstack"):
             selected_projs.append({
                 "title": p[f"title_{lang}"],
                 "tech": p["tech"],
+                "url": p.get("url", ""),
                 "bullets": p[f"bullets_{lang}"]
             })
 
-    # Skills mapped by language
+    # Skills mapped by language (use 'technologies' to avoid Jinja dict.items method collision)
     skills_data = {}
     for k, v in data["skills"].items():
         skills_data[k] = {
             "label": v[f"label_{lang}"],
-            "items": v["items"]
+            "technologies": v["items"]
         }
 
     rendered = tmpl.render(

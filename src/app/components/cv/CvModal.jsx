@@ -57,7 +57,7 @@ export default function CvModal({ isOpen, onClose }) {
 
     let text = `${personal.name.toUpperCase()}\n`;
     text += `${personal.location} | ${personal.phone} | ${personal.email}\n`;
-    text += `LinkedIn: ${personal.linkedin.url} | GitHub: ${personal.github.url}\n\n`;
+    text += `LinkedIn: ${personal.linkedin.url} | GitHub: ${personal.github.url} | Web: ${personal.portfolio?.url}\n\n`;
 
     text += `SUMMARY\n${pData[`title_${cvLang}`]}: ${pData[`summary_${cvLang}`]}\n\n`;
 

@@ -13,7 +13,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://kevingarrido.dev"),
+  metadataBase: new URL("https://kevingarrido.vercel.app"),
   title: {
     default: "Kevin Garrido // Ingeniero en Cómputo Inteligente",
     template: "%s | Kevin Garrido",
@@ -42,7 +42,7 @@ export const metadata = {
     title: "Kevin Garrido // Ingeniero en Cómputo Inteligente",
     description:
       "Arquitectura de motores de IA, pipelines generativos con MCP, gráficos 3D procedurales y sistemas web escalables.",
-    url: "https://kevingarrido.dev",
+    url: "https://kevingarrido.vercel.app",
     siteName: "Kevin Garrido Portfolio",
     images: [
       {

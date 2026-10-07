@@ -36,7 +36,7 @@ export default function CvPage() {
 
     let text = `${personal.name.toUpperCase()}\n`;
     text += `${personal.location} | ${personal.phone} | ${personal.email}\n`;
-    text += `LinkedIn: ${personal.linkedin.url} | GitHub: ${personal.github.url}\n\n`;
+    text += `LinkedIn: ${personal.linkedin.url} | GitHub: ${personal.github.url} | Web: ${personal.portfolio?.url}\n\n`;
 
     text += `SUMMARY\n${pData[`title_${lang}`]}: ${pData[`summary_${lang}`]}\n\n`;
 

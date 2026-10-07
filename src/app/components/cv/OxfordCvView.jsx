@@ -56,6 +56,19 @@ export default function OxfordCvView({ profile = "fullstack", lang = "es" }) {
           >
             {personal.github.display}
           </a>
+          {personal.portfolio && (
+            <>
+              <span>•</span>
+              <a
+                href={personal.portfolio.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-700 hover:underline"
+              >
+                {personal.portfolio.display}
+              </a>
+            </>
+          )}
         </div>
       </header>
 
@@ -130,7 +143,20 @@ export default function OxfordCvView({ profile = "fullstack", lang = "es" }) {
           {selectedProjects.map((p) => (
             <div key={p.title_en}>
               <div className="flex justify-between items-baseline text-[13px] sm:text-[14px]">
-                <span className="font-bold text-black">{p[`title_${lang}`]}</span>
+                <span className="font-bold text-black">
+                  {p.url ? (
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-purple-700 underline text-black"
+                    >
+                      {p[`title_${lang}`]}
+                    </a>
+                  ) : (
+                    p[`title_${lang}`]
+                  )}
+                </span>
                 <span className="text-[11px] sm:text-[12px] text-slate-600 font-sans italic">
                   [{p.tech}]
                 </span>
