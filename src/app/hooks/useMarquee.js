@@ -28,8 +28,17 @@ export function useMarquee({ containerRef, dependency, duration = 40 } = {}) {
       }, containerRef);
     }, 150);
 
+    const handleGlobalMouseUp = () => {
+      if (dragState.current.isDragging) {
+        dragState.current.isDragging = false;
+        tweenRef.current?.play();
+      }
+    };
+    window.addEventListener("mouseup", handleGlobalMouseUp);
+
     return () => {
       clearTimeout(timer);
+      window.removeEventListener("mouseup", handleGlobalMouseUp);
       if (ctx) ctx.revert();
       tweenRef.current = null;
     };
@@ -86,6 +95,9 @@ export function useMarquee({ containerRef, dependency, duration = 40 } = {}) {
 
   const handleMouseUp = () => {
     dragState.current.isDragging = false;
+    if (tweenRef.current) {
+      tweenRef.current.play();
+    }
   };
 
   const handleMouseLeave = () => {
@@ -95,7 +107,10 @@ export function useMarquee({ containerRef, dependency, duration = 40 } = {}) {
   };
 
   const handleMouseEnter = () => {
-    tweenRef.current?.pause();
+    // Only pause when actively dragging, or allow subtle hover pause
+    if (dragState.current.isDragging) {
+      tweenRef.current?.pause();
+    }
   };
 
   return {

@@ -63,11 +63,13 @@ export default function SignalLogSection() {
           className="marquee-track flex w-max gap-4 md:gap-8 cursor-grab active:cursor-grabbing touch-pan-y"
           {...dragHandlers}
         >
-          {/* Renderizamos dos veces el mismo bloque de tarjetas para crear el ciclo infinito */}
-          <div className="flex gap-4 md:gap-8 items-stretch">
+          {/* Renderizamos bloques dobles para crear un ciclo continuo sin vacíos */}
+          <div className="flex gap-4 md:gap-8 items-stretch shrink-0">
+            {renderCards()}
             {renderCards()}
           </div>
-          <div className="flex gap-4 md:gap-8 items-stretch">
+          <div className="flex gap-4 md:gap-8 items-stretch shrink-0">
+            {renderCards()}
             {renderCards()}
           </div>
         </div>
