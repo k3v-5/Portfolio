@@ -19,7 +19,7 @@ export const translations = {
       ctaProjects: "Explore Projects",
       ctaLab: "View LAB",
       ctaContact: "Get in Touch",
-      ctaCv: "LinkedIn // CV",
+      ctaCv: "Download CV",
     },
     about: {
       module: "// MODULE_01: BIO",
@@ -253,7 +253,7 @@ export const translations = {
       ctaProjects: "Explorar Proyectos",
       ctaLab: "Ver LAB",
       ctaContact: "Conectar",
-      ctaCv: "LinkedIn // CV",
+      ctaCv: "Descargar CV",
     },
     about: {
       module: "// MODULE_01: BIO",

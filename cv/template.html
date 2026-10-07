@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ personal.name }} – Curriculum Vitae</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0.42in 0.45in;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Times New Roman", Times, Georgia, serif;
+      color: #111111;
+      line-height: 1.25;
+      font-size: 9.6pt;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: #111111;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      margin-bottom: 6pt;
+    }
+    h1 {
+      font-size: 19pt;
+      font-weight: bold;
+      letter-spacing: 0.5pt;
+      text-transform: uppercase;
+      margin-bottom: 2pt;
+    }
+    .profile-title {
+      font-size: 9.8pt;
+      font-style: italic;
+      color: #333333;
+      margin-bottom: 3pt;
+    }
+    .contact-line {
+      font-size: 8.8pt;
+      color: #222222;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5pt;
+    }
+    .contact-line span:not(:last-child)::after {
+      content: " |";
+      color: #666666;
+    }
+
+    /* SUMMARY */
+    .summary {
+      font-size: 9.1pt;
+      text-align: justify;
+      margin-bottom: 6pt;
+      line-height: 1.28;
+      color: #222222;
+    }
+
+    /* SECTION HEADINGS (OXFORD STYLE) */
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.8pt;
+      border-bottom: 0.75pt solid #111111;
+      padding-bottom: 1.2pt;
+      margin-top: 6pt;
+      margin-bottom: 4pt;
+    }
+
+    /* ENTRIES */
+    .entry {
+      margin-bottom: 4.5pt;
+      page-break-inside: avoid;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.6pt;
+    }
+    .entry-title {
+      font-weight: bold;
+    }
+    .entry-date {
+      font-size: 8.8pt;
+      color: #222222;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+    .entry-subtitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.1pt;
+      font-style: italic;
+      color: #333333;
+      margin-bottom: 1.5pt;
+    }
+
+    /* BULLET LISTS */
+    ul {
+      list-style-type: disc;
+      margin-left: 14pt;
+      margin-top: 1pt;
+    }
+    li {
+      margin-bottom: 1.8pt;
+      font-size: 9.1pt;
+      line-height: 1.24;
+      text-align: justify;
+    }
+    li::marker {
+      font-size: 7.5pt;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2pt;
+    }
+    .skills-row {
+      font-size: 9.1pt;
+      line-height: 1.25;
+    }
+    .skills-label {
+      font-weight: bold;
+    }
+
+    @media print {
+      body {
+        width: 100%;
+        background: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO OXFORD -->
+  <header>
+    <h1>{{ personal.name }}</h1>
+    <div class="profile-title">{{ profile_data.title }}</div>
+    <div class="contact-line">
+      <span>{{ personal.location }}</span>
+      <span>{{ personal.phone }}</span>
+      <span><a href="mailto:{{ personal.email }}">{{ personal.email }}</a></span>
+      <span><a href="{{ personal.linkedin.url }}">{{ personal.linkedin.display }}</a></span>
+      <span><a href="{{ personal.github.url }}">{{ personal.github.display }}</a></span>
+      <span><a href="{{ personal.portfolio.url }}">{{ personal.portfolio.display }}</a></span>
+    </div>
+  </header>
+
+  <!-- PERFIL PROFESIONAL -->
+  <div class="summary">
+    {{ profile_data.summary }}
+  </div>
+
+  <!-- EXPERIENCIA LABORAL -->
+  <div class="section-title">
+    {% if lang == 'es' %}Experiencia Laboral{% else %}Professional Experience{% endif %}
+  </div>
+  {% for job in experience %}
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">{{ job.company }}</span>
+      <span class="entry-date">{{ job.dates }}</span>
+    </div>
+    <div class="entry-subtitle">
+      <span>{{ job.role }}</span>
+      <span>{{ job.location }}</span>
+    </div>
+    <ul>
+      {% for bullet in job.bullets %}
+      <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+
+  <!-- PROYECTOS TÉCNICOS -->
+  <div class="section-title">
+    {% if lang == 'es' %}Proyectos Técnicos & Motores{% else %}Technical Projects & Engines{% endif %}
+  </div>
+  {% for proj in selected_projects %}
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">{{ proj.title }}</span>
+      <span class="entry-date" style="font-size: 8.4pt; font-style: italic; color: #444;">{{ proj.tech }}</span>
+    </div>
+    <ul>
+      {% for bullet in proj.bullets %}
+      <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+
+  <!-- EDUCACIÓN -->
+  <div class="section-title">
+    {% if lang == 'es' %}Educación{% else %}Education{% endif %}
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">{{ education.school }}</span>
+      <span class="entry-date">{{ education.dates }}</span>
+    </div>
+    <div class="entry-subtitle">
+      <span>{{ education.degree }}</span>
+      <span>{{ education.location }}</span>
+    </div>
+    <div style="font-size: 8.8pt; color: #333333; margin-top: 1pt; font-style: italic;">
+      {{ education.focus }}
+    </div>
+  </div>
+
+  <!-- HABILIDADES TÉCNICAS -->
+  <div class="section-title">
+    {% if lang == 'es' %}Habilidades Técnicas{% else %}Technical Skills{% endif %}
+  </div>
+  <div class="skills-grid">
+    {% for skill_key in profile_data.skills_priority %}
+    {% set skill = skills[skill_key] %}
+    <div class="skills-row">
+      <span class="skills-label">{{ skill.label }}:</span> {{ skill.items }}
+    </div>
+    {% endfor %}
+  </div>
+
+</body>
+</html>

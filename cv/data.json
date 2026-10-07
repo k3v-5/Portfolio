@@ -1,0 +1,223 @@
+{
+  "personal": {
+    "name": "Kevin Garrido",
+    "location": "Aguascalientes, México",
+    "phone": "(+52) 449-166-6954",
+    "email": "kevingarrido711@gmail.com",
+    "linkedin": {
+      "display": "linkedin.com/in/kdgs7",
+      "url": "https://linkedin.com/in/kdgs7"
+    },
+    "github": {
+      "display": "github.com/k3v-5",
+      "url": "https://github.com/k3v-5"
+    },
+    "portfolio": {
+      "display": "kevingarrido.dev",
+      "url": "https://kevingarrido.dev"
+    }
+  },
+  "profiles": {
+    "fullstack": {
+      "title_es": "Ingeniero en Computación Inteligente | Full-Stack & DevOps",
+      "title_en": "Intelligent Computing Engineer | Full-Stack & DevOps",
+      "summary_es": "Ingeniero en Computación Inteligente especializado en arquitectura Full-Stack y prácticas DevOps. Experiencia en el desarrollo de aplicaciones empresariales escalables con .NET Core, Angular, React y SQL Server, orquestando pipelines de integración continua, compilaciones automatizadas y despliegues a producción multiplataforma.",
+      "summary_en": "Intelligent Computing Engineer specializing in Full-Stack architecture and DevOps practices. Experienced in developing scalable enterprise web and mobile applications with .NET Core, Angular, React, and SQL Server, orchestrating CI/CD pipelines, automated build systems, and production releases.",
+      "selected_projects": ["dating_app", "lexikit", "devops_pipeline"],
+      "skills_priority": ["fullstack", "devops", "ai", "tools"]
+    },
+    "devops": {
+      "title_es": "Ingeniero de Software & DevOps | Infraestructura y Despliegue",
+      "title_en": "Software & DevOps Engineer | Infrastructure & Releases",
+      "summary_es": "Ingeniero de Software con fuerte enfoque en DevOps, automatización de compilaciones y pipelines de publicación multiplataforma (web y móvil). Sólida experiencia en estandarización de flujos Git, aprovisionamiento de entornos, Docker, Linux y arquitectura de APIs escalables en producción.",
+      "summary_en": "Software Engineer with a strong focus on DevOps, build automation, and multi-platform release pipelines (web and mobile). Solid background in Git workflow standardization, environment provisioning, Docker, Linux, and production REST API architectures.",
+      "selected_projects": ["devops_pipeline", "dating_app", "blender_aoe"],
+      "skills_priority": ["devops", "fullstack", "tools", "ai"]
+    },
+    "ai": {
+      "title_es": "Ingeniero en Computación Inteligente | Motores de IA & MCP",
+      "title_en": "Intelligent Computing Engineer | AI Engines & MCP",
+      "summary_es": "Ingeniero en Computación Inteligente enfocado en motores de inteligencia artificial, orquestación mediante Model Context Protocol (MCP) y algoritmos generativos. Experiencia desarrollando pipelines que optimizan el consumo de tokens hasta un 80% comunicando LLMs con herramientas creativas de alto rendimiento (Blender Python, After Effects, Ableton).",
+      "summary_en": "Intelligent Computing Engineer focused on AI engines, Model Context Protocol (MCP) orchestration, and generative algorithms. Experienced in architecting pipelines that reduce context token consumption by up to 80% bridging LLMs with high-performance creative toolchains (Blender Python, After Effects, Ableton).",
+      "selected_projects": ["blender_aoe", "after_effects", "ableton_engine"],
+      "skills_priority": ["ai", "fullstack", "devops", "tools"]
+    },
+    "general": {
+      "title_es": "Ingeniero en Computación Inteligente | Full-Stack & AI Systems",
+      "title_en": "Intelligent Computing Engineer | Full-Stack & AI Systems",
+      "summary_es": "Ingeniero en Computación Inteligente con perfil versátil combinando arquitectura Full-Stack (.NET, Angular, SQL Server), orquestación de sistemas de IA (MCP, Python) y prácticas DevOps de publicación a producción. Orientado a construir infraestructura técnica robusta y resolver desafíos organizacionales de alta complejidad.",
+      "summary_en": "Intelligent Computing Engineer combining Full-Stack architecture (.NET, Angular, SQL Server), AI systems orchestration (MCP, Python), and DevOps production release pipelines. Committed to engineering resilient software infrastructure and solving complex technical challenges.",
+      "selected_projects": ["dating_app", "blender_aoe", "devops_pipeline"],
+      "skills_priority": ["fullstack", "devops", "ai", "tools"]
+    }
+  },
+  "education": {
+    "school_es": "Universidad Autónoma de Aguascalientes",
+    "school_en": "Autonomous University of Aguascalientes",
+    "location": "Aguascalientes, MX",
+    "degree_es": "Ingeniería en Computación Inteligente",
+    "degree_en": "B.S. Intelligent Computing Engineering",
+    "dates_es": "Agosto 2019 – Junio 2024",
+    "dates_en": "August 2019 – June 2024",
+    "focus_es": "Enfoque: Inteligencia Artificial, Optimización Inteligente, Minería de Datos y Algoritmos Avanzados.",
+    "focus_en": "Focus: Artificial Intelligence, Intelligent Optimization, Data Mining, and Advanced Algorithms."
+  },
+  "experience": [
+    {
+      "company": "RAINDE",
+      "location": "Aguascalientes, MX",
+      "role_es": "Software & DevOps Engineer",
+      "role_en": "Software & DevOps Engineer",
+      "dates_es": "Noviembre 2024 – Actualidad",
+      "dates_en": "November 2024 – Present",
+      "bullets_es": [
+        "Desarrollo y mantenimiento de aplicaciones empresariales responsivas (web y móvil) utilizando Angular, TypeScript, .NET y SQL Server.",
+        "Orquestación y automatización de procesos de compilación, empaquetado y pipelines de publicación para releases de producción multiplataforma.",
+        "Diseño e implementación de APIs RESTful escalables y reportes de Business Intelligence orientados al sector logístico.",
+        "Estandarización de flujos de trabajo en Git, aprovisionamiento de entornos y aseguramiento de la estabilidad de compilaciones."
+      ],
+      "bullets_en": [
+        "Architected and deployed responsive enterprise web and mobile applications using Angular, TypeScript, .NET, and SQL Server.",
+        "Orchestrated compilation, packaging, and CI/CD release pipelines for multi-platform web and mobile production distributions.",
+        "Engineered scalable RESTful APIs and Business Intelligence reporting services for the logistics operations sector.",
+        "Standardized Git branching workflows, environment provisioning, and automated build stability across cross-functional teams."
+      ]
+    },
+    {
+      "company": "Lion Intel Solutions",
+      "location": "Aguascalientes, MX",
+      "role_es": "Fullstack Developer",
+      "role_en": "Fullstack Developer",
+      "dates_es": "Mayo 2024 – Noviembre 2024",
+      "dates_en": "May 2024 – November 2024",
+      "bullets_es": [
+        "Liderazgo en el desarrollo de principio a fin de un portal médico dermatológico utilizando Vue.js, ASP.NET y bases de datos relacionales.",
+        "Integración de APIs de marketplace para sincronización de catálogos y transacciones de comercio electrónico en tiempo real.",
+        "Optimización de flujos operativos y centralización de la gestión administrativa, reduciendo sustancialmente los tiempos de respuesta."
+      ],
+      "bullets_en": [
+        "Led end-to-end full-stack development of a medical portal for a dermatology center using Vue.js, ASP.NET, and relational databases.",
+        "Engineered secure RESTful endpoints and integrated marketplace APIs to synchronize product catalogs and digital sales in real time.",
+        "Streamlined administrative and operational workflows, cutting operational processing times and centralizing customer management."
+      ]
+    },
+    {
+      "company": "Universidad Cuauhtémoc",
+      "location": "Aguascalientes, MX",
+      "role_es": "Soporte TI e Infraestructura",
+      "role_en": "IT Infrastructure & Automation",
+      "dates_es": "Mayo 2021 – Febrero 2023",
+      "dates_en": "May 2021 – February 2023",
+      "bullets_es": [
+        "Automatización de reportes de servicio interno mediante el desarrollo de una plataforma propia de gestión de solicitudes e incidencias.",
+        "Supervisión y mantenimiento de infraestructura tecnológica de campus, redes de comunicación y despliegue de sistemas de seguridad."
+      ],
+      "bullets_en": [
+        "Automated internal administrative service reporting by engineering a custom request and incident management platform.",
+        "Supervised campus IT infrastructure, hardware maintenance, network reliability, and security camera network deployments."
+      ]
+    }
+  ],
+  "projects": {
+    "dating_app": {
+      "title_es": "Plataforma de Citas Full-Stack",
+      "title_en": "Full-Stack Dating Platform",
+      "tech": "ASP.NET Core Web API, Angular, SQL Server, SignalR, JWT",
+      "bullets_es": [
+        "Arquitectura desacoplada cliente-servidor con autenticación segura por tokens JWT y gestión integral de perfiles de usuario.",
+        "Mensajería bidireccional en tiempo real con SignalR y persistencia relacional optimizada con Entity Framework Core."
+      ],
+      "bullets_en": [
+        "Engineered a decoupled client-server architecture with secure JWT token authentication and user profile management.",
+        "Implemented real-time bidirectional messaging with SignalR and optimized relational persistence using Entity Framework Core."
+      ]
+    },
+    "devops_pipeline": {
+      "title_es": "Pipeline de Publicación y CI/CD Multiplataforma",
+      "title_en": "Multi-Platform CI/CD & Deployment Pipeline",
+      "tech": "Docker, GitHub Actions, Linux / Bash, Nginx, Mobile App Releases",
+      "bullets_es": [
+        "Automatización integral de empaquetado y versionado para compilaciones móviles y web, eliminando errores de release manual.",
+        "Contenerización con Docker y configuración de proxies inversos Nginx para despliegues reproducibles y tolerantes a fallos."
+      ],
+      "bullets_en": [
+        "Automated compilation, versioning, and distribution pipelines for mobile and web releases, eliminating manual deployment errors.",
+        "Containerized application services using Docker with Nginx reverse proxies for reproducible and resilient production deployments."
+      ]
+    },
+    "blender_aoe": {
+      "title_es": "Blender Asset Orchestration Engine (AOE)",
+      "title_en": "Blender Asset Orchestration Engine (AOE)",
+      "tech": "Python API, Model Context Protocol (MCP), Procedural 3D, Headless Blender",
+      "bullets_es": [
+        "Pipeline de orquestación generativa para agentes de IA que genera topologías 3D y rigging paramétrico reduciendo un 80% el consumo de tokens.",
+        "Orquestador de producción de 19 etapas con renderizado desatendido (headless) y control programático de geometrías."
+      ],
+      "bullets_en": [
+        "Engineered a generative orchestration pipeline bridging LLMs via MCP to synthesize 3D procedural meshes and automated rigging.",
+        "Reduced context token overhead by up to 80% via single-turn batch payloads and automated 19-stage headless Blender export."
+      ]
+    },
+    "after_effects": {
+      "title_es": "Motor de Video After Effects MCP",
+      "title_en": "After Effects MCP Video Engine",
+      "tech": "Adobe After Effects, MCP Protocol, Node.js / Python, Token Optimization",
+      "bullets_es": [
+        "Puente de control por IA para dirigir, animar keyframes y renderizar composiciones de motion graphics mediante señales compactas.",
+        "Ahorro masivo de tokens de contexto y renderizado en segundo plano sin intervención manual."
+      ],
+      "bullets_en": [
+        "Connected AI models to Adobe After Effects through MCP to automate multi-layer timelines, keyframe interpolation, and cameras.",
+        "Achieved real-time headless render queue automation with context-minimized control payloads."
+      ]
+    },
+    "ableton_engine": {
+      "title_es": "AbletonEngine (Estudio de Música Algorítmica)",
+      "title_en": "AbletonEngine (Generative Music Studio)",
+      "tech": "Python, Ableton Live API, Audio DSP, Validación LUFS",
+      "bullets_es": [
+        "Generador musical algorítmico autónomo que valida criterios de producción (sonoridad LUFS, consistencia armónica y balance espectral).",
+        "Pipeline de composición multi-track exportable directamente a proyectos DAW profesionales."
+      ],
+      "bullets_en": [
+        "Autonomous algorithmic composition studio connected to Ableton Live enforcing LUFS loudness and harmonic consistency standards.",
+        "Synthesizes multi-track structural arrangements and dynamic spectral balancing directly into DAW sessions."
+      ]
+    },
+    "lexikit": {
+      "title_es": "LexiKit (Plataforma Educativa con IA)",
+      "title_en": "LexiKit (AI Language Learning Platform)",
+      "tech": "Next.js, TypeScript, LLM Prompt Chaining, Spaced Repetition",
+      "bullets_es": [
+        "Plataforma de aprendizaje continuo con generación adaptativa de contenido y refuerzo de memoria mediante algoritmos de repetición espaciada.",
+        "Integración de inferencia de modelos de lenguaje con baja latencia y UX interactiva."
+      ],
+      "bullets_en": [
+        "Engineered an adaptive learning platform generating on-demand lessons reinforced by spaced repetition algorithms.",
+        "Integrated low-latency LLM inference chains with intuitive interactive flashcards and progress tracking."
+      ]
+    }
+  },
+  "skills": {
+    "fullstack": {
+      "label_es": "Arquitectura Full-Stack",
+      "label_en": "Full-Stack Architecture",
+      "items": "C#, .NET / .NET Core, Angular, React, Next.js, Vue.js, TypeScript, SQL Server, APIs RESTful, Entity Framework"
+    },
+    "devops": {
+      "label_es": "DevOps e Infraestructura",
+      "label_en": "DevOps & Infrastructure",
+      "items": "Docker, CI/CD Pipelines, Linux / Bash, Git Workflows, Releases Web y Móvil, Nginx, Aprovisionamiento de Entornos"
+    },
+    "ai": {
+      "label_es": "IA y Sistemas Inteligentes",
+      "label_en": "AI & Intelligent Systems",
+      "items": "Model Context Protocol (MCP), Python, Flujos de Agentes, Automatización n8n, Optimización Inteligente, LLMs Locales"
+    },
+    "tools": {
+      "label_es": "Creative Tech e Idiomas",
+      "label_en": "Creative Tech & Languages",
+      "items": "Blender (Python 3D), After Effects Engine, Audio DSP / VST | Inglés (Profesional), Español (Nativo)"
+    }
+  }
+}
