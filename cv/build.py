@@ -153,29 +153,24 @@ def main():
                 generated.append((filename, f"{kb:.1f} KB", p, l.upper()))
                 print(f"  [OK] {filename:<38} [{kb:5.1f} KB] ({p} / {l.upper()})")
 
-    # Copiar también a public/cv/ para acceso directo en web
-    public_cv_dir = root_dir / "public" / "cv"
-    public_cv_dir.mkdir(parents=True, exist_ok=True)
+    # Publicar únicamente el CV oficial en public/cv.pdf (y versión EN en public/cv-en.pdf)
     import shutil
-    for fn, _, _, _ in generated:
-        src_f = dist_dir / fn
-        if src_f.exists():
-            shutil.copyfile(src_f, public_cv_dir / fn)
+    public_cv_es = root_dir / "public" / "cv.pdf"
+    public_cv_en = root_dir / "public" / "cv-en.pdf"
+    
+    cv_es_src = dist_dir / "Kevin_Garrido_CV_FULLSTACK_ES.pdf"
+    cv_en_src = dist_dir / "Kevin_Garrido_CV_FULLSTACK_EN.pdf"
 
-    # Si se solicita publish o por defecto para general_es, copiar a public/cv.pdf
-    public_cv = root_dir / "public" / "cv.pdf"
-    if args.publish or not public_cv.exists():
-        # Preferir fullstack_es o general_es
-        preferred = dist_dir / "Kevin_Garrido_CV_FULLSTACK_ES.pdf"
-        if not preferred.exists():
-            preferred = dist_dir / "Kevin_Garrido_CV_GENERAL_ES.pdf"
-        
-        if preferred.exists():
-            shutil.copyfile(preferred, public_cv)
-            print(f"\n  [PUBLICADO] Copiado a portfolio: public/cv.pdf ({preferred.name})")
+    if cv_es_src.exists():
+        shutil.copyfile(cv_es_src, public_cv_es)
+        print(f"\n  [PUBLICADO] CV Oficial ES en public/cv.pdf")
+
+    if cv_en_src.exists():
+        shutil.copyfile(cv_en_src, public_cv_en)
+        print(f"  [PUBLICADO] CV Oficial EN en public/cv-en.pdf")
 
     print("\n========================================================")
-    print(f" Total generados: {len(generated)} PDFs listos en cv/dist/ y public/cv/")
+    print(f" Total generados localmente: {len(generated)} PDFs en cv/dist/")
     print("========================================================\n")
 
 if __name__ == "__main__":

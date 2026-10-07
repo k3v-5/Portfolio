@@ -240,15 +240,9 @@ export const translations = {
       otherOptions: "// You could also try some other options:",
     },
     cvModal: {
-      badge: "OXFORD ATS FORMAT // 1-PAGE TAILORED RESUME",
+      badge: "OXFORD ATS FORMAT // 1-PAGE RESUME",
       title: "Curriculum Vitae",
-      subtitle: "Tailored by vacancy profile with strict single-page Oxford layout and 100% ATS score compliance.",
-      profiles: {
-        fullstack: "Full-Stack & DevOps",
-        devops: "DevOps & Cloud",
-        ai: "AI & MCP Engines",
-        general: "General (Intelligent Comp.)",
-      },
+      subtitle: "Official single-page Oxford layout with 100% ATS score compliance.",
       actions: {
         downloadPdf: "Download PDF",
         openPdf: "Open in Tab",
@@ -502,15 +496,9 @@ export const translations = {
       otherOptions: "// También puedes probar otras opciones:",
     },
     cvModal: {
-      badge: "FORMATO OXFORD ATS // 1 PÁGINA CALIBRADA",
+      badge: "FORMATO OXFORD ATS // 1 PÁGINA OFICIAL",
       title: "Curriculum Vitae",
-      subtitle: "Perfilado por tipo de vacante con maquetación estricta Oxford de una página y 100% amigable con ATS.",
-      profiles: {
-        fullstack: "Full-Stack & DevOps",
-        devops: "DevOps & Cloud",
-        ai: "IA & Motores MCP",
-        general: "General (Cómputo Inteligente)",
-      },
+      subtitle: "Maquetación estricta Oxford de una página oficial y 100% amigable con ATS.",
       actions: {
         downloadPdf: "Descargar PDF",
         openPdf: "Abrir en Pestaña",
