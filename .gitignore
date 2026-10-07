@@ -133,3 +133,6 @@ dist
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Backups
+public/images/.backup_originals/

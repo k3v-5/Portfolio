@@ -1,6 +1,7 @@
 import { Fira_Code, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./i18n/LanguageContext";
+import { ThemeProvider } from "./theme/ThemeContext";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -97,17 +98,24 @@ const personJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${firaCode.variable}`}>
+    <html lang="es" className={`${firaCode.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://i.scdn.co" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://i.scdn.co" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('portfolio-theme');if(s==='dark'||(!s&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
       <body className={jakarta.className}>
-        <LanguageProvider>{children}</LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>{children}</LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

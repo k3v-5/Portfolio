@@ -15,19 +15,19 @@ export default function AboutSection() {
             <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
               {about.module}
             </p>
-            <h2 className="text-4xl lg:text-5xl font-black mb-8 text-slate-900 uppercase italic">
+            <h2 className="text-4xl lg:text-5xl font-black mb-8 text-slate-900 dark:text-white uppercase italic">
               {about.heading}
             </h2>
-            <p className="text-slate-500 leading-relaxed text-lg lg:text-xl font-light">
+            <p className="text-slate-500 dark:text-slate-300 leading-relaxed text-lg lg:text-xl font-light">
               {about.bio}
             </p>
-            <div className="mt-8 pt-6 border-t border-slate-100">
+            <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
               <p className="text-sm text-slate-400 font-mono uppercase tracking-widest">
                 {about.educationLabel}
               </p>
-              <p className="text-slate-900 font-bold mt-2">{about.degree}</p>
-              <p className="text-slate-500 text-sm mt-1">{about.school}</p>
-              <p className="text-slate-400 text-sm mt-2 italic">
+              <p className="text-slate-900 dark:text-white font-bold mt-2">{about.degree}</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">{about.school}</p>
+              <p className="text-slate-400 dark:text-slate-400 text-sm mt-2 italic">
                 {about.focus}
               </p>
             </div>

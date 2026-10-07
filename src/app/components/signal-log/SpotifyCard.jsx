@@ -19,14 +19,14 @@ export default function SpotifyCard({ data, heading, offlineLabel = "Offline" })
     : (data?.title === "Offline" || !data?.title ? offlineLabel : data.title);
 
   return (
-    <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
+    <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 dark:bg-slate-900/85 backdrop-blur-[20px] border-2 border-slate-100 dark:border-white/10 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
       <div>
         <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
           {"// [PROCESS_ID: 0xAUDIO]"}
         </p>
         <div className="flex items-center gap-3">
           <h3
-            className="text-2xl font-black text-slate-900 uppercase italic truncate"
+            className="text-2xl font-black text-slate-900 dark:text-white uppercase italic truncate"
             title={heading}
           >
             {heading}
@@ -69,7 +69,7 @@ export default function SpotifyCard({ data, heading, offlineLabel = "Offline" })
             href={data.songUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-900 font-bold text-sm mt-4 font-mono truncate hover:text-[#1DB954] transition-colors flex items-center gap-2 group"
+            className="text-slate-900 dark:text-white font-bold text-sm mt-4 font-mono truncate hover:text-[#1DB954] dark:hover:text-[#1DB954] transition-colors flex items-center gap-2 group"
             title="Escuchar en Spotify"
           >
             {displayTitle}
@@ -89,14 +89,14 @@ export default function SpotifyCard({ data, heading, offlineLabel = "Offline" })
           </a>
         ) : (
           <p
-            className="text-slate-900 font-bold text-sm mt-4 font-mono truncate"
+            className="text-slate-900 dark:text-white font-bold text-sm mt-4 font-mono truncate"
             title={displayTitle}
           >
             {displayTitle}
           </p>
         )}
         <p
-          className="text-slate-500 text-xs mt-1 font-mono truncate"
+          className="text-slate-500 dark:text-slate-400 text-xs mt-1 font-mono truncate"
           title={data.artist}
         >
           {data.artist}

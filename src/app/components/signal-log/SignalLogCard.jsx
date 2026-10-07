@@ -10,13 +10,13 @@ export default function SignalLogCard({ log }) {
   const processId = log.id ? log.id.replace(".md", "") : "UNKNOWN";
 
   return (
-    <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex justify-between gap-4">
+    <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 dark:bg-slate-900/85 backdrop-blur-[20px] border-2 border-slate-100 dark:border-white/10 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex justify-between gap-4">
       <div className="flex-1">
         <p className="font-mono text-[10px] text-purple-600 font-bold mb-6 tracking-widest uppercase">
           {`// [PROCESS_ID: ${processId}]`}
         </p>
         <div
-          className="text-sm font-mono text-slate-600 space-y-4 prose-a:text-purple-500 prose-strong:text-slate-900 prose-headings:font-black prose-headings:italic prose-headings:text-xl"
+          className="text-sm font-mono text-slate-600 dark:text-slate-300 space-y-4 prose-a:text-purple-500 dark:prose-a:text-purple-400 prose-strong:text-slate-900 dark:prose-strong:text-white prose-headings:font-black prose-headings:italic prose-headings:text-xl dark:prose-headings:text-white"
           dangerouslySetInnerHTML={{ __html: log.content }}
         />
       </div>

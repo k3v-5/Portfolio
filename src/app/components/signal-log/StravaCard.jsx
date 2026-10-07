@@ -8,14 +8,14 @@ import React from "react";
  */
 export default function StravaCard({ data }) {
   return (
-    <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 backdrop-blur-[20px] border-2 border-slate-100 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
+    <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 dark:bg-slate-900/85 backdrop-blur-[20px] border-2 border-slate-100 dark:border-white/10 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
       <div>
         <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
           {`// [PROCESS_ID: 0x${data.type}]`}
         </p>
         <div className="flex items-center gap-3">
           <h3
-            className="text-2xl font-black text-slate-900 uppercase italic truncate"
+            className="text-2xl font-black text-slate-900 dark:text-white uppercase italic truncate"
             title={data.name}
           >
             {data.name}
@@ -41,7 +41,7 @@ export default function StravaCard({ data }) {
             <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
               Distance
             </p>
-            <p className="font-bold text-slate-900 font-mono text-sm">
+            <p className="font-bold text-slate-900 dark:text-white font-mono text-sm">
               {data.distance}
             </p>
           </div>
@@ -49,7 +49,7 @@ export default function StravaCard({ data }) {
             <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
               Avg Pace
             </p>
-            <p className="font-bold text-slate-900 font-mono text-sm">
+            <p className="font-bold text-slate-900 dark:text-white font-mono text-sm">
               {data.pace}
             </p>
           </div>
@@ -57,7 +57,7 @@ export default function StravaCard({ data }) {
             <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
               Time
             </p>
-            <p className="font-bold text-slate-900 font-mono text-sm">
+            <p className="font-bold text-slate-900 dark:text-white font-mono text-sm">
               {data.time}
             </p>
           </div>

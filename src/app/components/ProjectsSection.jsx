@@ -87,7 +87,7 @@ export default function ProjectsSection() {
         <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
           {t.projects.module}
         </p>
-        <h2 className="text-5xl lg:text-8xl font-black text-slate-900 uppercase italic tracking-tighter">
+        <h2 className="text-5xl lg:text-8xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter">
           {t.projects.heading}
         </h2>
       </div>

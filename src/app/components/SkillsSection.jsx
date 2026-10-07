@@ -17,7 +17,7 @@ export default function SkillsSection() {
             <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
               {t.skills.module}
             </p>
-            <h2 className="text-4xl lg:text-5xl font-black mb-8 text-slate-900 uppercase italic">
+            <h2 className="text-4xl lg:text-5xl font-black mb-8 text-slate-900 dark:text-white uppercase italic">
               {t.skills.heading}
             </h2>
 

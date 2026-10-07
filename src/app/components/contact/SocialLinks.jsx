@@ -26,7 +26,7 @@ const SOCIAL_ITEMS = [
  */
 export default function SocialLinks({ label }) {
   return (
-    <div className="pt-8 border-t border-slate-100 flex flex-col items-center">
+    <div className="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col items-center">
       <p className="font-mono text-[10px] text-slate-400 mb-6 tracking-widest uppercase">
         {label}
       </p>
@@ -37,7 +37,7 @@ export default function SocialLinks({ label }) {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-400 hover:text-purple-600 transition-colors transform hover:scale-110"
+            className="text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors transform hover:scale-110"
           >
             <span className="sr-only">{item.name}</span>
             <svg

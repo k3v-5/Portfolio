@@ -40,10 +40,10 @@ export default function LabCard({ item, innovationsLabel = "// Key Innovations" 
   };
 
   return (
-    <div className="reveal-card bg-white/95 backdrop-blur-[20px] border border-black/5 p-8 md:p-10 rounded-[3rem] shadow-2xl flex flex-col justify-between">
+    <div className="reveal-card bg-white/95 dark:bg-slate-900/85 backdrop-blur-[20px] border border-black/5 dark:border-white/10 p-8 md:p-10 rounded-[3rem] shadow-2xl flex flex-col justify-between">
       <div>
         {/* Slot de Imagen por Sección/Apartado */}
-        <div className="aspect-[2816/1536] rounded-2xl overflow-hidden mb-8 relative group border border-slate-100 bg-slate-950 flex items-center justify-center">
+        <div className="aspect-[2816/1536] rounded-2xl overflow-hidden mb-8 relative group border border-slate-100 dark:border-slate-800 bg-slate-950 flex items-center justify-center">
           {showImage ? (
             <Image
               src={item.image}
@@ -121,7 +121,7 @@ export default function LabCard({ item, innovationsLabel = "// Key Innovations" 
                 href={item.gitUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase bg-purple-50 text-purple-700 hover:bg-purple-600 hover:text-white border border-purple-200 transition-all duration-200"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 hover:bg-purple-600 dark:hover:bg-purple-600 hover:text-white border border-purple-200 dark:border-purple-800 transition-all duration-200"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -130,26 +130,26 @@ export default function LabCard({ item, innovationsLabel = "// Key Innovations" 
               </a>
             )}
           </div>
-          <h3 className="text-3xl font-black text-slate-900 uppercase italic tracking-tight">
+          <h3 className="text-3xl font-black text-slate-900 dark:text-white uppercase italic tracking-tight">
             {item.name}
           </h3>
         </div>
 
         {/* Descripción / Blurb */}
-        <p className="text-slate-600 text-sm leading-relaxed mb-6 font-sans">
+        <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 font-sans">
           {item.blurb}
         </p>
 
         {/* Highlights de Arquitectura */}
         {item.highlights && item.highlights.length > 0 && (
-          <div className="space-y-2 mb-8 bg-slate-50/80 rounded-2xl p-4 border border-slate-100">
+          <div className="space-y-2 mb-8 bg-slate-50/80 dark:bg-slate-800/50 rounded-2xl p-4 border border-slate-100 dark:border-slate-700/60">
             <p className="font-mono text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2">
               {innovationsLabel}
             </p>
             {item.highlights.map((highlight, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-2.5 text-xs text-slate-700"
+                className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300"
               >
                 <span className="font-mono text-purple-500 font-bold">
                   &gt;&gt;
@@ -162,11 +162,11 @@ export default function LabCard({ item, innovationsLabel = "// Key Innovations" 
       </div>
 
       {/* Tags Tecnológicos */}
-      <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-100">
+      <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
         {item.tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full font-mono text-[10px] uppercase tracking-wider font-semibold hover:bg-purple-100 hover:text-purple-700 transition-colors"
+            className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full font-mono text-[10px] uppercase tracking-wider font-semibold hover:bg-purple-100 dark:hover:bg-purple-900/50 hover:text-purple-700 dark:hover:text-purple-300 transition-colors"
           >
             {tag}
           </span>

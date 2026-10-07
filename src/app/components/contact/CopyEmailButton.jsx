@@ -23,9 +23,9 @@ export default function CopyEmailButton({
     <div className="group flex flex-col items-center justify-center mb-16 relative">
       <button
         onClick={onCopy}
-        className="group flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 bg-slate-50 border-2 border-slate-200 hover:border-purple-500 px-4 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 w-full sm:w-auto"
+        className="group flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 bg-slate-50 dark:bg-slate-800/80 border-2 border-slate-200 dark:border-slate-700 hover:border-purple-500 px-4 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 w-full sm:w-auto"
       >
-        <span className="font-mono text-slate-900 font-bold tracking-wider text-[11px] sm:text-base group-hover:text-purple-600 transition-colors break-all">
+        <span className="font-mono text-slate-900 dark:text-white font-bold tracking-wider text-[11px] sm:text-base group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors break-all">
           {email}
         </span>
         {copied ? (
@@ -45,7 +45,7 @@ export default function CopyEmailButton({
           </svg>
         ) : (
           <svg
-            className="w-5 h-5 text-slate-400 group-hover:text-purple-500 transition-colors shrink-0"
+            className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-purple-500 transition-colors shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

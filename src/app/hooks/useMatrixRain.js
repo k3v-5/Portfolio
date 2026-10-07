@@ -36,9 +36,10 @@ export function useMatrixRain(canvasRef) {
     const symbols = "01ΣΔ∫√μλπθΦΨΩαβγ∞≈∑∏".split("");
 
     const drawFrame = () => {
-      ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
+      const isDark = document.documentElement.classList.contains("dark");
+      ctx.fillStyle = isDark ? "rgba(7, 8, 12, 0.16)" : "rgba(255, 255, 255, 0.1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#9333EA";
+      ctx.fillStyle = isDark ? "#c084fc" : "#9333EA";
       ctx.font = fontSize + "px 'Fira Code', monospace";
       drops.forEach((y, i) => {
         const text = symbols[Math.floor(Math.random() * symbols.length)];
@@ -95,9 +96,21 @@ export function useMatrixRain(canvasRef) {
 
     window.addEventListener("resize", onResize, { passive: true });
 
+    let themeObserver;
+    if (typeof MutationObserver !== "undefined") {
+      themeObserver = new MutationObserver(() => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+      themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    }
+
     return () => {
       stopLoop();
       clearTimeout(resizeTimeout);
+      if (themeObserver) themeObserver.disconnect();
       window.removeEventListener("resize", onResize);
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };

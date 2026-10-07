@@ -13,10 +13,10 @@ export default function LabSection() {
         <p className="font-mono text-[10px] text-purple-600 font-bold mb-4 tracking-widest uppercase">
           {lab.module}
         </p>
-        <h2 className="text-5xl lg:text-8xl font-black text-slate-900 uppercase italic tracking-tighter">
+        <h2 className="text-5xl lg:text-8xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter">
           {lab.heading}
         </h2>
-        <p className="text-slate-500 text-sm max-w-2xl mx-auto mt-4 leading-relaxed font-sans">
+        <p className="text-slate-500 dark:text-slate-400 text-sm max-w-2xl mx-auto mt-4 leading-relaxed font-sans">
           {lab.subtitle}
         </p>
       </div>
