@@ -19,36 +19,36 @@
   },
   "profiles": {
     "fullstack": {
-      "title_es": "Ingeniero en Computación Inteligente | Full-Stack & DevOps",
-      "title_en": "Intelligent Computing Engineer | Full-Stack & DevOps",
-      "summary_es": "Ingeniero en Computación Inteligente especializado en arquitectura Full-Stack (.NET Core, Angular, SQL Server) y automatización DevOps (CI/CD, Docker, Linux). Diseña e implementa software empresarial de alta disponibilidad, orquestando pipelines de integración continua y acelerando ciclos de entrega. Pionero en la integración de agentes de IA y flujos de automatización mediante Model Context Protocol (MCP) para optimizar costos y maximizar eficiencia computacional.",
-      "summary_en": "Intelligent Computing Engineer specializing in Full-Stack architecture (.NET Core, Angular, SQL Server) and DevOps automation (CI/CD, Docker, Linux). Designs and deploys high-availability enterprise applications, orchestrating CI/CD pipelines to accelerate production delivery cycles. Pioneer in integrating AI agents and developer workflows via Model Context Protocol (MCP) to minimize compute overhead and boost technical throughput.",
+      "title_es": "Ingeniero en Computación Inteligente | Microservicios, ERP & Cloud",
+      "title_en": "Intelligent Computing Engineer | Microservices, ERP & Cloud",
+      "summary_es": "Ingeniero en Computación Inteligente con sólida experiencia en desarrollo de microservicios, endpoints RESTful e integraciones EDI en TypeScript, módulos de ERP empresarial en C# (.NET) y ASP Clásico con SQL Server, y plataformas de monitoreo telemático y rastreo GPS en Angular y Python. Gestión autónoma de despliegues y administración en servidores Linux y Windows IIS. Especialista en integración de APIs de LLMs mediante TypeScript y orquestación con Model Context Protocol (MCP).",
+      "summary_en": "Intelligent Computing Engineer experienced in building scalable TypeScript microservices, RESTful endpoints, and EDI integrations, enterprise ERP modules in C# (.NET) and Classic ASP, and real-time GPS tracking and telemetry platforms in Angular and Python. Independently manages production deployments on Linux and Windows IIS servers. Specialist in integrating LLM APIs via TypeScript and orchestrating workflows via Model Context Protocol (MCP).",
       "selected_projects": ["dating_app", "blender_aoe"],
-      "skills_priority": ["fullstack", "devops", "ai", "analytics", "languages"]
+      "skills_priority": ["fullstack", "devops", "telemetry", "ai", "languages"]
     },
     "devops": {
-      "title_es": "Ingeniero de Software & DevOps | Infraestructura y Despliegue",
-      "title_en": "Software & DevOps Engineer | Infrastructure & Releases",
-      "summary_es": "Ingeniero de Software enfocado en prácticas DevOps, automatización de compilaciones y pipelines de publicación continua multiplataforma (web y móvil). Especialista en flujos GitFlow, aprovisionamiento automatizado con Docker y Linux, Nginx y arquitectura de APIs escalables de alta concurrencia.",
-      "summary_en": "Software Engineer focused on DevOps practices, automated build systems, and multi-platform continuous release pipelines (web and mobile). Specialist in GitFlow workflows, Docker/Linux environment provisioning, Nginx reverse proxies, and resilient high-concurrency API architectures.",
+      "title_es": "Ingeniero de Software & DevOps | Infraestructura y Despliegues",
+      "title_en": "Software & DevOps Engineer | Infrastructure & Deployments",
+      "summary_es": "Ingeniero de Software enfocado en despliegues autónomos en producción (servidores Linux e IIS), aprovisionamiento con Docker, pipelines CI/CD y monitoreo continuo de microservicios en TypeScript y sistemas ERP en C#. Especialista en automatización de releases, proxies inversos Nginx y arquitecturas resilientes de alta disponibilidad.",
+      "summary_en": "Software Engineer focused on independent production deployments (Linux and IIS servers), Docker provisioning, CI/CD pipelines, and continuous monitoring of TypeScript microservices and C# ERP systems. Specialist in automated releases, Nginx reverse proxies, and resilient high-availability architectures.",
       "selected_projects": ["devops_pipeline", "dating_app", "blender_aoe"],
-      "skills_priority": ["devops", "fullstack", "ai", "analytics", "languages"]
+      "skills_priority": ["devops", "fullstack", "telemetry", "ai", "languages"]
     },
     "ai": {
       "title_es": "Ingeniero en Computación Inteligente | Motores de IA & MCP",
       "title_en": "Intelligent Computing Engineer | AI Engines & MCP",
-      "summary_es": "Ingeniero en Computación Inteligente enfocado en motores de inteligencia artificial, orquestación mediante Model Context Protocol (MCP) y algoritmos generativos. Experiencia desarrollando pipelines que optimizan el consumo de tokens hasta un 80% comunicando LLMs con herramientas creativas de alto rendimiento (Blender Python, After Effects, Ableton).",
-      "summary_en": "Intelligent Computing Engineer focused on AI engines, Model Context Protocol (MCP) orchestration, and generative algorithms. Experienced in architecting pipelines that reduce context token consumption by up to 80% bridging LLMs with high-performance creative toolchains (Blender Python, After Effects, Ableton).",
+      "summary_es": "Ingeniero en Computación Inteligente enfocado en integración de APIs de LLMs en TypeScript/Python, orquestación mediante Model Context Protocol (MCP) y algoritmos generativos. Experiencia desarrollando pipelines que optimizan el consumo de tokens hasta un 80% comunicando LLMs con herramientas creativas de alto rendimiento (Blender Python, After Effects, Ableton).",
+      "summary_en": "Intelligent Computing Engineer focused on integrating LLM APIs in TypeScript/Python, Model Context Protocol (MCP) orchestration, and generative algorithms. Experienced in architecting pipelines that reduce context token consumption by up to 80% bridging LLMs with high-performance creative toolchains (Blender Python, After Effects, Ableton).",
       "selected_projects": ["blender_aoe", "dating_app", "devops_pipeline"],
-      "skills_priority": ["ai", "fullstack", "devops", "analytics", "languages"]
+      "skills_priority": ["ai", "fullstack", "devops", "telemetry", "languages"]
     },
     "general": {
-      "title_es": "Ingeniero en Computación Inteligente | Full-Stack & DevOps",
-      "title_en": "Intelligent Computing Engineer | Full-Stack & DevOps",
-      "summary_es": "Ingeniero en Computación Inteligente especializado en arquitectura Full-Stack (.NET Core, Angular, SQL Server) y automatización DevOps (CI/CD, Docker, Linux). Diseña e implementa software empresarial de alta disponibilidad, orquestando pipelines de integración continua y acelerando ciclos de entrega. Pionero en la integración de agentes de IA y flujos de automatización mediante Model Context Protocol (MCP) para optimizar costos y maximizar eficiencia computacional.",
-      "summary_en": "Intelligent Computing Engineer specializing in Full-Stack architecture (.NET Core, Angular, SQL Server) and DevOps automation (CI/CD, Docker, Linux). Designs and deploys high-availability enterprise applications, orchestrating CI/CD pipelines to accelerate production delivery cycles. Pioneer in integrating AI agents and developer workflows via Model Context Protocol (MCP) to minimize compute overhead and boost technical throughput.",
+      "title_es": "Ingeniero en Computación Inteligente | Microservicios, ERP & Cloud",
+      "title_en": "Intelligent Computing Engineer | Microservices, ERP & Cloud",
+      "summary_es": "Ingeniero en Computación Inteligente con sólida experiencia en desarrollo de microservicios, endpoints RESTful e integraciones EDI en TypeScript, módulos de ERP empresarial en C# (.NET) y ASP Clásico con SQL Server, y plataformas de monitoreo telemático y rastreo GPS en Angular y Python. Gestión autónoma de despliegues y administración en servidores Linux y Windows IIS. Especialista en integración de APIs de LLMs mediante TypeScript y orquestación con Model Context Protocol (MCP).",
+      "summary_en": "Intelligent Computing Engineer experienced in building scalable TypeScript microservices, RESTful endpoints, and EDI integrations, enterprise ERP modules in C# (.NET) and Classic ASP, and real-time GPS tracking and telemetry platforms in Angular and Python. Independently manages production deployments on Linux and Windows IIS servers. Specialist in integrating LLM APIs via TypeScript and orchestrating workflows via Model Context Protocol (MCP).",
       "selected_projects": ["dating_app", "blender_aoe"],
-      "skills_priority": ["fullstack", "devops", "ai", "analytics", "languages"]
+      "skills_priority": ["fullstack", "devops", "telemetry", "ai", "languages"]
     }
   },
   "education": {
@@ -71,14 +71,16 @@
       "dates_es": "Noviembre 2024 – Actualidad",
       "dates_en": "November 2024 – Present",
       "bullets_es": [
-        "Arquitectó y desplegó soluciones empresariales responsivas (web y móvil) con Angular, TypeScript, .NET Core y SQL Server para entornos de alta disponibilidad operativa.",
-        "Diseñó pipelines de CI/CD (GitHub Actions / GitLab CI) y aprovisionamiento con Docker y Linux (GitFlow), reduciendo tiempos de release de horas a menos de 15 minutos.",
-        "Construyó servicios RESTful escalables e implementó pipelines de Business Intelligence (Power BI / Tableau) para trazabilidad analítica de operaciones logísticas."
+        "Desarrolló y mantuvo módulos centrales de ERP empresarial en C# (.NET) y ASP Clásico con SQL Server, gestionando catálogos, facturación y trazabilidad operativa de misión crítica.",
+        "Diseñó microservicios y endpoints RESTful en TypeScript para procesamiento e intercambio electrónico de datos (EDI), sincronizando transacciones B2B con socios comerciales.",
+        "Construyó plataformas de monitoreo y rastreo GPS en Angular, conectadas a servicios de ingesta telemática en tiempo real desarrollados con Python para trackeo de flotas.",
+        "Gestionó de manera autónoma despliegues en servidores Linux (servicios/daemons) y servidores IIS, e implementó integraciones y procesos con APIs de LLMs en TypeScript."
       ],
       "bullets_en": [
-        "Architected and deployed responsive enterprise applications (web & mobile) using Angular, TypeScript, .NET Core, and SQL Server for mission-critical operations.",
-        "Engineered CI/CD pipelines (GitHub Actions / GitLab CI) and Docker/Linux provisioning under GitFlow, slashing release turnaround from hours to under 15 minutes.",
-        "Built scalable RESTful services and implemented Business Intelligence pipelines (Power BI / Tableau) driving real-time operational traceability."
+        "Engineered and maintained core enterprise ERP modules using C# (.NET), Classic ASP, and SQL Server, managing inventories, billing, and mission-critical business transactions.",
+        "Architected scalable microservices and RESTful endpoints in TypeScript for Electronic Data Interchange (EDI), automating high-throughput B2B transactions with commercial partners.",
+        "Built real-time GPS tracking and asset monitoring platforms in Angular, fed by Python telemetry ingestion services and continuous coordinate streaming.",
+        "Independently managed production deployments across Linux servers and Windows IIS environments, while building intelligent LLM API integrations and automated pipelines in TypeScript."
       ]
     },
     {
@@ -202,19 +204,24 @@
   },
   "skills": {
     "fullstack": {
-      "label_es": "Arquitectura Full-Stack & Backend",
-      "label_en": "Full-Stack & Backend Architecture",
-      "items": "C#, .NET Core, ASP.NET Web API, Angular, React, Next.js, Vue.js, TypeScript, SQL Server, Entity Framework Core, RESTful APIs, SignalR (WebSockets)"
+      "label_es": "Microservicios, ERP & Backend",
+      "label_en": "Microservices, ERP & Backend",
+      "items": "TypeScript (Microservicios & Endpoints), C#, .NET / .NET Core, ASP Clásico, Angular, SQL Server, Arquitectura ERP, Integraciones EDI, RESTful APIs"
     },
     "devops": {
-      "label_es": "DevOps, CI/CD & Infraestructura Cloud",
-      "label_en": "DevOps, CI/CD & Cloud Infrastructure",
-      "items": "GitHub Actions, GitLab CI, Docker, Docker Compose, Linux (Ubuntu/Debian), Bash Scripting, Nginx, GitFlow, Aprovisionamiento de Entornos, Releases Multiplataforma"
+      "label_es": "Servidores, Despliegues & DevOps",
+      "label_en": "Servers, Deployments & DevOps",
+      "items": "Despliegues Autónomos, Servidores Linux (Servicios/Daemons), Servidores Windows IIS, Docker, CI/CD (GitHub Actions, GitLab CI), Nginx, GitFlow"
+    },
+    "telemetry": {
+      "label_es": "Monitoreo, Telemetría GPS & Trazabilidad",
+      "label_en": "Monitoring, GPS Telemetry & Analytics",
+      "items": "Python (Ingesta GPS / Sockets en Tiempo Real), Plataformas de Monitoreo (Angular), Trackeo de Información y Flotas, Power BI, Tableau"
     },
     "ai": {
-      "label_es": "Sistemas Inteligentes, MCP & IA Generativa",
-      "label_en": "Intelligent Systems, MCP & Generative AI",
-      "items": "Model Context Protocol (MCP), Python, Flujos de Agentes Autónomos, n8n Automation, Optimización Algorítmica, LLM Context Optimization, PyTorch"
+      "label_es": "Integración de LLMs, MCP & IA Generativa",
+      "label_en": "LLM Integrations, MCP & Generative AI",
+      "items": "Integración de APIs de LLMs (TypeScript/Python), Model Context Protocol (MCP), Flujos de Agentes Autónomos, n8n Automation, Reducción de Tokens"
     },
     "analytics": {
       "label_es": "Business Intelligence & Analítica de Datos",

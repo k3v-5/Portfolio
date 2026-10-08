@@ -24,16 +24,25 @@ export const metadata = {
   keywords: [
     "Kevin Garrido",
     "Ingeniero en Cómputo Inteligente",
+    "Microservicios",
+    "TypeScript",
+    "C#",
+    ".NET",
+    "Angular",
+    "ERP",
+    "EDI",
+    "Telemetría GPS",
+    "Software de Monitoreo",
+    "Servidores Linux",
+    "Servidores IIS",
+    "APIs de LLMs",
     "Full-Stack Developer",
     "DevOps",
     "CI/CD",
     "Docker",
-    ".NET",
-    "Angular",
     "Model Context Protocol",
     "MCP",
     "Inteligencia Artificial",
-    "n8n",
     "Blender Python",
     "After Effects Engine",
   ],
@@ -42,7 +51,7 @@ export const metadata = {
   openGraph: {
     title: "Kevin Garrido // Ingeniero en Cómputo Inteligente",
     description:
-      "Arquitectura de motores de IA, pipelines generativos con MCP, gráficos 3D procedurales y sistemas web escalables.",
+      "Arquitectura de microservicios, ERP, telemetría telemática GPS, servidores Linux/IIS y motores de IA con MCP.",
     url: "https://kevingarrido.com",
     siteName: "Kevin Garrido Portfolio",
     images: [
@@ -60,7 +69,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Kevin Garrido // Ingeniero en Cómputo Inteligente",
     description:
-      "Arquitectura de motores de IA, pipelines generativos con MCP, gráficos 3D procedurales y sistemas web escalables.",
+      "Arquitectura de microservicios, ERP, telemetría telemática GPS, servidores Linux/IIS y motores de IA con MCP.",
     images: ["/og-image.png"],
   },
 };
@@ -84,12 +93,15 @@ const personJsonLd = {
     name: "Universidad Autónoma de Aguascalientes"
   },
   knowsAbout: [
-    "Full-Stack Architecture",
-    ".NET Core",
+    "Microservicios en TypeScript",
+    "Enterprise ERP Systems (C# / .NET)",
+    "Integraciones EDI",
+    "Telemetría GPS y Software de Monitoreo",
+    "Servidores Linux y Windows IIS",
+    "Integración de APIs de LLMs",
     "Angular",
     "SQL Server",
-    "DevOps",
-    "CI/CD",
+    "DevOps & CI/CD",
     "Docker",
     "Model Context Protocol (MCP)",
     "Inteligencia Artificial"
