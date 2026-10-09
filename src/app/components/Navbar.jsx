@@ -159,7 +159,7 @@ export default function Navbar({ onOpenCv }) {
                 }}
                 className="py-2 px-3 rounded-xl text-left text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/40 transition-all flex items-center justify-between"
               >
-                <span>{t.nav.cv || "// CV (ATS)"}</span>
+                <span>{t.nav.cv || "// CV"}</span>
                 <span className="text-purple-500 opacity-60 text-[10px]">&gt;&gt;</span>
               </button>
             </div>

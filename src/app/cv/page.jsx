@@ -118,7 +118,7 @@ export default function CvPage() {
             <button
               onClick={handleCopyAtsText}
               className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-xs px-3 py-1.5 rounded-lg border border-slate-700 transition"
-              title="Copiar texto plano ATS"
+              title="Copiar texto plano"
             >
               {copied ? (
                 <>
@@ -130,7 +130,7 @@ export default function CvPage() {
               ) : (
                 <>
                   <ClipboardDocumentIcon className="w-4 h-4 text-slate-400" />
-                  <span>{lang === "es" ? "Copiar ATS" : "Copy ATS"}</span>
+                  <span>{lang === "es" ? "Copiar Texto" : "Copy Text"}</span>
                 </>
               )}
             </button>
@@ -175,8 +175,8 @@ export default function CvPage() {
       {/* FOOTER */}
       <footer className="max-w-[850px] mx-auto mt-8 pt-4 border-t border-slate-800 text-center text-[10px] font-mono text-slate-500 uppercase tracking-widest print:hidden">
         {lang === "es"
-          ? "Formato Oxford de 1 página estricta // Verificado para lectores ATS // Kevin Garrido"
-          : "Strict 1-Page Oxford Layout // ATS-friendly verified // Kevin Garrido"}
+          ? "Curriculum Vitae Oficial // Kevin Garrido"
+          : "Official Resume // Kevin Garrido"}
       </footer>
     </div>
   );

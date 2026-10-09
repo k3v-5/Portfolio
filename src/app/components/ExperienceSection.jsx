@@ -49,19 +49,6 @@ export default function ExperienceSection({ onOpenCv }) {
                 </div>
               ))}
             </div>
-
-            <div className="mt-10 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
-              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
-                {"// ATS-FRIENDLY OXFORD FORMAT"}
-              </span>
-              <button
-                type="button"
-                onClick={onOpenCv}
-                className="inline-flex items-center gap-2 text-xs font-mono font-bold text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 uppercase tracking-widest hover:underline"
-              >
-                <span>{experience.viewFullCv || "Ver CV Completo (Formato Oxford ATS) →"}</span>
-              </button>
-            </div>
           </div>
         </div>
       </div>

@@ -118,8 +118,8 @@ export default function CvModal({ isOpen, onClose }) {
             </span>
             <p className="font-mono text-[10px] text-purple-400 font-bold tracking-widest uppercase">
               {cvLang === "es"
-                ? "CURRICULUM VITAE // FORMATO OXFORD ATS (1 PÁGINA)"
-                : "RESUME // OXFORD ATS FORMAT (1-PAGE)"}
+                ? "CURRICULUM VITAE // VERSIÓN OFICIAL"
+                : "RESUME // OFFICIAL VERSION"}
             </p>
           </div>
 
@@ -148,7 +148,7 @@ export default function CvModal({ isOpen, onClose }) {
               </button>
             </div>
 
-            {/* Actions: Copy ATS, Open PDF, Download PDF */}
+            {/* Actions: Copy Text, Open PDF, Download PDF */}
             <button
               onClick={handleCopyAtsText}
               className="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-mono text-xs px-3 py-1.5 rounded-lg border border-slate-700 transition"
@@ -165,7 +165,7 @@ export default function CvModal({ isOpen, onClose }) {
                 <>
                   <ClipboardDocumentIcon className="w-4 h-4 text-slate-400" />
                   <span className="hidden sm:inline">
-                    {cvLang === "es" ? "Copiar ATS" : "Copy ATS"}
+                    {cvLang === "es" ? "Copiar Texto" : "Copy Text"}
                   </span>
                 </>
               )}
@@ -209,14 +209,14 @@ export default function CvModal({ isOpen, onClose }) {
           <div className="w-full max-w-[850px] transition-all">
             <OxfordCvView profile="fullstack" lang={cvLang} />
 
-            {/* ATS Badge & Explanatory Footer */}
+            {/* Explanatory Footer */}
             <div className="mt-6 mb-2 flex items-center justify-between text-slate-500 text-[11px] font-mono px-2">
               <span className="flex items-center gap-1.5">
                 <SparklesIcon className="w-3.5 h-3.5 text-purple-400" />
                 <span>
                   {cvLang === "es"
-                    ? "Formato Oxford de 1 página exacta, optimizado para lectores ATS y lectura ágil."
-                    : "Strict 1-page Oxford layout, optimized for ATS parsers and technical recruiters."}
+                    ? "Versión oficial de 1 página para lectura y revisión ágil."
+                    : "Official 1-page layout calibrated for technical review."}
                 </span>
               </span>
               <span className="opacity-60 hidden sm:inline">
