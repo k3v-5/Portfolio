@@ -74,13 +74,15 @@
         "Desarrollo y mantengo módulos centrales de ERP empresarial en C# (.NET) y ASP Clásico con SQL Server, gestionando catálogos, facturación y trazabilidad operativa de misión crítica.",
         "Diseño e implemento microservicios y endpoints RESTful en TypeScript para procesamiento e intercambio electrónico de datos (EDI), sincronizando transacciones B2B con socios comerciales.",
         "Construyo plataformas de monitoreo y rastreo GPS en Angular, conectadas a servicios de ingesta telemática en tiempo real con Python para trackeo de flotas.",
-        "Gestiono de manera autónoma despliegues en servidores Linux (servicios/daemons) y servidores IIS, e implemento integraciones y procesos con APIs de LLMs en TypeScript."
+        "Gestiono de manera autónoma el ciclo de despliegue y publicación de servicios en servidores Linux (servicios/daemons) y servidores Windows IIS.",
+        "Implemento procesos e integraciones con APIs de LLMs en TypeScript para automatización de flujos de trabajo y análisis inteligente de datos."
       ],
       "bullets_en": [
         "Develop and maintain core enterprise ERP modules in C# (.NET) and Classic ASP with SQL Server, managing inventories, billing, and mission-critical business transactions.",
         "Design and implement scalable microservices and RESTful endpoints in TypeScript for Electronic Data Interchange (EDI), automating high-throughput B2B transactions with commercial partners.",
         "Build real-time GPS tracking and asset monitoring platforms in Angular, fed by Python telemetry ingestion services and continuous coordinate streaming.",
-        "Independently manage production deployments across Linux servers (systemd services) and Windows IIS environments, while building intelligent LLM API integrations and automated pipelines in TypeScript."
+        "Independently manage production deployments and service publishing across Linux servers (systemd daemons) and Windows IIS environments.",
+        "Implement automated workflows and integrations with LLM APIs in TypeScript for intelligent data processing and task automation."
       ]
     },
     {
