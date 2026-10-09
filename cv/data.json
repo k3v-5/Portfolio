@@ -71,16 +71,16 @@
       "dates_es": "Noviembre 2024 – Actualidad",
       "dates_en": "November 2024 – Present",
       "bullets_es": [
-        "Desarrolló y mantuvo módulos centrales de ERP empresarial en C# (.NET) y ASP Clásico con SQL Server, gestionando catálogos, facturación y trazabilidad operativa de misión crítica.",
-        "Diseñó microservicios y endpoints RESTful en TypeScript para procesamiento e intercambio electrónico de datos (EDI), sincronizando transacciones B2B con socios comerciales.",
-        "Construyó plataformas de monitoreo y rastreo GPS en Angular, conectadas a servicios de ingesta telemática en tiempo real desarrollados con Python para trackeo de flotas.",
-        "Gestionó de manera autónoma despliegues en servidores Linux (servicios/daemons) y servidores IIS, e implementó integraciones y procesos con APIs de LLMs en TypeScript."
+        "Desarrollo y mantengo módulos centrales de ERP empresarial en C# (.NET) y ASP Clásico con SQL Server, gestionando catálogos, facturación y trazabilidad operativa de misión crítica.",
+        "Diseño e implemento microservicios y endpoints RESTful en TypeScript para procesamiento e intercambio electrónico de datos (EDI), sincronizando transacciones B2B con socios comerciales.",
+        "Construyo plataformas de monitoreo y rastreo GPS en Angular, conectadas a servicios de ingesta telemática en tiempo real con Python para trackeo de flotas.",
+        "Gestiono de manera autónoma despliegues en servidores Linux (servicios/daemons) y servidores IIS, e implemento integraciones y procesos con APIs de LLMs en TypeScript."
       ],
       "bullets_en": [
-        "Engineered and maintained core enterprise ERP modules using C# (.NET), Classic ASP, and SQL Server, managing inventories, billing, and mission-critical business transactions.",
-        "Architected scalable microservices and RESTful endpoints in TypeScript for Electronic Data Interchange (EDI), automating high-throughput B2B transactions with commercial partners.",
-        "Built real-time GPS tracking and asset monitoring platforms in Angular, fed by Python telemetry ingestion services and continuous coordinate streaming.",
-        "Independently managed production deployments across Linux servers and Windows IIS environments, while building intelligent LLM API integrations and automated pipelines in TypeScript."
+        "Develop and maintain core enterprise ERP modules in C# (.NET) and Classic ASP with SQL Server, managing inventories, billing, and mission-critical business transactions.",
+        "Design and implement scalable microservices and RESTful endpoints in TypeScript for Electronic Data Interchange (EDI), automating high-throughput B2B transactions with commercial partners.",
+        "Build real-time GPS tracking and asset monitoring platforms in Angular, fed by Python telemetry ingestion services and continuous coordinate streaming.",
+        "Independently manage production deployments across Linux servers (systemd services) and Windows IIS environments, while building intelligent LLM API integrations and automated pipelines in TypeScript."
       ]
     },
     {
