@@ -49,6 +49,14 @@
       "summary_en": "Intelligent Computing Engineer experienced in building scalable TypeScript microservices, RESTful endpoints, and EDI integrations, enterprise ERP modules in C# (.NET) and Classic ASP, and real-time GPS tracking and telemetry platforms in Angular and Python. Independently manages production deployments on Linux and Windows IIS servers. Specialist in integrating LLM APIs via TypeScript and orchestrating workflows via Model Context Protocol (MCP).",
       "selected_projects": ["dating_app", "blender_aoe"],
       "skills_priority": ["fullstack", "devops", "telemetry", "ai", "languages"]
+    },
+    "custom": {
+      "title_es": "Ingeniero en Computación Inteligente | Perfil a Medida de Vacante",
+      "title_en": "Intelligent Computing Engineer | Tailored Role",
+      "summary_es": "Ingeniero en Computación Inteligente con sólida experiencia en desarrollo de software de misión crítica, arquitecturas escalables y automatización de procesos.",
+      "summary_en": "Intelligent Computing Engineer with proven experience in mission-critical software engineering, scalable architectures, and process automation.",
+      "selected_projects": ["dating_app", "devops_pipeline"],
+      "skills_priority": ["fullstack", "devops", "telemetry", "ai", "languages"]
     }
   },
   "education": {

@@ -117,7 +117,7 @@ def html_to_pdf(html_content, output_pdf_path):
 
 def main():
     parser = argparse.ArgumentParser(description="Oxford CV Generator")
-    parser.add_argument("--profile", default="all", choices=["all", "fullstack", "devops", "ai", "general"], help="Perfil de la vacante")
+    parser.add_argument("--profile", default="all", choices=["all", "fullstack", "devops", "ai", "general", "custom"], help="Perfil de la vacante")
     parser.add_argument("--lang", default="all", choices=["all", "es", "en"], help="Idioma (es, en o all)")
     parser.add_argument("--publish", action="store_true", help="Copia el CV principal a public/cv.pdf")
     args = parser.parse_args()
