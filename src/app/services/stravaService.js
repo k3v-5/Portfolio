@@ -1,43 +1,42 @@
+import { apiFetch } from "./apiClient";
+
 /**
  * Strava Service
- * Handles communication with the Strava API route and returns
- * formatted activity statistics.
+ * Maneja la comunicación con el endpoint /api/strava y retorna estadísticas formateadas.
  */
 
-export async function fetchStravaActivity() {
-  try {
-    const res = await fetch("/api/strava");
-    if (res.ok) {
-      const data = await res.json();
-      return {
-        name: data.name,
-        pace: `${data.pace} /km`,
-        distance: `${data.distance} km`,
-        time: data.time,
-        elevation: data.elevation,
-        type: (data.type || "RUN").toUpperCase(),
-      };
-    } else {
-      const errorData = await res.json().catch(() => ({}));
-      console.error("❌ Error de la API de Strava:", errorData);
-      return {
-        name: errorData.error || "No data",
-        pace: "--:--",
-        distance: "--",
-        time: "--",
-        elevation: "--",
-        type: "N/A",
-      };
-    }
-  } catch (error) {
-    console.error("❌ Falló la conexión al endpoint de Strava:", error);
+export const STRAVA_FALLBACK_STATE = Object.freeze({
+  name: "No data",
+  pace: "--:--",
+  distance: "--",
+  time: "--",
+  elevation: "--",
+  type: "N/A",
+});
+
+/**
+ * Consulta la última actividad de Strava.
+ * @param {AbortSignal} [signal]
+ * @returns {Promise<typeof STRAVA_FALLBACK_STATE>}
+ */
+export async function fetchStravaActivity(signal) {
+  const result = await apiFetch("/api/strava", { signal, timeoutMs: 6000 });
+
+  if (!result.ok || !result.data) {
     return {
-      name: "Signal lost",
-      pace: "--:--",
-      distance: "--",
-      time: "--",
-      elevation: "--",
-      type: "ERR",
+      ...STRAVA_FALLBACK_STATE,
+      name: result.error || "Signal lost",
+      type: result.status === 408 ? "TIMEOUT" : "ERR",
     };
   }
+
+  const data = result.data;
+  return {
+    name: data.name || "Run",
+    pace: data.pace ? `${data.pace} /km` : "--:--",
+    distance: data.distance ? `${data.distance} km` : "--",
+    time: data.time || "--",
+    elevation: data.elevation || "--",
+    type: (data.type || "RUN").toUpperCase(),
+  };
 }

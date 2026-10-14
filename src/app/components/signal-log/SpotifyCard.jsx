@@ -1,4 +1,5 @@
 import React from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const SPECTRUM_BARS = [40, 70, 45, 90, 60, 100, 50, 80, 30, 65, 40];
 
@@ -12,6 +13,8 @@ const SPECTRUM_BARS = [40, 70, 45, 90, 60, 100, 50, 80, 30, 65, 40];
  * }} props
  */
 export default function SpotifyCard({ data, heading, offlineLabel = "Offline" }) {
+  const { lang } = useLanguage();
+  const listenTitle = lang === "en" ? "Listen on Spotify" : "Escuchar en Spotify";
   const isPlaying = Boolean(data?.isPlaying);
   const hasUrl = Boolean(data?.songUrl && data.songUrl !== "#");
   const displayTitle = isPlaying
@@ -37,7 +40,7 @@ export default function SpotifyCard({ data, heading, offlineLabel = "Offline" })
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform cursor-pointer"
-              title="Escuchar en Spotify"
+              title={listenTitle}
             >
               <svg
                 className="w-6 h-6 text-[#1DB954] shrink-0"
@@ -70,7 +73,7 @@ export default function SpotifyCard({ data, heading, offlineLabel = "Offline" })
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-900 dark:text-white font-bold text-sm mt-4 font-mono truncate hover:text-[#1DB954] dark:hover:text-[#1DB954] transition-colors flex items-center gap-2 group"
-            title="Escuchar en Spotify"
+            title={listenTitle}
           >
             {displayTitle}
             <svg

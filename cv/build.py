@@ -43,13 +43,14 @@ def render_html(template_path, data, lang="es", profile_name="fullstack"):
 
     # Experience
     experience_data = []
-    for job in data["experience"]:
+    exp_source = prof.get("experience_override", data["experience"])
+    for job in exp_source:
         experience_data.append({
             "company": job["company"],
             "location": job["location"],
-            "role": job[f"role_{lang}"],
-            "dates": job[f"dates_{lang}"],
-            "bullets": job[f"bullets_{lang}"]
+            "role": job.get(f"role_{lang}", job.get("role_es")),
+            "dates": job.get(f"dates_{lang}", job.get("dates_es")),
+            "bullets": job.get(f"bullets_{lang}", job.get("bullets_es", []))
         })
 
     # Selected Projects for this profile
@@ -66,10 +67,11 @@ def render_html(template_path, data, lang="es", profile_name="fullstack"):
 
     # Skills mapped by language (use 'technologies' to avoid Jinja dict.items method collision)
     skills_data = {}
-    for k, v in data["skills"].items():
+    skills_source = prof.get("skills_override", data["skills"])
+    for k, v in skills_source.items():
         skills_data[k] = {
-            "label": v[f"label_{lang}"],
-            "technologies": v["items"]
+            "label": v.get(f"label_{lang}", v.get("label_es")),
+            "technologies": v.get(f"items_{lang}", v.get("items", ""))
         }
 
     rendered = tmpl.render(
@@ -120,14 +122,23 @@ def main():
     parser.add_argument("--profile", default="all", choices=["all", "fullstack", "devops", "ai", "general", "custom"], help="Perfil de la vacante")
     parser.add_argument("--lang", default="all", choices=["all", "es", "en"], help="Idioma (es, en o all)")
     parser.add_argument("--publish", action="store_true", help="Copia el CV principal a public/cv.pdf")
+    parser.add_argument("--output-dir", default=None, help="Directorio destino para guardar los PDFs generados")
+    parser.add_argument("--name", default=None, help="Nombre base personalizado para el archivo PDF")
     args = parser.parse_args()
 
     root_dir = Path(__file__).resolve().parent.parent
     cv_dir = root_dir / "cv"
     data_path = cv_dir / "data.json"
     template_path = cv_dir / "template.html"
-    dist_dir = cv_dir / "dist"
-    dist_dir.mkdir(exist_ok=True)
+
+    # Si es perfil custom y no se especificó output-dir, usar cv/tailored
+    if args.output_dir:
+        dest_dir = Path(args.output_dir).resolve()
+    elif args.profile == "custom":
+        dest_dir = cv_dir / "tailored"
+    else:
+        dest_dir = cv_dir / "dist"
+    dest_dir.mkdir(parents=True, exist_ok=True)
 
     data = load_data(data_path)
 
@@ -145,8 +156,11 @@ def main():
 
     for p in profiles:
         for l in langs:
-            filename = f"Kevin_Garrido_CV_{p.upper()}_{l.upper()}.pdf"
-            out_path = dist_dir / filename
+            if args.name:
+                filename = f"{args.name}_{l.upper()}.pdf" if len(langs) > 1 else f"{args.name}.pdf"
+            else:
+                filename = f"Kevin_Garrido_CV_{p.upper()}_{l.upper()}.pdf"
+            out_path = dest_dir / filename
             html = render_html(template_path, data, lang=l, profile_name=p)
             ok = html_to_pdf(html, out_path)
             if ok:
@@ -154,24 +168,26 @@ def main():
                 generated.append((filename, f"{kb:.1f} KB", p, l.upper()))
                 print(f"  [OK] {filename:<38} [{kb:5.1f} KB] ({p} / {l.upper()})")
 
-    # Publicar únicamente el CV oficial en public/cv.pdf (y versión EN en public/cv-en.pdf)
-    import shutil
-    public_cv_es = root_dir / "public" / "cv.pdf"
-    public_cv_en = root_dir / "public" / "cv-en.pdf"
-    
-    cv_es_src = dist_dir / "Kevin_Garrido_CV_FULLSTACK_ES.pdf"
-    cv_en_src = dist_dir / "Kevin_Garrido_CV_FULLSTACK_EN.pdf"
+    # Publicar únicamente si se solicita explícitamente con --publish
+    if args.publish:
+        import shutil
+        public_cv_es = root_dir / "public" / "cv.pdf"
+        public_cv_en = root_dir / "public" / "cv-en.pdf"
+        
+        cv_es_src = dest_dir / "Kevin_Garrido_CV_FULLSTACK_ES.pdf"
+        cv_en_src = dest_dir / "Kevin_Garrido_CV_FULLSTACK_EN.pdf"
 
-    if cv_es_src.exists():
-        shutil.copyfile(cv_es_src, public_cv_es)
-        print(f"\n  [PUBLICADO] CV Oficial ES en public/cv.pdf")
+        if cv_es_src.exists():
+            shutil.copyfile(cv_es_src, public_cv_es)
+            print(f"\n  [PUBLICADO] CV Oficial ES en public/cv.pdf")
 
-    if cv_en_src.exists():
-        shutil.copyfile(cv_en_src, public_cv_en)
-        print(f"  [PUBLICADO] CV Oficial EN en public/cv-en.pdf")
+        if cv_en_src.exists():
+            shutil.copyfile(cv_en_src, public_cv_en)
+            print(f"  [PUBLICADO] CV Oficial EN en public/cv-en.pdf")
 
+    rel_dest = dest_dir.relative_to(root_dir) if dest_dir.is_relative_to(root_dir) else dest_dir
     print("\n========================================================")
-    print(f" Total generados localmente: {len(generated)} PDFs en cv/dist/")
+    print(f" Total generados localmente: {len(generated)} PDFs en {rel_dest}/")
     print("========================================================\n")
 
 if __name__ == "__main__":

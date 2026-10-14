@@ -136,3 +136,7 @@ __pycache__/
 
 # Backups
 public/images/.backup_originals/
+
+# Tailored CVs & Generated PDFs (no trackeados)
+cv/tailored/
+cv/dist/

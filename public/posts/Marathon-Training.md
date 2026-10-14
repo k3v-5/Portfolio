@@ -4,6 +4,6 @@
 
 - **Distance:** 42.195 km (Full Marathon)
 - **Status:** Goal Achieved // Finisher 🎯
-- **Mindset:** Extreme discipline, stamina & long-range engineering focus.
+- **Mindset:** Rigorous discipline, stamina & long-range engineering focus.
 
-> *"Long-distance endurance translates directly into engineering: deep focus, patience through friction, and delivering across the finish line."* ⚡
+> *"Long-distance endurance translates directly into my engineering practice: deep focus, patience through friction, and delivering across the finish line."* ⚡

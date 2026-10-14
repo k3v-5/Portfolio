@@ -1,44 +1,34 @@
+import { apiFetch } from "./apiClient";
+
 /**
  * Spotify Service
- * Handles communication with the Spotify API route and returns
- * standardized playback state.
+ * Maneja la comunicación con el endpoint /api/spotify y retorna un estado estandarizado.
  */
 
-export async function fetchSpotifyTrack() {
-  try {
-    const res = await fetch("/api/spotify");
-    if (!res.ok) {
-      return {
-        isPlaying: false,
-        title: "Offline",
-        artist: "Spotify",
-        songUrl: "#",
-      };
-    }
+export const SPOTIFY_OFFLINE_STATE = Object.freeze({
+  isPlaying: false,
+  title: "Offline",
+  artist: "Spotify",
+  songUrl: "#",
+});
 
-    const data = await res.json();
-    if (data.isPlaying) {
-      return {
-        isPlaying: true,
-        title: data.title || "Offline",
-        artist: data.artist || "Spotify",
-        songUrl: data.songUrl || "#",
-      };
-    }
+/**
+ * Consulta la pista de reproducción actual de Spotify.
+ * @param {AbortSignal} [signal]
+ * @returns {Promise<{ isPlaying: boolean, title: string, artist: string, songUrl: string }>}
+ */
+export async function fetchSpotifyTrack(signal) {
+  const result = await apiFetch("/api/spotify", { signal, timeoutMs: 6000 });
 
-    return {
-      isPlaying: false,
-      title: data.title || "Offline",
-      artist: data.artist || "Spotify",
-      songUrl: data.songUrl || "#",
-    };
-  } catch (error) {
-    console.error("❌ Error cargando Spotify", error);
-    return {
-      isPlaying: false,
-      title: "Offline",
-      artist: "Spotify",
-      songUrl: "#",
-    };
+  if (!result.ok || !result.data) {
+    return { ...SPOTIFY_OFFLINE_STATE };
   }
+
+  const { isPlaying, title, artist, songUrl } = result.data;
+  return {
+    isPlaying: Boolean(isPlaying),
+    title: title || "Offline",
+    artist: artist || "Spotify",
+    songUrl: songUrl || "#",
+  };
 }

@@ -10,6 +10,7 @@ import LabSection from "./components/LabSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import SectionVisual from "./components/SectionVisual";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { useLanguage } from "./i18n/LanguageContext";
 import { useScrollAnimations } from "./hooks/useScrollAnimations";
 
@@ -92,8 +93,12 @@ export default function Home() {
 
         <Herosection onOpenCv={() => setIsCvOpen(true)} />
         <AboutSection />
-        <ExperienceSection onOpenCv={() => setIsCvOpen(true)} />
-        <SkillsSection />
+        <ErrorBoundary sectionName="EXPERIENCE">
+          <ExperienceSection onOpenCv={() => setIsCvOpen(true)} />
+        </ErrorBoundary>
+        <ErrorBoundary sectionName="SKILLS">
+          <SkillsSection />
+        </ErrorBoundary>
 
         {/* The Creative Synthesis: Hito visual autónomo entre Skills y Lab */}
         <SectionVisual
@@ -103,7 +108,9 @@ export default function Home() {
           direction="center"
         />
 
-        <LabSection />
+        <ErrorBoundary sectionName="LAB">
+          <LabSection />
+        </ErrorBoundary>
 
         {/* Server Towers: Hito visual autónomo entre Lab y Projects */}
         <SectionVisual
@@ -113,7 +120,9 @@ export default function Home() {
           direction="center"
         />
 
-        <ProjectsSection />
+        <ErrorBoundary sectionName="PROJECTS">
+          <ProjectsSection />
+        </ErrorBoundary>
 
         {/* The Deep Transmission: Hito visual autónomo entre Projects y Signal Log */}
         <SectionVisual
@@ -123,7 +132,9 @@ export default function Home() {
           direction="center"
         />
 
-        <SignalLogSection />
+        <ErrorBoundary sectionName="SIGNAL_LOG">
+          <SignalLogSection />
+        </ErrorBoundary>
 
         {/* Neural Core: Hito visual autónomo entre Signal Log y Contact */}
         <SectionVisual
@@ -133,7 +144,9 @@ export default function Home() {
           direction="center"
         />
 
-        <ContactSection />
+        <ErrorBoundary sectionName="CONTACT">
+          <ContactSection />
+        </ErrorBoundary>
 
         <footer className="py-16 text-center opacity-30 font-mono text-[9px] uppercase tracking-[0.8em]">
           {t.footer}

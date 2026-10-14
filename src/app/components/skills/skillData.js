@@ -300,101 +300,57 @@ export const SKILL_ICONS = {
   },
 };
 
+export const DEFAULT_SKILL_STYLE = {
+  color: "#9333ea",
+  hoverBg: "rgba(147, 51, 234, 0.08)",
+  hoverBorder: "rgba(147, 51, 234, 0.4)",
+  icon: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 8v8M8 12h8" />
+    </svg>
+  ),
+};
+
 /**
- * Normalizes skill name to dictionary key across EN and ES translations.
+ * Tabla declarativa de reglas para resolver iconos y colores por habilidad.
+ * Cumple con el Principio Abierto/Cerrado (OCP): nuevas habilidades se registran aquí
+ * sin necesidad de alterar ni encadenar sentencias if/else imperativas.
+ */
+export const SKILL_MATCHER_RULES = [
+  { match: (s) => s.includes("python") && !s.includes("blender"), data: SKILL_ICONS.python },
+  { match: (s) => s.includes("react"), data: SKILL_ICONS.react },
+  { match: (s) => s.includes("next"), data: SKILL_ICONS.nextjs },
+  { match: (s) => s.includes("typescript"), data: SKILL_ICONS.typescript },
+  { match: (s) => s.includes("angular"), data: SKILL_ICONS.angular },
+  { match: (s) => s === "c#" || s.includes("c#"), data: SKILL_ICONS.csharp },
+  { match: (s) => s.includes(".net"), data: SKILL_ICONS.dotnet },
+  { match: (s) => s.includes("sql"), data: SKILL_ICONS.sqlserver },
+  { match: (s) => s.includes("blender"), data: SKILL_ICONS.blender },
+  { match: (s) => s.includes("after effects"), data: SKILL_ICONS.aftereffects },
+  { match: (s) => s.includes("game dev") || s.includes("videojuegos"), data: SKILL_ICONS.gamedev },
+  { match: (s) => s.includes("linux"), data: SKILL_ICONS.linux },
+  { match: (s) => s.includes("mcp") || s.includes("model context") || s.includes("agent") || s.includes("llm"), data: SKILL_ICONS.mcp },
+  { match: (s) => s.includes("n8n"), data: SKILL_ICONS.n8n },
+  { match: (s) => s.includes("mining") || s.includes("miner"), data: SKILL_ICONS.datamining },
+  { match: (s) => s.includes("orange"), data: SKILL_ICONS.orange },
+  { match: (s) => s.includes("optimi") || s.includes("inteligente"), data: SKILL_ICONS.optimization },
+  { match: (s) => s.includes("powerbi") || s.includes("power bi"), data: SKILL_ICONS.powerbi },
+  { match: (s) => s.includes("tableau"), data: SKILL_ICONS.tableau },
+  { match: (s) => s.includes("api") || s.includes("rest"), data: SKILL_ICONS.restapi },
+  { match: (s) => s.includes("docker"), data: SKILL_ICONS.docker },
+  { match: (s) => s.includes("ci/cd") || s.includes("pipeline"), data: SKILL_ICONS.cicd },
+  { match: (s) => s.includes("git"), data: SKILL_ICONS.git },
+  { match: (s) => s.includes("nginx"), data: SKILL_ICONS.nginx },
+  { match: (s) => s.includes("audio") || s.includes("dsp") || s.includes("vst"), data: SKILL_ICONS.audiodsp },
+];
+
+/**
+ * Normaliza el nombre de la habilidad a sus estilos y SVG correspondientes.
+ * @param {string} skillName
  */
 export function getSkillData(skillName = "") {
   const normalized = skillName.toLowerCase().trim();
-
-  if (normalized.includes("python") && !normalized.includes("blender")) {
-    return SKILL_ICONS.python;
-  }
-  if (normalized.includes("react")) {
-    return SKILL_ICONS.react;
-  }
-  if (normalized.includes("next")) {
-    return SKILL_ICONS.nextjs;
-  }
-  if (normalized.includes("typescript")) {
-    return SKILL_ICONS.typescript;
-  }
-  if (normalized.includes("angular")) {
-    return SKILL_ICONS.angular;
-  }
-  if (normalized === "c#" || normalized.includes("c#")) {
-    return SKILL_ICONS.csharp;
-  }
-  if (normalized.includes(".net")) {
-    return SKILL_ICONS.dotnet;
-  }
-  if (normalized.includes("sql")) {
-    return SKILL_ICONS.sqlserver;
-  }
-  if (normalized.includes("blender")) {
-    return SKILL_ICONS.blender;
-  }
-  if (normalized.includes("after effects")) {
-    return SKILL_ICONS.aftereffects;
-  }
-  if (normalized.includes("game dev") || normalized.includes("videojuegos")) {
-    return SKILL_ICONS.gamedev;
-  }
-  if (normalized.includes("linux")) {
-    return SKILL_ICONS.linux;
-  }
-  if (normalized.includes("mcp") || normalized.includes("model context")) {
-    return SKILL_ICONS.mcp;
-  }
-  if (normalized.includes("n8n")) {
-    return SKILL_ICONS.n8n;
-  }
-  if (normalized.includes("mining") || normalized.includes("miner")) {
-    return SKILL_ICONS.datamining;
-  }
-  if (normalized.includes("orange")) {
-    return SKILL_ICONS.orange;
-  }
-  if (normalized.includes("optimi") || normalized.includes("inteligente")) {
-    return SKILL_ICONS.optimization;
-  }
-  if (normalized.includes("powerbi") || normalized.includes("power bi")) {
-    return SKILL_ICONS.powerbi;
-  }
-  if (normalized.includes("tableau")) {
-    return SKILL_ICONS.tableau;
-  }
-  if (normalized.includes("api") || normalized.includes("rest")) {
-    return SKILL_ICONS.restapi;
-  }
-  if (normalized.includes("docker")) {
-    return SKILL_ICONS.docker;
-  }
-  if (normalized.includes("ci/cd") || normalized.includes("pipeline")) {
-    return SKILL_ICONS.cicd;
-  }
-  if (normalized.includes("git")) {
-    return SKILL_ICONS.git;
-  }
-  if (normalized.includes("nginx")) {
-    return SKILL_ICONS.nginx;
-  }
-  if (normalized.includes("audio") || normalized.includes("dsp") || normalized.includes("vst")) {
-    return SKILL_ICONS.audiodsp;
-  }
-  if (normalized.includes("agent") || normalized.includes("llm")) {
-    return SKILL_ICONS.mcp;
-  }
-
-  // Fallback
-  return {
-    color: "#9333ea",
-    hoverBg: "rgba(147, 51, 234, 0.08)",
-    hoverBorder: "rgba(147, 51, 234, 0.4)",
-    icon: (props) => (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 8v8M8 12h8" />
-      </svg>
-    ),
-  };
+  const matchedRule = SKILL_MATCHER_RULES.find((rule) => rule.match(normalized));
+  return matchedRule ? matchedRule.data : DEFAULT_SKILL_STYLE;
 }

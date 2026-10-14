@@ -5,8 +5,9 @@ import { useClipboardCopy } from "../hooks/useClipboardCopy";
 import AvailabilityBadge from "./contact/AvailabilityBadge";
 import CopyEmailButton from "./contact/CopyEmailButton";
 import SocialLinks from "./contact/SocialLinks";
+import { siteConfig } from "../data/siteConfig";
 
-const CONTACT_EMAIL = "kevingarrido711@gmail.com";
+const CONTACT_EMAIL = siteConfig.author.email;
 
 export default function ContactSection() {
   const { t } = useLanguage();

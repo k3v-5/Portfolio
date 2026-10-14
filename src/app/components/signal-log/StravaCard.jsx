@@ -1,4 +1,5 @@
 import React from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 /**
  * Strava Activity Card
@@ -7,6 +8,14 @@ import React from "react";
  * @param {{ data: { name: string, pace: string, distance: string, time: string, elevation: string, type: string } }} props
  */
 export default function StravaCard({ data }) {
+  const { lang } = useLanguage();
+  const isEn = lang === "en";
+  const profileTitle = isEn ? "View profile on Strava" : "Ver perfil en Strava";
+  const distanceLabel = isEn ? "Distance" : "Distancia";
+  const paceLabel = isEn ? "Avg Pace" : "Ritmo Promedio";
+  const timeLabel = isEn ? "Time" : "Tiempo";
+  const elevationLabel = isEn ? "Elevation" : "Desnivel";
+
   return (
     <div className="shrink-0 w-[280px] sm:w-[320px] md:w-[400px] bg-white/95 dark:bg-slate-900/85 backdrop-blur-[20px] border-2 border-slate-100 dark:border-white/10 hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl transition-colors duration-300 flex flex-col justify-between">
       <div>
@@ -25,7 +34,7 @@ export default function StravaCard({ data }) {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform cursor-pointer"
-            title="Ver perfil en Strava"
+            title={profileTitle}
           >
             <svg
               className="w-6 h-6 text-[#FC4C02] shrink-0"
@@ -39,7 +48,7 @@ export default function StravaCard({ data }) {
         <div className="grid grid-cols-2 gap-y-4 gap-x-2 mt-6">
           <div>
             <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
-              Distance
+              {distanceLabel}
             </p>
             <p className="font-bold text-slate-900 dark:text-white font-mono text-sm">
               {data.distance}
@@ -47,7 +56,7 @@ export default function StravaCard({ data }) {
           </div>
           <div>
             <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
-              Avg Pace
+              {paceLabel}
             </p>
             <p className="font-bold text-slate-900 dark:text-white font-mono text-sm">
               {data.pace}
@@ -55,7 +64,7 @@ export default function StravaCard({ data }) {
           </div>
           <div>
             <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
-              Time
+              {timeLabel}
             </p>
             <p className="font-bold text-slate-900 dark:text-white font-mono text-sm">
               {data.time}
@@ -63,7 +72,7 @@ export default function StravaCard({ data }) {
           </div>
           <div>
             <p className="text-[9px] text-slate-400 font-mono uppercase tracking-wider">
-              Elevation
+              {elevationLabel}
             </p>
             <p className="font-bold text-purple-600 font-mono text-sm">
               {data.elevation}

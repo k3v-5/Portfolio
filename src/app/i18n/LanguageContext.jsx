@@ -33,6 +33,12 @@ export function LanguageProvider({ children }) {
     setReady(true);
   }, []);
 
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = lang;
+    }
+  }, [lang]);
+
   const setLang = useCallback((next) => {
     setLangState(next);
     if (typeof window !== "undefined") {

@@ -4,7 +4,7 @@
  * into sanitized HTML.
  */
 
-export async function fetchSignalLogs() {
+export async function fetchSignalLogs(lang = "en") {
   try {
     const res = await fetch("/posts/logs.json");
     if (!res.ok) return [];
@@ -17,7 +17,12 @@ export async function fetchSignalLogs() {
     const posts = await Promise.all(
       files.map(async (file) => {
         try {
-          const mdRes = await fetch(`/posts/${file}`);
+          const baseName = file.replace(/\.md$/, "");
+          const langFile = `${baseName}.${lang}.md`;
+          let mdRes = await fetch(`/posts/${langFile}`);
+          if (!mdRes.ok) {
+            mdRes = await fetch(`/posts/${file}`);
+          }
           if (!mdRes.ok) return null;
           const text = await mdRes.text();
 

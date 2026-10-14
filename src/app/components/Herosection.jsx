@@ -4,7 +4,7 @@ import { ArrowDownTrayIcon, DocumentTextIcon } from "@heroicons/react/24/outline
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Herosection({ onOpenCv }) {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
     <section id="kevin-garrido" className="justify-center text-center">
@@ -50,9 +50,9 @@ export default function Herosection({ onOpenCv }) {
             <span>{t.hero.ctaViewCv || "Ver CV"}</span>
           </button>
           <a
-            href="/cv.pdf"
-            download="Kevin_Garrido_CV.pdf"
-            title={t.hero.ctaCv || "Descargar CV (.pdf)"}
+            href={lang === "en" ? "/cv-en.pdf" : "/cv.pdf"}
+            download={lang === "en" ? "Kevin_Garrido_CV_EN.pdf" : "Kevin_Garrido_CV.pdf"}
+            title={t.hero.ctaCv || (lang === "en" ? "Download Resume (.pdf)" : "Descargar CV (.pdf)")}
             className="inline-flex items-center justify-center bg-white dark:bg-slate-900 hover:bg-purple-50 dark:hover:bg-purple-950/40 border-2 border-slate-200 dark:border-slate-700 hover:border-purple-600 text-slate-700 dark:text-slate-300 hover:text-purple-700 dark:hover:text-purple-300 font-mono text-[11px] uppercase font-bold p-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(147,51,234,0.15)] transform hover:-translate-y-0.5 active:translate-y-0"
           >
             <ArrowDownTrayIcon className="w-4 h-4 text-purple-600 dark:text-purple-400" />

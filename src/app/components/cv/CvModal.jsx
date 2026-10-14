@@ -87,7 +87,7 @@ export default function CvModal({ isOpen, onClose }) {
     skillsPriority.forEach((sKey) => {
       const g = cvData.skills[sKey];
       if (g) {
-        const itemsStr = Array.isArray(g.items) ? g.items.join(", ") : g.items;
+        const itemsStr = g[`items_${cvLang}`] || (Array.isArray(g.items) ? g.items.join(", ") : g.items);
         text += `• ${g[`label_${cvLang}`]}: ${itemsStr}\n`;
       }
     });
@@ -152,7 +152,7 @@ export default function CvModal({ isOpen, onClose }) {
             <button
               onClick={handleCopyAtsText}
               className="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-mono text-xs px-3 py-1.5 rounded-lg border border-slate-700 transition"
-              title="Copiar texto plano estructurado"
+              title={cvLang === "es" ? "Copiar texto plano estructurado" : "Copy structured plain text"}
             >
               {copied ? (
                 <>
@@ -176,7 +176,7 @@ export default function CvModal({ isOpen, onClose }) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-mono text-xs px-3 py-1.5 rounded-lg border border-slate-700 transition"
-              title="Abrir PDF en pestaña nueva"
+              title={cvLang === "es" ? "Abrir PDF en pestaña nueva" : "Open PDF in new tab"}
             >
               <ArrowTopRightOnSquareIcon className="w-4 h-4 text-slate-400" />
               <span className="hidden sm:inline">

@@ -72,7 +72,7 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
   * Integración de mapas dinámicos (Leaflet / Google Maps API), renderizado de rutas históricas, cálculo de tiempos estimados de llegada (ETA), geocercas poligonales y alertas visuales instantáneas.
 
 #### D. Despliegues Autónomos & Administración de Servidores (Linux & Windows IIS)
-* **Infraestructura 100% Gestionada de Manera Autónoma (Self-Managed):** Kevin gestiona de forma directa, sin intermediarios, la publicación y operación de los sistemas en producción.
+* **Infraestructura Gestionada de Manera Autónoma (Self-Managed):** Gestiono de forma directa, sin intermediarios, la publicación y operación de los sistemas en producción.
 * **Servidores Linux (Ubuntu / Debian):**
   * Conexión remota segura mediante **SSH**.
   * Aprovisionamiento y orquestación de servicios en segundo plano con **systemd** (servicios, daemons) y administradores de procesos como **PM2**.
@@ -98,7 +98,27 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 
 ---
 
-### 1.2 LION INTEL SOLUTIONS
+### 1.2 FINANCIERA INDEPENDENCIA
+**Puesto:** Ejecutivo Telefónico  
+**Período:** Enero 2025 – Abril 2025 (15 de enero a 15 de abril)  
+**Ubicación:** Aguascalientes, México  
+**Modalidad:** Presencial  
+**Giro:** Servicios Financieros, Crédito y Cobranza  
+
+#### A. Operación de Telefonía y Atención a Clientes
+* **Gestión Telefónica Integral:** Atención y contacto con clientes a través de conmutadores y sistemas especializados de telefonía para seguimiento a cuentas, asesoría personalizada y resolución oportuna de consultas.
+* **Calidad de Servicio y Apego Normativo:** Manejo de protocolos estrictos de atención, confidencialidad de datos financieros y apego a lineamientos institucionales.
+
+#### B. Sistemas Transaccionales & Generación de Ligas de Pago
+* **Operación de Plataformas de Cómputo:** Manejo diario de equipos de cómputo y software administrativo para consulta de expedientes de clientes y actualización de estados de cuenta.
+* **Sistema de Generación de Ligas de Pago:** Operación del sistema interno de generación y envío de enlaces de pago seguros para clientes, facilitando transacciones digitales y agilizando la conciliación de cobranza.
+
+#### C. Rendimiento y Cumplimiento de Metas
+* **Cumplimiento Constante de Objetivos:** Alcance y superación continua de metas comerciales y operativas establecidas por la sucursal, manteniendo un alto estándar de productividad y efectividad en la gestión diaria.
+
+---
+
+### 1.3 LION INTEL SOLUTIONS
 **Puesto:** Fullstack Developer  
 **Período:** Mayo 2024 – Noviembre 2024  
 **Ubicación:** Aguascalientes, México  
@@ -118,11 +138,11 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 * **Backend y APIs RESTful:** Desarrollo de endpoints y lógica de negocio en **ASP.NET / .NET**, estructurados bajo arquitectura en capas con Entity Framework Core.
 * **Gestión Clínica y Administrativa:**
   * Módulo de expedientes de pacientes, historial de consultas, agenda de citas y recetas médicas.
-  * Optimización de consultas SQL en SQL Server, reduciendo los tiempos de respuesta de consulta en un 35% y centralizando la administración de la clínica.
+  * Optimización de consultas SQL en SQL Server, reduciendo sustancialmente los tiempos de respuesta de consulta y centralizando la administración de la clínica.
 
 ---
 
-### 1.3 UNIVERSIDAD CUAUHTÉMOC
+### 1.4 UNIVERSIDAD CUAUHTÉMOC
 **Puesto:** Ingeniero de Infraestructura TI y Automatización  
 **Período:** Mayo 2021 – Febrero 2023  
 **Ubicación:** Aguascalientes, México  
@@ -132,7 +152,7 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 #### A. Desarrollo Interno y Sistemas de Automatización
 * **Sistema Interno de Gestión de Tickets e Incidencias:**
   * Diseño, programación y despliegue de una plataforma web propia para registro, asignación, seguimiento y resolución de incidencias tecnológicas para más de 1,000 usuarios universitarios (docentes, estudiantes y personal administrativo).
-  * Automatización de reportes periódicos de soporte, métricas de cumplimiento de SLA y reducción de tiempos de atención en un 40%.
+  * Automatización de reportes periódicos de soporte, métricas de cumplimiento de SLA y reducción de tiempos de atención para más de 1,000 usuarios.
 * **Sistema de Control de Asistencia y Acceso Biométrico / RFID:**
   * Implementación y administración de lectores biométricos (huella digital) y lectores de tarjetas de proximidad (RFID) para registro de entradas y salidas de colaboradores y alumnos.
   * Sincronización de registros de checado con bases de datos administrativas internas.
@@ -158,24 +178,6 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 
 ---
 
-### 1.4 FINANCIERA INDEPENDENCIA
-**Puesto:** Ejecutivo Telefónico (Área de Virtuales / Medios Digitales de Pago)  
-**Período:** Enero 2024 – Abril 2024  
-**Ubicación:** Aguascalientes, México  
-**Modalidad:** Presencial  
-**Giro:** Sector Financiero, Microcréditos y Cobranza Especializada  
-
-#### Funciones y Habilidades Clave:
-* **Generación de Líneas de Pago en Tiempo Real:** Emisión y cálculo de referencias bancarias y líneas de captura para pago remoto (SPEI, tiendas de conveniencia, ventanillas) durante llamadas en vivo con cuentahabientes.
-* **Gestión de Medios Digitales y Pagos Virtuales:** Asesoramiento sobre plataformas virtuales de pago, validación transaccional y confirmación de recepción de fondos.
-* **Uso de Sistemas Financieros y CRM:** Navegación intensiva en sistemas bancarios internos, consulta de saldos, estados de cuenta, amortizaciones y registro detallado de bitácoras de llamada.
-* **Habilidades Blandas e Interpersonales de Alto Rendimiento:**
-  * Comunicación verbal asertiva, escucha activa y negociación bajo presión.
-  * Manejo de objeciones y resolución inmediata de conflictos con clientes morosos o con incidencias en pagos no reflejados.
-  * Apego estricto a políticas de seguridad de la información financiera y confidencialidad bancaria.
-
----
-
 ## 💻 2. PROYECTOS TÉCNICOS DESTACADOS (PORTAFOLIO & LAB)
 
 ### 2.1 CitasApp (Plataforma Full-Stack de Citas en Tiempo Real)
@@ -190,7 +192,7 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 * **Stack:** Python API, Model Context Protocol (MCP), Blender Headless, Procedural 3D, LLM Orchestration.
 * **Logros:**
   * Motor generativo que conecta modelos de lenguaje con Blender a través de Model Context Protocol (MCP) para sintetizar escenas 3D procedurales y rigging automatizado.
-  * Reducción de hasta un 80% en el consumo de tokens de contexto gracias a señales de control compactas y un pipeline de renderizado desatendido de 19 etapas.
+  * Reducción drástica en el consumo de tokens de contexto gracias a señales de control compactas y un pipeline de renderizado desatendido de 19 etapas.
 * **Repo:** `https://github.com/k3v-5/AssetOrchestrationEngine`
 
 ### 2.3 After Effects MCP Video Engine (N8Effect)
@@ -202,7 +204,7 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 ### 2.4 AbletonEngine (Estudio de Música Algorítmica & DSP)
 * **Stack:** Python, Ableton Live API, Audio DSP, Validación LUFS, Síntesis Estructural.
 * **Logros:**
-  * Generador autónomo de composiciones musicales algorítmicas con validación estricta de sonoridad estándar industrial (LUFS), balance espectral y consistencia armónica exportable directamente a proyectos DAW.
+  * Generador autónomo de composiciones musicales algorítmicas con validación estricta de sonoridad estándar profesional (LUFS), balance espectral y consistencia armónica exportable directamente a proyectos DAW.
 * **Repo:** `https://github.com/k3v-5/AbletonEngine`
 
 ### 2.5 LexiKit (Plataforma Educativa Adaptativa con IA)
@@ -213,7 +215,13 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 ### 2.6 Pipeline CI/CD & Despliegues Multiplataforma
 * **Stack:** GitHub Actions, GitLab CI, Docker, Docker Compose, Linux (Ubuntu), Bash, Nginx.
 * **Logros:**
-  * Automatización del ciclo de vida de compilación, ejecución de suites de pruebas y empaquetado de artefactos web y móviles, reduciendo tiempos de despliegue en un 65%.
+  * Automatización del ciclo de vida de compilación, ejecución de suites de pruebas y empaquetado de artefactos web y móviles, agilizando drásticamente los tiempos de despliegue y erradicando fallos manuales.
+
+### 2.7 IANIMATION (Orquestador 3D & Unreal Engine 5 con FastMCP)
+* **Stack:** Tauri v2, Rust, React 18, TypeScript, Three.js, Python, FastMCP (Model Context Protocol), Unreal Engine 5, Pydantic v2, WebSockets/SSE.
+* **Logros:**
+  * Desarrollo una plataforma de escritorio de alta fidelidad que automatiza la creación de escenas, personajes 3D, auto-rigging y renderizado cinemático audiovisual controlando Unreal Engine 5 mediante Model Context Protocol (MCP).
+  * Arquitecté e integré un servidor FastMCP de herramientas atómicas validadas estrictamente con Pydantic v2 para análisis espectral de audio (Librosa/Demucs), síntesis de mallas 3D procedurales y extracción de mocap desde video sin intervención manual.
 
 ---
 
@@ -225,6 +233,7 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 * **Idiomas:**
   * **Español:** Nativo.
   * **Inglés:** Profesional Avanzado (B2 / C1 - Lectura, escritura técnica, documentación y comunicación oral fluida).
+  * **Alemán:** Interés y aprendizaje activo (Nivel básico en curso).
 * **Mérito Extracurricular:** Maratón Finisher (42.195 km) — Demuestra constancia, disciplina férrea, resistencia y mentalidad de alto rendimiento.
 
 ---

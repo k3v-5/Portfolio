@@ -7,7 +7,7 @@ import { fetchSignalLogs } from "../services/signalLogService";
  *
  * @returns {{ logs: Array<{ id: string, content: string, sideText: string | null }>, loading: boolean }}
  */
-export function useSignalLogs() {
+export function useSignalLogs(lang = "en") {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -15,7 +15,7 @@ export function useSignalLogs() {
     let isMounted = true;
 
     async function loadLogs() {
-      const posts = await fetchSignalLogs();
+      const posts = await fetchSignalLogs(lang);
       if (isMounted) {
         setLogs(posts);
         setLoading(false);
@@ -27,7 +27,7 @@ export function useSignalLogs() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [lang]);
 
   return { logs, loading };
 }

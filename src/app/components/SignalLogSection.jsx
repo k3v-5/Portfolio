@@ -16,11 +16,11 @@ import SignalLogCard from "./signal-log/SignalLogCard";
 const STRAVA_ENABLED = false;
 
 export default function SignalLogSection() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const signalLog = t.signalLog;
   const containerRef = useRef(null);
 
-  const { logs } = useSignalLogs();
+  const { logs } = useSignalLogs(lang);
   const { stravaData } = useStravaActivity({ enabled: STRAVA_ENABLED });
   const { spotifyData } = useSpotifyTrack();
   const { dragHandlers } = useMarquee({ containerRef, dependency: logs });

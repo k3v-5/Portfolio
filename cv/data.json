@@ -23,40 +23,172 @@
       "title_en": "Intelligent Computing Engineer | Microservices, ERP & Cloud",
       "summary_es": "Ingeniero en Computación Inteligente con sólida experiencia en desarrollo de microservicios, endpoints RESTful e integraciones EDI en TypeScript, módulos de ERP empresarial en C# (.NET) y ASP Clásico con SQL Server, y plataformas de monitoreo telemático y rastreo GPS en Angular y Python. Gestión autónoma de despliegues y administración en servidores Linux y Windows IIS. Especialista en integración de APIs de LLMs mediante TypeScript y orquestación con Model Context Protocol (MCP).",
       "summary_en": "Intelligent Computing Engineer experienced in building scalable TypeScript microservices, RESTful endpoints, and EDI integrations, enterprise ERP modules in C# (.NET) and Classic ASP, and real-time GPS tracking and telemetry platforms in Angular and Python. Independently manages production deployments on Linux and Windows IIS servers. Specialist in integrating LLM APIs via TypeScript and orchestrating workflows via Model Context Protocol (MCP).",
-      "selected_projects": ["dating_app", "blender_aoe"],
-      "skills_priority": ["fullstack", "devops", "telemetry", "ai", "languages"]
+      "selected_projects": [
+        "dating_app",
+        "blender_aoe"
+      ],
+      "skills_priority": [
+        "fullstack",
+        "devops",
+        "telemetry",
+        "ai",
+        "languages"
+      ]
     },
     "devops": {
       "title_es": "Ingeniero de Software & DevOps | Infraestructura y Despliegues",
       "title_en": "Software & DevOps Engineer | Infrastructure & Deployments",
       "summary_es": "Ingeniero de Software enfocado en despliegues autónomos en producción (servidores Linux e IIS), aprovisionamiento con Docker, pipelines CI/CD y monitoreo continuo de microservicios en TypeScript y sistemas ERP en C#. Especialista en automatización de releases, proxies inversos Nginx y arquitecturas resilientes de alta disponibilidad.",
       "summary_en": "Software Engineer focused on independent production deployments (Linux and IIS servers), Docker provisioning, CI/CD pipelines, and continuous monitoring of TypeScript microservices and C# ERP systems. Specialist in automated releases, Nginx reverse proxies, and resilient high-availability architectures.",
-      "selected_projects": ["devops_pipeline", "dating_app", "blender_aoe"],
-      "skills_priority": ["devops", "fullstack", "telemetry", "ai", "languages"]
+      "selected_projects": [
+        "devops_pipeline",
+        "dating_app"
+      ],
+      "skills_priority": [
+        "devops",
+        "fullstack",
+        "telemetry",
+        "ai",
+        "languages"
+      ]
     },
     "ai": {
       "title_es": "Ingeniero en Computación Inteligente | Motores de IA & MCP",
       "title_en": "Intelligent Computing Engineer | AI Engines & MCP",
-      "summary_es": "Ingeniero en Computación Inteligente enfocado en integración de APIs de LLMs en TypeScript/Python, orquestación mediante Model Context Protocol (MCP) y algoritmos generativos. Experiencia desarrollando pipelines que optimizan el consumo de tokens hasta un 80% comunicando LLMs con herramientas creativas de alto rendimiento (Blender Python, After Effects, Ableton).",
-      "summary_en": "Intelligent Computing Engineer focused on integrating LLM APIs in TypeScript/Python, Model Context Protocol (MCP) orchestration, and generative algorithms. Experienced in architecting pipelines that reduce context token consumption by up to 80% bridging LLMs with high-performance creative toolchains (Blender Python, After Effects, Ableton).",
-      "selected_projects": ["blender_aoe", "dating_app", "devops_pipeline"],
-      "skills_priority": ["ai", "fullstack", "devops", "telemetry", "languages"]
+      "summary_es": "Ingeniero en Computación Inteligente enfocado en integración de APIs de LLMs en TypeScript/Python, orquestación mediante Model Context Protocol (MCP) y algoritmos generativos. Experiencia desarrollando pipelines que optimizan drásticamente el consumo de tokens comunicando LLMs con herramientas creativas de alto rendimiento (Blender Python, After Effects, Ableton).",
+      "summary_en": "Intelligent Computing Engineer focused on integrating LLM APIs in TypeScript/Python, Model Context Protocol (MCP) orchestration, and generative algorithms. Experienced in architecting pipelines that substantially reduce context token consumption bridging LLMs with high-performance creative toolchains (Blender Python, After Effects, Ableton).",
+      "selected_projects": [
+        "blender_aoe",
+        "dating_app"
+      ],
+      "skills_priority": [
+        "ai",
+        "fullstack",
+        "devops",
+        "telemetry",
+        "languages"
+      ]
     },
     "general": {
       "title_es": "Ingeniero en Computación Inteligente | Microservicios, ERP & Cloud",
       "title_en": "Intelligent Computing Engineer | Microservices, ERP & Cloud",
       "summary_es": "Ingeniero en Computación Inteligente con sólida experiencia en desarrollo de microservicios, endpoints RESTful e integraciones EDI en TypeScript, módulos de ERP empresarial en C# (.NET) y ASP Clásico con SQL Server, y plataformas de monitoreo telemático y rastreo GPS en Angular y Python. Gestión autónoma de despliegues y administración en servidores Linux y Windows IIS. Especialista en integración de APIs de LLMs mediante TypeScript y orquestación con Model Context Protocol (MCP).",
       "summary_en": "Intelligent Computing Engineer experienced in building scalable TypeScript microservices, RESTful endpoints, and EDI integrations, enterprise ERP modules in C# (.NET) and Classic ASP, and real-time GPS tracking and telemetry platforms in Angular and Python. Independently manages production deployments on Linux and Windows IIS servers. Specialist in integrating LLM APIs via TypeScript and orchestrating workflows via Model Context Protocol (MCP).",
-      "selected_projects": ["dating_app", "blender_aoe"],
-      "skills_priority": ["fullstack", "devops", "telemetry", "ai", "languages"]
+      "selected_projects": [
+        "dating_app",
+        "blender_aoe"
+      ],
+      "skills_priority": [
+        "fullstack",
+        "devops",
+        "telemetry",
+        "ai",
+        "languages"
+      ]
     },
     "custom": {
-      "title_es": "Ingeniero en Computación Inteligente | Perfil a Medida de Vacante",
-      "title_en": "Intelligent Computing Engineer | Tailored Role",
-      "summary_es": "Ingeniero en Computación Inteligente con sólida experiencia en desarrollo de software de misión crítica, arquitecturas escalables y automatización de procesos.",
-      "summary_en": "Intelligent Computing Engineer with proven experience in mission-critical software engineering, scalable architectures, and process automation.",
-      "selected_projects": ["dating_app", "devops_pipeline"],
-      "skills_priority": ["fullstack", "devops", "telemetry", "ai", "languages"]
+      "title_es": "Ingeniero en Computación Inteligente | Soporte IT & Sistemas de Producción (ERP)",
+      "title_en": "Intelligent Computing Engineer | IT Support & Production Systems (ERP)",
+      "summary_es": "Ingeniero en Computación Inteligente con más de 3 años de experiencia en soporte a sistemas de misión crítica, infraestructura TI y plataformas productivas/ERP. Especialista en soporte a líneas operativas bajo criterios de criticidad, administración de servidores Windows y Linux, Active Directory, Servidores de Archivos (File Server), Máquinas Virtuales (VM) y redes LAN/WLAN. Experiencia en mantenimiento preventivo/correctivo de cómputo, impresoras Zebra (etiquetas y credenciales) y elaboración de reportes de servicio. Inglés profesional avanzado y aprendizaje activo de alemán.",
+      "summary_en": "Intelligent Computing Engineer with 3+ years of experience in mission-critical IT support, enterprise ERP systems, and production infrastructure. Specialist in high-availability operations support based on strict criticality, Windows and Linux server administration, Active Directory, File Servers, Virtual Machines (VM), and LAN/WLAN networking. Proven background in PC hardware/software maintenance, Zebra label and card printers, and service reporting. Advanced professional English and active German learner.",
+      "selected_projects": [
+        "devops_pipeline"
+      ],
+      "skills_priority": [
+        "it_support",
+        "servers_vm",
+        "networking",
+        "erp_databases",
+        "languages"
+      ],
+      "skills_override": {
+        "it_support": {
+          "label_es": "Soporte IT, Hardware & Periféricos",
+          "label_en": "IT Support, Hardware & Peripherals",
+          "items_es": "Mantenimiento Preventivo y Correctivo de Cómputo, Impresoras Zebra (Etiquetas, Térmicas y Credenciales), Diagnóstico de Hardware, Periféricos y Puntos de Impresión",
+          "items_en": "Preventive & Corrective PC Maintenance, Zebra Printers (Labels, Thermal & ID Cards), Hardware Diagnostics, Peripherals & Printing Points"
+        },
+        "servers_vm": {
+          "label_es": "Sistemas Operativos, Servidores & Virtualización",
+          "label_en": "Operating Systems, Servers & Virtualization",
+          "items_es": "Sistemas Operativos Windows y Linux (Ubuntu), Active Directory (AD), Servidor de Archivos (File Server), Máquinas Virtuales (VM / Hyper-V), Servidores IIS, systemd, Docker",
+          "items_en": "Windows & Linux (Ubuntu) OS, Active Directory (AD), File Server Administration, Virtual Machines (VM / Hyper-V), Windows IIS, systemd, Docker"
+        },
+        "networking": {
+          "label_es": "Redes, Comunicaciones & Telefonía",
+          "label_en": "Networking, Communications & Telephony",
+          "items_es": "Redes LAN & WLAN, VLANs, Switches Administrables, Routers, Cableado Estructurado (Cat 6), Telefonía IP (VoIP), Protocolos TCP/IP, DNS, DHCP, CCTV / Cámaras IP",
+          "items_en": "LAN & WLAN Networking, VLANs, Managed Switches, Routers, Structured Cabling (Cat 6), VoIP Telephony, TCP/IP, DNS, DHCP, CCTV / IP Cameras"
+        },
+        "erp_databases": {
+          "label_es": "Sistemas ERP/MES, Bases de Datos & Reportes",
+          "label_en": "ERP/MES Systems, Databases & Reporting",
+          "items_es": "Sistemas ERP (Inventarios, Almacenes, Embarques), SQL Server (Consultas, Triggers, Vistas, Respaldos), Elaboración de Reportes Operativos, Plataformas de Tickets & SLA, Power BI",
+          "items_en": "Enterprise ERP Systems (Inventories, Warehouses, Shipments), SQL Server (Queries, Triggers, Views, Backups), Operational Reporting & SLAs, Power BI"
+        },
+        "languages": {
+          "label_es": "Idiomas & Méritos",
+          "label_en": "Languages & Achievements",
+          "items_es": "Inglés Avanzado (B2/C1 - Comunicación técnica y laboral fluida), Alemán (Interés y aprendizaje activo / Básico), Español Nativo | Maratón Finisher (42.195 km - Disciplina y perseverancia)",
+          "items_en": "Advanced English (B2/C1 - Fluent technical & business communication), German (Active interest & ongoing learning), Native Spanish | Marathon Finisher (42.195 km - Discipline & endurance)"
+        }
+      },
+      "experience_override": [
+        {
+          "company": "RAINDE",
+          "location": "Aguascalientes, MX",
+          "role_es": "Ingeniero de Software & Soporte de Infraestructura",
+          "role_en": "Software & Infrastructure Support Engineer",
+          "dates_es": "Noviembre 2024 – Actualidad",
+          "dates_en": "November 2024 – Present",
+          "bullets_es": [
+            "Brindo soporte técnico continuo y mantenimiento a módulos centrales de ERP (inventarios, almacenes, facturación, proveedores y trazabilidad de embarques), asegurando alta disponibilidad y continuidad operativa.",
+            "Administro servidores Windows (IIS, File Server, Task Scheduler) y servidores Linux, gestionando máquinas virtuales, permisos de usuario y respaldos automatizados de bases de datos SQL Server.",
+            "Monitoreo y diagnostico dispositivos telemáticos y GPS enlazados a la plataforma central, asegurando la transmisión continua de coordenadas y datos operativos de flotas.",
+            "Genero reportes operativos y dashboards analíticos para seguimiento de incidencias, consumo de recursos y métricas de desempeño, atendiendo solicitudes con base en niveles de criticidad."
+          ],
+          "bullets_en": [
+            "Deliver continuous technical support and maintenance for enterprise ERP modules (inventories, warehouses, billing, suppliers, and shipment traceability), ensuring high availability and operational continuity.",
+            "Administer Windows servers (IIS, File Servers, Task Scheduler) and Linux environments, managing virtual machines, user permissions, and automated database backups.",
+            "Monitor and troubleshoot telemetry and GPS devices linked to the central platform, ensuring uninterrupted data and coordinate transmission across active fleets.",
+            "Generate operational reports and analytical dashboards for incident tracking and system performance, addressing support requests based on strict criticality levels."
+          ]
+        },
+        {
+          "company": "Lion Intel Solutions",
+          "location": "Aguascalientes, MX",
+          "role_es": "Desarrollador Fullstack & Soporte de Sistemas",
+          "role_en": "Fullstack Developer & Systems Support",
+          "dates_es": "Mayo 2024 – Noviembre 2024",
+          "dates_en": "May 2024 – November 2024",
+          "bullets_es": [
+            "Gestioné la integración y soporte de inventarios multicanal y bases de datos relacionales en SQL Server, resolviendo discrepancias de stock y sincronización transaccional.",
+            "Optimicé consultas de base de datos y flujos administrativos, reduciendo tiempos de respuesta y brindando soporte correctivo continuo a usuarios de la plataforma."
+          ],
+          "bullets_en": [
+            "Managed multi-channel inventory integrations and relational SQL Server databases, resolving stock discrepancies and transaction synchronization issues.",
+            "Optimized database queries and administrative workflows, reducing response latency while providing continuous corrective software support to platform users."
+          ]
+        },
+        {
+          "company": "Universidad Cuauhtémoc",
+          "location": "Aguascalientes, MX",
+          "role_es": "Ingeniero de Infraestructura TI y Soporte Técnico",
+          "role_en": "IT Infrastructure & Technical Support Engineer",
+          "dates_es": "Mayo 2021 – Febrero 2023",
+          "dates_en": "May 2021 – February 2023",
+          "bullets_es": [
+            "Ejecuté mantenimiento preventivo y correctivo a más de 300 equipos de cómputo, impresoras de credenciales y etiquetas Zebra (térmicas), proyectores y periféricos institucionales.",
+            "Configuré y administré infraestructura de redes LAN y WLAN (VLANs, switches administrables, routers), cableado estructurado, telefonía IP (VoIP) y cámaras de videovigilancia CCTV.",
+            "Diseñé y operé la plataforma interna de tickets de soporte técnico, automatizando reportes de servicio y reduciendo tiempos de resolución de incidencias para más de 1,000 usuarios."
+          ],
+          "bullets_en": [
+            "Executed preventive and corrective maintenance across 300+ PCs, Zebra card and label printers (thermal), projectors, and campus peripherals.",
+            "Configured and administered LAN and WLAN network infrastructure (VLANs, managed switches, routers), structured cabling, VoIP telephony, and CCTV security cameras.",
+            "Designed and operated an internal IT ticketing platform, automating service reports and reducing incident resolution times for 1,000+ campus users."
+          ]
+        }
+      ]
     }
   },
   "education": {
@@ -101,12 +233,12 @@
       "dates_es": "Mayo 2024 – Noviembre 2024",
       "dates_en": "May 2024 – November 2024",
       "bullets_es": [
-        "Lideró la arquitectura de un portal médico dermatológico con Vue.js, ASP.NET y SQL Server, integrando APIs RESTful y pasarelas transaccionales en tiempo real.",
-        "Optimizó consultas SQL relacionales y flujos administrativos, reduciendo la latencia de respuesta en un 35% y centralizando la gestión operativa de pacientes."
+        "Lideré la arquitectura de un portal médico dermatológico con Vue.js, ASP.NET y SQL Server, integrando APIs RESTful y pasarelas transaccionales en tiempo real.",
+        "Optimicé consultas SQL relacionales y flujos administrativos, reduciendo sustancialmente los tiempos de respuesta y centralizando la gestión operativa de pacientes."
       ],
       "bullets_en": [
         "Spearheaded architecture of a clinical dermatology web portal utilizing Vue.js, ASP.NET, and SQL Server, integrating RESTful APIs and real-time transaction gateways.",
-        "Optimized relational SQL queries and administrative workflows, cutting response latency by 35% and centralizing patient operational management."
+        "Optimized relational SQL queries and administrative workflows, significantly reducing response latency and centralizing patient operational management."
       ]
     },
     {
@@ -117,24 +249,38 @@
       "dates_es": "Mayo 2021 – Febrero 2023",
       "dates_en": "May 2021 – February 2023",
       "bullets_es": [
-        "Diseñó y desplegó una plataforma interna de gestión de tickets, automatizando reportes y reduciendo tiempos de resolución en un 40% para +1,000 usuarios.",
-        "Administró la infraestructura de red del campus, servidores de telecomunicaciones y seguridad, garantizando un 99.5% de disponibilidad operativa."
+        "Diseñé y desplegué una plataforma interna de gestión de tickets, automatizando reportes y reduciendo tiempos de resolución de incidencias para más de 1,000 usuarios.",
+        "Administré la infraestructura de red del campus, servidores de telecomunicaciones y seguridad, garantizando alta disponibilidad y continuidad operativa."
       ],
       "bullets_en": [
-        "Engineered and deployed an internal ticketing platform, automating service reporting and cutting incident resolution times by 40% for 1,000+ campus users.",
-        "Administered campus network infrastructure, telecom servers, and security hardware, maintaining 99.5% operational uptime and reliability."
+        "Engineered and deployed an internal ticketing platform, automating service reporting and reducing incident resolution times for 1,000+ campus users.",
+        "Administered campus network infrastructure, telecom servers, and security hardware, maintaining high availability and continuous operational reliability."
       ]
     }
   ],
   "projects": {
+    "ianimation": {
+      "title_es": "IANIMATION (Orquestador 3D & Unreal Engine 5 con FastMCP)",
+      "title_en": "IANIMATION (3D & Unreal Engine 5 Orchestrator with FastMCP)",
+      "url": "https://github.com/k3v-5/IANIMATION",
+      "tech": "Tauri v2, Rust, React, TypeScript, Three.js, Python FastMCP, Unreal Engine 5",
+      "bullets_es": [
+        "Desarrollo una plataforma de escritorio de alta fidelidad que automatiza creación de escenas, personajes 3D, auto-rigging y renderizado cinemático en Unreal Engine 5 vía Model Context Protocol (MCP).",
+        "Diseñé e integré un servidor FastMCP de herramientas atómicas para análisis espectral de audio, síntesis procedural y extracción de mocap sin intervención manual."
+      ],
+      "bullets_en": [
+        "Develop a high-fidelity desktop platform automating 3D scene creation, character generation, auto-rigging, and cinematic rendering in Unreal Engine 5 via Model Context Protocol (MCP).",
+        "Engineered and integrated a FastMCP server of atomic tools for audio spectral analysis, procedural 3D synthesis, and mocap extraction without manual friction."
+      ]
+    },
     "dating_app": {
       "title_es": "Plataforma de Citas Full-Stack (Tiempo Real)",
       "title_en": "Real-Time Full-Stack Dating Platform",
       "url": "https://github.com/k3v-5/CitasApp",
       "tech": "ASP.NET Core Web API, Angular, SQL Server, SignalR / WebSockets, JWT, EF Core",
       "bullets_es": [
-        "Arquitectó una solución desacoplada cliente-servidor con autenticación robusta mediante tokens JWT y control granular de sesiones de usuario.",
-        "Implementó mensajería bidireccional instantánea con SignalR/WebSockets y optimizó esquemas relacionales con Entity Framework Core para consultas de alta concurrencia."
+        "Arquitecté una solución desacoplada cliente-servidor con autenticación robusta mediante tokens JWT y control granular de sesiones de usuario.",
+        "Implementé mensajería bidireccional instantánea con SignalR/WebSockets y optimicé esquemas relacionales con Entity Framework Core para consultas de alta concurrencia."
       ],
       "bullets_en": [
         "Architected a decoupled client-server architecture featuring secure JWT authentication and granular user session management.",
@@ -147,12 +293,12 @@
       "url": "https://github.com/k3v-5",
       "tech": "GitHub Actions, GitLab CI, Docker, Docker Compose, Linux (Ubuntu), Bash, Nginx",
       "bullets_es": [
-        "Automatizó el ciclo de vida completo de compilación, ejecución de tests y empaquetado de artefactos con GitHub Actions para distribuciones web y móviles.",
-        "Contenerizó servicios con Docker y configuró proxies inversos Nginx en servidores Linux, reduciendo tiempos de despliegue en un 65% y erradicando fallos manuales."
+        "Automaticé el ciclo de vida completo de compilación, ejecución de tests y empaquetado de artefactos con GitHub Actions para distribuciones web y móviles.",
+        "Contenericé servicios con Docker y configuré proxies inversos Nginx en servidores Linux, reduciendo drásticamente los tiempos de despliegue y erradicando fallos manuales."
       ],
       "bullets_en": [
         "Automated complete end-to-end compilation, test validation, and artifact packaging via GitHub Actions for web and mobile distributions.",
-        "Containerized application services using Docker and configured Nginx reverse proxies on Linux servers, cutting deployment times by 65% while eliminating manual failures."
+        "Containerized application services using Docker and configured Nginx reverse proxies on Linux servers, dramatically accelerating deployment cycles while eliminating manual failures."
       ]
     },
     "blender_aoe": {
@@ -161,12 +307,12 @@
       "url": "https://github.com/k3v-5/AssetOrchestrationEngine",
       "tech": "Python API, Model Context Protocol (MCP), Procedural 3D, Headless Blender",
       "bullets_es": [
-        "Diseñó un motor de orquestación generativa mediante Model Context Protocol (MCP), conectando asistentes de IA con Blender para síntesis 3D procedural y rigging paramétrico.",
-        "Redujo el consumo de tokens de contexto en un 80% procesando instrucciones compactas y automatizando un pipeline de renderizado desatendido de 19 etapas."
+        "Diseñé un motor de orquestación generativa mediante Model Context Protocol (MCP), conectando asistentes de IA con Blender para síntesis 3D procedural y rigging paramétrico.",
+        "Reduje drásticamente el consumo de tokens de contexto procesando instrucciones compactas y automatizando un pipeline de renderizado desatendido de 19 etapas."
       ],
       "bullets_en": [
         "Architected a generative orchestration pipeline via Model Context Protocol (MCP), bridging AI coding agents with Blender for procedural 3D synthesis and automated rigging.",
-        "Slashed LLM context token consumption by up to 80% using compact batch control signals and automating a 19-stage headless rendering pipeline."
+        "Substantially slashed LLM context token consumption using compact batch control signals and automating a 19-stage headless rendering pipeline."
       ]
     },
     "after_effects": {
@@ -241,7 +387,26 @@
     "languages": {
       "label_es": "Idiomas & Méritos",
       "label_en": "Languages & Achievements",
-      "items": "Inglés Profesional Avanzado (B2/C1 - Comunicación técnica y laboral fluida), Español Nativo | Maratón Finisher (42.195 km - Disciplina y constancia de alto rendimiento)"
+      "items_es": "Inglés Avanzado (B2/C1 - Fluido), Alemán (En aprendizaje activo), Español Nativo | Maratón Finisher (42.195 km)",
+      "items_en": "Advanced English (B2/C1 - Fluent), German (Active learner), Native Spanish | Marathon Finisher (42.195 km)"
     }
-  }
+  },
+  "experience_history": [
+    {
+      "company": "Financiera Independencia",
+      "location": "Aguascalientes, MX",
+      "role_es": "Ejecutivo Telefónico",
+      "role_en": "Telephony Account Executive",
+      "dates_es": "Enero 2025 – Abril 2025",
+      "dates_en": "January 2025 – April 2025",
+      "bullets_es": [
+        "Gestioné atención telefónica y contacto con clientes a través de plataformas de conmutador, brindando asesoría y resolución de consultas.",
+        "Operé el sistema interno de generación de ligas de pago seguras, facilitando cobros electrónicos y cumplimiento de metas operativas."
+      ],
+      "bullets_en": [
+        "Managed customer telephone communication through PBX systems, delivering account advisory and issue resolution.",
+        "Operated internal payment link generation systems, facilitating electronic collections and achieving operational targets."
+      ]
+    }
+  ]
 }

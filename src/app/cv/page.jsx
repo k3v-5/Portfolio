@@ -66,7 +66,7 @@ export default function CvPage() {
     skillsPriority.forEach((sKey) => {
       const g = cvData.skills[sKey];
       if (g) {
-        const itemsStr = Array.isArray(g.items) ? g.items.join(", ") : g.items;
+        const itemsStr = g[`items_${lang}`] || (Array.isArray(g.items) ? g.items.join(", ") : g.items);
         text += `• ${g[`label_${lang}`]}: ${itemsStr}\n`;
       }
     });
@@ -118,7 +118,7 @@ export default function CvPage() {
             <button
               onClick={handleCopyAtsText}
               className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-xs px-3 py-1.5 rounded-lg border border-slate-700 transition"
-              title="Copiar texto plano"
+              title={lang === "es" ? "Copiar texto plano estructurado" : "Copy structured plain text"}
             >
               {copied ? (
                 <>
@@ -138,7 +138,7 @@ export default function CvPage() {
             <button
               onClick={handlePrint}
               className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-xs px-3 py-1.5 rounded-lg border border-slate-700 transition"
-              title="Imprimir"
+              title={lang === "es" ? "Imprimir" : "Print"}
             >
               <PrinterIcon className="w-4 h-4 text-slate-400" />
               <span>{lang === "es" ? "Imprimir" : "Print"}</span>
@@ -149,7 +149,7 @@ export default function CvPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-mono text-xs px-3 py-1.5 rounded-lg border border-slate-700 transition"
-              title="Ver PDF en pestaña"
+              title={lang === "es" ? "Ver PDF en pestaña nueva" : "Open PDF in new tab"}
             >
               <ArrowTopRightOnSquareIcon className="w-4 h-4 text-slate-400" />
               <span>PDF</span>

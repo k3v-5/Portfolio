@@ -186,9 +186,10 @@ export default function OxfordCvView({ profile = "fullstack", lang = "es" }) {
                   {skillGroup[`label_${lang}`]}:
                 </strong>
                 <span className="font-sans text-[11.5px] sm:text-[12px] text-slate-700">
-                  {Array.isArray(skillGroup.items)
-                    ? skillGroup.items.join(", ")
-                    : skillGroup.items}
+                  {skillGroup[`items_${lang}`] ||
+                    (Array.isArray(skillGroup.items)
+                      ? skillGroup.items.join(", ")
+                      : skillGroup.items)}
                 </span>
               </p>
             );

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { SpeakerWaveIcon, PlayIcon, PauseIcon } from "@heroicons/react/24/solid";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 /**
  * Audio Demo Player
@@ -17,6 +18,13 @@ export default function AudioDemoPlayer({
   label = "Audio Output Preview",
   fallbackNote = "Coloca tu archivo MP3 en public/audio/",
 }) {
+  const { lang } = useLanguage();
+  const isEn = lang === "en";
+  const pauseLabel = isEn ? "Pause" : "Pausar";
+  const playLabel = isEn ? "Play demo" : "Reproducir demo";
+  const pauseAria = isEn ? "Pause audio" : "Pausar audio";
+  const playAria = isEn ? "Play audio" : "Reproducir audio";
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -146,8 +154,8 @@ export default function AudioDemoPlayer({
           type="button"
           onClick={togglePlay}
           className="w-9 h-9 rounded-full bg-purple-600 hover:bg-purple-500 active:scale-95 text-white flex items-center justify-center shrink-0 transition-transform shadow-md hover:shadow-purple-500/30"
-          title={isPlaying ? "Pausar" : "Reproducir demo"}
-          aria-label={isPlaying ? "Pausar audio" : "Reproducir audio"}
+          title={isPlaying ? pauseLabel : playLabel}
+          aria-label={isPlaying ? pauseAria : playAria}
         >
           {isPlaying ? (
             <PauseIcon className="w-4 h-4" />

@@ -1,8 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function ScrollProgress() {
+  const { lang, t } = useLanguage();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -67,8 +69,8 @@ export default function ScrollProgress() {
           type="button"
           onClick={scrollToTop}
           className="flex items-center justify-center w-11 h-11 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 hover:border-purple-500 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 shadow-xl hover:shadow-[0_0_25px_rgba(147,51,234,0.35)] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 group focus:outline-none focus:ring-2 focus:ring-purple-500"
-          aria-label="Volver arriba"
-          title="Volver arriba"
+          aria-label={t.contact?.backToTop || (lang === "en" ? "Back to top" : "Volver arriba")}
+          title={t.contact?.backToTop || (lang === "en" ? "Back to top" : "Volver arriba")}
         >
           <ArrowUpIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
         </button>
