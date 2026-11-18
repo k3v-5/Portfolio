@@ -31,7 +31,6 @@ export default function Navbar({ onOpenCv }) {
     { href: "#about-me", label: t.nav.bio },
     { href: "#experience", label: t.nav.exp },
     { href: "#skills", label: t.nav.skills },
-    { href: "#lab", label: t.nav.lab },
     { href: "#projects", label: t.nav.projects },
   ];
 

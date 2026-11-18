@@ -1,6 +1,6 @@
 export const signalLogTranslations = {
   en: {
-    module: "// MODULE_06: SIGNAL_LOG",
+    module: "// MODULE_05: SIGNAL_LOG",
     heading: "Transmissions",
     nowPlaying: "Now Playing",
     offline: "Offline",
@@ -11,7 +11,7 @@ export const signalLogTranslations = {
     },
   },
   es: {
-    module: "// MODULE_06: SIGNAL_LOG",
+    module: "// MODULE_05: SIGNAL_LOG",
     heading: "Transmisiones",
     nowPlaying: "Reproduciendo Ahora",
     offline: "Sin Conexión",

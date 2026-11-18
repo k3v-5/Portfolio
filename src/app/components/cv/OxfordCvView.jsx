@@ -82,28 +82,6 @@ export default function OxfordCvView({ profile = "fullstack", lang = "es" }) {
         </p>
       </section>
 
-      {/* EDUCATION */}
-      <section className="mb-4">
-        <h2 className="text-[12px] font-sans font-black tracking-widest uppercase border-b border-black pb-0.5 mb-2 text-black">
-          {lang === "en" ? "EDUCATION" : "EDUCACIÓN"}
-        </h2>
-        <div className="flex justify-between items-baseline font-bold text-black text-[13px] sm:text-[14px]">
-          <span>{edu[`school_${lang}`]}</span>
-          <span className="font-normal text-[11px] sm:text-[12px] text-slate-600 font-sans">
-            {edu.location}
-          </span>
-        </div>
-        <div className="flex justify-between items-baseline italic text-slate-800 text-[12px] sm:text-[13px]">
-          <span>{edu[`degree_${lang}`]}</span>
-          <span className="font-normal not-italic text-[11px] sm:text-[12px] text-slate-600 font-sans">
-            {edu[`dates_${lang}`]}
-          </span>
-        </div>
-        <p className="text-[11px] sm:text-[12px] text-slate-700 mt-1">
-          {edu[`focus_${lang}`]}
-        </p>
-      </section>
-
       {/* WORK EXPERIENCE */}
       <section className="mb-4">
         <h2 className="text-[12px] font-sans font-black tracking-widest uppercase border-b border-black pb-0.5 mb-2 text-black">
@@ -169,6 +147,28 @@ export default function OxfordCvView({ profile = "fullstack", lang = "es" }) {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* EDUCATION */}
+      <section className="mb-4">
+        <h2 className="text-[12px] font-sans font-black tracking-widest uppercase border-b border-black pb-0.5 mb-2 text-black">
+          {lang === "en" ? "EDUCATION" : "EDUCACIÓN"}
+        </h2>
+        <div className="flex justify-between items-baseline font-bold text-black text-[13px] sm:text-[14px]">
+          <span>{edu[`school_${lang}`]}</span>
+          <span className="font-normal text-[11px] sm:text-[12px] text-slate-600 font-sans">
+            {edu.location}
+          </span>
+        </div>
+        <div className="flex justify-between items-baseline italic text-slate-800 text-[12px] sm:text-[13px]">
+          <span>{edu[`degree_${lang}`]}</span>
+          <span className="font-normal not-italic text-[11px] sm:text-[12px] text-slate-600 font-sans">
+            {edu[`dates_${lang}`]}
+          </span>
+        </div>
+        <p className="text-[11px] sm:text-[12px] text-slate-700 mt-1">
+          {edu[`focus_${lang}`]}
+        </p>
       </section>
 
       {/* TECHNICAL SKILLS */}

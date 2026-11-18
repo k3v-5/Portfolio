@@ -1,6 +1,6 @@
 export const projectsTranslations = {
   en: {
-    module: "// MODULE_05: PORTFOLIO",
+    module: "// MODULE_04: PORTFOLIO",
     heading: "Projects",
     filters: {
       all: "All",
@@ -14,23 +14,30 @@ export const projectsTranslations = {
     items: {
       8: {
         title: "IANIMATION",
-        badge: "Unreal Engine 5 & FastMCP Orchestrator",
+        badge: "Unified MCP Suite · UE5 & VFX",
+        videoDemoLabel: "Watch Demo (0:12)",
         description:
-          "High-fidelity native desktop platform built with Tauri v2, React, and Python FastMCP that automates 3D scene composition, character auto-rigging, and cinematic rendering by orchestrating Unreal Engine 5 via Model Context Protocol (MCP). Integrates hybrid AI pipelines for multi-track audio analysis, procedural 3D synthesis, and video motion capture extraction.",
+          "High-fidelity native desktop monorepo built with Tauri v2, React, and Python FastMCP that unifies my 3D/UE5, Blender procedural, After Effects Motion-VFX, Adobe Suite, and 2D Stick-IK engines into 144 MCP tools. I automate end-to-end 3D scene composition, auto-rigging, audio analysis, motion capture, and cinematic rendering.",
+      },
+      9: {
+        title: "Hendrix Assistant",
+        badge: "Mobile AI & Workstation Bridge",
+        description:
+          "Hybrid cloud and local-SLM mobile AI assistant I built with Kotlin Jetpack Compose, paired in real time to a Python workstation companion over WebSockets RPC and zero-config LAN/WAN discovery. I automate desktop routines, manage Antigravity multi-account pools, sync clipboards/OTA builds, and orchestrate complex workflows.",
       },
       0: {
         title: "DARX",
         badge: "In Active Development",
         description:
-          "Action-adventure video game currently in development, built on a proprietary generative toolchain. Integrates 3D characters procedurally synthesized through the Blender MCP engine with cinematic sequences and visual motion orchestrated via the After Effects MCP pipeline.",
+          "Action-adventure video game I am currently developing on top of my proprietary generative toolchain. I synthesize 3D characters, rigs, and cinematic sequences through the unified IANIMATION MCP ecosystem.",
       },
       7: {
         title: "AbletonEngine",
         badge: "Generative Music Studio",
-        audioDemoLabel: "Algorithmic Composition Output",
-        audioFallbackNote: "Place audio file in public/audio",
+        youtubeDemoLabel: "Algorithmic Album // YouTube Playlist",
+        youtubeOpenLabel: "Open in YouTube",
         description:
-          "Autonomous algorithmic composition and AI music production pipeline connected to Ableton Live. Generates complete musical arrangements while enforcing rigorous production standards, including real-time LUFS loudness validation, tonal key consistency, chord voicing, and multi-track spectral balance.",
+          "Autonomous algorithmic composition and AI music production pipeline connected to Ableton Live. I generate complete musical arrangements while enforcing rigorous production standards, including real-time LUFS loudness validation, tonal key consistency, chord voicing, and multi-track spectral balance.",
       },
       6: {
         title: "N8Effect",
@@ -54,7 +61,7 @@ export const projectsTranslations = {
     },
   },
   es: {
-    module: "// MODULE_05: PORTFOLIO",
+    module: "// MODULE_04: PORTFOLIO",
     heading: "Proyectos",
     filters: {
       all: "Todos",
@@ -68,23 +75,30 @@ export const projectsTranslations = {
     items: {
       8: {
         title: "IANIMATION",
-        badge: "Orquestador UE5 & FastMCP",
+        badge: "Suite MCP Unificada · UE5 & VFX",
+        videoDemoLabel: "Ver Demo (0:12)",
         description:
-          "Aplicación de escritorio nativa de alta fidelidad construida con Tauri v2, React y Python FastMCP que automatiza la creación de escenas, personajes 3D, auto-rigging y renderizado cinemático orquestando directamente Unreal Engine 5 mediante Model Context Protocol (MCP). Integro pipelines de IA híbrida para análisis de audio, síntesis 3D procedural y extracción de mocap.",
+          "Monorepo de escritorio nativo construido con Tauri v2, React y Python FastMCP donde unifiqué mis motores de UE5, Blender 3D procedural, After Effects Motion-VFX, Adobe Suite y animación 2D Stick-IK en 144 herramientas MCP. Automatizo creación de escenas, auto-rigging, análisis espectral de audio, mocap y renderizado cinemático.",
+      },
+      9: {
+        title: "Hendrix Assistant",
+        badge: "Asistente Móvil de IA & Puente PC",
+        description:
+          "Asistente móvil híbrido (nube y modelos locales) que desarrollé en Kotlin Jetpack Compose conectado en tiempo real a un compañero de escritorio en Python vía WebSockets RPC y descubrimiento LAN/WAN sin configuración. Automatizo rutinas de PC, gestiono cuentas múltiples de Antigravity, sincronizo portapapeles/OTA y coordino flujos complejos.",
       },
       0: {
         title: "DARX",
         badge: "En Desarrollo Activo",
         description:
-          "Videojuego de acción/aventura en desarrollo activo, impulsado por un pipeline generativo propio. Integra personajes 3D sintetizados proceduralmente mediante el motor de Blender MCP y cinemáticas orquestadas a través del motor de video de After Effects MCP.",
+          "Videojuego de acción y aventura que desarrollo actualmente sobre mi propio pipeline generativo. Sintetizo personajes 3D procedurales, rigs y secuencias cinemáticas a través del ecosistema unificado IANIMATION.",
       },
       7: {
         title: "AbletonEngine",
         badge: "Generative Music Studio",
-        audioDemoLabel: "Muestra de Composición Algorítmica",
-        audioFallbackNote: "Coloca tu archivo de audio en public/audio",
+        youtubeDemoLabel: "Álbum Algorítmico // Playlist Oficial",
+        youtubeOpenLabel: "Abrir en YouTube",
         description:
-          "Pipeline autónomo de composición algorítmica y producción musical generada por IA conectado con Ableton Live. Genera arreglos musicales completos garantizando estrictos criterios de producción profesional, incluyendo validación de sonoridad (LUFS), consistencia tonal, armonía y balance espectral multicanal.",
+          "Pipeline autónomo de composición algorítmica y producción musical generada por IA conectado con Ableton Live. Genero arreglos musicales completos garantizando estrictos criterios de producción profesional, incluyendo validación de sonoridad (LUFS), consistencia tonal, armonía y balance espectral multicanal.",
       },
       6: {
         title: "N8Effect",

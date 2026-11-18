@@ -13,6 +13,14 @@ const AudioDemoPlayer = dynamic(() => import("./AudioDemoPlayer"), {
   ssr: false,
 });
 
+const YouTubeDemoPlayer = dynamic(() => import("./YouTubeDemoPlayer"), {
+  ssr: false,
+});
+
+const VideoDemoPlayer = dynamic(() => import("./VideoDemoPlayer"), {
+  ssr: false,
+});
+
 /**
  * Project Card Item Component
  * Renders an individual project card with interactive links, responsive image,
@@ -21,16 +29,24 @@ const AudioDemoPlayer = dynamic(() => import("./AudioDemoPlayer"), {
  * @param {{
  *   project: {
  *     id: number,
- *     image: string,
+ *     image: string | null,
  *     tagIds: string[],
  *     gitUrl: string | null,
  *     previewUrl: string | null,
+ *     audioDemo?: string,
+ *     youtubeDemo?: string,
+ *     videoDemo?: string,
  *     fit?: string
  *   },
  *   copy: {
  *     title?: string,
  *     badge?: string,
- *     description?: string
+ *     description?: string,
+ *     audioDemoLabel?: string,
+ *     audioFallbackNote?: string,
+ *     youtubeDemoLabel?: string,
+ *     youtubeOpenLabel?: string,
+ *     videoDemoLabel?: string
  *   },
  *   filters: Record<string, string>,
  *   isExpanded: boolean,
@@ -58,7 +74,21 @@ export default function ProjectCardItem({
   return (
     <div className="project-card-anim bg-white/95 dark:bg-slate-900/85 backdrop-blur-[20px] border border-black/5 dark:border-white/10 p-8 md:p-10 rounded-[3rem] shadow-2xl block">
       <div className="aspect-video rounded-2xl overflow-hidden mb-8 relative group border border-slate-100 dark:border-slate-800 bg-slate-950 flex items-center justify-center">
-        {hasImg ? (
+        {project.youtubeDemo ? (
+          <YouTubeDemoPlayer
+            url={project.youtubeDemo}
+            label={copy?.youtubeDemoLabel}
+            embeddedSlot
+          />
+        ) : project.videoDemo ? (
+          <VideoDemoPlayer
+            src={project.videoDemo}
+            poster={project.image}
+            alt={copy?.title || "Project"}
+            playLabel={copy?.videoDemoLabel}
+            fit={project.fit}
+          />
+        ) : hasImg ? (
           <Image
             src={project.image}
             alt={copy?.title || "Project"}
@@ -77,8 +107,10 @@ export default function ProjectCardItem({
           </div>
         )}
 
-        {/* Overlay con iconos si hay links */}
-        {(project.gitUrl || project.previewUrl) && (
+        {/* Overlay con iconos si hay links (desactivado cuando hay reproductor interactivo) */}
+        {!project.youtubeDemo &&
+          !project.videoDemo &&
+          (project.gitUrl || project.previewUrl) && (
           <div className="items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
             {project.gitUrl && (
               <Link
@@ -120,6 +152,19 @@ export default function ProjectCardItem({
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
               </svg>
               <span>GitHub</span>
+            </a>
+          )}
+          {project.youtubeDemo && (
+            <a
+              href={project.youtubeDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-[9px] font-bold uppercase tracking-wider bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 hover:bg-red-600 dark:hover:bg-red-600 hover:text-white border border-red-200 dark:border-red-800/60 transition-all duration-200"
+            >
+              <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              <span>{copy?.youtubeOpenLabel || "YouTube"}</span>
             </a>
           )}
           {copy?.badge && (

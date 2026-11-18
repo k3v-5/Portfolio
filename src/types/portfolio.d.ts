@@ -74,17 +74,6 @@ export interface SkillCategory {
   items: string[];
 }
 
-export interface LabItem {
-  id: string;
-  name: string;
-  tagline: string;
-  blurb: string;
-  highlights: string[];
-  tags: string[];
-  image: string;
-  gitUrl?: string;
-}
-
 export interface SpotifyTrackState {
   isPlaying: boolean;
   title: string;

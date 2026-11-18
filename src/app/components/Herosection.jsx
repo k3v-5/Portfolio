@@ -35,12 +35,6 @@ export default function Herosection({ onOpenCv }) {
             <span>{t.hero.ctaProjects}</span>
             <span className="text-purple-400 group-hover:text-white transition-colors">&gt;&gt;</span>
           </a>
-          <a
-            href="#lab"
-            className="inline-flex items-center gap-2 bg-white/80 dark:bg-slate-900/80 hover:bg-slate-50 dark:hover:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-purple-600 text-slate-800 dark:text-slate-200 font-mono text-[11px] uppercase font-bold tracking-widest px-7 py-3.5 rounded-full transition-all duration-300 backdrop-blur-md shadow-sm hover:shadow-[0_0_20px_rgba(147,51,234,0.15)] transform hover:-translate-y-0.5 active:translate-y-0"
-          >
-            <span>{t.hero.ctaLab}</span>
-          </a>
           <button
             type="button"
             onClick={onOpenCv}

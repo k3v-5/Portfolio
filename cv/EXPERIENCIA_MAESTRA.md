@@ -22,79 +22,46 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 ---
 
 ### 1.1 RAINDE
-**Puesto:** Software & DevOps Engineer  
+**Puesto:** Ingeniero de Software & DevOps  
 **Período:** Noviembre 2024 – Actualidad  
 **Ubicación:** Aguascalientes, México  
 **Modalidad:** Presencial / Híbrida  
-**Giro:** Soluciones de Software Empresarial, Logística, Transporte de Carga y Cadena de Suministro  
+**Giro:** Soluciones de Software Empresarial (TMS / ERP), Logística, Transporte de Carga y Rastreo Satelital  
 
-#### A. Arquitectura ERP Core & Base de Datos (C# / .NET / ASP Clásico / SQL Server)
-* **Desarrollo y Soporte de Módulos ERP:** Desarrollo integral desde cero, ampliación y soporte de corrección de errores (hotfixes/troubleshooting) en módulos centrales de la suite ERP empresarial de RAINDE.
-* **Módulos Fiscales y Financieros:**
-  * **Timbrado y Facturación Electrónica (CFDI):** Lógica transaccional de timbrado y emisión con Proveedores Autorizados de Certificación (PAC).
-  * **Carta Porte:** Implementación de complementos de Carta Porte para transporte de carga federal y logística de mercancías bajo normativas oficiales.
-  * **Cuentas por Pagar (CXP) y Proveedores:** Gestión de pagos, órdenes de compra, control de pasivos y conciliación con proveedores.
+#### A. Arquitectura TMS / ERP Core & Reportes (.NET / Web Forms / WebView / ASP Clásico / SQL Server)
+* **Desarrollo de Módulos TMS y ERP:** Desarrollo integral, ampliación y mantenimiento de módulos centrales en las suites TMS (Transportation Management System) y ERP empresariales en **C# (.NET)**, **ASP.NET Web Forms**, **WebView** y **ASP Clásico**.
+* **Módulos Contables, Fiscales y de Nómina:**
+  * **Contabilidad y Finanzas:** Lógica contable operativa, cuentas por pagar (CXP), proveedores, timbrado y facturación electrónica (CFDI) y complementos de Carta Porte para transporte federal.
   * **Nómina:** Módulo de cálculo de percepciones, deducciones y dispersión de nómina operativa.
-* **Módulos Operativos y Logísticos:**
-  * **Inventarios y Almacenes:** Control multialmacén de entradas, salidas, transferencias y stock crítico.
-  * **Seguimiento Logístico y Operaciones:** Trazabilidad de órdenes de viaje, estatus de entregas y monitoreo de despacho.
-* **Base de Datos Relacional Avanzada (SQL Server):**
-  * Diseño, depuración y mantenimiento de **Stored Procedures** de alta complejidad, **Vistas**, **Triggers** de consistencia de datos y transacciones ACID.
-  * Optimización de consultas SQL (análisis de planes de ejecución, creación de índices, reducción de cuellos de botella).
-* **Modernización de Sistemas Legacy:**
-  * Mantenimiento correctivo y preventivo de módulos construidos históricamente en **ASP Clásico**.
-  * Arquitectura y migración progresiva de lógica de negocio desde ASP Clásico hacia **.NET moderno (.NET Core / C#)** y servicios RESTful desacoplados.
-* **Visualización de Datos y Reportes:**
-  * Creación y parametrización de reportes operativos, financieros y de rendimiento con gráficas dinámicas para directores y gerentes de área.
+* **Módulos Logísticos y Operativos:**
+  * **Catálogos, Inventarios y Almacenes:** Control multialmacén, administración de catálogos maestros, entradas, salidas, transferencias y existencias críticas.
+  * **Operación Logística:** Seguimiento de órdenes de viaje, estatus de entregas y trazabilidad operativa.
+* **SQL Server y Generación de Reportes:**
+  * Diseño, depuración y mantenimiento de **Stored Procedures**, **Vistas**, **Triggers** y consultas en **SQL Server** para extraer toda la lógica e información operativa y generar reportes ejecutivos, financieros y logísticos.
 
-#### B. Microservicios, Endpoints & Procesamiento EDI en TypeScript (Node.js)
-* **Arquitectura de Microservicios:** Diseño, desarrollo e implementación de servicios ligeros e independientes construidos en **TypeScript / Node.js**.
-* **Integración y Procesamiento de EDIs (Electronic Data Interchange):**
-  * Parseo, validación, transformación y generación de mensajes de intercambio electrónico de datos para logística y transporte internacional.
-  * Gestión de **Tenders logísticos** (ofertas de carga, confirmaciones de aceptación/rechazo, asignación de rutas).
-  * Manejo de transacciones estándares y formatos B2B para integración automatizada con socios comerciales y clientes corporativos.
-* **APIs RESTful y Webhooks:**
-  * Construcción de endpoints seguros de alto rendimiento para recepción y envío de datos transaccionales en tiempo real.
-  * Implementación de **Webhooks** bidireccionales con reintentos automáticos y tolerancia a fallos.
-* **Seguridad, Autenticación y Auditoría:**
-  * Esquemas de autenticación y autorización mediante **JWT (JSON Web Tokens)**, API Keys y roles de usuario.
-  * Sistemas de trazabilidad, logging estructurado (Winston / Morgan / logs centralizados) y seguimiento de peticiones para auditoría operativa.
-* **Web Scraping Automatizado:**
-  * Desarrollo de scripts y bots en Node.js/TypeScript para extracción controlada de datos desde portales externos de validación vehicular, aduanal y logística.
+#### B. Microservicios, Integraciones B2B (EDI / SFTP) & Comunicación Automatizada (TypeScript / Node.js)
+* **Arquitectura de Microservicios:** Diseño, desarrollo e implementación de servicios y APIs RESTful en **TypeScript / Node.js**.
+* **Transmisión de Datos entre Sistemas (EDI y SFTP):**
+  * Procesamiento, validación, transformación e intercambio electrónico de datos (**EDI**) y gestión de **Tenders logísticos** para transmisión de información con sistemas externos y socios comerciales.
+  * Integración y envío automatizado de archivos mediante **SFTP** para sincronización segura de lotes operativos y documentales entre plataformas.
+* **Notificaciones y Mensajería Automatizada:**
+  * Integración de pipelines para procesamiento integral de información, envío automatizado de **mensajes** y despacho automatizado de **correos electrónicos** operativos y de alertas.
+* **APIs RESTful, Webhooks y Seguridad:**
+  * Endpoints seguros con **JWT**, webhooks bidireccionales con tolerancia a fallos, logging estructurado y scripts de automatización/extracción controlada en Node.js.
 
-#### C. Monitoreo Telemático & Rastreo GPS en Tiempo Real (Angular & Python)
-* **Ingesta Telemática de GPS (Python):**
-  * Desarrollo de listeners y servidores de sockets **TCP/UDP** en Python para recepción continua y concurrente de paquetes binarios y tramas crudas emitidas por dispositivos GPS/IoT.
-  * Integración con APIs de proveedores de rastreo telemático para ingesta en streaming de telemetría.
-  * Decodificación de tramas (coordenadas geográficas, velocidad, ignición, nivel de combustible, alertas de botón de pánico) y persistencia en base de datos.
-* **Plataforma Web de Monitoreo y Rastreo (Angular):**
-  * Construcción de aplicaciones web interactivas (SPA) en **Angular** y TypeScript para monitoreo de flotas en tiempo real.
-  * Integración de mapas dinámicos (Leaflet / Google Maps API), renderizado de rutas históricas, cálculo de tiempos estimados de llegada (ETA), geocercas poligonales y alertas visuales instantáneas.
+#### C. Plataforma de Rastreo GPS & Activos Móviles en Tiempo Real (Angular / TypeScript / Node.js / Python)
+* **Procesamiento Masivo de Datos GPS (Python / Node.js):**
+  * Desarrollo de servicios de ingesta y procesamiento masivo de tramas y posiciones GPS provenientes de dispositivos instalados en unidades y camiones (listeners de sockets TCP/UDP e integraciones de streaming).
+* **Plataforma Web de Monitoreo de Flotas (Angular & TypeScript):**
+  * Construcción de aplicaciones web SPA en **Angular** y **TypeScript** para seguimiento en tiempo real de unidades de transporte, dispositivos y **activos móviles**.
+  * Visualización consolidada de todos los camiones y dispositivos activos sobre mapas interactivos, con rutas históricas, cálculo de ETA, geocercas y alertas operativas.
 
-#### D. Despliegues Autónomos & Administración de Servidores (Linux & Windows IIS)
-* **Infraestructura Gestionada de Manera Autónoma (Self-Managed):** Gestiono de forma directa, sin intermediarios, la publicación y operación de los sistemas en producción.
-* **Servidores Linux (Ubuntu / Debian):**
-  * Conexión remota segura mediante **SSH**.
-  * Aprovisionamiento y orquestación de servicios en segundo plano con **systemd** (servicios, daemons) y administradores de procesos como **PM2**.
-  * Configuración y administración de tareas programadas con **crontab** (crones automáticos para limpieza, respaldos y conciliaciones).
-  * Configuración de servidores web y proxies inversos con **Nginx** (balanceo de carga local, headers de seguridad, certificados SSL con Let's Encrypt / Certbot, redirecciones y gestión de puertos).
-  * Monitoreo de uso de CPU/RAM, inspección de logs del sistema (`journalctl`) y endurecimiento de seguridad básico (UFW / firewalls).
-* **Servidores Windows con IIS (Internet Information Services):**
-  * Configuración de sitios web, aplicaciones y directorios virtuales en **IIS**.
-  * Administración de **Application Pools** (asignación de recursos, reciclaje de pools, versiones de CLR / .NET Core Hosting Bundle).
-  * Configuración de bindings (HTTP/HTTPS, dominios, certificados SSL) y reglas de permisos de carpetas/usuarios de Windows.
-  * Creación y despliegue de **Servicios de Windows (Windows Services)** para procesos residentes en memoria.
-  * Programación de tareas administrativas con el Programador de Tareas (**Task Scheduler**).
-* **Contenerización y Bases de Datos en Servidores:**
-  * Uso de **Docker** y **Docker Compose** para aislamiento de microservicios y dependencias de ejecución.
-  * Administración directa de instancias de bases de datos, ejecución de scripts de migración y respaldos programados en servidores de producción.
+#### D. Despliegues y Administración de Servidores (Linux & Windows IIS)
+* **Gestión Directa en Producción:** Opero directamente la publicación y mantenimiento de aplicaciones y servicios en servidores **Linux (Ubuntu/Debian)** mediante SSH, **systemd**, **PM2**, **crontab** y **Nginx** (proxies inversos y SSL), así como en servidores **Windows IIS** (Application Pools, bindings, Windows Services y Task Scheduler).
+* **Contenerización y Bases de Datos:** Uso de **Docker** / **Docker Compose**, ejecución de migraciones y administración de respaldos en servidores de producción.
 
 #### E. Inteligencia Artificial & Automatización con LLMs (TypeScript)
-* **Integración de APIs de Modelos de Lenguaje:** Conexión de APIs de LLMs comerciales (OpenAI GPT-4, Anthropic Claude, Google Gemini) dentro de flujos de trabajo en TypeScript.
-* **Casos de Uso Empresariales:**
-  * Extracción y normalización automática de datos no estructurados a partir de facturas, correos, documentos de embarque y reportes escaneados.
-  * Procesamiento inteligente de información operativa y clasificación de incidencias.
-  * Pipelines de automatización donde LLMs actúan como agentes de decisión para enriquecer catálogos o validar coherencia de datos.
+* **Integración de APIs de Modelos de Lenguaje:** Conexión de APIs de LLMs dentro de flujos de trabajo en TypeScript/Node.js para extracción, validación y estructuración automatizada de datos operativos y documentos.
 
 ---
 
@@ -103,42 +70,32 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 **Período:** Enero 2025 – Abril 2025 (15 de enero a 15 de abril)  
 **Ubicación:** Aguascalientes, México  
 **Modalidad:** Presencial  
-**Giro:** Servicios Financieros, Crédito y Cobranza  
+**Giro:** Servicios Financieros y Atención al Cliente  
 
-#### A. Operación de Telefonía y Atención a Clientes
-* **Gestión Telefónica Integral:** Atención y contacto con clientes a través de conmutadores y sistemas especializados de telefonía para seguimiento a cuentas, asesoría personalizada y resolución oportuna de consultas.
+#### A. Operación de Telefonía y Atención al Cliente
+* **Gestión Telefónica de Servicio:** Atención y orientación directa al cliente mediante conmutadores y sistemas de telefonía para consulta de cuentas, resolución de dudas y acompañamiento para que pudiera efectuar sus pagos a tiempo.
 * **Calidad de Servicio y Apego Normativo:** Manejo de protocolos estrictos de atención, confidencialidad de datos financieros y apego a lineamientos institucionales.
 
 #### B. Sistemas Transaccionales & Generación de Ligas de Pago
-* **Operación de Plataformas de Cómputo:** Manejo diario de equipos de cómputo y software administrativo para consulta de expedientes de clientes y actualización de estados de cuenta.
-* **Sistema de Generación de Ligas de Pago:** Operación del sistema interno de generación y envío de enlaces de pago seguros para clientes, facilitando transacciones digitales y agilizando la conciliación de cobranza.
+* **Operación de Plataformas de Cómputo:** Manejo diario de equipos de cómputo y software administrativo para consulta de expedientes y seguimiento a solicitudes de clientes.
+* **Sistema de Generación de Ligas de Pago:** Operación del sistema interno para generar y enviar enlaces de pago seguros con los montos personalizados que cada cliente decidiera pagar, facilitando transacciones digitales puntuales.
 
 #### C. Rendimiento y Cumplimiento de Metas
-* **Cumplimiento Constante de Objetivos:** Alcance y superación continua de metas comerciales y operativas establecidas por la sucursal, manteniendo un alto estándar de productividad y efectividad en la gestión diaria.
+* **Cumplimiento Constante de Objetivos:** Alcance y superación continua de metas operativas y estándares de calidad en atención al cliente establecidos por la sucursal.
 
 ---
 
 ### 1.3 LION INTEL SOLUTIONS
-**Puesto:** Fullstack Developer  
-**Período:** Mayo 2024 – Noviembre 2024  
+**Puesto:** Desarrollador Full-Stack  
+**Período:** Abril 2024 – Noviembre 2024  
 **Ubicación:** Aguascalientes, México  
 **Modalidad:** Híbrida  
-**Giro:** Soluciones Digitales, E-Commerce y Sector Salud  
+**Giro:** Soluciones Digitales, Integración de E-Commerce / Marketplaces y Sector Dermatológico  
 
-#### A. Integración de APIs de E-Commerce (Mercado Libre, Amazon)
-* **Sincronización Multicanal en Tiempo Real:** Integración directa de las APIs oficiales de **Mercado Libre** y **Amazon** con el backend empresarial (.NET / SQL Server).
-* **Gestión Unificada de Inventarios y Catálogos:**
-  * Sincronización automática de existencias y precios entre los marketplaces y la base de datos central, evitando ventas fuera de stock.
-  * Mapeo de catálogos de productos, atributos, imágenes y especificaciones técnicas hacia los esquemas requeridos por cada plataforma de marketplace.
-* **Procesamiento de Órdenes y Transacciones:**
-  * Consumo de webhooks y endpoints de las plataformas para captura inmediata de órdenes de compra, generación de guías de envío y actualización de estados transaccionales.
-
-#### B. Portal Médico Dermatológico & Plataforma Web (Vue.js + .NET)
-* **Arquitectura Frontend:** Desarrollo de la interfaz web responsiva utilizando **Vue.js**, Vuex/Pinia y componentes interactivos para atención clínica y venta de productos dermatológicos.
-* **Backend y APIs RESTful:** Desarrollo de endpoints y lógica de negocio en **ASP.NET / .NET**, estructurados bajo arquitectura en capas con Entity Framework Core.
-* **Gestión Clínica y Administrativa:**
-  * Módulo de expedientes de pacientes, historial de consultas, agenda de citas y recetas médicas.
-  * Optimización de consultas SQL en SQL Server, reduciendo sustancialmente los tiempos de respuesta de consulta y centralizando la administración de la clínica.
+#### A. Plataforma de Integración de Marketplaces e Inventario Centralizado (Vue.js + .NET + SQL Server)
+* **Arquitectura de Integración por APIs:** Diseño y desarrollo de una aplicación centralizada e integrada vía APIs para conectar múltiples marketplaces de comercio electrónico para una empresa del sector dermatológico.
+* **Unificación de Inventario en Plataforma Principal:** Implementación de la lógica backend en **.NET** y base de datos relacional en **SQL Server** para concentrar un inventario único en la plataforma principal, permitiendo verificar, comparar y sincronizar existencias y movimientos entre cada marketplace conectado.
+* **Frontend Administrativo en Vue.js:** Desarrollo de la interfaz web en **Vue.js** para la administración unificada de catálogos, verificación de disponibilidad multicanal y control operativo desde una sola plataforma.
 
 ---
 
@@ -149,32 +106,27 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 **Modalidad:** Presencial  
 **Giro:** Educación Superior y Administración Universitaria  
 
-#### A. Desarrollo Interno y Sistemas de Automatización
+#### A. Desarrollo de Plataformas Internas & Sistemas Universitarios
 * **Sistema Interno de Gestión de Tickets e Incidencias:**
   * Diseño, programación y despliegue de una plataforma web propia para registro, asignación, seguimiento y resolución de incidencias tecnológicas para más de 1,000 usuarios universitarios (docentes, estudiantes y personal administrativo).
-  * Automatización de reportes periódicos de soporte, métricas de cumplimiento de SLA y reducción de tiempos de atención para más de 1,000 usuarios.
-* **Sistema de Control de Asistencia y Acceso Biométrico / RFID:**
-  * Implementación y administración de lectores biométricos (huella digital) y lectores de tarjetas de proximidad (RFID) para registro de entradas y salidas de colaboradores y alumnos.
-  * Sincronización de registros de checado con bases de datos administrativas internas.
-* **Sistema de Credencialización Universitaria:**
-  * Automatización de la emisión, captura de fotografía y codificación de credenciales digitales y físicas para el campus.
+* **Plataforma Interna de Documentos e Inventarios:**
+  * Desarrollo de un sistema interno centralizado para la **generación automatizada de documentos** institucionales y el **control de inventarios** de la universidad.
+* **Sistema Operativo de Cafetería:**
+  * Desarrollo e implementación del sistema de gestión para la **cafetería** del campus.
+* **Control de Acceso y Credencialización (Tarjetas RFID / Biométricos):**
+  * Implementación y administración de sistemas de ingreso con **tarjetas RFID** y lectores biométricos, así como automatización de credencialización universitaria.
 
-#### B. Redes, Telecomunicaciones y Servidores
-* **Redes Corporativas y Conectividad del Campus:**
-  * Configuración, segmentación y mantenimiento de redes mediante **VLANs**, switches administrables (Cisco / HP / TP-Link) y routers de borde.
-  * Mantenimiento de cableado estructurado (Cat 6), racks de comunicaciones, patch panels y balanceo de enlaces de internet.
-* **Telefonía IP (VoIP):**
-  * Configuración y administración de extensiones telefónicas IP, conmutador digital, troncales SIP y mantenimiento de terminales VoIP en oficinas y directivos.
-* **Servidores Linux y Servicios de Red:**
-  * Configuración de servidores Linux para servicios locales de red (DNS, DHCP, compartición de archivos y hosting interno).
+#### B. Redes, Repetidores, Cableado y Servidores
+* **Infraestructura de Red y Conectividad del Campus:**
+  * Instalación y conexión de cableado estructurado, configuración de **repetidores** y puntos de acceso inalámbricos, switches administrables, routers y segmentación con **VLANs**.
+* **Servidores y Telefonía IP (VoIP):**
+  * Administración de servidores locales, servicios de red y terminales de telefonía IP para oficinas administrativas.
 
-#### C. Infraestructura Física, Seguridad y Soporte a Usuarios
-* **Seguridad Electrónica y Videovigilancia (CCTV):**
-  * Instalación, configuración y monitoreo de cámaras de seguridad IP y análogas, DVRs/NVRs y esquemas de grabación perimetral.
-* **Mantenimiento y Soporte de Hardware:**
-  * Diagnóstico y mantenimiento correctivo/preventivo de equipo de cómputo (PCs, laptops), impresoras láser/térmicas, proyectores multimedia y pantallas interactivas en aulas y auditorios.
-* **Atención y Soporte Técnico Integral:**
-  * Soporte técnico presencial y remoto de primer y segundo nivel a usuarios, personal administrativo, directores y comunidad estudiantil.
+#### C. Seguridad (CCTV), Soporte a Usuarios y Equipamiento de Aulas
+* **Seguridad y Monitoreo Institucional:**
+  * Seguimiento, instalación y administración de **cámaras de videovigilancia (CCTV)** y sistemas de control de acceso para resguardo de las instalaciones.
+* **Soporte Técnico, Préstamos y Mantenimiento:**
+  * Atención directa a usuarios en el **préstamo de equipo de cómputo**, diagnóstico, **reparación y mantenimiento** de equipos de cómputo, revisión y reparación de **proyectores**, e **instalación completa de equipo de cómputo y equipamiento en aulas**.
 
 ---
 
@@ -188,40 +140,35 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
   * Optimización de esquemas relacionales en SQL Server con EF Core para consultas de alta concurrencia.
 * **Repo:** `https://github.com/k3v-5/CitasApp`
 
-### 2.2 Blender Asset Orchestration Engine (AOE)
-* **Stack:** Python API, Model Context Protocol (MCP), Blender Headless, Procedural 3D, LLM Orchestration.
+### 2.2 IANIMATION (Monorepo Unificado 3D, VFX & Motores MCP)
+* **Stack:** Tauri v2, Rust, React 18, TypeScript, Three.js, Python, FastMCP (Model Context Protocol), Unreal Engine 5, Blender 5.2 (Headless Python), Adobe After Effects, Pydantic v2, WebSockets/SSE.
 * **Logros:**
-  * Motor generativo que conecta modelos de lenguaje con Blender a través de Model Context Protocol (MCP) para sintetizar escenas 3D procedurales y rigging automatizado.
-  * Reducción drástica en el consumo de tokens de contexto gracias a señales de control compactas y un pipeline de renderizado desatendido de 19 etapas.
-* **Repo:** `https://github.com/k3v-5/AssetOrchestrationEngine`
+  * Unifiqué en un solo monorepo estandarizado mis 5 motores creativos (`ianimation-3d` para UE5, `blender-procedural-lab`, `motion-vfx` de After Effects, `adobe-suite` y `stick-animator` 2D IK) expuestos mediante 144 herramientas MCP y 123 generadores Python headless.
+  * Desarrollo una plataforma de escritorio en Tauri v2 y React que automatiza síntesis 3D procedural, auto-rigging, texturizado PBR, análisis espectral de audio, extracción de mocap y renderizado cinemático reduciendo drásticamente el consumo de tokens mediante señales compactas.
+* **Repo:** `https://github.com/k3v-5/IANIMATION`
 
-### 2.3 After Effects MCP Video Engine (N8Effect)
-* **Stack:** Adobe After Effects, Model Context Protocol (MCP), Node.js, Python, Token Optimization.
-* **Logros:**
-  * Puente de control autónomo para orquestar capas de video, animar keyframes, manipular cámaras y lanzar colas de render en segundo plano mediante comandos de IA compactos.
-* **Repo:** `https://github.com/k3v-5/N8Effect`
-
-### 2.4 AbletonEngine (Estudio de Música Algorítmica & DSP)
+### 2.3 AbletonEngine (Estudio de Música Algorítmica & DSP)
 * **Stack:** Python, Ableton Live API, Audio DSP, Validación LUFS, Síntesis Estructural.
 * **Logros:**
   * Generador autónomo de composiciones musicales algorítmicas con validación estricta de sonoridad estándar profesional (LUFS), balance espectral y consistencia armónica exportable directamente a proyectos DAW.
 * **Repo:** `https://github.com/k3v-5/AbletonEngine`
+* **Álbum / Playlist Oficial (YouTube):** `https://www.youtube.com/watch?v=2lZNss1OUpc&list=OLAK5uy_kNcmcsSnpFcAz_bR50LsLOJdUzfwnknvQ`
 
-### 2.5 LexiKit (Plataforma Educativa Adaptativa con IA)
+### 2.4 LexiKit (Plataforma Educativa Adaptativa con IA)
 * **Stack:** Next.js, React, TypeScript, LLM Prompt Chaining, Algoritmos de Repetición Espaciada.
 * **Logros:**
   * Plataforma de aprendizaje de idiomas con generación dinámica de contenido contextual, flashcards interactivas y refuerzo de memoria a largo plazo mediante algoritmos de repetición espaciada.
 
-### 2.6 Pipeline CI/CD & Despliegues Multiplataforma
+### 2.5 Pipeline CI/CD & Despliegues Multiplataforma
 * **Stack:** GitHub Actions, GitLab CI, Docker, Docker Compose, Linux (Ubuntu), Bash, Nginx.
 * **Logros:**
   * Automatización del ciclo de vida de compilación, ejecución de suites de pruebas y empaquetado de artefactos web y móviles, agilizando drásticamente los tiempos de despliegue y erradicando fallos manuales.
 
-### 2.7 IANIMATION (Orquestador 3D & Unreal Engine 5 con FastMCP)
-* **Stack:** Tauri v2, Rust, React 18, TypeScript, Three.js, Python, FastMCP (Model Context Protocol), Unreal Engine 5, Pydantic v2, WebSockets/SSE.
+### 2.6 Hendrix Assistant (Asistente Móvil de IA & Puente Desktop)
+* **Stack:** Kotlin (Jetpack Compose), Python (AsyncIO, Tkinter), WebSockets RPC, Gemini API / Local SLMs, UDP Zero-Config Discovery, OTA.
 * **Logros:**
-  * Desarrollo una plataforma de escritorio de alta fidelidad que automatiza la creación de escenas, personajes 3D, auto-rigging y renderizado cinemático audiovisual controlando Unreal Engine 5 mediante Model Context Protocol (MCP).
-  * Arquitecté e integré un servidor FastMCP de herramientas atómicas validadas estrictamente con Pydantic v2 para análisis espectral de audio (Librosa/Demucs), síntesis de mallas 3D procedurales y extracción de mocap desde video sin intervención manual.
+  * Desarrollé un asistente móvil híbrido conectado en tiempo real a una estación de trabajo mediante WebSockets RPC y descubrimiento LAN/WAN sin configuración para automatizar rutinas de escritorio, gestionar cuentas de IA y sincronizar archivos/OTA.
+* **Repo:** `https://github.com/k3v-5/HendrixAssistant`
 
 ---
 
@@ -233,8 +180,8 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
 * **Idiomas:**
   * **Español:** Nativo.
   * **Inglés:** Profesional Avanzado (B2 / C1 - Lectura, escritura técnica, documentación y comunicación oral fluida).
-  * **Alemán:** Interés y aprendizaje activo (Nivel básico en curso).
-* **Mérito Extracurricular:** Maratón Finisher (42.195 km) — Demuestra constancia, disciplina férrea, resistencia y mentalidad de alto rendimiento.
+  * **Alemán:** Básico.
+* **Mérito Extracurricular:** Maratón Finisher (42.195 km).
 
 ---
 
@@ -244,14 +191,15 @@ Cuando el usuario presente una vacante, utiliza esta guía rápida para seleccio
 
 | Tipo de Vacante | Bullets a Elegir de RAINDE / Empleos | Proyectos a Incluir | Habilidades Clave en Top |
 | :--- | :--- | :--- | :--- |
-| **Backend .NET / C#** | Módulos ERP en C# (.NET), Facturación/Nómina/Inventarios, Stored Procedures SQL Server, Migración ASP a .NET. | `dating_app` + `devops_pipeline` | C#, .NET Core, ASP.NET Web API, SQL Server, Stored Procedures, EF Core. |
-| **Backend TypeScript / Node.js** | Microservicios en TypeScript, APIs REST, Webhooks, EDIs/Tenders, Web Scraping, JWT. | `dating_app` + `blender_aoe` (o N8Effect) | TypeScript, Node.js, Microservicios, REST APIs, Webhooks, EDIs, SQL Server. |
-| **Full-Stack (Angular / Vue + .NET)** | ERP en C# + Plataformas de Monitoreo en Angular + Portal médico e integraciones e-commerce en Vue.js (Lion Intel). | `dating_app` + `lexikit` | Angular, TypeScript, C#, .NET Core, Vue.js, SQL Server, RESTful APIs. |
-| **DevOps / Infraestructura / SysAdmin** | Despliegues en servidores Linux (systemd, Nginx, PM2, SSH, crones) + Servidores IIS + Redes y servidores (Cuauhtémoc). | `devops_pipeline` + `blender_aoe` | Servidores Linux, Servidores IIS, Nginx, Docker, CI/CD, Bash, systemd, Redes/VLANs. |
-| **Sistemas ERP, Logística & Integraciones** | ERP (Facturación, Carta Porte, Inventarios, CXP), EDIs (Tenders logísticos), APIs E-Commerce Mercado Libre/Amazon. | `dating_app` + `devops_pipeline` | Arquitectura ERP, Integraciones EDI, Tenders, Facturación/Carta Porte, C#, SQL Server, TypeScript. |
+| **Data Analyst / BI / Data Engineer** | Optimización SQL Server (SP, vistas, triggers, indexación), Ingesta y análisis telemático en Python, Reportes ejecutivos y KPIs, Atención al cliente y ligas de pago personalizadas (Financiera Independencia). | `dating_app` | SQL Server (T-SQL), Python (Pandas/NumPy), Modelado Relacional, Reportes & KPIs, ETL Pipelines. |
+| **Backend .NET / C#** | Módulos TMS/ERP en C# (.NET, Web Forms, WebView, ASP), Contabilidad/Nómina/Logística/Inventarios, Stored Procedures SQL Server. | `dating_app` + `devops_pipeline` | C#, .NET, ASP.NET Web Forms, SQL Server, Stored Procedures, EF Core. |
+| **Backend TypeScript / Node.js** | Microservicios en TypeScript/Node.js, APIs REST, EDI, SFTP, mensajería/correos automatizados, webhooks, JWT. | `dating_app` + `ianimation` | TypeScript, Node.js, Microservicios, REST APIs, EDI, SFTP, SQL Server. |
+| **Full-Stack (Angular / Vue + .NET)** | TMS/ERP en .NET + Plataformas GPS en Angular + Integración API multi-marketplace e inventario único en Vue.js/.NET (Lion Intel). | `dating_app` + `lexikit` | Angular, Vue.js, TypeScript, Node.js, C#, .NET, SQL Server, REST APIs. |
+| **DevOps / Infraestructura / SysAdmin** | Despliegues en servidores Linux (systemd, Nginx, PM2, SSH, crones) + Servidores IIS + Redes y servidores (Cuauhtémoc). | `devops_pipeline` + `ianimation` | Servidores Linux, Windows IIS, Nginx, Docker, CI/CD, Bash, systemd, Redes/VLANs. |
+| **Sistemas TMS/ERP, Logística & Integraciones** | TMS/ERP (Contable, Logística, Nómina, Catálogos, Inventarios, CFDI), EDI, SFTP, Sincronización de Marketplaces (Lion Intel). | `dating_app` + `devops_pipeline` | Sistemas TMS/ERP, EDI, SFTP, Marketplaces APIs, C#, .NET, SQL Server, TypeScript. |
 | **IoT, Telemetría & Monitoreo en Tiempo Real** | Recepción de tramas GPS en Python (sockets TCP/UDP) + Visualización de flotas en Angular con mapas interactivos y alertas. | `dating_app` + `ableton_engine` | Python (Sockets/GPS), Angular, Telemetría en Tiempo Real, SQL Server, WebSockets. |
-| **AI Engineer / Automatización con LLMs** | Integración de APIs de LLMs en TypeScript + Orquestación MCP en Blender/After Effects + Scraping y automatización. | `blender_aoe` + `after_effects` (o LexiKit) | Model Context Protocol (MCP), APIs de LLMs (OpenAI/Gemini/Claude), Python, TypeScript, Agentes. |
-| **Soporte TI / Infraestructura de Redes** | Redes VLANs, telefonía IP, CCTV, biometricos y soporte en Cuauhtémoc + Atención telefónica y CRM en Financiera Independencia. | `devops_pipeline` + `dating_app` | Redes (VLANs/Switches), Servidores Linux/Windows, Telefonía IP, Soporte Técnico, Atención al Cliente. |
+| **AI Engineer / Automatización con LLMs** | Integración de APIs de LLMs en TypeScript + Orquestación MCP unificada en IANIMATION (Blender/After Effects/UE5) + Automatización. | `ianimation` + `dating_app` | Model Context Protocol (MCP), FastMCP, APIs de LLMs, Python, TypeScript, Agentes. |
+| **Soporte TI / Infraestructura de Redes** | Redes, repetidores, cableado, servidores, CCTV, RFID y plataformas internas en Cuauhtémoc + Atención al cliente en Financiera Independencia. | `devops_pipeline` + `dating_app` | Redes (VLANs/Switches), Servidores Linux/Windows, Telefonía IP, Soporte Técnico, Atención al Cliente. |
 
 ---
 

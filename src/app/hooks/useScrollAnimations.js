@@ -107,7 +107,6 @@ export function useScrollAnimations({
         "about-me",
         "experience",
         "skills",
-        "lab",
         "projects",
       ];
       sectionIds.forEach((id) => {

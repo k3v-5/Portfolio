@@ -17,7 +17,6 @@ export const siteConfig = {
     { href: "#about-me", key: "bio" },
     { href: "#experience", key: "exp" },
     { href: "#skills", key: "skills" },
-    { href: "#lab", key: "lab" },
     { href: "#projects", key: "projects" },
   ],
   cv: {

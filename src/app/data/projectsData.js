@@ -7,11 +7,13 @@
 /**
  * @typedef {Object} ProjectItem
  * @property {number} id - Identificador numérico único del proyecto
- * @property {string} image - Ruta del recurso visual principal
+ * @property {string|null} image - Ruta del recurso visual principal o null si usa reproductor embebido
  * @property {string[]} tagIds - Categorías de filtrado asignadas
  * @property {string|null} gitUrl - Enlace al repositorio GitHub o null
  * @property {string|null} previewUrl - Enlace a demo en vivo o null
  * @property {string} [audioDemo] - Enlace a demostración de audio
+ * @property {string} [youtubeDemo] - Enlace a demostración o playlist de YouTube
+ * @property {string} [videoDemo] - Enlace a video demo local ligero
  * @property {"cover"|"contain"} [fit] - Ajuste de la imagen en tarjeta
  */
 
@@ -21,6 +23,15 @@ export const PROJECTS_DATA = [
     image: "/images/projects/ianimation/principal.webp",
     tagIds: ["all", "ai", "gameDev"],
     gitUrl: "https://github.com/k3v-5/IANIMATION",
+    previewUrl: null,
+    videoDemo: "/video/ianimation-demo.mp4",
+    fit: "cover",
+  },
+  {
+    id: 9,
+    image: "/images/projects/hendrix/principal.webp",
+    tagIds: ["all", "ai"],
+    gitUrl: "https://github.com/k3v-5/HendrixAssistant",
     previewUrl: null,
     fit: "cover",
   },
@@ -34,11 +45,13 @@ export const PROJECTS_DATA = [
   },
   {
     id: 7,
-    image: "/images/projects/ableton-engine/principal.webp",
+    image: null,
     tagIds: ["all", "ai", "audioDev"],
     gitUrl: "https://github.com/k3v-5/AbletonEngine",
-    previewUrl: null,
-    audioDemo: "/audio/ableton-engine-demo.mp3",
+    previewUrl:
+      "https://www.youtube.com/watch?v=2lZNss1OUpc&list=OLAK5uy_kNcmcsSnpFcAz_bR50LsLOJdUzfwnknvQ",
+    youtubeDemo:
+      "https://www.youtube.com/watch?v=2lZNss1OUpc&list=OLAK5uy_kNcmcsSnpFcAz_bR50LsLOJdUzfwnknvQ",
     fit: "contain",
   },
   {

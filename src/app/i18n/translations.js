@@ -9,7 +9,6 @@ import {
   aboutTranslations,
   experienceTranslations,
   skillsTranslations,
-  labTranslations,
   projectsTranslations,
   signalLogTranslations,
 } from "./modules/index.js";
@@ -21,7 +20,6 @@ export const translations = {
     about: aboutTranslations.en,
     experience: experienceTranslations.en,
     skills: skillsTranslations.en,
-    lab: labTranslations.en,
     projects: projectsTranslations.en,
     signalLog: signalLogTranslations.en,
     contact: commonTranslations.en.contact,
@@ -35,7 +33,6 @@ export const translations = {
     about: aboutTranslations.es,
     experience: experienceTranslations.es,
     skills: skillsTranslations.es,
-    lab: labTranslations.es,
     projects: projectsTranslations.es,
     signalLog: signalLogTranslations.es,
     contact: commonTranslations.es.contact,

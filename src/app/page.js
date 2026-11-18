@@ -6,7 +6,6 @@ import Herosection from "./components/Herosection";
 import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
 import SkillsSection from "./components/SkillsSection";
-import LabSection from "./components/LabSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import SectionVisual from "./components/SectionVisual";
@@ -100,22 +99,10 @@ export default function Home() {
           <SkillsSection />
         </ErrorBoundary>
 
-        {/* The Creative Synthesis: Hito visual autónomo entre Skills y Lab */}
+        {/* The Creative Synthesis: Hito visual autónomo entre Skills y Projects */}
         <SectionVisual
           src="/images/img_creative_synthesis_wb.webp"
           alt="The Creative Synthesis"
-          standalone
-          direction="center"
-        />
-
-        <ErrorBoundary sectionName="LAB">
-          <LabSection />
-        </ErrorBoundary>
-
-        {/* Server Towers: Hito visual autónomo entre Lab y Projects */}
-        <SectionVisual
-          src="/images/img_3wb.webp"
-          alt="Server Towers"
           standalone
           direction="center"
         />
