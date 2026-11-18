@@ -58,10 +58,10 @@ export const PROJECTS_DATA = [
     id: 6,
     image: "/images/projects/n8effect/principal.webp",
     tagIds: ["all", "audioDev", "gameDev"],
-    gitUrl: null,
-    previewUrl: null,
+    gitUrl: "https://github.com/k3v-5/N8Effect",
+    previewUrl: "https://github.com/k3v-5/N8Effect",
     audioDemo: "/audio/n8effect-demo.mp3",
-    fit: "contain",
+    fit: "cover",
   },
   {
     id: 5,

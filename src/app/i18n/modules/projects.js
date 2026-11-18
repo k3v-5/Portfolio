@@ -41,22 +41,22 @@ export const projectsTranslations = {
       },
       6: {
         title: "N8Effect",
-        badge: "Modular Audio Engine",
-        audioDemoLabel: "Spatial DSP Modular Output",
+        badge: "Modular Audio Engine VST3 · DAG & DSP",
+        audioDemoLabel: "A/B Demo (Dry → Wet Morph)",
         audioFallbackNote: "Place audio file in public/audio",
         description:
-          "Modular VST audio plugin engineered for dynamic effect integration and custom audio signal chain routing. Designed for high-fidelity audio reprocessing, real-time spatial manipulation, and the synthesis of intricate acoustic atmospheres and soundscapes.",
+          "I designed and engineered a modular VST3/CLAP audio plugin and standalone engine in C++20 with JUCE based on directed acyclic graph (DAG) routing. I implemented 23 DSP nodes (FDN reverb, binaural 3D spatial panning, granular clouds, OTT multiband dynamics, and tape saturation), a 64-route universal modulation matrix, and zero-allocation real-time scene morphing.",
       },
       5: {
         title: "LexiKit",
         description:
-          "AI-powered language learning app that generates lessons on demand and reinforces them with spaced repetition across a variety of flashcard types.",
+          "I engineered an AI-powered adaptive language learning platform in Next.js that generates dynamic lessons on demand and reinforces retention via spaced repetition algorithms across multi-format interactive flashcards.",
       },
       1: {
         title: "Full-Stack Dating Platform",
         badge: "Enterprise Architecture",
         description:
-          "Full-stack web platform built with a decoupled architecture using ASP.NET Core Web API and Angular SPA. Features secure JWT authentication, bidirectional real-time messaging, comprehensive user profile management, and relational database persistence.",
+          "I architected and developed a full-stack dating web platform with a decoupled ASP.NET Core Web API and Angular SPA client. I implemented secure JWT authentication, bidirectional real-time messaging, user profile management, and optimized relational database persistence in SQL Server.",
       },
     },
   },
@@ -102,22 +102,22 @@ export const projectsTranslations = {
       },
       6: {
         title: "N8Effect",
-        badge: "Motor de Audio Modular",
-        audioDemoLabel: "Muestra DSP Espacial y Modular",
+        badge: "Motor de Audio Modular VST3 · DAG & DSP",
+        audioDemoLabel: "Demostración A/B (Dry → Wet Morph)",
         audioFallbackNote: "Coloca tu archivo de audio en public/audio",
         description:
-          "Plugin VST modular diseñado para la integración dinámica de efectos y la personalización flexible de cadenas de audio. Permite el reprocesamiento avanzado de señales en tiempo real y la creación inmersiva de atmósferas y paisajes sonoros complejos.",
+          "Diseñé y programé un plugin VST3/CLAP y motor standalone en C++20 con JUCE para procesamiento modular por grafos acíclicos (DAG). Implementé 23 nodos DSP (reverberación FDN, paneo 3D binaural, nubes granulares, dinámica multibanda OTT y saturación de cinta), matriz de modulación universal de 64 rutas y morphing continuo entre escenas sin latencia ni asignaciones de memoria en tiempo real.",
       },
       5: {
         title: "LexiKit",
         description:
-          "App de aprendizaje de idiomas potenciada por IA que genera lecciones a demanda y las refuerza con repetición espaciada sobre una variedad de tarjetas de aprendizaje.",
+          "Diseñé y desarrollé una aplicación de aprendizaje de idiomas con IA en Next.js que genera lecciones adaptativas a demanda y refuerza la retención mediante algoritmos de repetición espaciada sobre múltiples formatos de tarjetas interactivas.",
       },
       1: {
         title: "Plataforma de Citas Full-Stack",
         badge: "Arquitectura Empresarial",
         description:
-          "Plataforma web Full-Stack con arquitectura desacoplada basada en ASP.NET Core Web API y cliente SPA en Angular. Integra autenticación segura con tokens JWT, mensajería bidireccional en tiempo real, gestión completa de perfiles de usuario y persistencia relacional optimizada.",
+          "Arquitecté y desarrollé una plataforma web Full-Stack con arquitectura desacoplada en ASP.NET Core Web API y cliente SPA en Angular. Implementé autenticación segura con tokens JWT, mensajería bidireccional en tiempo real, gestión completa de perfiles de usuario y persistencia relacional optimizada en SQL Server.",
       },
     },
   },
