@@ -154,6 +154,17 @@ export default function ProjectCardItem({
               <span>GitHub</span>
             </a>
           )}
+          {project.previewUrl && !project.youtubeDemo && (
+            <a
+              href={project.previewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-[9px] font-bold uppercase tracking-wider bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 hover:bg-purple-600 dark:hover:bg-purple-600 hover:text-white border border-purple-200 dark:border-purple-800/60 transition-all duration-200"
+            >
+              <EyeIcon className="w-3 h-3" />
+              <span>{copy?.previewLabel || "Demo"}</span>
+            </a>
+          )}
           {project.youtubeDemo && (
             <a
               href={project.youtubeDemo}

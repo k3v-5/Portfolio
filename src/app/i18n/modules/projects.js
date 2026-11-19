@@ -42,6 +42,7 @@ export const projectsTranslations = {
       6: {
         title: "N8Effect",
         badge: "Modular Audio Engine VST3 · DAG & DSP",
+        previewLabel: "Demo & Repo",
         audioDemoLabel: "A/B Demo (Dry → Wet Morph)",
         audioFallbackNote: "Place audio file in public/audio",
         description:
@@ -55,6 +56,7 @@ export const projectsTranslations = {
       1: {
         title: "Full-Stack Dating Platform",
         badge: "Enterprise Architecture",
+        previewLabel: "Live Demo",
         description:
           "I architected and developed a full-stack dating web platform with a decoupled ASP.NET Core Web API and Angular SPA client. I implemented secure JWT authentication, bidirectional real-time messaging, user profile management, and optimized relational database persistence in SQL Server.",
       },
@@ -103,6 +105,7 @@ export const projectsTranslations = {
       6: {
         title: "N8Effect",
         badge: "Motor de Audio Modular VST3 · DAG & DSP",
+        previewLabel: "Demo & Repo",
         audioDemoLabel: "Demostración A/B (Dry → Wet Morph)",
         audioFallbackNote: "Coloca tu archivo de audio en public/audio",
         description:
@@ -116,6 +119,7 @@ export const projectsTranslations = {
       1: {
         title: "Plataforma de Citas Full-Stack",
         badge: "Arquitectura Empresarial",
+        previewLabel: "Demo en Vivo",
         description:
           "Arquitecté y desarrollé una plataforma web Full-Stack con arquitectura desacoplada en ASP.NET Core Web API y cliente SPA en Angular. Implementé autenticación segura con tokens JWT, mensajería bidireccional en tiempo real, gestión completa de perfiles de usuario y persistencia relacional optimizada en SQL Server.",
       },
