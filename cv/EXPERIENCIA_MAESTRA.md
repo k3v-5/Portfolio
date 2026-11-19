@@ -170,10 +170,10 @@ Este archivo es la **fuente de verdad exhaustiva** de toda la trayectoria técni
   * Desarrollé un asistente móvil híbrido conectado en tiempo real a una estación de trabajo mediante WebSockets RPC y descubrimiento LAN/WAN sin configuración para automatizar rutinas de escritorio, gestionar cuentas de IA y sincronizar archivos/OTA.
 * **Repo:** `https://github.com/k3v-5/HendrixAssistant`
 
-### 2.7 N8Effect (Motor de Audio Modular VST3 · DAG & DSP)
-* **Stack:** C++20, JUCE 8, Rust, Audio DSP, VST3, CLAP, Standalone, Lock-Free Concurrency.
+### 2.7 N8Effect (Motor de Audio Modular VST3 · DAG & Rust SIMD)
+* **Stack:** C++20, JUCE 8, Rust SIMD, Audio DSP, VST3, CLAP, Standalone, Lock-Free Concurrency.
 * **Logros:**
-  * Diseñé y programé un plugin VST3/CLAP y motor de audio modular basado en grafos acíclicos dirigidos (DAG), implementando 23 procesadores DSP (reverberación FDN, paneo 3D binaural psicoacústico, dinámica multibanda OTT y nubes granulares) con seguridad estricta para audio en tiempo real (cero asignaciones de memoria y colas lock-free).
+  * Diseñé y programé un plugin VST3/CLAP y motor standalone con vista dual de grafo acíclico dirigido (DAG) y rack analógico serie 500, implementando 83 procesadores DSP (reverberación FDN, paneo 3D binaural psicoacústico, dinámica multibanda OTT, nubes granulares y saturación de cinta), 68 presets de fábrica y visualizadores FFT/Radar 3D con seguridad estricta para audio en tiempo real (cero asignaciones de memoria y colas lock-free).
 * **Repo:** `https://github.com/k3v-5/N8Effect`
 
 ---

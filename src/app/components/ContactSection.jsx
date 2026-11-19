@@ -36,6 +36,7 @@ export default function ContactSection() {
           copyHint={contact.copyHint}
           copiedHint={contact.copiedHint}
           openMailLabel={contact.openMail}
+          mailSubject={contact.mailSubject}
         />
 
         <SocialLinks label={contact.otherOptions} />

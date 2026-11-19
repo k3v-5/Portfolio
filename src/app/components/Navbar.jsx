@@ -21,7 +21,7 @@ export default function Navbar({ onOpenCv }) {
   // Close mobile menu on window resize to desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) setIsMobileMenuOpen(false);
+      if (window.innerWidth >= 1024) setIsMobileMenuOpen(false);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -36,35 +36,28 @@ export default function Navbar({ onOpenCv }) {
 
   return (
     <nav className="relative z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex justify-between items-center">
-        <div className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tighter italic">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex justify-between items-center gap-4">
+        <div className="text-xl font-black text-slate-900 dark:text-white uppercase tracking-tighter italic whitespace-nowrap shrink-0">
           <a href="#kevin-garrido" onClick={() => setIsMobileMenuOpen(false)}>
             Kevin Garrido
           </a>
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex space-x-8 lg:space-x-10 text-[10px] font-mono font-bold tracking-[0.4em] uppercase items-center">
+        <div className="hidden lg:flex space-x-6 xl:space-x-10 text-[10px] font-mono font-bold tracking-[0.25em] xl:tracking-[0.35em] uppercase items-center shrink-0">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-500 dark:text-slate-400"
+              className="whitespace-nowrap hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-500 dark:text-slate-400"
             >
               {link.label}
             </a>
           ))}
-          <button
-            type="button"
-            onClick={onOpenCv}
-            className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-slate-500 dark:text-slate-400"
-          >
-            {t.nav.cv || "// CV"}
-          </button>
         </div>
 
         {/* Action Controls & Mobile Hamburger */}
-        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 shrink-0">
           {/* Theme Toggle */}
           <button
             type="button"
@@ -121,7 +114,7 @@ export default function Navbar({ onOpenCv }) {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden flex items-center justify-center p-2 text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 border border-slate-200 dark:border-slate-800 rounded-full transition-colors bg-white/70 dark:bg-slate-900/80 shadow-sm"
+            className="lg:hidden flex items-center justify-center p-2 text-slate-700 dark:text-slate-200 hover:text-purple-600 dark:hover:text-purple-400 border border-slate-200 dark:border-slate-800 rounded-full transition-colors bg-white/70 dark:bg-slate-900/80 shadow-sm"
             aria-label={isMobileMenuOpen ? t.nav.close || "Cerrar" : t.nav.menu || "Menú"}
             aria-expanded={isMobileMenuOpen}
           >
@@ -136,7 +129,7 @@ export default function Navbar({ onOpenCv }) {
 
       {/* Mobile Menu Dropdown Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden px-4 pb-6 pt-2 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden px-4 pb-6 pt-2 animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-2xl space-y-4">
             <div className="flex flex-col space-y-3 font-mono text-xs font-bold uppercase tracking-[0.25em]">
               {navLinks.map((link) => (

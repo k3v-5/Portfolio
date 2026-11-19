@@ -11,9 +11,11 @@ import {
 } from "@heroicons/react/24/outline";
 import OxfordCvView from "../components/cv/OxfordCvView";
 import cvData from "../data/cvData";
+import { useLanguage } from "../i18n/LanguageContext";
+import { formatCvPlainText } from "../utils/formatCvText";
 
 export default function CvPage() {
-  const [lang, setLang] = useState("es");
+  const { lang, setLang } = useLanguage();
   const [copied, setCopied] = useState(false);
 
   const pdfUrl = lang === "en" ? "/cv-en.pdf" : "/cv.pdf";
@@ -24,53 +26,7 @@ export default function CvPage() {
   };
 
   const handleCopyAtsText = () => {
-    const pData = cvData.profiles.fullstack;
-    const personal = cvData.personal;
-    const edu = cvData.education;
-
-    const selectedProjects = (pData.selected_projects || [])
-      .map((k) => cvData.projects[k])
-      .filter(Boolean);
-
-    const skillsPriority = pData.skills_priority || ["fullstack", "devops", "ai", "tools"];
-
-    let text = `${personal.name.toUpperCase()}\n`;
-    text += `${personal.location} | ${personal.phone} | ${personal.email}\n`;
-    text += `LinkedIn: ${personal.linkedin.url} | GitHub: ${personal.github.url} | Web: ${personal.portfolio?.url}\n\n`;
-
-    text += `SUMMARY\n${pData[`title_${lang}`]}: ${pData[`summary_${lang}`]}\n\n`;
-
-    text += `EDUCATION\n${edu[`school_${lang}`]} - ${edu.location}\n`;
-    text += `${edu[`degree_${lang}`]} (${edu[`dates_${lang}`]})\n`;
-    text += `${edu[`focus_${lang}`]}\n\n`;
-
-    text += `PROFESSIONAL EXPERIENCE\n`;
-    cvData.experience.forEach((job) => {
-      text += `• ${job.company} (${job.location}) - ${job[`role_${lang}`]} [${job[`dates_${lang}`]}]\n`;
-      job[`bullets_${lang}`].forEach((b) => {
-        text += `   - ${b}\n`;
-      });
-      text += `\n`;
-    });
-
-    text += `SELECTED PROJECTS\n`;
-    selectedProjects.forEach((p) => {
-      text += `• ${p[`title_${lang}`]} [${p.tech}]\n`;
-      p[`bullets_${lang}`].forEach((b) => {
-        text += `   - ${b}\n`;
-      });
-      text += `\n`;
-    });
-
-    text += `TECHNICAL SKILLS\n`;
-    skillsPriority.forEach((sKey) => {
-      const g = cvData.skills[sKey];
-      if (g) {
-        const itemsStr = g[`items_${lang}`] || (Array.isArray(g.items) ? g.items.join(", ") : g.items);
-        text += `• ${g[`label_${lang}`]}: ${itemsStr}\n`;
-      }
-    });
-
+    const text = formatCvPlainText(cvData, lang, "fullstack");
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);

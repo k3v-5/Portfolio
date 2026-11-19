@@ -41,12 +41,12 @@ export const projectsTranslations = {
       },
       6: {
         title: "N8Effect",
-        badge: "Modular Audio Engine VST3 · DAG & DSP",
+        badge: "Modular Audio Engine · VST3 & Rust SIMD",
         previewLabel: "Demo & Repo",
         audioDemoLabel: "A/B Demo (Dry → Wet Morph)",
         audioFallbackNote: "Place audio file in public/audio",
         description:
-          "I designed and engineered a modular VST3/CLAP audio plugin and standalone engine in C++20 with JUCE based on directed acyclic graph (DAG) routing. I implemented 23 DSP nodes (FDN reverb, binaural 3D spatial panning, granular clouds, OTT multiband dynamics, and tape saturation), a 64-route universal modulation matrix, and zero-allocation real-time scene morphing.",
+          "I designed and engineered a modular VST3/CLAP audio plugin and standalone engine in C++20, JUCE, and Rust SIMD with dual Modular DAG and 500-Series Rack views. I built 83 DSP processors (FDN reverb, binaural 3D spatial panning, granular clouds, OTT multiband dynamics, and tape saturation), 68 factory presets, real-time FFT/3D Radar visualizers, and zero-allocation lock-free scene morphing.",
       },
       5: {
         title: "LexiKit",
@@ -56,7 +56,6 @@ export const projectsTranslations = {
       1: {
         title: "Full-Stack Dating Platform",
         badge: "Enterprise Architecture",
-        previewLabel: "Live Demo",
         description:
           "I architected and developed a full-stack dating web platform with a decoupled ASP.NET Core Web API and Angular SPA client. I implemented secure JWT authentication, bidirectional real-time messaging, user profile management, and optimized relational database persistence in SQL Server.",
       },
@@ -96,7 +95,7 @@ export const projectsTranslations = {
       },
       7: {
         title: "AbletonEngine",
-        badge: "Generative Music Studio",
+        badge: "Estudio de Música Generativa",
         youtubeDemoLabel: "Álbum Algorítmico // Playlist Oficial",
         youtubeOpenLabel: "Abrir en YouTube",
         description:
@@ -104,12 +103,12 @@ export const projectsTranslations = {
       },
       6: {
         title: "N8Effect",
-        badge: "Motor de Audio Modular VST3 · DAG & DSP",
+        badge: "Motor de Audio Modular · VST3 & Rust SIMD",
         previewLabel: "Demo & Repo",
         audioDemoLabel: "Demostración A/B (Dry → Wet Morph)",
         audioFallbackNote: "Coloca tu archivo de audio en public/audio",
         description:
-          "Diseñé y programé un plugin VST3/CLAP y motor standalone en C++20 con JUCE para procesamiento modular por grafos acíclicos (DAG). Implementé 23 nodos DSP (reverberación FDN, paneo 3D binaural, nubes granulares, dinámica multibanda OTT y saturación de cinta), matriz de modulación universal de 64 rutas y morphing continuo entre escenas sin latencia ni asignaciones de memoria en tiempo real.",
+          "Diseñé y programé un plugin VST3/CLAP y motor standalone en C++20, JUCE y Rust SIMD con vista dual de grafo modular (DAG) y rack analógico serie 500. Implementé 83 procesadores DSP (reverberación FDN, paneo 3D binaural, nubes granulares, dinámica multibanda OTT y saturación de cinta), 68 presets de fábrica, visualizadores FFT/Radar 3D en tiempo real y morphing continuo lock-free sin asignaciones de memoria.",
       },
       5: {
         title: "LexiKit",
@@ -119,7 +118,6 @@ export const projectsTranslations = {
       1: {
         title: "Plataforma de Citas Full-Stack",
         badge: "Arquitectura Empresarial",
-        previewLabel: "Demo en Vivo",
         description:
           "Arquitecté y desarrollé una plataforma web Full-Stack con arquitectura desacoplada en ASP.NET Core Web API y cliente SPA en Angular. Implementé autenticación segura con tokens JWT, mensajería bidireccional en tiempo real, gestión completa de perfiles de usuario y persistencia relacional optimizada en SQL Server.",
       },

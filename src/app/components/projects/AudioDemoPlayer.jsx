@@ -44,9 +44,11 @@ export default function AudioDemoPlayer({
       }
     };
 
-    const handleLoadedMetadata = () => {
-      setDuration(audio.duration);
-      setFileMissing(false);
+    const syncDuration = () => {
+      if (audio.duration && Number.isFinite(audio.duration)) {
+        setDuration(audio.duration);
+        setFileMissing(false);
+      }
     };
 
     const handleEnded = () => {
@@ -60,14 +62,22 @@ export default function AudioDemoPlayer({
       setIsPlaying(false);
     };
 
+    if (audio.readyState >= 1) {
+      syncDuration();
+    }
+
     audio.addEventListener("timeupdate", handleTimeUpdate);
-    audio.addEventListener("loadedmetadata", handleLoadedMetadata);
+    audio.addEventListener("loadedmetadata", syncDuration);
+    audio.addEventListener("durationchange", syncDuration);
+    audio.addEventListener("canplay", syncDuration);
     audio.addEventListener("ended", handleEnded);
     audio.addEventListener("error", handleError);
 
     return () => {
       audio.removeEventListener("timeupdate", handleTimeUpdate);
-      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      audio.removeEventListener("loadedmetadata", syncDuration);
+      audio.removeEventListener("durationchange", syncDuration);
+      audio.removeEventListener("canplay", syncDuration);
       audio.removeEventListener("ended", handleEnded);
       audio.removeEventListener("error", handleError);
     };

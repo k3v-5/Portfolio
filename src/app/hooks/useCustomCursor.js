@@ -21,6 +21,8 @@ export function useCustomCursor() {
 
     if (!dot || !ring || !pointer) return;
 
+    document.documentElement.classList.add("has-custom-cursor");
+
     let mouseX = -100;
     let mouseY = -100;
     let isHoveringButton = false;
@@ -147,6 +149,7 @@ export function useCustomCursor() {
     document.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
+      document.documentElement.classList.remove("has-custom-cursor");
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);

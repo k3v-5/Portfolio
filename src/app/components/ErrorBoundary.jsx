@@ -52,7 +52,7 @@ export default class ErrorBoundary extends React.Component {
             </button>
           </div>
           <p className="text-stone-400 mb-2 leading-relaxed">
-            Se contuvo una anomalía en este subsistema para preservar la estabilidad general del sistema.
+            Subsystem anomaly isolated to preserve overall application stability.
           </p>
           {process.env.NODE_ENV !== "production" && this.state.error && (
             <pre className="mt-2 p-2 bg-black/40 rounded text-red-300/80 overflow-x-auto text-[10px]">

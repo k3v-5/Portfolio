@@ -16,14 +16,14 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata = {
   metadataBase: new URL("https://kevingarrido.com"),
   title: {
-    default: "Kevin Garrido // Ingeniero en Cómputo Inteligente",
+    default: "Kevin Garrido // Ingeniero en Computación Inteligente",
     template: "%s | Kevin Garrido",
   },
   description:
-    "Ingeniero en Cómputo Inteligente especializado en Arquitectura Full-Stack, DevOps, Orquestación de IA & MCP Engines y Sistemas Escalables.",
+    "Ingeniero en Computación Inteligente especializado en Arquitectura Full-Stack, DevOps, Telemetría GPS, Orquestación de IA & MCP y Sistemas Escalables.",
   keywords: [
     "Kevin Garrido",
-    "Ingeniero en Cómputo Inteligente",
+    "Ingeniero en Computación Inteligente",
     "Microservicios",
     "TypeScript",
     "C#",
@@ -31,6 +31,7 @@ export const metadata = {
     "Angular",
     "ERP",
     "EDI",
+    "SFTP",
     "Telemetría GPS",
     "Software de Monitoreo",
     "Servidores Linux",
@@ -43,15 +44,16 @@ export const metadata = {
     "Model Context Protocol",
     "MCP",
     "Inteligencia Artificial",
-    "Blender Python",
-    "After Effects Engine",
+    "IANIMATION",
+    "N8Effect",
+    "Audio DSP",
   ],
   authors: [{ name: "Kevin Garrido" }],
   creator: "Kevin Garrido",
   openGraph: {
-    title: "Kevin Garrido // Ingeniero en Cómputo Inteligente",
+    title: "Kevin Garrido // Ingeniero en Computación Inteligente",
     description:
-      "Arquitectura de microservicios, ERP, telemetría telemática GPS, servidores Linux/IIS y motores de IA con MCP.",
+      "Arquitectura de microservicios, TMS/ERP, telemetría GPS, servidores Linux/IIS y motores de IA con MCP.",
     url: "https://kevingarrido.com",
     siteName: "Kevin Garrido Portfolio",
     images: [
@@ -67,9 +69,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kevin Garrido // Ingeniero en Cómputo Inteligente",
+    title: "Kevin Garrido // Ingeniero en Computación Inteligente",
     description:
-      "Arquitectura de microservicios, ERP, telemetría telemática GPS, servidores Linux/IIS y motores de IA con MCP.",
+      "Arquitectura de microservicios, TMS/ERP, telemetría GPS, servidores Linux/IIS y motores de IA con MCP.",
     images: ["/og-image.png"],
   },
 };

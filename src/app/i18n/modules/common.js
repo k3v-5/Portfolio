@@ -13,8 +13,8 @@ export const commonTranslations = {
     hero: {
       eyebrow: ">> INTELLIGENT COMPUTING ENGINEER",
       tags: [
-        "TypeScript Microservices & EDI",
-        "Enterprise ERP in C#",
+        "TypeScript Microservices, EDI & SFTP",
+        "Enterprise TMS / ERP in C# (.NET)",
         "Angular GPS Tracking & Python Telemetry",
         "Autonomous Linux & IIS Deployments",
         "LLM APIs & MCP",
@@ -32,6 +32,7 @@ export const commonTranslations = {
       copyHint: "Click to copy",
       copiedHint: "Copied to clipboard",
       openMail: "Open in mail client",
+      mailSubject: "Contact // Kevin Garrido",
       backToTop: "Back to top",
       otherOptions: "// You could also try some other options:",
     },
@@ -183,11 +184,11 @@ export const commonTranslations = {
       close: "Cerrar",
     },
     hero: {
-      eyebrow: ">> INGENIERO EN CÓMPUTO INTELIGENTE",
+      eyebrow: ">> INGENIERO EN COMPUTACIÓN INTELIGENTE",
       tags: [
-        "Microservicios & EDIs (TypeScript)",
-        "ERP Empresarial (C# / .NET)",
-        "Monitoreo GPS (Angular & Python)",
+        "Microservicios, EDI & SFTP (TypeScript)",
+        "TMS / ERP Empresarial (C# / .NET)",
+        "Rastreo GPS (Angular & Python)",
         "Despliegues en Servidores Linux & IIS",
         "Integración de LLMs & MCP",
       ],
@@ -204,6 +205,7 @@ export const commonTranslations = {
       copyHint: "Clic para copiar",
       copiedHint: "Copiado al portapapeles",
       openMail: "Abrir en tu correo",
+      mailSubject: "Contacto // Kevin Garrido",
       backToTop: "Volver arriba",
       otherOptions: "// También puedes probar otras opciones:",
     },
@@ -341,7 +343,7 @@ export const commonTranslations = {
         },
       ],
     },
-    footer: "Kevin Garrido // Intelligent Computing & DevOps // 2026",
+    footer: "Kevin Garrido // Computación Inteligente & DevOps // 2026",
   },
 };
 

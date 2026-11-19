@@ -11,6 +11,7 @@ import {
 import OxfordCvView from "./OxfordCvView";
 import cvData from "../../data/cvData";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { formatCvPlainText } from "../../utils/formatCvText";
 
 export default function CvModal({ isOpen, onClose }) {
   const { lang: siteLang, t } = useLanguage();
@@ -45,53 +46,7 @@ export default function CvModal({ isOpen, onClose }) {
   const pdfDownloadName = cvLang === "en" ? "Kevin_Garrido_CV_EN.pdf" : "Kevin_Garrido_CV.pdf";
 
   const handleCopyAtsText = () => {
-    const pData = cvData.profiles.fullstack;
-    const personal = cvData.personal;
-    const edu = cvData.education;
-
-    const selectedProjects = (pData.selected_projects || [])
-      .map((k) => cvData.projects[k])
-      .filter(Boolean);
-
-    const skillsPriority = pData.skills_priority || ["fullstack", "devops", "ai", "tools"];
-
-    let text = `${personal.name.toUpperCase()}\n`;
-    text += `${personal.location} | ${personal.phone} | ${personal.email}\n`;
-    text += `LinkedIn: ${personal.linkedin.url} | GitHub: ${personal.github.url} | Web: ${personal.portfolio?.url}\n\n`;
-
-    text += `SUMMARY\n${pData[`title_${cvLang}`]}: ${pData[`summary_${cvLang}`]}\n\n`;
-
-    text += `EDUCATION\n${edu[`school_${cvLang}`]} - ${edu.location}\n`;
-    text += `${edu[`degree_${cvLang}`]} (${edu[`dates_${cvLang}`]})\n`;
-    text += `${edu[`focus_${cvLang}`]}\n\n`;
-
-    text += `PROFESSIONAL EXPERIENCE\n`;
-    cvData.experience.forEach((job) => {
-      text += `• ${job.company} (${job.location}) - ${job[`role_${cvLang}`]} [${job[`dates_${cvLang}`]}]\n`;
-      job[`bullets_${cvLang}`].forEach((b) => {
-        text += `   - ${b}\n`;
-      });
-      text += `\n`;
-    });
-
-    text += `SELECTED PROJECTS\n`;
-    selectedProjects.forEach((p) => {
-      text += `• ${p[`title_${cvLang}`]} [${p.tech}]\n`;
-      p[`bullets_${cvLang}`].forEach((b) => {
-        text += `   - ${b}\n`;
-      });
-      text += `\n`;
-    });
-
-    text += `TECHNICAL SKILLS\n`;
-    skillsPriority.forEach((sKey) => {
-      const g = cvData.skills[sKey];
-      if (g) {
-        const itemsStr = g[`items_${cvLang}`] || (Array.isArray(g.items) ? g.items.join(", ") : g.items);
-        text += `• ${g[`label_${cvLang}`]}: ${itemsStr}\n`;
-      }
-    });
-
+    const text = formatCvPlainText(cvData, cvLang, "fullstack");
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);

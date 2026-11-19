@@ -15,11 +15,13 @@ html.dark {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  html {
+  html.has-custom-cursor {
     cursor: none;
   }
 
-  *, *::before, *::after {
+  html.has-custom-cursor *,
+  html.has-custom-cursor *::before,
+  html.has-custom-cursor *::after {
     cursor: none !important;
   }
 }
@@ -178,7 +180,7 @@ html.dark #scroll-path {
   filter: drop-shadow(0 0 18px rgba(192, 132, 252, 0.75));
 }
 
-section {
+.scroll-container > section {
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -238,7 +240,7 @@ html.dark .content-card {
     opacity: 0.3;
   }
 
-  section {
+  .scroll-container > section {
     padding: 4rem 1rem;
     min-height: auto;
   }
@@ -247,7 +249,7 @@ html.dark .content-card {
     border-radius: 2rem;
   }
 
-  h1 {
+  #kevin-garrido h1 {
     font-size: 3.5rem !important;
     line-height: 1 !important;
   }

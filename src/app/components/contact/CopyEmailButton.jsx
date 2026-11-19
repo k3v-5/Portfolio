@@ -21,7 +21,8 @@ export default function CopyEmailButton({
   onCopy,
   copyHint,
   copiedHint,
-  openMailLabel = "Abrir correo",
+  openMailLabel = "Open in mail client",
+  mailSubject = "Contact // Kevin Garrido",
 }) {
   return (
     <div className="flex flex-col items-center justify-center mb-16 relative">
@@ -71,7 +72,7 @@ export default function CopyEmailButton({
 
         {/* Botón Secundario: Abrir Cliente de Correo Directo */}
         <a
-          href={`mailto:${email}?subject=Contacto%20//%20Kevin%20Garrido`}
+          href={`mailto:${email}?subject=${encodeURIComponent(mailSubject)}`}
           className="inline-flex items-center gap-2 bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 dark:hover:bg-purple-900/60 border-2 border-purple-200 dark:border-purple-800 hover:border-purple-500 text-purple-700 dark:text-purple-300 font-mono text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-3 sm:py-4 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(147,51,234,0.2)] transform hover:scale-[1.02] active:scale-95"
           title={openMailLabel}
         >

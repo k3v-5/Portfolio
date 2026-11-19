@@ -422,7 +422,7 @@
     "lexikit": {
       "title_es": "LexiKit (Plataforma Educativa con IA)",
       "title_en": "LexiKit (AI Language Learning Platform)",
-      "url": "https://github.com/k3v-5",
+      "url": "https://github.com/k3v-5/LexiKit",
       "tech": "Next.js, TypeScript, LLM Prompt Chaining, Spaced Repetition",
       "bullets_es": [
         "Desarrollé una plataforma educativa adaptativa con Next.js y TypeScript que genera lecciones dinámicas y refuerza la retención mediante repetición espaciada.",

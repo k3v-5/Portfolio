@@ -6,7 +6,7 @@ export const siteConfig = {
   author: {
     name: "Kevin Garrido",
     shortName: "Kevin",
-    title: "Ingeniero en Cómputo Inteligente // Intelligent Computing Engineer",
+    title: "Ingeniero en Computación Inteligente // Intelligent Computing Engineer",
     email: "kevingarrido711@gmail.com",
     github: "https://github.com/k3v-5",
     linkedin: "https://www.linkedin.com/in/kdgs7/",
