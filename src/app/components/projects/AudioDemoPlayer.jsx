@@ -84,30 +84,32 @@ export default function AudioDemoPlayer({
   }, [src]);
 
   const togglePlay = () => {
-    if (fileMissing) {
-      setShowTooltip(true);
-      setTimeout(() => setShowTooltip(false), 3500);
-      return;
-    }
-
     const audio = audioRef.current;
     if (!audio) return;
 
     if (isPlaying) {
       audio.pause();
       setIsPlaying(false);
-    } else {
-      audio
-        .play()
-        .then(() => {
-          setIsPlaying(true);
-        })
-        .catch(() => {
-          setFileMissing(true);
-          setShowTooltip(true);
-          setTimeout(() => setShowTooltip(false), 3500);
-        });
+      return;
     }
+
+    if (fileMissing || audio.error || audio.readyState === 0) {
+      setFileMissing(false);
+      audio.load();
+    }
+
+    audio
+      .play()
+      .then(() => {
+        setFileMissing(false);
+        setIsPlaying(true);
+      })
+      .catch((err) => {
+        console.warn("[AudioDemoPlayer] Playback failed:", err?.message || err);
+        setFileMissing(true);
+        setShowTooltip(true);
+        setTimeout(() => setShowTooltip(false), 3500);
+      });
   };
 
   const handleSeek = (e) => {
@@ -131,7 +133,7 @@ export default function AudioDemoPlayer({
 
   return (
     <div className="mt-5 w-full bg-slate-900/90 text-white rounded-2xl p-4 border border-purple-500/20 backdrop-blur-md shadow-inner relative overflow-hidden">
-      <audio ref={audioRef} src={src} preload="metadata" />
+      <audio ref={audioRef} src={src} preload="metadata" playsInline />
 
       <div className="flex items-center justify-between gap-3 mb-2.5">
         <div className="flex items-center gap-2">

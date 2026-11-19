@@ -9,10 +9,10 @@ const nextConfig = {
   // Elimina la cabecera x-powered-by para reducir overhead por petición y mejorar seguridad
   poweredByHeader: false,
 
-  // Optimización de imágenes en producción (AVIF y WebP con caché persistente)
+  // Optimización de imágenes en producción (AVIF y WebP)
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 días de caché para imágenes optimizadas
+    minimumCacheTTL: 3600, // 1 hora para reflejar actualizaciones de imágenes sin caché obsoleto
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
@@ -25,15 +25,25 @@ const nextConfig = {
         : false,
   },
 
-  // Cabeceras HTTP de caché inmutable para recursos estáticos pesados
+  // Cabeceras HTTP de caché: inmutable solo para fuentes; revalidación por ETag para medios y PDFs
+  // (evita que Cloudflare/navegadores congelen 404s o versiones antiguas de CV/demos durante 1 año)
   async headers() {
     return [
       {
-        source: "/:all*(svg|jpg|jpeg|png|webp|avif|ico|mp3|pdf|woff2)",
+        source: "/:all*(woff2)",
         headers: [
           {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|ico|mp3|mp4|pdf)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate",
           },
         ],
       },

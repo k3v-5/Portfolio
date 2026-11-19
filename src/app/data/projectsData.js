@@ -20,7 +20,7 @@
 export const PROJECTS_DATA = [
   {
     id: 8,
-    image: "/images/projects/ianimation/principal.webp",
+    image: "/images/projects/ianimation/preview-s8.webp",
     tagIds: ["all", "ai", "gameDev"],
     gitUrl: "https://github.com/k3v-5/IANIMATION",
     previewUrl: null,
@@ -60,7 +60,7 @@ export const PROJECTS_DATA = [
     tagIds: ["all", "audioDev", "gameDev"],
     gitUrl: "https://github.com/k3v-5/N8Effect",
     previewUrl: "https://github.com/k3v-5/N8Effect",
-    audioDemo: "/audio/n8effect-demo.mp3",
+    audioDemo: "/audio/n8effect-ab-demo.mp3",
     fit: "cover",
   },
   {
